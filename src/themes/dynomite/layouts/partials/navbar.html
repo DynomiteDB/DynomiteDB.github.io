@@ -1,7 +1,12 @@
 <div class="navbar navbar-default navbar-fixed-top {{ if .Site.Params.theme.inverse }}navbar-inverse{{ end }}" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{.Site.BaseURL}}">{{ .Site.Params.product }}</a>
+            <a class="navbar-brand" href="{{.Site.BaseURL}}"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="{{ .Site.Params.product }}" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">{{ .Site.Params.product }}</span>
+            </a>
         </div>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
             <ul class="nav navbar-nav navbar-left">

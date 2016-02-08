@@ -27,9 +27,8 @@ div.dyno-docs-nav-section li {
 
 section.dyno-home-banner {
     background: #2c3e50;
-    opacity: 0.85;
     color: #fff;
-    padding: 75px 0 55px;
+    padding: 55px 0 55px;
 }
 
 section.dyno-home-banner h2 {

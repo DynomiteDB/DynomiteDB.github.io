@@ -1,0 +1,11 @@
+<div>
+	<h1><a href="{{.Permalink}}">{{ .Title }} - {{ .Type }}</a></h1>
+	<h2>Date: {{ if .Site.Params.strings.date_format }}{{ .Date.Format .Site.Params.strings.date_format }}{{ else }}{{ .Date.Format "Mon, Jan 2, 2006" }}{{ end }}</h2>
+	<p>{{ .Summary }} {{ if .Truncated }}<a href=" {{ .RelPermalink }}">...Read more</a>{{ end }}</a></p>
+	{{ range .Params.tags }}
+		<p>Tag(n): <a href="/tags/{{ . | urlize }}">{{ . }}</a></p>
+	{{ end }}
+	{{ range .Params.categories }}
+		<p>Category(n): {{ . }}</p>
+	{{ end }}
+</div>

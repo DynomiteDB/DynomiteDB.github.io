@@ -1,0 +1,43 @@
+{{ partial "header.html" . }}
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-9">
+			{{ range .Data.Pages }}
+				{{ if ne .Params.menu "main" }}
+					{{ .Render "blog-list-item"}}
+				{{ end }}
+			{{ end }}
+		</div>
+		<div class="col-sm-3">
+			<p>Tags</p>
+			<ul id="all-tags">
+				{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+				<li><a href="/tags/{{ $name | urlize }}">{{ $name }}</a></li>
+				{{ end }}
+			</ul>
+
+			<p>ALL</p>
+			<ul>
+				{{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+				<li><a href="/{{ $taxonomyname | urlize }}">{{ $taxonomyname }}</a>
+					<ul>
+						{{ range $key, $value := $taxonomy }}
+						<li> {{ $key }} </li>
+						<ul>
+							{{ range $value.Pages }}
+							<li hugo-nav="{{ .RelPermalink}}"><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a> </li>
+							{{ end }}
+						</ul>
+						{{ end }}
+					</ul>
+				</li>
+				{{ end }}
+			</ul>
+
+		</div>
+    </div>
+</div>
+
+{{ partial "footer.html" . }}
+	</body>
+</html>

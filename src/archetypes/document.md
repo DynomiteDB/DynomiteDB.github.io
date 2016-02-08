@@ -1,6 +1,0 @@
----
-product: ""
-version: ""
-type: "doc"
-
----
