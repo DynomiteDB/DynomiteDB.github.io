@@ -1,0 +1,97 @@
+baseurl = "https://dynomitedb.com/"
+languageCode = "en-us"
+title = "DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache"
+buildDrafts = "false"
+buildFuture = "false"
+publishdir = "public" # Change this to "../"
+theme = "dynomite"
+
+[permalinks]
+  # Optional. Change the permalink format for the 'blog' content type.
+  blog = "/blog/:year/:month/:day/:title/"
+
+#[author]
+  # Optional. Used in RSS feed meta information.
+  #name = "your name"
+  #email = "example <at> example <dot> com"
+
+[params]
+  product = "DynomiteDB"
+  description = "DynomiteDB is a high performance, linearly scalable, highly available (HA) and distributed cache."
+  keywords = "dynomite, cache, high availability, HA, linearly scalable, scalable, distributed, distributed cache"
+  languagecode = "en-US"
+  author = "The DynomiteDB community"
+  copyright = "2015 DynomiteDB.com"
+
+  # Social links are displayed in the footer
+  twitter = "https://twitter.com/DynomiteDB"
+  github = "https://github.com/DynomiteDB/DynomiteDB"
+  #facebook = "https://www.facebook.com/<username>"
+  #delicious = "https://delicious.com/<username>"
+  #linkedin = "https://www.linkedin.com/in/<username>"
+  #flickr = "https://www.flickr.com/photos/<username>"
+
+  # show default summaries on the frontpage or not
+  use_summaries = false
+
+  # Documentation
+  current_dyno_version = "v1.3.1"
+  current_dynomite_version = "v0.5.6"
+
+[params.strings]
+  # name of the header used in the post list page
+  # Used in:
+  # ./src/themes/dynomite/layouts/_default/list.html
+  # ./src/themes/dynomite/layouts/partials/header.html
+  #posts_list_header = "Posts"
+
+  # used date format
+  date_format = 'Jan 2, 2006'
+
+[params.theme]
+  inverse = false   # if true, use inverse colors
+  name = "flatly"   # Bootswatch theme
+
+  # name must be one of:
+  # name = cerulean, cosmo, cyborg, default, flatly, journal, lumen, paper,
+  #        readable, sandstone, simplex, slate, spacelabs, superhero, united,
+  #        yeti
+
+[[menu.main]]
+  name = "DocsXXX"
+  weight = -110
+  identifier = "docs"
+  url = "/docs/"
+  test = "xxxMain"
+[[menu.main]]
+  name = "Blog"
+  weight = -100
+  identifier = "blog"
+  url = "/blog/"
+  test = "YYYMain"
+
+[menu]
+[menu.
+params:
+  sections:
+    - id: "get-started"
+      name: "Get Started"
+      url: "/get-started"
+    - id: "manual"
+      name: "Manual"
+      url: "/manual"
+    - id: "enterprise"
+      name: "Enterprise"
+      url: "/enterprise"
+  section:
+    id: "manual"
+    version: "develop"
+    versionAlias: "7.5"
+    versions:
+      - "latest"
+      - "7.4"
+      - "7.3"
+      - "7.2"
+      - "7.1"
+      - "7.0"
+      - "develop"

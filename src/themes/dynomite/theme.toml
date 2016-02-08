@@ -1,0 +1,17 @@
+name = "dynomite"
+license = "Apache 2"
+licenselink = "https://github.com/DynomiteDB/DynomiteDB/blob/master/LICENSE"
+description = "DynomiteDB theme for Hugo. Forked from the Hugo Multi BootSwatch Theme (https://github.com/mpas/hugo-multi-bootswatch)."
+tags = ["project", "documentation", "blog"]
+features = ["project", "documentation", "blog"]
+min_version = 0.15
+
+[author]
+    name = "Akbar S. Ahmed"
+    email = "akbar501@gmail.com"
+
+[original]
+    author = "Marco Pas"
+    name = "Marco Pas"
+    email = "marco.pasopas@gmail.com"
+    repo = "https://github.com/mpas/hugo-multi-bootswatch"
