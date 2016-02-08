@@ -1,5 +1,5 @@
 body {
-    padding-top: 70px;
+    padding-top: 60px;
 }
 
 p.dyno-footer-copyright {
@@ -21,4 +21,46 @@ div.dyno-docs-nav-section ul {
 div.dyno-docs-nav-section li {
     line-height: 19px;
     margin: 0 0 6px;
+}
+
+/* Home */
+
+section.dyno-home-banner {
+    background: #2c3e50;
+    opacity: 0.85;
+    color: #fff;
+    padding: 75px 0 55px;
+}
+
+section.dyno-home-banner h2 {
+    font-size: 40px;
+    color: #3498db;
+    margin-top: 0;
+}
+
+section.dyno-home-banner p:first-of-type {
+    font-size: 22px;
+    max-width: 680px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+section.dyno-home-banner p:last-of-type {
+    font-size: 15px;
+}
+
+section.dyno-home-banner div div {
+    margin-top: 45px;
+}
+
+section.dyno-home-banner div a {
+/*.dyno-home-banner .dyno-home-banner-buttons .dyno-btn-home-banner {*/
+    border: 2px solid #FFFFFF;
+    background-color: transparent;
+    color: #FFFFFF;
+    font-size: 18px;
+    padding: 8px 30px;
+}
+section.dyno-home-banner div a:last-of-type {
+    margin-left: 17px;
 }
