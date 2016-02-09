@@ -89,7 +89,7 @@ menu:
       - Name: "Docs"
         Weight: -110
         Identifier: "docs"
-        URL: "/docs/"
+        URL: "/docs/dynomite/v0.5.6/quick-start/"
       - Name: "Blog"
         Weight: -100
         Identifier: "blog"
