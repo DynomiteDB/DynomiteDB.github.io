@@ -5,6 +5,7 @@ product: "Dynomite"
 version: "v0.5.6"
 type: "dynomite-v0.5.6"
 docurl: "/docs/dynomite/v0.5.6/"
+weight: 300
 
 ---
 
@@ -14,6 +15,8 @@ In the age of high scalability and big data, Dynomite’s design goal is to turn
 
 Dynomite and the target storage engine run on the same node. Clients connect to Dynomite, and requests are proxied to either the storage engine on the same node or to Dynomite processes running on other nodes.
 
-<img src="/img/dynomite/v0.5.6/dynomite-architecture.png" alt="Dynomite Architecture">
+<img class="img-responsive center-block"
+     src="/img/dynomite/v0.5.6/dynomite-architecture.png" 
+     alt="Dynomite Architecture">
 
 As the request goes through a Dynomite node, the data gets replicated and eventually stored in the target storage. The data can then be read back either through Dynomite or directly from the underlying storage’s API. 

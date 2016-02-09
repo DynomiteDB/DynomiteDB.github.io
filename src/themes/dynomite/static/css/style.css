@@ -6,21 +6,25 @@ p.dyno-footer-copyright {
     line-height: 2em;
 }
 
-div.dyno-docs-nav-section h3 {
+div.dyno-doc-nav h3 {
     font-size: 15px;
-    text-transform: uppercase;
     font-weight: bold;
 }
 
-div.dyno-docs-nav-section ul {
+div.dyno-doc-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-div.dyno-docs-nav-section li {
-    line-height: 19px;
+div.dyno-doc-nav ul li {
+    line-height: 23px;
     margin: 0 0 6px;
+}
+
+div.dyno-doc-nav ul li a:hover {
+    color: #f39c12;
+    text-decoration: none;
 }
 
 /* Home */
