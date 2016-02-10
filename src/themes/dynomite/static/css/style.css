@@ -60,8 +60,16 @@ div.dyno-doc-nav ul li a:hover {
     text-decoration: none;
 }
 
-/* Docs: Document */
+/* Headings for individual Document and Blog Post
+   - Docs: Document
+   - Blog: Blog Post
+*/
 
+.dyno-blog-post h1,
+.dyno-blog-post h2,
+.dyno-blog-post h3,
+.dyno-blog-post h4,
+.dyno-blog-post h5,
 .dyno-doc h1,
 .dyno-doc h2,
 .dyno-doc h3,
@@ -70,29 +78,34 @@ div.dyno-doc-nav ul li a:hover {
     font-weight: bold;
 }
 
+.dyno-blog-post h1,
 .dyno-doc h1 {
     font-size: 27px;
     margin-bottom: 22px;
 }
 
+.dyno-blog-post h2,
 .dyno-doc h2 {
     font-size: 24px;
     margin-bottom: 19px;
     margin-top: 27px;
 }
 
+.dyno-blog-post h3,
 .dyno-doc h3 {
     font-size: 21px;
     margin-bottom: 16px;
     margin-top: 24px;
 }
 
+.dyno-blog-post h4,
 .dyno-doc h4 {
     font-size: 18px;
     margin-bottom: 13px;
     margin-top: 21px;
 }
 
+.dyno-blog-post h5,
 .dyno-doc h5 {
     font-size: 15px;
     margin-bottom: 10px;

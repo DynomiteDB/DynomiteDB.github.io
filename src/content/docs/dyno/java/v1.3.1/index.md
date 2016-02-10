@@ -6,6 +6,7 @@ clientlang: "Java"
 version: "v1.3.1"
 type: "dyno-java-v1.3.1"
 docurl: "/docs/dyno/java/v1.3.1/"
+draft: true
 
 ---
 
