@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Quick Start">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>Quick Start &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="https://dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="https://dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="https://dynomitedb.com/css/style.css">
+
+
+    
+    <script src="https://dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+    <script src="https://dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/dynomite/v0.5.6/quick-start/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	
+		
+			
+			
+			
+			
+		
+	
+	<div class="row">
+		
+			
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+			
+		
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Dynomite v0.5.6</h3>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/quick-start/">Quick Start</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/architecture/">Architecture</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/topology/">Topology</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/replication/">Replication</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/consistency/">Consistency</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/membership-protocols/">Membership Protocols</a></li>
+
+					
+				
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>Quick Start</h1>
+			
+
+<p>In this setup, we will use Redis with Dynomite. For Memcached, it is very similar replacing Redis installation step with Memcached installation step. We will also show you the configurations to simulate a one-node Dynomite cluster and a two-node Dynomite cluster.</p>
+
+<h2 id="1-install-redis:e3f45fc764592010fd1ca88ac8fff243">1.) Install Redis</h2>
+
+<p>Please follow the instructions on this website to download and install Redis: <a href="http://redis.io/">http://redis.io/</a></p>
+
+<h2 id="2-build-dynomite:e3f45fc764592010fd1ca88ac8fff243">2.) Build Dynomite</h2>
+
+<p>Please follow our <a href="https://github.com/Netflix/dynomite/blob/master/README.md">README.md</a> to compile and build Dynomite from source. Note that we only test Dynomite on Linux environments so we recommend compiling and building Dynomite on a Linux system.</p>
+
+<h2 id="3-configuration:e3f45fc764592010fd1ca88ac8fff243">3.) Configuration</h2>
+
+<p>These examples are for redis. If you remove redis property, they will become memcached configured files.</p>
+
+<h3 id="a-one-node-cluster:e3f45fc764592010fd1ca88ac8fff243">a. One node cluster:</h3>
+
+<pre><code class="language-bash">https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_single.yml  
+</code></pre>
+
+<h3 id="b-two-nodes-cluster-in-one-datacenter-with-2-racks:e3f45fc764592010fd1ca88ac8fff243">b. Two-nodes cluster in one datacenter with 2 racks</h3>
+
+<pre><code class="language-bash">https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_dc1_rack1.yml
+
+https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_dc1_rack2.yml
+</code></pre>
+
+<h3 id="c-two-nodes-cluster-in-two-datacenters-each-having-one-rack:e3f45fc764592010fd1ca88ac8fff243">c. Two-nodes cluster in two datacenters each having one rack</h3>
+
+<pre><code class="language-bash">https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_mul_dc1.yml
+
+https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_mul_dc2.yml
+</code></pre>
+
+<h3 id="d-6-node-cluster-in-one-datacenter-with-3-racks-each-having-2-nodes:e3f45fc764592010fd1ca88ac8fff243">d. 6-node cluster in one datacenter with 3 racks, each having 2 nodes</h3>
+
+<pre><code class="language-bash">dyn_o_mite:
+     datacenter: us-east-1
+     dyn_listen: 0.0.0.0:9101
+     dyn_seed_provider: simple_provider
+     dyn_seeds:
+     - ec2-54-162-161-10.compute-1.amazonaws.com:9101:rack-v0:us-east-1:1383429731
+     - ec2-54-191-177-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:1383429731
+     - ec2-54-181-51-12.compute-1.amazonaws.com:9101:rack-v1:us-east-1:3530913378
+     - ec2-54-129-121-134.compute-1.amazonaws.com:9101:rack-v0:us-east-1:3530913378
+     - ec2-23-123-53-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:3530913378
+     listen: 0.0.0.0:9102
+     servers:
+     - 127.0.0.1:6380:1
+     timeout: 30000
+     tokens: '1383429731'
+     rack: rack-v1
+     data_store: 0
+</code></pre>
+
+<pre><code class="language-bash">dyn_o_mite:
+     datacenter: us-east-1
+     dyn_listen: 0.0.0.0:9101
+     dyn_seed_provider: simple_provider
+     dyn_seeds:
+     - ec2-54-111-131-14.compute-1.amazonaws.com:9101:rack-v1:us-east-1:1383429731
+     - ec2-54-191-177-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:1383429731
+     - ec2-23-123-53-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:3530913378
+     - ec2-54-129-121-134.compute-1.amazonaws.com:9101:rack-v0:us-east-1:3530913378
+     - ec2-54-181-51-12.compute-1.amazonaws.com:9101:rack-v1:us-east-1:3530913378
+     listen: 0.0.0.0:9102
+     servers:
+     - 127.0.0.1:6380:1
+     timeout: 30000
+     tokens: '1383429731'
+     rack: rack-v0
+     data_store: 0
+</code></pre>
+
+<pre><code class="language-bash">dyn_o_mite:
+     datacenter: us-east-1
+     dyn_listen: 0.0.0.0:9101
+     dyn_seed_provider: simple_provider
+     dyn_seeds:
+     - ec2-54-162-161-10.compute-1.amazonaws.com:9101:rack-v0:us-east-1:1383429731
+     - ec2-54-111-131-14.compute-1.amazonaws.com:9101:rack-v1:us-east-1:1383429731
+     - ec2-54-129-121-134.compute-1.amazonaws.com:9101:rack-v0:us-east-1:3530913378
+     - ec2-23-123-53-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:3530913378
+     - ec2-54-181-51-12.compute-1.amazonaws.com:9101:rack-v1:us-east-1:3530913378
+     listen: 0.0.0.0:9102
+     servers:
+     - 127.0.0.1:6380:1
+     timeout: 30000
+     tokens: '1383429731'
+     rack: rack-v2
+     data_store: 0
+</code></pre>
+
+<pre><code class="language-bash">dyn_o_mite:
+     datacenter: us-east-1
+     dyn_listen: 0.0.0.0:9101
+     dyn_seed_provider: simple_provider
+     dyn_seeds:
+     - ec2-54-162-161-10.compute-1.amazonaws.com:9101:rack-v0:us-east-1:1383429731
+     - ec2-54-191-177-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:1383429731
+     - ec2-54-111-131-14.compute-1.amazonaws.com:9101:rack-v1:us-east-1:1383429731
+     - ec2-23-123-53-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:3530913378
+     - ec2-54-129-121-134.compute-1.amazonaws.com:9101:rack-v0:us-east-1:3530913378
+     listen: 0.0.0.0:9102
+     servers:
+     - 127.0.0.1:6380:1
+     timeout: 30000
+     tokens: '3530913378'
+     rack: rack-v1
+     data_store: 0
+</code></pre>
+
+<pre><code class="language-bash">dyn_o_mite:
+     datacenter: us-east-1
+     dyn_listen: 0.0.0.0:9101
+     dyn_seed_provider: simple_provider
+     dyn_seeds:
+     - ec2-54-162-161-10.compute-1.amazonaws.com:9101:rack-v0:us-east-1:1383429731
+     - ec2-54-111-131-14.compute-1.amazonaws.com:9101:rack-v1:us-east-1:1383429731
+     - ec2-54-191-177-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:1383429731
+     - ec2-54-181-51-12.compute-1.amazonaws.com:9101:rack-v1:us-east-1:3530913378
+     - ec2-23-123-53-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:3530913378
+     listen: 0.0.0.0:9102
+     servers:
+     - 127.0.0.1:6380:1
+     timeout: 30000
+     tokens: '3530913378'
+     rack: rack-v0
+     data_store: 0
+</code></pre>
+
+<pre><code class="language-bash">dyn_o_mite:
+     auto_eject_hosts: true
+     datacenter: us-east-1
+     dyn_listen: 0.0.0.0:9101
+     dyn_seed_provider: simple_provider
+     dyn_seeds:
+     - ec2-54-111-131-14.compute-1.amazonaws.com:9101:rack-v1:us-east-1:1383429731
+     - ec2-54-162-161-10.compute-1.amazonaws.com:9101:rack-v0:us-east-1:1383429731
+     - ec2-54-191-177-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:1383429731
+     - ec2-54-181-51-12.compute-1.amazonaws.com:9101:rack-v1:us-east-1:3530913378
+     - ec2-54-129-121-134.compute-1.amazonaws.com:9101:rack-v0:us-east-1:3530913378
+     listen: 0.0.0.0:9102
+     servers:
+     - 127.0.0.1:6380:1
+     timeout: 30000
+     tokens: '3530913378'
+     rack: rack-v2
+     data_store: 0
+</code></pre>
+
+<h2 id="4-start-the-cluster-s:e3f45fc764592010fd1ca88ac8fff243">4.) Start the cluster(s)</h2>
+
+<p>Assume you have gone through the build process and produced the binary file <code>dynomite</code>.</p>
+
+<p>To run a one node dynomite cluster using the above config, you can run</p>
+
+<pre><code class="language-bash">dynomite -c dynomite.yml
+</code></pre>
+
+<p>If you want to start a 2 node cluster with those two yaml files, you can open 2 terminals and run:</p>
+
+<p>In the first terminal run the following:</p>
+
+<pre><code class="language-bash">dynomite -c dynomite1.yml
+</code></pre>
+
+<p>In the second terminal run the following:</p>
+
+<pre><code class="language-bash">dynomite -c dynomite2.yml
+</code></pre>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2015 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+	</body>
+</html>

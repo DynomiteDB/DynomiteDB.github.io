@@ -1,5 +1,5 @@
 ---
-baseurl: "https://dynomitedb.com/"
+baseurl: "https://dynomitedb.com"
 languageCode: "en-us"
 title: "DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache"
 buildDrafts: "false"

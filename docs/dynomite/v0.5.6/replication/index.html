@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Replication">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>Replication &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="https://dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="https://dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="https://dynomitedb.com/css/style.css">
+
+
+    
+    <script src="https://dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+    <script src="https://dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/dynomite/v0.5.6/quick-start/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	
+		
+			
+			
+			
+			
+		
+	
+	<div class="row">
+		
+			
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+			
+		
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Dynomite v0.5.6</h3>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/quick-start/">Quick Start</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/architecture/">Architecture</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/topology/">Topology</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/replication/">Replication</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/consistency/">Consistency</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/membership-protocols/">Membership Protocols</a></li>
+
+					
+				
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>Replication</h1>
+			<p>A client can connect to any node on a Dynomite cluster when sending write traffic. If the Dynomite node happens to own the data based on its token, then the data is written to the local datastore server process and asynchronously replicated to other racks in the cluster across all data centers. If the node does not own the data, it acts as a coordinator and sends the write to the node owning the data in the same rack. It also replicates the writes to the corresponding nodes in other racks and DCs.</p>
+
+<p>The diagram below shows an example where data is being written to the cluster by the client. It belongs on nodes a2,b2,c2 and d2 as per the partitioning scheme. The request is sent to a1 which acts as the coordinator and sends the request to the appropriate datastore nodes.</p>
+
+<p><img class="img-responsive center-block"
+     src="/img/dynomite/v0.5.6/cross-dc-replication.png"
+     alt="Cross data center (DC) replication"></p>
+
+<p>Dynomite features a regular, consistent hash ring. Replication is asymmetric. When a key is hashed to the ring, its owner is the node proceeding it in the ring. As shown in the graphic below, key 30 belongs to node 1 and key 200 belongs to node 4.</p>
+
+<p><img class="img-responsive center-block"
+     style="width: 75%;"
+     src="/img/dynomite/v0.5.6/token-ownership.png"
+     alt="Token ownership"></p>
+
+<p>Local writes with the Dyno client employ token aware load balancing. The Dyno client is aware of the cluster topology of Dynomite within the same region, and hence can write directly to a specific node using consistent hashing.</p>
+
+<p><img class="img-responsive center-block"
+     style="width: 75%;"
+     src="/img/dynomite/v0.5.6/topology-aware-load-balancing.png"
+     alt="Dyno token aware load balancing"></p>
+
+<p>Below, the Dyno client does a local write only (i.e local region) and the dynomite co-ordinator know its corresponding replica in the remote region and forwards on the write.</p>
+
+<p><img class="img-responsive center-block"
+     src="/img/dynomite/v0.5.6/topology-aware-local-writes.png"
+     alt="Dyno writes to local DC"></p>
+
+<p>Asymmetric replication looks slightly different. At some point in the future we could have another region where the capacity is different from the current regions. For example, assume that we have m2.4xl instances in us-east-1 and we have a 6 node token ring in vus-east-1. Then assume that in eu-west-1 we have only m2.2xl instances, hence we have a 12 node token ring in eu-west-1.</p>
+
+<p>In this scenario, key 30 goes to node 1 in us-east-1 but it goes to node 2 in eu-west-1. The Dyno client in each region is aware of the cluster topology and Dynomite is aware of all the topologies for remote regions (via gossip). By design, the client and server and respectively route the write to the correct set of nodes in both regions.</p>
+
+<p><img class="img-responsive center-block"
+     src="/img/dynomite/v0.5.6/topology-aware-multi-dc-local-writes.png"
+     alt="Dyno writes to local DC in multi-DC environment"></p>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2015 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+	</body>
+</html>

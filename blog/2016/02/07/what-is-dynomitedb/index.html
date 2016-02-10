@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="What is DynomiteDB?">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>What is DynomiteDB? &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="https://dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="https://dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="https://dynomitedb.com/css/style.css">
+
+
+    
+    <script src="https://dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+    <script src="https://dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/dynomite/v0.5.6/quick-start/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<section class="dyno-blog-post-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="dyno-blog-post">
+                    <h1>What is DynomiteDB?</h1>
+                    <p class="lead">A high-performance distributed cache</p>
+                    <div><p>
+
+<p>DynomiteDB is a high performance, linearly scalable, highly available (HA) and distributed cache. Dynomite&rsquo;s clustering has a Dynamo-inspired shared nothing architecture with no single point of failure (SPOF). High speed storage is provided by Redis while the clustering layer allows Redis to span 10s, 100s or 1000s of servers.</p>
+
+<p>DynomiteDB combines three upstream projects into a comprehensive solution:</p>
+
+<ul>
+<li><strong>Dynomite</strong>: A high performance Dynamo layer that adds linearly scalability, data replication, sharding, and high availability to Redis.</li>
+<li><strong>Redis</strong>: The primary data store used by Dynomite to store cached data.</li>
+<li><strong>Dyno</strong>: A Java client that communicates with Dynomite using the Redis protocol.</li>
+</ul>
+
+<p>You can view each of the above projects on GitHub:</p>
+
+<ul>
+<li><a href="https://github.com/Netflix/dynomite" target="_blank">Dynomite</a></li>
+<li><a href="https://github.com/Netflix/dyno" target="_blank">Dyno</a></li>
+<li><a href="https://github.com/antirez/redis" target="_blank">Redis</a></li>
+</ul>
+
+<h2 id="dynomitedb-vs-dynomite:91f133730294fdcd6ebf855736388508">DynomiteDB vs. Dynomite</h2>
+
+<p>DynomiteDB uses Dynomite, Dyno and Redis as upstream projects. It combines these three projects into a single, easily installable package.</p>
+
+<p>Dynomite is a generic Dynamo implementation that supports multiple key/value stores on the backend. It is unopinionated about which backend you use, Redis or Memcached. Therefore, an installation of Dynomite requires more configuration of both Dynomite plus Redis or Memcached.</p>
+
+<p>DynomiteDB on the other hand is opinionated in its use of Redis as the backend for Dynomite. Dynomite installs and configures Dynomite to work with Redis out of the box.</p>
+</p></div>
+
+                    <div class="dyno-blog-post-footer">
+                        <div class="pull-left">
+                            By 
+                                
+Akbar S. Ahmed
+                             /
+                            In 
+                                <a href="/categories/dynomitedb">DynomiteDB</a>
+                             /
+                            On February 7, 2016
+                        </div>
+                        <div class="pull-right">
+                            <i class="fa fa-tags"></i>
+                            
+                            <a href="/tags/dynomitedb">DynomiteDB</a>
+                            
+                        </div>
+                    </div>
+
+
+                        
+                            
+                            
+                            
+                                
+                                
+                            
+                            
+                                
+                                
+                            
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2015 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+	</body>
+</html>

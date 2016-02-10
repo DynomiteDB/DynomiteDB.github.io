@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="FAQ">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>FAQ &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="https://dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="https://dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="https://dynomitedb.com/css/style.css">
+
+
+    
+    <script src="https://dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+    <script src="https://dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/dynomite/v0.5.6/quick-start/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	
+		
+			
+			
+			
+			
+		
+	
+	<div class="row">
+		
+			
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+			
+		
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Dynomite v0.5.6</h3>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/quick-start/">Quick Start</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/architecture/">Architecture</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/topology/">Topology</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/replication/">Replication</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/consistency/">Consistency</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/membership-protocols/">Membership Protocols</a></li>
+
+					
+				
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>FAQ</h1>
+			
+
+<h2 id="what-is-the-relationship-between-a-rack-and-a-data-center:3c4cfe10458f6c35c5fa87d5a5ac8354">What is the relationship between a rack and a data center?</h2>
+
+<p>A Dynomite cluster consists of a group of data centers and each data center has a number of racks. Each rack consists of a number of nodes. Note that different racks can have different numbers of nodes. Similarly, different data centers can have different numbers of racks.</p>
+
+<h2 id="what-is-a-replication-factor:3c4cfe10458f6c35c5fa87d5a5ac8354">What is a replication factor?</h2>
+
+<p>In a Dynomite cluster, each rack contains a complete set of data. Replication factor is the number of complete data copies in a data center. In other words, it is the number of racks in a data center.</p>
+
+<h2 id="what-are-the-currently-supported-datastore-servers:3c4cfe10458f6c35c5fa87d5a5ac8354">What are the currently supported datastore servers?</h2>
+
+<p>Redis and Memcached.</p>
+
+<h2 id="why-not-just-use-cassandra:3c4cfe10458f6c35c5fa87d5a5ac8354">Why not just use Cassandra?</h2>
+
+<p>Cassandra is written in Java and at runtime, GC trigger can result in unexpected latencies in some cases. Cassandra is fast for writing but in very high frequency writes, Cassandra node will get blown up very soon as the compaction can&rsquo;t catch up. Also during a compaction is running on a Cassandra node, read latency is also affected due to the extra CPU and disk loads.</p>
+
+<p>Furthermore, to achieve the same throughputs, and latencies as Dynomite, using Cassandra, you probably need to spend 15X-20X of the cost of a Dynomite cluster.</p>
+
+<p>If you need more consistency, Cassandra at this point provides a better solution. However, Dynomite is going to provide different levels of consistencies very soon. Stay tuned.</p>
+
+<h2 id="why-not-use-mcrouter:3c4cfe10458f6c35c5fa87d5a5ac8354">Why not use McRouter?</h2>
+
+<p>Do you employ a Read-Modify-Write pattern? Do you love Redis and its API (set, list, hash)? Do you want to simplify your cluster management leveraging a peer-to-peer system? Do you want to avoid an extra network hop that McRouter introduces? If you answered yes to these questions, then Dynomite is for you.</p>
+
+<h2 id="why-not-use-redis-cluster:3c4cfe10458f6c35c5fa87d5a5ac8354">Why not use Redis cluster?</h2>
+
+<p>Dynomite is a peer-to-peer system. Redis cluster is multi master/slave system. You should choose whichever system works best for you.</p>
+
+<h2 id="why-not-use-twemproxy:3c4cfe10458f6c35c5fa87d5a5ac8354">Why not use Twemproxy?</h2>
+
+<p>Twemproxy, as the name recalls, is just a proxy to route Memcached or Redis requests in a consistent hashing mechanism to a pool of Memcached or Redis servers. In a way, it is similar to McRouter but without any replications. You can consider Dynomite as a superset of Twemproxy&rsquo;s features. Indeed, Dynomite was originally a fork of Twemproxy before we went off to our own path.</p>
+
+<h2 id="what-do-we-need-to-install-before-building-dynomite:3c4cfe10458f6c35c5fa87d5a5ac8354">What do we need to install before building Dynomite?</h2>
+
+<p>You need to install libevent, autoconf, libtool, and either Memcached or Redis</p>
+
+<h2 id="how-can-we-monitor-a-dynomite-process:3c4cfe10458f6c35c5fa87d5a5ac8354">How can we monitor a Dynomite process?</h2>
+
+<p>There is an admin port that you can access with HTTP protocol to pull out statistical information from a running Dynomite process.</p>
+
+<pre><code class="language-bash">curl 'http://localhost:22222/info'
+</code></pre>
+
+<h2 id="is-this-a-fork-from-twemproxy:3c4cfe10458f6c35c5fa87d5a5ac8354">Is this a fork from twemproxy?</h2>
+
+<p>Yes, it is. When we started we realized that a bunch of work already there in twemproxy to get us progress quickly. However, since our design is so different from twemproxy&rsquo;s design, we eventually had to do what is best for our project while still retaining all twemproxy&rsquo;s commit histories, its copyright notices and also other open sources&rsquo; copyright notices that twemproxy uses, e.g. the FreeBSD code from University of Berkeley.</p>
+
+<h2 id="why-is-it-written-in-c:3c4cfe10458f6c35c5fa87d5a5ac8354">Why is it written in C?</h2>
+
+<p>We were evaluating the pros and cons between a JVM language (Java/Scala), Go, or C/C++. A JVM language will force us to worry about GC and we don&rsquo;t have a deterministic control over it. Go seems to be a new and interesting language. However, at the time we explored it, it still had long GC issues in some cases and plus, not many detailed documents available on the internet to give us the confidence. C/C++ give us a total control we can get the best possible performance to avoid the bottleneck issue in our layer. We finally settled on C as we don&rsquo;t need many features from C++ and if we do, converting a C project to a C++ project should be straight forward.</p>
+
+<h2 id="is-there-something-like-priam-for-cassandra:3c4cfe10458f6c35c5fa87d5a5ac8354">Is there something like Priam for Cassandra?</h2>
+
+<p>Yes, there is. We call this &lsquo;Florida&rsquo; and it will play the similar role as Priam for helping to manage a multi-region Dynomite cluster in AWS cloud. We will open source this soon.</p>
+
+<h2 id="what-client-can-we-use-to-connect-to-dynomite:3c4cfe10458f6c35c5fa87d5a5ac8354">What client can we use to connect to Dynomite?</h2>
+
+<p>If you are using a JVM language, we have our Java client, Dyno, for you. It has many advanced features and you can read more about it at <a href="http://github.com/Netflix/dyno">http://github.com/Netflix/dyno</a>. Otherwise, you can use just any other Memcached or Redis client out there to connect but of course, you will not have those advanced features Dyno provide such as failover strategy, retries strategy, etc.</p>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2015 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+	</body>
+</html>

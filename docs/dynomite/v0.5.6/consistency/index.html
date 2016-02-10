@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Consistency">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>Consistency &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="https://dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="https://dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="https://dynomitedb.com/css/style.css">
+
+
+    
+    <script src="https://dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+    <script src="https://dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/dynomite/v0.5.6/quick-start/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	
+		
+			
+			
+			
+			
+		
+	
+	<div class="row">
+		
+			
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+			
+		
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Dynomite v0.5.6</h3>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/quick-start/">Quick Start</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/architecture/">Architecture</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/topology/">Topology</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/replication/">Replication</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/consistency/">Consistency</a></li>
+
+					
+				
+					
+						
+
+<li><a href="https://dynomitedb.com/docs/dynomite/v0.5.6/membership-protocols/">Membership Protocols</a></li>
+
+					
+				
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>Consistency</h1>
+			
+
+<p>Dynomite (ver &gt;0.5.3) extends eventual consistency to tunable consistency in the local region. The consistency level specifies how many replicas must respond to a write/read request before returning data to the client application. Read and write consistency can be configured to manage availability versus data accuracy. Consistency can be configured for read or write operations separately (cluster-wide). There are two configurations.</p>
+
+<p><strong>DC_ONE</strong>: Reads and writes are propagated synchronously only to the node in the local rack (Availability Zone) and asynchronously replicated to other Racks and regions.</p>
+
+<p><strong>DC_QUORUM</strong>: Reads and writes are propagated synchronously to quorum number of nodes in the local data center and asynchronously to the rest. The DC_QUORUM configuration writes to the number of nodes that make up a quorum. A quorum is calculated, and then rounded down to a whole number. The operation succeeds if the read/write succeeded on a quorum number of nodes.</p>
+
+<h2 id="configuration:589bd115e6e47c06d69cedda34bcaebd">Configuration</h2>
+
+<p>There are two ways to configure consistency. The first is in the YAML file and it is picked up on Dynomite&rsquo;s start. The entries in the YAML must appear as follows (the values are case insensitive):</p>
+
+<pre><code class="language-bash">read_consistency: dc_quorum
+write_consistency: dc_quorum
+</code></pre>
+
+<p>The second is during run time through the admin port (default 22222) on all nodes:</p>
+
+<pre><code class="language-bash">curl http://localhost:22222/set_consistency/read/dc_quorum
+
+curl http://localhost:22222/set_consistency/write/dc_quorum
+</code></pre>
+
+<p>To check the node level consistency:</p>
+
+<pre><code class="language-bash">curl http://localhost:22222/get_consistency
+</code></pre>
+
+<p>The expected output from the curl command above is a list of the current consistency levels. For example:</p>
+
+<pre><code class="language-bash">Read Consistency: DC_QUORUM
+Write Consistency: DC_QUORUM
+</code></pre>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2015 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+	</body>
+</html>
