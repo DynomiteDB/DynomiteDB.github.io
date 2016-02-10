@@ -28,6 +28,11 @@ p.dyno-footer-copyright {
     padding: 0;
 }
 
+/* General purpose <section> */
+.dyno-section {
+    margin-top: 21px;
+}
+
 /* Docs */
 
 /* Docs: Left navigation */

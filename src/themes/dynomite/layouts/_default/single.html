@@ -1,0 +1,20 @@
+<!-- Individual page -->
+{{ partial "header.html" . }}
+
+<section class="dyno-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="dyno-blog-post">
+                    <h1>{{ .Title }}</h1>
+
+                    {{ .Content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "footer.html" . }}
+</body>
+</html>
