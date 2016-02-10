@@ -260,3 +260,33 @@ section.dyno-home-banner div a:last-of-type {
     color: #18bc9c;
     text-decoration: none;
 }
+
+/* Blog post */
+
+.dyno-blog-post-section {
+    margin-top: 21px;
+}
+
+.dyno-blog-post {
+    padding-bottom: 45px;
+}
+
+.dyno-blog-post h1 {
+    font-size: 24px;
+    margin-bottom: 13px;
+    font-weight: bold;
+}
+
+.dyno-blog-post p.lead {
+    font-size: 18px;
+}
+
+.dyno-blog-post a:active,
+.dyno-blog-post a:focus,
+.dyno-blog-post a:hover {
+    text-decoration: none;
+}
+
+.dyno-blog-post div.dyno-blog-post-footer {
+    margin-top: 33px;
+}
