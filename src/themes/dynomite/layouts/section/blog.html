@@ -58,30 +58,42 @@
 		</div>
 
 		<div class="col-sm-3">
-			<p>Tags</p>
-			<ul id="all-tags">
-				{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-				<li><a href="/tags/{{ $name | urlize }}">{{ $name }}</a></li>
-				{{ end }}
-			</ul>
+			<div class="dyno-taxonomy-menu">
+				<h3>Categories</h3>
+				<ul>
+					{{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+						<li><a class="text-info" href="/categories/{{ $name | urlize }}">{{ $name }}</a></li>
+					{{ end }}
+				</ul>
+			</div>
 
-			<p>ALL</p>
-			<ul>
-				{{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-				<li><a href="/{{ $taxonomyname | urlize }}">{{ $taxonomyname }}</a>
-					<ul>
-						{{ range $key, $value := $taxonomy }}
-						<li> {{ $key }} </li>
-						<ul>
-							{{ range $value.Pages }}
-							<li hugo-nav="{{ .RelPermalink}}"><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a> </li>
-							{{ end }}
-						</ul>
-						{{ end }}
-					</ul>
-				</li>
-				{{ end }}
-			</ul>
+			<div class="dyno-taxonomy-menu">
+				<h3>Tags</h3>
+				<ul>
+					{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+						<li><a class="text-info" href="/tags/{{ $name | urlize }}">{{ $name }}</a></li>
+					{{ end }}
+				</ul>
+			</div>
+
+			<!-- List all categories and the blog posts within each category -->
+			<!--<p>ALL</p>-->
+			<!--<ul>-->
+				<!--{{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}-->
+				<!--<li><a href="/{{ $taxonomyname | urlize }}">{{ $taxonomyname }}</a>-->
+					<!--<ul>-->
+						<!--{{ range $key, $value := $taxonomy }}-->
+						<!--<li> {{ $key }} </li>-->
+						<!--<ul>-->
+							<!--{{ range $value.Pages }}-->
+							<!--<li hugo-nav="{{ .RelPermalink}}"><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a> </li>-->
+							<!--{{ end }}-->
+						<!--</ul>-->
+						<!--{{ end }}-->
+					<!--</ul>-->
+				<!--</li>-->
+				<!--{{ end }}-->
+			<!--</ul>-->
 		</div>
 
     </div>
