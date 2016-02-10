@@ -1,13 +1,62 @@
 {{ partial "header.html" . }}
+
+<section class="dyno-page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1><i class="fa fa-list"></i> Blog</h1>
+			</div>
+		</div>
+	</div>
+</section>
+
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-sm-9">
-			{{ range .Data.Pages }}
-				{{ if ne .Params.menu "main" }}
-					{{ .Render "blog-list-item"}}
-				{{ end }}
+			{{ range (.Paginator 10).Pages }}
+				<div class="dyno-blog-list-item">
+					<h1><a class="text-primary" href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+					<p class="lead"><a class="text-primary" href="{{ .RelPermalink }}">{{ .Description }}</a></p>
+					<p class="text-muted">
+						By {{ with.Params.authors }}
+							{{ delimit (apply (apply (sort .) "partial" "author-link" ".") "chomp" ".") " &middot; " }}
+						{{ end }} /
+						In {{ with.Params.categories }}
+								{{ delimit (apply (apply (sort .) "partial" "category-link" ".") "chomp" ".") " &middot; " }}
+						{{ end }} /
+						On {{ .Date.Format "January 2, 2006" }}
+					</p>
+
+					<div><p><a class="text-primary dyno-blog-list-summary" href="{{ .RelPermalink }}">{{ .Summary }}</a></p></div>
+
+					<div>
+						<div class="pull-left">
+							<a class="text-info" href="{{.RelPermalink}}">Continue reading</a>
+						</div>
+						<div class="pull-right text-muted">
+							<i class="fa fa-tags"></i>
+							{{ with.Params.tags }}
+								{{ delimit (apply (apply (sort .) "partial" "tag-link" ".") "chomp" ".") " &middot; " }}
+							{{ end }}
+						</div>
+					</div>
+
+				</div>
 			{{ end }}
+
+			<div class="dyno-blog-list-pagination">
+				{{ if .Paginator.HasPrev }}
+					<a class="pull-left" href="{{ .Paginator.Prev.URL }}"><i class="fa fa-angle-double-left"></i> Previous Page</a>
+				{{ end }}
+				{{ if .Paginator.HasNext }}
+					<a class="pull-right" href="{{ .Paginator.Next.URL }}">Next Page <i class="fa fa-angle-double-right"></i>
+
+					</a>
+				{{ end }}
+			</div>
+
 		</div>
+
 		<div class="col-sm-3">
 			<p>Tags</p>
 			<ul id="all-tags">
@@ -33,8 +82,8 @@
 				</li>
 				{{ end }}
 			</ul>
-
 		</div>
+
     </div>
 </div>
 

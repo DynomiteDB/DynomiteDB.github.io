@@ -1,8 +1,14 @@
 ---
 title: "dynomitedb"
+description: ""
 date: "2016-02-07T17:35:08-08:00"
-categories: ["DynomiteDB"]
-tags: ["DynomiteDB"]
+draft: true
+author: "Akbar S. Ahmed"
+email: "akbar501@gmail.com"
+categories:
+  - "DynomiteDB"
+tags:
+  - "DynomiteDB"
 
 ---
 

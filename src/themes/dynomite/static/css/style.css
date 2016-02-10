@@ -2,8 +2,30 @@ body {
     padding-top: 60px;
 }
 
+/* Image captions */
+
+.dyno-image-caption {
+    font-size: .9em;
+    margin-top: 5px;
+}
+
 p.dyno-footer-copyright {
     line-height: 2em;
+}
+
+/* Page header [optional] */
+.dyno-page-header {
+    background-color: #3498db;
+    height: 60px;
+    margin-bottom: 21px;
+}
+
+.dyno-page-header h1 {
+    color: #fff;
+    border: none;
+    margin: 17px 0;
+    font-size: 24px;
+    padding: 0;
 }
 
 /* Docs */
@@ -157,4 +179,60 @@ section.dyno-home-banner div a:last-of-type {
 
 .dyno-home-components i {
     font-size: 30px;
+}
+
+/* Blog list */
+
+.dyno-blog-list-item {
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 45px;
+}
+
+.dyno-blog-list-item h1 {
+    font-size: 24px;
+    margin-bottom: 13px;
+    font-weight: bold;
+}
+
+.dyno-blog-list-item p.lead {
+    font-size: 18px;
+}
+
+/* Muted (greyed out) text in blog list
+   - By author / In categories / On date
+   - Tags list
+*/
+.dyno-blog-list-item p.text-muted > a,
+.dyno-blog-list-item div.text-muted > a {
+    color: #b4bcc2;
+}
+
+.dyno-blog-list-item p.text-muted > a:active,
+.dyno-blog-list-item p.text-muted > a:focus,
+.dyno-blog-list-item p.text-muted > a:hover,
+.dyno-blog-list-item div.text-muted > a:active,
+.dyno-blog-list-item div.text-muted > a:focus,
+.dyno-blog-list-item div.text-muted > a:hover {
+    color: #18bc9c;
+    text-decoration: none;
+}
+
+.dyno-blog-list-item a:active,
+.dyno-blog-list-item a:focus,
+.dyno-blog-list-item a:hover {
+    color: #18bc9c;
+    text-decoration: none;
+}
+
+/* Do not change the color of the blog summary during hover */
+.dyno-blog-list-item a.dyno-blog-list-summary:active,
+.dyno-blog-list-item a.dyno-blog-list-summary:focus,
+.dyno-blog-list-item a.dyno-blog-list-summary:hover {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+/* Blog list pagination */
+.dyno-blog-list-pagination {
+    margin-top: 45px;
 }
