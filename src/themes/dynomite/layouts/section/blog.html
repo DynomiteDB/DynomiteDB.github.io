@@ -14,34 +14,7 @@
 	<div class="row">
 		<div class="col-xs-12 col-sm-9">
 			{{ range (.Paginator 10).Pages }}
-				<div class="dyno-blog-list-item">
-					<h1><a class="text-primary" href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-					<p class="lead"><a class="text-primary" href="{{ .RelPermalink }}">{{ .Description }}</a></p>
-					<p class="text-muted">
-						By {{ with.Params.authors }}
-							{{ delimit (apply (apply (sort .) "partial" "author-link" ".") "chomp" ".") " &middot; " }}
-						{{ end }} /
-						In {{ with.Params.categories }}
-								{{ delimit (apply (apply (sort .) "partial" "category-link" ".") "chomp" ".") " &middot; " }}
-						{{ end }} /
-						On {{ .Date.Format "January 2, 2006" }}
-					</p>
-
-					<div><p><a class="text-primary dyno-blog-list-summary" href="{{ .RelPermalink }}">{{ .Summary }}</a></p></div>
-
-					<div>
-						<div class="pull-left">
-							<a class="text-info" href="{{.RelPermalink}}">Continue reading</a>
-						</div>
-						<div class="pull-right text-muted">
-							<i class="fa fa-tags"></i>
-							{{ with.Params.tags }}
-								{{ delimit (apply (apply (sort .) "partial" "tag-link" ".") "chomp" ".") " &middot; " }}
-							{{ end }}
-						</div>
-					</div>
-
-				</div>
+				{{ .Render "blog-list-item" }}
 			{{ end }}
 
 			<div class="dyno-blog-list-pagination">
@@ -58,23 +31,8 @@
 		</div>
 
 		<div class="col-sm-3">
-			<div class="dyno-taxonomy-menu">
-				<h3>Categories</h3>
-				<ul>
-					{{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-						<li><a class="text-info" href="/categories/{{ $name | urlize }}">{{ $name }}</a></li>
-					{{ end }}
-				</ul>
-			</div>
-
-			<div class="dyno-taxonomy-menu">
-				<h3>Tags</h3>
-				<ul>
-					{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-						<li><a class="text-info" href="/tags/{{ $name | urlize }}">{{ $name }}</a></li>
-					{{ end }}
-				</ul>
-			</div>
+			{{ partial "sidebar-menu-categories" . }}
+			{{ partial "sidebar-menu-tags" . }}
 
 			<!-- List all categories and the blog posts within each category -->
 			<!--<p>ALL</p>-->

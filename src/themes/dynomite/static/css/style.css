@@ -290,3 +290,33 @@ section.dyno-home-banner div a:last-of-type {
 .dyno-blog-post div.dyno-blog-post-footer {
     margin-top: 33px;
 }
+
+/* Page header: Category */
+.dyno-page-header-category {
+    background-color: #18bc9c;
+    height: 60px;
+    margin-bottom: 21px;
+}
+
+.dyno-page-header-category h1 {
+    color: #fff;
+    border: none;
+    margin: 17px 0;
+    font-size: 24px;
+    padding: 0;
+}
+
+/* Page header: Tag */
+.dyno-page-header-tag {
+    background-color: #18bc9c;
+    height: 60px;
+    margin-bottom: 21px;
+}
+
+.dyno-page-header-tag h1 {
+    color: #fff;
+    border: none;
+    margin: 17px 0;
+    font-size: 24px;
+    padding: 0;
+}

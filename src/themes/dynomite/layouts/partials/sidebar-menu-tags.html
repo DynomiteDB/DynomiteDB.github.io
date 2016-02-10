@@ -1,0 +1,8 @@
+<div class="dyno-taxonomy-menu">
+    <h3>Tags</h3>
+    <ul>
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+            <li><a class="text-info" href="/tags/{{ $name | urlize }}">{{ $name }}</a></li>
+        {{ end }}
+    </ul>
+</div>

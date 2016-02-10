@@ -1,11 +1,29 @@
-<div>
-	<h1><a href="{{.Permalink}}">{{ .Title }} - {{ .Type }}</a></h1>
-	<h2>Date: {{ if .Site.Params.strings.date_format }}{{ .Date.Format .Site.Params.strings.date_format }}{{ else }}{{ .Date.Format "Mon, Jan 2, 2006" }}{{ end }}</h2>
-	<p>{{ .Summary }} {{ if .Truncated }}<a href=" {{ .RelPermalink }}">...Read more</a>{{ end }}</a></p>
-	{{ range .Params.tags }}
-		<p>Tag(n): <a href="/tags/{{ . | urlize }}">{{ . }}</a></p>
-	{{ end }}
-	{{ range .Params.categories }}
-		<p>Category(n): {{ . }}</p>
-	{{ end }}
+<!-- Blog title, description and summary to display in a list -->
+<div class="dyno-blog-list-item">
+	<h1><a class="text-primary" href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+	<p class="lead"><a class="text-primary" href="{{ .RelPermalink }}">{{ .Description }}</a></p>
+	<p class="text-muted">
+		By {{ with.Params.authors }}
+			{{ delimit (apply (apply (sort .) "partial" "author-link" ".") "chomp" ".") " &middot; " }}
+		{{ end }} /
+		In {{ with.Params.categories }}
+			{{ delimit (apply (apply (sort .) "partial" "category-link" ".") "chomp" ".") " &middot; " }}
+		{{ end }} /
+		On {{ .Date.Format "January 2, 2006" }}
+	</p>
+
+	<div><p><a class="text-primary dyno-blog-list-summary" href="{{ .RelPermalink }}">{{ .Summary }}</a></p></div>
+
+	<div>
+		<div class="pull-left">
+			<a class="text-info" href="{{.RelPermalink}}">Continue reading</a>
+		</div>
+		<div class="pull-right text-muted">
+			<i class="fa fa-tags"></i>
+			{{ with.Params.tags }}
+				{{ delimit (apply (apply (sort .) "partial" "tag-link" ".") "chomp" ".") " &middot; " }}
+			{{ end }}
+		</div>
+	</div>
+
 </div>

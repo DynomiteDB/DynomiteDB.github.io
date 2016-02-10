@@ -1,24 +1,42 @@
+<!-- Category index: /categories/:category-name -->
 {{ partial "header.html" . }}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-9">
-            <div class="well well-sm">
-                <strong>Items in category <code>{{ .Title | lower }}</code></strong>
-                <ul class="list-unstyled">
-                    {{ range .Data.Pages }}
-                    {{ .Render "li" }}
-                    {{ end}}
-                </ul>
+<section class="dyno-page-header-category">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1><i class="fa fa-list-alt"></i> Category: {{ .Title | lower }}</h1>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- Sidebar -->
-        <div class="col-md-3">
-            {{ partial "menu.html" . }}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                {{ partial "sidebar-menu-categories" . }}
+            </div>
+
+            <div class="col-xs-12 col-sm-9">
+                {{ range (.Paginator 10).Pages }}
+                    {{ .Render "blog-list-item" }}
+                {{ end}}
+
+
+                <div class="dyno-blog-list-pagination">
+                    {{ if .Paginator.HasPrev }}
+                        <a class="pull-left" href="{{ .Paginator.Prev.URL }}"><i class="fa fa-angle-double-left"></i> Previous Page</a>
+                    {{ end }}
+                    {{ if .Paginator.HasNext }}
+                        <a class="pull-right" href="{{ .Paginator.Next.URL }}">Next Page <i class="fa fa-angle-double-right"></i></a>
+                    {{ end }}
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
+</section>
 
     {{ partial "footer.html" . }}
 </body>
