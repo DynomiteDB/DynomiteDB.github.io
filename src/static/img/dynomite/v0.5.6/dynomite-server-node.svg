@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 200 114" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15855) - http://www.bohemiancoding.com/sketch -->
+    <title>dynomite-server-node</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="logo" sketch:type="MSLayerGroup" transform="translate(-10.000000, 6.000000)">
+            <circle id="Oval-6" stroke="#ECF0F1" sketch:type="MSShapeGroup" cx="61.5" cy="54.5" r="44.5"></circle>
+            <path d="M31.5314158,41.2174689 L24.4067765,41.6827284 L42.0758853,53.6863975 L15.8572087,41.5896773 L22.6968636,39.9147452 L11.0124527,29.9582134 L31.5314158,41.2174689 Z" id="Upper-left-bolt" fill="#000000" sketch:type="MSShapeGroup" transform="translate(26.544169, 41.822305) scale(-1, 1) rotate(37.000000) translate(-26.544169, -41.822305) "></path>
+            <path d="M44.0702332,83.8329095 L36.9455938,84.2981691 L54.6147026,96.3018381 L28.3960261,84.2051179 L35.235681,82.5301858 L23.5512701,72.573654 L44.0702332,83.8329095 Z" id="Lower-left-bolt" fill="#000000" sketch:type="MSShapeGroup" transform="translate(39.082986, 84.437746) scale(-1, 1) rotate(-252.000000) translate(-39.082986, -84.437746) "></path>
+            <path d="M87.7236545,81.5285144 L80.5990151,81.9937739 L98.268124,93.997443 L72.0494474,81.9007228 L78.8891023,80.2257907 L67.2046914,70.2692589 L87.7236545,81.5285144 Z" id="Lower-right-bolt" fill="#000000" sketch:type="MSShapeGroup" transform="translate(82.736408, 82.133351) scale(-1, 1) rotate(-179.000000) translate(-82.736408, -82.133351) "></path>
+            <path d="M99.5969533,40.9052939 L92.4723139,41.3705534 L110.141423,53.3742225 L83.9227462,41.2775023 L90.7624011,39.6025702 L79.0779902,29.6460383 L99.5969533,40.9052939 Z" id="Upper-right-bolt" fill="#000000" sketch:type="MSShapeGroup" transform="translate(94.609706, 41.510130) scale(-1, 1) rotate(-101.000000) translate(-94.609706, -41.510130) "></path>
+            <path d="M63.5150476,18.0222852 L56.3904082,18.4875448 L74.0595171,30.4912138 L47.8408405,18.3944936 L54.6804954,16.7195615 L42.9960845,6.76302968 L63.5150476,18.0222852 Z" id="Top-bolt" fill="#000000" sketch:type="MSShapeGroup" transform="translate(58.527801, 18.627122) scale(-1, 1) rotate(-35.000000) translate(-58.527801, -18.627122) "></path>
+            <circle id="Bottom-node" stroke="#000000" fill="#BD1E2B" sketch:type="MSShapeGroup" cx="61" cy="98" r="9"></circle>
+            <path d="M103.5,58.5 L164.5,35.5" id="Line" stroke="#95A5A6" stroke-linecap="square" stroke-dasharray="2,3" filter="url(#filter-1)" sketch:type="MSShapeGroup"></path>
+            <path d="M103.5,75.5 L169.5,97.5" id="Line-Copy" stroke="#95A5A6" stroke-linecap="square" stroke-dasharray="2,3" filter="url(#filter-2)" sketch:type="MSShapeGroup"></path>
+            <circle id="Lower-right-node" stroke="#000000" fill="#BD1E2B" sketch:type="MSShapeGroup" cx="103" cy="67" r="9"></circle>
+            <circle id="Lower-left-node" stroke="#000000" fill="#BD1E2B" sketch:type="MSShapeGroup" cx="20" cy="67" r="9"></circle>
+            <circle id="Top-left-node" stroke="#000000" fill="#BD1E2B" sketch:type="MSShapeGroup" cx="35" cy="19" r="9"></circle>
+            <circle id="Top-right-node" stroke="#000000" fill="#BD1E2B" sketch:type="MSShapeGroup" cx="87" cy="19" r="9"></circle>
+        </g>
+        <path d="M166,105 C184.225397,105 199,90.2253967 199,72 C199,53.7746033 184.225397,39 166,39 C147.774603,39 133,53.7746033 133,72 C133,90.2253967 147.774603,105 166,105 Z" id="Large-server" stroke="#BD1E2B" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        <g id="Redis" sketch:type="MSLayerGroup" transform="translate(145.000000, 82.000000)">
+            <rect id="Redis-box" fill="#2C3E50" sketch:type="MSShapeGroup" x="0" y="0" width="43" height="12" rx="2"></rect>
+            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="8" font-weight="normal" fill="#FFFFFF">
+                <tspan x="11" y="9">Redis</tspan>
+            </text>
+        </g>
+        <g id="Dynomite" sketch:type="MSLayerGroup" transform="translate(144.000000, 50.000000)">
+            <rect id="Dynomite-box" fill="#2C3E50" sketch:type="MSShapeGroup" x="0" y="0" width="43" height="12" rx="2"></rect>
+            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="8" font-weight="normal" fill="#FFFFFF">
+                <tspan x="4" y="9">Dynomite</tspan>
+            </text>
+        </g>
+        <g id="Up-arrow" sketch:type="MSLayerGroup" transform="translate(156.000000, 71.500000) scale(-1, 1) rotate(-90.000000) translate(-156.000000, -71.500000) translate(148.500000, 64.500000)">
+            <g id="Arrow-Copy" transform="translate(9.485281, 6.692388) rotate(-45.000000) translate(-9.485281, -6.692388) translate(5.985281, 3.192388)" fill="#2C3E50" sketch:type="MSShapeGroup">
+                <path d="M6.79267133,6.49346873 C6.88264268,6.40333631 6.93951624,6.27959949 6.93951624,6.14306087 L6.93951624,0.641563197 C6.93951624,0.358578665 6.71565861,0.142312033 6.43951624,0.142312033 C6.17144983,0.142312033 5.93951624,0.365834393 5.93951624,0.641563197 L5.93951624,5.68538166 L0.895697774,5.68538166 C0.612713241,5.68538166 0.396446609,5.90923929 0.396446609,6.18538166 C0.396446609,6.45344807 0.619968969,6.68538166 0.895697774,6.68538166 L6.39719544,6.68538166 C6.56107961,6.68538166 6.70258733,6.61030232 6.79267133,6.49346873 Z" id="Rectangle-10"></path>
+            </g>
+            <path d="M0.939453125,6.5 L13.5,6.5" id="Dashed-line" stroke="#2C3E50" stroke-linecap="round" stroke-dasharray="2" sketch:type="MSShapeGroup"></path>
+        </g>
+        <g id="Down-arrow" sketch:type="MSLayerGroup" transform="translate(176.000000, 73.500000) scale(1, -1) translate(-176.000000, -73.500000) translate(169.000000, 66.000000)">
+            <g transform="translate(7.000000, 7.500000) scale(-1, 1) rotate(-90.000000) translate(-7.000000, -7.500000) translate(-0.500000, 0.500000)" sketch:type="MSShapeGroup">
+                <g id="Arrow-Copy" transform="translate(9.485281, 6.692388) rotate(-45.000000) translate(-9.485281, -6.692388) translate(5.985281, 3.192388)" fill="#2C3E50">
+                    <path d="M6.79267133,6.49346873 C6.88264268,6.40333631 6.93951624,6.27959949 6.93951624,6.14306087 L6.93951624,0.641563197 C6.93951624,0.358578665 6.71565861,0.142312033 6.43951624,0.142312033 C6.17144983,0.142312033 5.93951624,0.365834393 5.93951624,0.641563197 L5.93951624,5.68538166 L0.895697774,5.68538166 C0.612713241,5.68538166 0.396446609,5.90923929 0.396446609,6.18538166 C0.396446609,6.45344807 0.619968969,6.68538166 0.895697774,6.68538166 L6.39719544,6.68538166 C6.56107961,6.68538166 6.70258733,6.61030232 6.79267133,6.49346873 Z" id="Rectangle-10"></path>
+                </g>
+                <path d="M0.939453125,6.5 L13.5,6.5" id="Dashed-line" stroke="#2C3E50" stroke-linecap="round" stroke-dasharray="2"></path>
+            </g>
+        </g>
+        <g id="Up-arrow-to-client" sketch:type="MSLayerGroup" transform="translate(161.000000, 31.500000) scale(-1, 1) rotate(-90.000000) translate(-161.000000, -31.500000) translate(144.500000, 24.500000)">
+            <g id="Arrow-Copy" transform="translate(27.485281, 6.692388) rotate(-45.000000) translate(-27.485281, -6.692388) translate(23.985281, 3.192388)" fill="#95A5A6" sketch:type="MSShapeGroup">
+                <path d="M6.79267133,6.49346873 C6.88264268,6.40333631 6.93951624,6.27959949 6.93951624,6.14306087 L6.93951624,0.641563197 C6.93951624,0.358578665 6.71565861,0.142312033 6.43951624,0.142312033 C6.17144983,0.142312033 5.93951624,0.365834393 5.93951624,0.641563197 L5.93951624,5.68538166 L0.895697774,5.68538166 C0.612713241,5.68538166 0.396446609,5.90923929 0.396446609,6.18538166 C0.396446609,6.45344807 0.619968969,6.68538166 0.895697774,6.68538166 L6.39719544,6.68538166 C6.56107961,6.68538166 6.70258733,6.61030232 6.79267133,6.49346873 Z" id="Rectangle-10"></path>
+            </g>
+            <path d="M0.939453125,6.5 L30.4994526,6.5" id="Dashed-line" stroke="#95A5A6" stroke-linecap="round" stroke-dasharray="2" sketch:type="MSShapeGroup"></path>
+        </g>
+        <g id="Down-arrow-from-client-Copy" sketch:type="MSLayerGroup" transform="translate(169.000000, 33.500000) scale(-1, -1) rotate(-90.000000) translate(-169.000000, -33.500000) translate(152.500000, 26.500000)">
+            <g id="Arrow-Copy" transform="translate(27.485281, 6.692388) rotate(-45.000000) translate(-27.485281, -6.692388) translate(23.985281, 3.192388)" fill="#95A5A6" sketch:type="MSShapeGroup">
+                <path d="M6.79267133,6.49346873 C6.88264268,6.40333631 6.93951624,6.27959949 6.93951624,6.14306087 L6.93951624,0.641563197 C6.93951624,0.358578665 6.71565861,0.142312033 6.43951624,0.142312033 C6.17144983,0.142312033 5.93951624,0.365834393 5.93951624,0.641563197 L5.93951624,5.68538166 L0.895697774,5.68538166 C0.612713241,5.68538166 0.396446609,5.90923929 0.396446609,6.18538166 C0.396446609,6.45344807 0.619968969,6.68538166 0.895697774,6.68538166 L6.39719544,6.68538166 C6.56107961,6.68538166 6.70258733,6.61030232 6.79267133,6.49346873 Z" id="Rectangle-10"></path>
+            </g>
+            <path d="M0.939453125,6.5 L30.4994526,6.5" id="Dashed-line" stroke="#95A5A6" stroke-linecap="round" stroke-dasharray="2" sketch:type="MSShapeGroup"></path>
+        </g>
+        <g id="Dynomite-Copy" sketch:type="MSLayerGroup" transform="translate(144.000000, 3.000000)">
+            <rect id="Dynomite-box" fill="#95A5A6" sketch:type="MSShapeGroup" x="0" y="0" width="43" height="12" rx="2"></rect>
+            <text id="Client" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="8" font-weight="normal" fill="#FFFFFF">
+                <tspan x="12" y="9">Client</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

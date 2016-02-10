@@ -6,9 +6,15 @@ p.dyno-footer-copyright {
     line-height: 2em;
 }
 
+/* Docs */
+
+/* Docs: Left navigation */
+
 div.dyno-doc-nav h3 {
     font-size: 15px;
     font-weight: bold;
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 7px
 }
 
 div.dyno-doc-nav ul {
@@ -27,7 +33,51 @@ div.dyno-doc-nav ul li a:hover {
     text-decoration: none;
 }
 
-/* Home */
+/* Docs: Document */
+
+.dyno-doc h1,
+.dyno-doc h2,
+.dyno-doc h3,
+.dyno-doc h4,
+.dyno-doc h5 {
+    font-weight: bold;
+}
+
+.dyno-doc h1 {
+    font-size: 27px;
+    margin-bottom: 22px;
+}
+
+.dyno-doc h2 {
+    font-size: 24px;
+    margin-bottom: 19px;
+    margin-top: 27px;
+}
+
+.dyno-doc h3 {
+    font-size: 21px;
+    margin-bottom: 16px;
+    margin-top: 24px;
+}
+
+.dyno-doc h4 {
+    font-size: 18px;
+    margin-bottom: 13px;
+    margin-top: 21px;
+}
+
+.dyno-doc h5 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 18px;
+}
+
+/*
+    Home
+    ----
+*/
+
+/* Home: Banner */
 
 section.dyno-home-banner {
     background: #2c3e50;
@@ -41,15 +91,12 @@ section.dyno-home-banner h2 {
     margin-top: 0;
 }
 
-section.dyno-home-banner p:first-of-type {
+section.dyno-home-banner p {
     font-size: 22px;
     max-width: 680px;
     margin: 0 auto;
-    margin-bottom: 30px;
-}
-
-section.dyno-home-banner p:last-of-type {
-    font-size: 15px;
+    margin-top: 21px;
+    margin-bottom: 37px;
 }
 
 section.dyno-home-banner div div {
@@ -66,4 +113,48 @@ section.dyno-home-banner div a {
 }
 section.dyno-home-banner div a:last-of-type {
     margin-left: 17px;
+}
+
+/* Home: Description */
+
+.dyno-home-description {
+    background: #fff;
+    border-bottom: 1px solid #ecf0f1;
+    padding: 10px 0;
+    margin: 0 auto;
+}
+
+.dyno-home-description p {
+    padding: 21px 0;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin: 0;
+}
+
+/* Home: Architecture */
+
+.dyno-home-architecture {
+    padding: 55px 0 35px;
+    margin: 0 auto;
+}
+
+.dyno-home-architecture h2 {
+    margin-top: 3px;
+}
+
+.dyno-home-components {
+    padding: 0;
+    margin: 0 auto;
+}
+
+.dyno-home-components > div {
+    padding-top: 35px;
+}
+
+.dyno-home-components h4 {
+    font-weight: 700;
+}
+
+.dyno-home-components i {
+    font-size: 30px;
 }

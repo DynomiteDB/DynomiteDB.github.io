@@ -4,7 +4,6 @@
     <div class="container text-center">
         <h2>DynomiteDB</h2>
         <p>A high performance, linearly scalable, highly available (HA) and distributed cache.</p>
-        <p class="text-muted">Use DynomiteDB to improve the performance of microservices and distributed databases, such as Cassandra and MongoDB.</p>
         <div>
             <a class="btn" href="/download/">Download DynomiteDB</a>
             <a href="/docs/dynomite/v0.5.6/quick-start/" class="btn">Get Started</a>
@@ -12,13 +11,61 @@
     </div>
 </section>
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <p>Home page content goes here</p>
+<section class="dyno-home-description section">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+                <p>DynomiteDB is a high performance Dynamo layer that adds data replication and sharding to Redis, plus the ability to scale linearly, a shared nothing architecture with no single point of failure (SPOF), and support for 1000+ node clusters that span multiple data centers.</p>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="dyno-home-architecture section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-5">
+                <img class="img-responsive"
+                     style="width: 100% \9;"
+                     src="/img/dynomite/v0.5.6/dynomite-server-node.svg">
+            </div>
+            <div class="col-xs-12 col-sm-7">
+                <h2>Architecture</h2>
+                <p>DynomiteDB has three components:</p>
+                <ul>
+                    <li><strong>Server</strong>: Each server in a DynomiteDB cluster runs an instance of Dynomite and Redis.</li>
+                    <li><strong>Dynomite</strong>: A high performance Dynamo layer that adds linearly scalability, data replication, sharding, and high availability to Redis.</li>
+                    <li><strong>Redis</strong>: The primary data store used by Dynomite to store cached data.</li>
+                    <li><strong>Dyno</strong>: A Java client that communicates with Dynomite using the Redis protocol.</li>
+                </ul>
+
+                <p>View on GitHub: <a href="https://github.com/Netflix/dynomite" target="_blank">Dynomite</a> | <a href="https://github.com/Netflix/dyno" target="_blank">Dyno</a> | <a href="https://github.com/antirez/redis" target="_blank">Redis</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="dyno-home-components section">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-4">
+                <i class="fa fa-gears text-info"></i>
+                <h4>Redis</h4>
+                <p>Redis provides DynomiteDB with a high performance backend and is the primary API supported by Dynomite. You can use any Redis client in your favorite programming language to build high performance, scalable applications with DynomiteDB.</p>
+            </div>
+            <div class="col-lg-4">
+                <i class="fa fa-server text-info"></i>
+                <h4>Dynomite</h4>
+                <p>Dynomite enables you to scale Redis across 10s, 100s or 1000s of servers. It provides a Dynamo-inspired, linearly scalable cluster with no single point of failure. Dynomite clusters can span multiple data centers and are ideal for cloud or on-premise deployments.</p>
+            </div>
+            <div class="col-lg-4">
+                <i class="fa fa-bolt text-info"></i>
+                <h4>Dyno</h4>
+                <p>The Dyno Java client reduces the complexity of developing applications. Dyno provides connection pooling, load shedding with exponential backoff, efficient request routing and a suite of features that simplify application development.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     {{ partial "footer.html" . }}
 </body>
