@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docs on DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
-    <link>https://dynomitedb.com/docs/</link>
+    <link>//www.dynomitedb.com/docs/</link>
     <description>Recent content in Docs on DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 07 Feb 2016 18:19:40 -0800</lastBuildDate>
-    <atom:link href="https://dynomitedb.com/docs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//www.dynomitedb.com/docs/index.xml" rel="self" type="application/rss+xml" />
     
       
     

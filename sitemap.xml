@@ -2,58 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
-        <loc>https://dynomitedb.com/</loc>
+        <loc>//www.dynomitedb.com/</loc>
         <lastmod>2016-02-10T16:11:45-08:00</lastmod>
         <priority>0</priority>
     </url>
     
     <url>
-        <loc>https://dynomitedb.com/download/</loc>
+        <loc>//www.dynomitedb.com/download/</loc>
         <lastmod>2016-02-10T16:11:45-08:00</lastmod>
     </url>
     
     <url>
-        <loc>https://dynomitedb.com/docs/quick-start/</loc>
+        <loc>//www.dynomitedb.com/docs/quick-start/</loc>
         <lastmod>2016-02-07T18:19:40-08:00</lastmod>
     </url>
     
     <url>
-        <loc>https://dynomitedb.com/blog/2016/02/07/what-is-dynomitedb/</loc>
+        <loc>//www.dynomitedb.com/blog/2016/02/07/what-is-dynomitedb/</loc>
         <lastmod>2016-02-07T17:35:08-08:00</lastmod>
     </url>
     
     <url>
-        <loc>https://dynomitedb.com/docs/dynomite/v0.5.6/quick-start/</loc>
+        <loc>//www.dynomitedb.com/docs/dynomite/v0.5.6/quick-start/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
     <url>
-        <loc>https://dynomitedb.com/docs/dynomite/v0.5.6/faq/</loc>
+        <loc>//www.dynomitedb.com/docs/dynomite/v0.5.6/faq/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
     <url>
-        <loc>https://dynomitedb.com/docs/dynomite/v0.5.6/architecture/</loc>
+        <loc>//www.dynomitedb.com/docs/dynomite/v0.5.6/architecture/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
     <url>
-        <loc>https://dynomitedb.com/docs/dynomite/v0.5.6/topology/</loc>
+        <loc>//www.dynomitedb.com/docs/dynomite/v0.5.6/topology/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
     <url>
-        <loc>https://dynomitedb.com/docs/dynomite/v0.5.6/replication/</loc>
+        <loc>//www.dynomitedb.com/docs/dynomite/v0.5.6/replication/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
     <url>
-        <loc>https://dynomitedb.com/docs/dynomite/v0.5.6/consistency/</loc>
+        <loc>//www.dynomitedb.com/docs/dynomite/v0.5.6/consistency/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
     <url>
-        <loc>https://dynomitedb.com/docs/dynomite/v0.5.6/membership-protocols/</loc>
+        <loc>//www.dynomitedb.com/docs/dynomite/v0.5.6/membership-protocols/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
