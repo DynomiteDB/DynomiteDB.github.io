@@ -1,5 +1,5 @@
 ---
-baseurl: "//www.dynomitedb.com"
+baseurl: "http://www.dynomitedb.com"
 languageCode: "en-us"
 title: "DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache"
 buildDrafts: "false"
@@ -94,5 +94,9 @@ menu:
         Weight: -100
         Identifier: "blog"
         URL: "/blog/"
+      - Name: "FAQ"
+        Weight: -90
+        Identifier: "faq"
+        URL: "/faq/"
 
 ---

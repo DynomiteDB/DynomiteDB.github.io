@@ -1,7 +1,7 @@
 ---
 title: "What is DynomiteDB?"
 description: "A high-performance distributed cache"
-date: "2016-02-07T17:35:08-08:00"
+date: "2016-02-07T08:08:08-08:00"
 draft: false
 author: "Akbar S. Ahmed"
 authors:
