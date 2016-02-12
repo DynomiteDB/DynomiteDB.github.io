@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Terminology">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>Terminology &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="//www.dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="//www.dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="//www.dynomitedb.com/css/style.css">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="//www.dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/dynomite/v0.5.6/quick-start/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+                  <li class=''><a href="/faq/"> FAQ </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<section class="dyno-blog-post-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="dyno-blog-post">
+                    <h1>Terminology</h1>
+                    <p class="lead">Learn the key terminology</p>
+                    <div><p>
+
+<p>Understanding the DynomiteDB terminology is key to learning and using the technology. Fortunately, DynomiteD has a relatively small technical footprint which means that there are</p>
+
+<p>Dynomite is</p>
+
+<p>If you&rsquo;ve spent any time watching Cassandra videos on YouTube or reading blog posts about Cassandra you&rsquo;ll notice that the same term is often used to mean different things. For example, the term &ldquo;row&rdquo; is used to refer to a partition and to the CQL rows within a partition.</p>
+
+<p>In this post, I propose that we (the Cassandra community) start to standardize terminology around CQL and try to limit terms to a single abstraction layer when possible. When a term must span multiple abstraction layers, say from CQL to physical, then it should refer to the same thing.</p>
+
+<p>Please bear in mind I&rsquo;m not trying to make this an &ldquo;I&rsquo;m right&rdquo; kind of article. The goal is to improve Cassandra terminology by making it less ambiguous so that we all use the same terms to refer to the same things and to start a discussion on what terminology should be used to discuss Cassandra.</p>
+
+<h1 id="problem:25b0bccbd015cb792a35abd72233e20a">Problem</h1>
+
+<p>So what&rsquo;s the problem? Let&rsquo;s pick one simple term, &ldquo;row&rdquo;. Is the following a correct or incorrect statement?</p>
+
+<p>Range scans across rows are efficient in Cassandra.</p>
+
+<p>I say it&rsquo;s true, you say it&rsquo;s false, but who&rsquo;s right? Actually, we both are given the fact that the community currently uses row to refer to either a partition or to a CQL row (i.e. an abstract row within a partition).</p>
+
+<p>If &ldquo;row&rdquo; refers to a partition, then range scans are not efficient. However, if we are using &ldquo;row&rdquo; to refer to a CQL row, then range scans are efficient.</p>
+
+<p>The cause of this mixed use is well known. Jay Patel (Architect at eBay) has a slide the explains the problem well: &ldquo;The more I read, the more I&rsquo;m confused.&rdquo; Please refer to slide 7 of <a href="http://www.slideshare.net/jaykumarpatel/cassandra-data-modeling-best-practices" target="_blank">Cassandra data modeling best practices</a>.</p>
+
+<p>In the case of Cassandra, the mixed terminology occurred due to the transition from thrift to CQL. However, CQL is clearly Cassandra&rsquo;s query language moving forward, so it&rsquo;s time to upgrade our wording to simplify communication and help make Cassandra easier for newcomers to learn.</p>
+
+<h1 id="abstraction-layers:25b0bccbd015cb792a35abd72233e20a">Abstraction layers</h1>
+
+<p>This post focuses on the two layers with the most confusing terminology:</p>
+
+<ol>
+<li>CQL (logical)</li>
+<li>Storage (physical)</li>
+</ol>
+
+<h1 id="proposed-terminology:25b0bccbd015cb792a35abd72233e20a">Proposed terminology</h1>
+
+<h2 id="cql:25b0bccbd015cb792a35abd72233e20a">CQL</h2>
+
+<p>CQL terminology should be focused on explaining the CQL abstraction layer. Some terms, such as &ldquo;partition key&rdquo; are used in both the CQL layer and the storage layer. However, a consistent use of the term to refer to the same thing in both layers will help avoid ambiguity.</p>
+
+<table class="table table-condensed table-bordered">
+    <tr class="active">
+        <th>Term</th>
+        <th>Definition</th>
+    </tr>
+    <tr>
+        <td>Keyspace</td>
+        <td>A logical grouping of tables that all have the same replication factor and replication strategy.</td> 
+    </tr> 
+    <tr>
+        <td>Table</td>
+        <td>A CQL table is a logical grouping of partitions that share the
+            same schema.
+        </td>
+    </tr>
+    <tr>
+        <td>Partition</td>
+        <td>A partition is a collection of sorted CQL rows. A partition is the unit of data access as most queries access a single partition.</td>
+    </tr>
+    <tr>
+        <td>Row</td>
+        <td>A CQL row is an abstract data structure that is a collection of sorted columns. When a partition has multiple rows, the rows are physically sorted on disk per the clustering column(s).</td>
+    </tr>
+    <tr>
+        <td>Column name</td>
+        <td>A column name is how each column is identified. A column name may be used in the primary key as either the partition key or as a clustering column.</td>
+    </tr>
+    <tr>
+        <td>Column value</td>
+        <td>The value stored in a column.</td>
+    </tr>
+    <tr>
+        <td>Primary key</td>
+        <td>The CQL primary key is a composite key that defines the partition key and, optionally, one or more clustering columns. The partition key itself may be defined as a single key or composite key.</td>
+    </tr>
+    <tr>
+        <td>Partition key</td>
+        <td>The partition key is the first component of the primary key and must be unique within a CQL table. The partition key may be defined as a composite key if it is surrounded by parentheses and supplied with a comma separated list of values.</td>
+    </tr>
+    <tr>
+        <td>Clustering column</td>
+        <td>A clustering column is used to allow a partition to have multiple rows where each row is sorted per the clustering column(s).</td>
+    </tr>
+</table>
+
+<h2 id="physical:25b0bccbd015cb792a35abd72233e20a">Physical</h2>
+
+<p>The physical layer is how Cassandra actually stores data on disk. Understanding the physical layer is an important part of performance turning and data modeling in Cassandra.</p>
+
+<table class="table table-condensed table-bordered">
+    <tr class="active">
+        <th>Term</th>
+        <th>Definition</th>
+    </tr>
+    <tr>
+        <td>Partition</td>
+        <td>A partition is a physical unit of data that consists of a collection of sorted cells and is identified by a partition key.</td>
+    </tr>
+    <tr>
+        <td>Partition key</td>
+        <td>A hashed value that provides fast access to a partition and that must be unique within a table.</td>
+    </tr>
+    <tr>
+        <td>Cell</td>
+        <td>A cell value is smallest unit of storage. At a minimum, a cell consists of a cell name, a cell value and a timestamp. The cell value may be empty.</td>
+    </tr>
+    <tr>
+        <td>Cell name</td>
+        <td>A cell name is either:
+            <ul>
+                <li>a single CQL column name when no clustering columns are
+                    defined; or</li>
+                <li>a composite of multiple CQL column values when all column
+                    names are used in the primary key; or</li>
+                <li>a composite of multiple CQL column values plus a single CQL
+                    column name when clustering columns are defined and when
+                    some column names are not used in the primary key.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Cell value</td>
+        <td>The cell value can contain a value or be left empty.</td>
+    </tr>
+    <tr>
+        <td>Timestamp</td>
+        <td>The timestamp is a cell property that is used internally by
+            Cassandra to keep track of when a cell was inserted or updated. It
+            is also used by Cassandra's merge process during a read request.
+        </td>
+    </tr>
+    <tr>
+        <td>TTL</td>
+        <td>TTL, or time to live, is a cell property that you can set to define
+            the date/time after which a cell will be automatically deleted by
+            Cassandra.
+        </td>
+    </tr>
+    <tr>
+        <td>Tombstone</td>
+        <td>The tombstone is cell property that represents a deletion marker.
+            Cassandra will remove cells that contain a tombstone from the
+            partition that is returned to a client during a read.
+        </td>
+    </tr>
+</table>
+
+<h1 id="cql-to-relational:25b0bccbd015cb792a35abd72233e20a">CQL to relational</h1>
+
+<p>It&rsquo;s popular to show a table that maps CQL concepts to relational concepts. The
+mapping of SQL to CQL is designed ease SQL developers into the no-sql world of
+Cassandra.</p>
+
+<p>However, the use of SQL-like terminology in CQL can confuse matters as many
+terms have very different meaning in SQL vs. CQL. I have found that Cassandra
+works more like a database that has only materialized views than it does like a
+database with relational tables.</p>
+
+<table class="table table-condensed table-bordered">
+    <tr class="active">
+        <th>SQL</th>
+        <th>CQL</th>
+        <th>Elaboration</th>
+    </tr>
+    <tr>
+        <td>Database</td>
+        <td>Keyspace</td>
+        <td>These two concepts are relatively similar as both contain tables.
+            A keyspace defines the replication factor and replication strategy
+            for all tables that it contains.
+        </td>
+    </tr>
+    <tr>
+        <td>Table</td>
+        <td>No equivalent</td>
+        <td>See <strong>Materialized view</strong> below.</td>
+    </tr>
+    <tr>
+        <td>Materialized view</td>
+        <td>Table + Partition</td>
+        <td>A CQL table defines a schema much like an SQL table. However, CQL
+            tables contain partitions and each partition contains rows. The
+            combination of a CQL table plus a partition is similar to a
+            materialized view in SQL.
+        </td>
+    </tr>
+    <tr>
+        <td>Primary key</td>
+        <td>&nbsp;</td>
+        <td>An SQL primary key is a unique identifier per row. There is no
+            direct equivalent in CQL, although the term "primary key" is used
+            in CQL.
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>Primary key</td>
+        <td>A CQL primary key is a composite key that may define the partition
+            key and optionally clustering columns.
+        </td>
+    </tr>
+    <tr>
+        <td>Column</td>
+        <td>Column</td>
+        <td>The concept of a column is very similar in Cassandra vs. an RDMBS.
+            Although how a column is physically stored is very different in
+            Cassandra vs. an RDBMS.
+        </td>
+    </tr>
+    <tr>
+        <td>Value</td>
+        <td>Value</td>
+        <td>The concept of a value is very similar in Cassandra vs. an RDMBS.
+        </td>
+    </tr>
+    <tr>
+        <td>ORDER BY</td>
+        <td>Clustering columns</td>
+        <td>Cassandra stores data in sorted order. Therefore, you achieve the
+            equivalent of an SQL ORDER BY through the selection of clustering
+            columns.
+        </td>
+    </tr>
+    <tr>
+        <td>JOIN</td>
+        <td>Achieved via materialized view</td>
+        <td>As mentioned above, a CQL table plus partition is conceptually
+            closer to a materialized view than a relational table. In a
+            materialized view in an RDBMS you would achieve the equivalent of a
+            JOIN by denormalizing data. The same concept applies to Cassandra
+            where you denormalize data.
+        </td>
+    </tr>
+</table>
+
+<h1 id="summary:25b0bccbd015cb792a35abd72233e20a">Summary</h1>
+
+<p>As a community we all benefit from clear terminology. It makes it easier to understand, learn and communicate about Cassandra. Each term should be used in only one abstraction layer, if at all possible. When a term must be used across multiple layers then it should always refer to the same thing.</p>
+</p></div>
+
+                    <div class="dyno-blog-post-footer">
+                        <div class="pull-left">
+                            By 
+                                
+Akbar S. Ahmed
+                             /
+                            In 
+                                <a href="/categories/dynomitedb">DynomiteDB</a>
+                             /
+                            On February 10, 2016
+                        </div>
+                        <div class="pull-right">
+                            <i class="fa fa-tags"></i>
+                            
+                            <a href="/tags/dynomitedb">DynomiteDB</a> &middot; <a href="/tags/replication">Replication</a> &middot; <a href="/tags/sharding">Sharding</a>
+                            
+                        </div>
+                    </div>
+
+
+                        
+                            
+                            
+                            
+                                
+                                
+                            
+                            
+                                
+                                
+                            
+                                
+                                
+                            
+                                
+                                
+                            
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2015 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script src="//www.dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+<script src="//www.dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+<script src="//www.dynomitedb.com/js/dynomite.js"></script>
+
+	</body>
+</html>

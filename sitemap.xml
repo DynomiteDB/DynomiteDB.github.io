@@ -3,13 +3,23 @@
     
     <url>
         <loc>//www.dynomitedb.com/</loc>
-        <lastmod>2016-02-10T16:11:45-08:00</lastmod>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
         <priority>0</priority>
+    </url>
+    
+    <url>
+        <loc>//www.dynomitedb.com/faq/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
     </url>
     
     <url>
         <loc>//www.dynomitedb.com/download/</loc>
         <lastmod>2016-02-10T16:11:45-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>//www.dynomitedb.com/blog/2016/02/10/terminology/</loc>
+        <lastmod>2016-02-10T08:08:08-08:00</lastmod>
     </url>
     
     <url>
@@ -19,7 +29,7 @@
     
     <url>
         <loc>//www.dynomitedb.com/blog/2016/02/07/what-is-dynomitedb/</loc>
-        <lastmod>2016-02-07T17:35:08-08:00</lastmod>
+        <lastmod>2016-02-07T08:08:08-08:00</lastmod>
     </url>
     
     <url>
