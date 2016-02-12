@@ -150,6 +150,7 @@ section.dyno-home-banner div a {
     color: #FFFFFF;
     font-size: 18px;
     padding: 8px 30px;
+    margin-bottom: 21px;
 }
 section.dyno-home-banner div a:last-of-type {
     margin-left: 17px;
