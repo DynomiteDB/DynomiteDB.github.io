@@ -1,0 +1,97 @@
+<!-- Roadmap -->
+{{ partial "header.html" . }}
+
+<section class="dyno-page-header-roadmap">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1><i class="fa fa-map-o"></i> Roadmap</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="dyno-section">
+    <div class="container container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <div>
+                    <!-- Tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#timeframe" aria-controls="timeframe" role="tab" data-toggle="tab">by Time frame</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#status" aria-controls="status" role="tab" data-toggle="tab">by Status</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#project" aria-controls="project" role="tab" data-toggle="tab">by Project</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="timeframe">
+                            <div class="row">
+                                {{ range .Data.Pages.GroupByParam "timeframe" }}
+                                    <div class="col-xs-12 col-sm-4">
+                                        <div class="panel panel-default dyno-roadmap-cards">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">{{ .Key }}</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                {{ range .Pages }}
+                                                    {{ .Render "roadmap-list-item-timeframe" }}
+                                                {{ end }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="status">
+                            <div class="row">
+                                {{ range .Data.Pages.GroupByParam "featurestatus" }}
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="panel panel-default dyno-roadmap-cards">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">{{ .Key }}</h3>
+                                        </div>
+                                        <div class="panel-body dyno-panel-body">
+                                            {{ range .Pages }}
+                                                {{ .Render "roadmap-list-item-status" }}
+                                            {{ end }}
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="project">
+                            <div class="row">
+                                {{ range .Data.Pages.GroupByParam "project" }}
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="panel panel-default dyno-roadmap-cards">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">{{ .Key }}</h3>
+                                        </div>
+                                        <div class="panel-body dyno-panel-body">
+                                            {{ range .Pages }}
+                                                {{ .Render "roadmap-list-item-project" }}
+                                            {{ end }}
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "footer.html" . }}
+</body>
+</html>
