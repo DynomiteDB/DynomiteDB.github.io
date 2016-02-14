@@ -13,6 +13,8 @@ weight: 1
 
 ---
 
+## Description
+
 ARDB provides a Redis API / Redis protocol support and uses LMDB, RocksDB and several other backends.
 
 Integration of ARDB would provide immediate support for LMDB within Dynomite.

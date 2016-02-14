@@ -13,6 +13,8 @@ weight: 1
 
 ---
 
+## Description
+
 Create a Dyno Node.js client
 
 ## Impact

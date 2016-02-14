@@ -13,6 +13,8 @@ weight: 1
 
 ---
 
+## Description
+
 Add support for the BLPOP and BRPOP commands.
 
 ## Impact

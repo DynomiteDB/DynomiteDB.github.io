@@ -15,6 +15,8 @@ weight: 1
 
 ---
 
+## Description
+
 Dynomite users have repeatedly asked how to scale Dynomite up/down. Documentation on manual scale up/down will help our users with this question until such time as scale up/down is automated.
 
 ## Impact

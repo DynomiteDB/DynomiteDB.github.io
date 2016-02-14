@@ -63,8 +63,14 @@ div.dyno-doc-nav ul li a:hover {
 /* Headings for individual Document and Blog Post
    - Docs: Document
    - Blog: Blog Post
+   - Roadmap: Roadmap task
 */
 
+.dyno-roadmap-task h1,
+.dyno-roadmap-task h2,
+.dyno-roadmap-task h3,
+.dyno-roadmap-task h4,
+.dyno-roadmap-task h5,
 .dyno-blog-post h1,
 .dyno-blog-post h2,
 .dyno-blog-post h3,
@@ -78,12 +84,17 @@ div.dyno-doc-nav ul li a:hover {
     font-weight: bold;
 }
 
+.dyno-roadmap-task h1,
 .dyno-blog-post h1,
 .dyno-doc h1 {
-    font-size: 27px;
-    margin-bottom: 22px;
+    /*font-size: 27px;*/
+    /*margin-bottom: 22px;*/
+    font-size: 24px;
+    margin-bottom: 13px;
+    font-weight: bold;
 }
 
+.dyno-roadmap-task h2,
 .dyno-blog-post h2,
 .dyno-doc h2 {
     font-size: 24px;
@@ -91,6 +102,7 @@ div.dyno-doc-nav ul li a:hover {
     margin-top: 27px;
 }
 
+.dyno-roadmap-task h3,
 .dyno-blog-post h3,
 .dyno-doc h3 {
     font-size: 21px;
@@ -98,6 +110,7 @@ div.dyno-doc-nav ul li a:hover {
     margin-top: 24px;
 }
 
+.dyno-roadmap-task h4,
 .dyno-blog-post h4,
 .dyno-doc h4 {
     font-size: 18px;
@@ -105,6 +118,7 @@ div.dyno-doc-nav ul li a:hover {
     margin-top: 21px;
 }
 
+.dyno-roadmap-task h5,
 .dyno-blog-post h5,
 .dyno-doc h5 {
     font-size: 15px;
@@ -290,11 +304,12 @@ section.dyno-home-banner div a:last-of-type {
     padding-bottom: 45px;
 }
 
-.dyno-blog-post h1 {
-    font-size: 24px;
-    margin-bottom: 13px;
-    font-weight: bold;
-}
+/* TODO: Clean up CSS. This overrides style on line 88 */
+/*.dyno-blog-post h1 {*/
+    /*font-size: 24px;*/
+    /*margin-bottom: 13px;*/
+    /*font-weight: bold;*/
+/*}*/
 
 .dyno-blog-post p.lead {
     font-size: 18px;
@@ -381,6 +396,8 @@ div.dyno-panel-group > div.panel {
     font-size: .75em;
 }
 
+
+.dyno-roadmap-task-sidebar-more h2,
 .dyno-faq-sidebar-more h2 {
     font-size: 1.25em;
     font-weight: 500;
@@ -466,4 +483,10 @@ div.dyno-panel-group > div.panel {
 .dyno-roadmap-cards a:focus {
     color: #18bc9c;
     text-decoration: none;
+}
+
+/* Roadmap: Task */
+
+.dyno-roadmap-task > p.lead {
+    font-size: 18px;
 }

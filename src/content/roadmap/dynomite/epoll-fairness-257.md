@@ -13,6 +13,8 @@ weight: 1
 
 ---
 
+## Description
+
 Dynomite is not fair in handling connections. This is due to unfairness in how epoll handles connections.
 
 ## Impact

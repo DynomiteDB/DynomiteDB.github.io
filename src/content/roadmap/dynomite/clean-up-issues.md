@@ -6,12 +6,14 @@ draft: false
 project: "Dynomite"
 timeframe: "Short-term"
 featurecategory: "core"
-featurestatus: "New"
+featurestatus: "In process"
 issueurls: 
   - "https://github.com/Netflix/dynomite/issues"
 weight: 1
 
 ---
+
+## Description
 
 There are many issues which can be closed:
 

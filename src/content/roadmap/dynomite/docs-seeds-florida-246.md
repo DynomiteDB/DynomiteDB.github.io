@@ -13,6 +13,8 @@ weight: 1
 
 ---
 
+## Description
+
 Document the following:
 - Format for `seeds.list`
 - The fact that `seeds.list` must be created by the admin

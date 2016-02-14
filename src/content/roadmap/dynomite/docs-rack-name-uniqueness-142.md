@@ -13,6 +13,8 @@ weight: 1
 
 ---
 
+## Description
+
 Rack names must be unique across data centers.
 
 ## Impact

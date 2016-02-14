@@ -1,0 +1,58 @@
+<!-- Roadmap single page template: Used for individual tasks -->
+{{ partial "header.html" . }}
+
+<section class="dyno-page-header-roadmap">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1><i class="fa fa-map-o"></i> Roadmap</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="dyno-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-9">
+                <div class="dyno-roadmap-task">
+                    <h1>{{ .Title }}</h1>
+                    <p class="lead">{{ .Description }}</p>
+
+                    <h2>Details</h2>
+                    <ul>
+                        <li><strong>Project</strong>: {{ .Params.project }}</li>
+                        <li><strong>Time frame</strong>: {{ .Params.timeframe }}</li>
+                        <li><strong>Status</strong>: {{ .Params.featurestatus }}</li>
+                        <li><strong>Issue(s)</strong>:
+                            <ul>
+                                {{ range .Params.issueurls }}
+                                    <li><a href="{{.}}" target="_blank">{{ . }}</a></li>
+                                {{ end }}
+                            </ul>
+                        </li>
+                    </ul>
+
+                    {{ .Content }}
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-3">
+                <div class="well text-center dyno-roadmap-task-sidebar-more">
+                    <i class="fa fa-comment fa-4x text-info"></i>
+
+                    <h2>Have something to say?</h2>
+
+                    <p>Add your voice and help improve DynomiteDB.</p>
+
+                    <a class="btn btn-danger" href="https://gitter.im/DynomiteDB/DynomiteDB?utm_source=share-link&utm_medium=link&utm_campaign=share-link" target="_blank">Join the conversation!</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{{ partial "footer.html" . }}
+</body>
+</html>

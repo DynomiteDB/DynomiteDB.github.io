@@ -15,6 +15,8 @@ weight: 1
 
 ---
 
+## Description
+
 Memcached as a backend for Dynomite requires some TLC. Please see the issue for more information.
 
 ## Impact

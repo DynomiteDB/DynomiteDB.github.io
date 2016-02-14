@@ -15,6 +15,8 @@ weight: 1
 
 ---
 
+## Description
+
 Create and improve the tooling around Dynomite operations including:
 
 - Generate configuration `.yml` file

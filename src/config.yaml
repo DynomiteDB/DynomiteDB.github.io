@@ -1,7 +1,7 @@
 ---
 # http is required when running the development server
-#baseurl: "http://www.dynomitedb.com"
-baseurl: "//www.dynomitedb.com"
+baseurl: "http://www.dynomitedb.com"
+#baseurl: "//www.dynomitedb.com"
 languageCode: "en-us"
 title: "DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache"
 buildDrafts: "false"
@@ -100,5 +100,9 @@ menu:
         Weight: -90
         Identifier: "faq"
         URL: "/faq/"
+      - Name: "Roadmap"
+        Weight: -80
+        Identifier: "roadmap"
+        URL: "/roadmap/"
 
 ---

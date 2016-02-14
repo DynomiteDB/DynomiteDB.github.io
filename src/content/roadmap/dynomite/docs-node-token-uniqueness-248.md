@@ -14,6 +14,8 @@ weight: 1
 
 ---
 
+## Description
+
 A Dynomite node's token must be unique within its rack. This fact needs to be added to the Dynomite documentation.
 
 The way the token calculation works is that we take the max int (4294967295) and divide out to the number of nodes.

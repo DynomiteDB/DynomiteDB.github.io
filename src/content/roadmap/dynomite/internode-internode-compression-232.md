@@ -13,6 +13,8 @@ weight: 1
 
 ---
 
+## Description
+
 Add a configurable option to compress Dynomite to Dynomite communication.
 
 ## Impact

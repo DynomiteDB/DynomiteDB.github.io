@@ -13,6 +13,8 @@ weight: 1
 
 ---
 
+## Description
+
 Document various recovery scenarios:
 
 - Node

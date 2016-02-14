@@ -15,6 +15,8 @@ weight: 1
 
 ---
 
+## Description
+
 Develop new tools to automate scale up/down of the cluster.
 
 ## Impact

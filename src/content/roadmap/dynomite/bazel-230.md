@@ -13,6 +13,8 @@ weight: 1
 
 ---
 
+## Description
+
 We are exploring the possibility of changing from autotools to Bazel.
 
 ## Impact

@@ -13,6 +13,8 @@ weight: 1
 
 ---
 
+## Description
+
 Add a new command that describes the cluster including nodes, tokens, and node status.
 
 ## Impact

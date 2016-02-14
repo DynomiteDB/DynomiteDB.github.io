@@ -34,36 +34,38 @@
                         <div role="tabpanel" class="tab-pane active" id="timeframe">
                             <div class="row">
                                 {{ range .Data.Pages.GroupByParam "timeframe" }}
-                                    <div class="col-xs-12 col-sm-4">
-                                        <div class="panel panel-default dyno-roadmap-cards">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">{{ .Key }}</h3>
-                                            </div>
-                                            <div class="panel-body">
-                                                {{ range .Pages }}
-                                                    {{ .Render "roadmap-list-item-timeframe" }}
-                                                {{ end }}
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {{ if eq .Key "Short-term" }}
+                                        {{ partial "roadmap-timeframe-cards" . }}
+                                    {{ end }}
+                                {{ end }}
+                                {{ range .Data.Pages.GroupByParam "timeframe" }}
+                                    {{ if eq .Key "Mid-term" }}
+                                        {{ partial "roadmap-timeframe-cards" . }}
+                                    {{ end }}
+                                {{ end }}
+                                {{ range .Data.Pages.GroupByParam "timeframe" }}
+                                    {{ if eq .Key "Long-term" }}
+                                        {{ partial "roadmap-timeframe-cards" . }}
+                                    {{ end }}
                                 {{ end }}
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="status">
                             <div class="row">
                                 {{ range .Data.Pages.GroupByParam "featurestatus" }}
-                                <div class="col-xs-12 col-sm-4">
-                                    <div class="panel panel-default dyno-roadmap-cards">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title">{{ .Key }}</h3>
-                                        </div>
-                                        <div class="panel-body dyno-panel-body">
-                                            {{ range .Pages }}
-                                                {{ .Render "roadmap-list-item-status" }}
-                                            {{ end }}
-                                        </div>
-                                    </div>
-                                </div>
+                                    {{ if eq .Key "New" }}
+                                        {{ partial "roadmap-timeframe-cards" . }}
+                                    {{ end }}
+                                {{ end }}
+                                {{ range .Data.Pages.GroupByParam "featurestatus" }}
+                                    {{ if eq .Key "In process" }}
+                                        {{ partial "roadmap-timeframe-cards" . }}
+                                    {{ end }}
+                                {{ end }}
+                                {{ range .Data.Pages.GroupByParam "featurestatus" }}
+                                    {{ if eq .Key "Complete" }}
+                                        {{ partial "roadmap-timeframe-cards" . }}
+                                    {{ end }}
                                 {{ end }}
                             </div>
                         </div>

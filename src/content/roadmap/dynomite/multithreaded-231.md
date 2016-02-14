@@ -13,6 +13,8 @@ weight: 1
 
 ---
 
+## Description
+
 Change Dynomite to a multi-threaded model:
 
 - A master thread performs all setup tasks, then spawns `n` number of worker threads where `n` = # of cores available
