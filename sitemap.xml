@@ -2,63 +2,178 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
-        <loc>//www.dynomitedb.com/</loc>
+        <loc>http://www.dynomitedb.com/</loc>
         <lastmod>2016-02-11T08:08:08-08:00</lastmod>
         <priority>0</priority>
     </url>
     
     <url>
-        <loc>//www.dynomitedb.com/faq/</loc>
+        <loc>http://www.dynomitedb.com/faq/</loc>
         <lastmod>2016-02-11T08:08:08-08:00</lastmod>
     </url>
     
     <url>
-        <loc>//www.dynomitedb.com/download/</loc>
+        <loc>http://www.dynomitedb.com/download/</loc>
         <lastmod>2016-02-10T16:11:45-08:00</lastmod>
     </url>
     
     <url>
-        <loc>//www.dynomitedb.com/docs/quick-start/</loc>
+        <loc>http://www.dynomitedb.com/docs/quick-start/</loc>
         <lastmod>2016-02-07T18:19:40-08:00</lastmod>
     </url>
     
     <url>
-        <loc>//www.dynomitedb.com/blog/2016/02/07/what-is-dynomitedb/</loc>
+        <loc>http://www.dynomitedb.com/blog/2016/02/07/what-is-dynomitedb/</loc>
         <lastmod>2016-02-07T08:08:08-08:00</lastmod>
     </url>
     
     <url>
-        <loc>//www.dynomitedb.com/docs/dynomite/v0.5.6/quick-start/</loc>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/automate-ops-225/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/automated-scale-up-down-229/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/clean-up-issues/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/internode-internode-compression-232/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/bazel-230/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/docs-node-token-uniqueness-248/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/docs-rack-name-uniqueness-142/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/docs-failure-recovery-51/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/docs-scaling-260/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/docs-seeds-florida-246/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/dyno-go-226/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/dyno-nodejs-226/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/dyno-python-226/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/integrate-ardb-254/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/integrate-forestdb-228/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/multithreaded-231/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/reduce-message-object-copy-on-write-184/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/epoll-fairness-257/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/blpop-brpop-50/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/mset-msetnx-49/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/auth-46/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/ring-describe-command-47/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/roadmap/dynomite/update-memcached-features-227/</loc>
+        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/quick-start/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
     <url>
-        <loc>//www.dynomitedb.com/docs/dynomite/v0.5.6/faq/</loc>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/faq/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
     <url>
-        <loc>//www.dynomitedb.com/docs/dynomite/v0.5.6/architecture/</loc>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/architecture/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
     <url>
-        <loc>//www.dynomitedb.com/docs/dynomite/v0.5.6/topology/</loc>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/topology/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
     <url>
-        <loc>//www.dynomitedb.com/docs/dynomite/v0.5.6/replication/</loc>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/replication/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
     <url>
-        <loc>//www.dynomitedb.com/docs/dynomite/v0.5.6/consistency/</loc>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/consistency/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
     <url>
-        <loc>//www.dynomitedb.com/docs/dynomite/v0.5.6/membership-protocols/</loc>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/membership-protocols/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
