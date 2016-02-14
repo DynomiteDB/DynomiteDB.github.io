@@ -355,7 +355,10 @@ section.dyno-home-banner div a:last-of-type {
     padding: 0;
 }
 
-/* FAQ */
+/*
+    FAQ
+    ---
+*/
 
 .dyno-page-header-faq {
     background-color: #f39c12;
@@ -369,6 +372,12 @@ section.dyno-home-banner div a:last-of-type {
     margin: 17px 0;
     font-size: 24px;
     padding: 0;
+}
+
+.dyno-faq h1 {
+    font-size: 24px;
+    margin-bottom: 13px;
+    font-weight: bold;
 }
 
 /* Panel group

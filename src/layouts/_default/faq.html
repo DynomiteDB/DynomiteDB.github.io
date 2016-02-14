@@ -15,98 +15,99 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-9">
-                <h2>General Questions</h2>
+                <div class="dyno-faq">
+                    <h1>General Questions</h1>
 
-                <div class="panel-group dyno-panel-group" id="faq" role="tablist" aria-multiselectable="true">
+                    <div class="panel-group dyno-panel-group" id="faq" role="tablist" aria-multiselectable="true">
 
-                    <div class="panel">
-                        <div class="panel-heading dyno-faq-active" role="tab" id="headingOne">
-                            <h4 class="panel-title dyno-faq-question">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#faq" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    <i class="fa fa-plus"></i> What is DynomiteDB?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body">
-                                DynomiteDB is a high performance, linearly scalable, highly available (HA) and distributed cache. It combines Dynomite and Redis into a single, easily installable package.
+                        <div class="panel">
+                            <div class="panel-heading dyno-faq-active" role="tab" id="headingOne">
+                                <h4 class="panel-title dyno-faq-question">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#faq" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        <i class="fa fa-plus"></i> What is DynomiteDB?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    DynomiteDB is a high performance, linearly scalable, highly available (HA) and distributed cache. It combines Dynomite and Redis into a single, easily installable package.
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="panel">
-                        <div class="panel-heading" role="tab" id="headingTwo">
-                            <h4 class="panel-title dyno-faq-question">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#faq" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <i class="fa fa-plus"></i> Is DynomiteDB a fork of Dynomite?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                            <div class="panel-body">
-                                No. DynomiteDB is built using Dynomite.
+                        <div class="panel">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title dyno-faq-question">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#faq" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <i class="fa fa-plus"></i> Is DynomiteDB a fork of Dynomite?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    No. DynomiteDB is built using Dynomite.
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="panel">
-                        <div class="panel-heading" role="tab" id="headingThree">
-                            <h4 class="panel-title dyno-faq-question">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#faq" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <i class="fa fa-plus"></i> Why don't you contribute the packaging directly to the Dynomite repo?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                            <div class="panel-body">
-                                <p>Dynomite is a generic Dynamo-layer that supports multiple backends. Dynomite is designed for maximum flexibility which means that configuration is left to the user.</p>
+                        <div class="panel">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title dyno-faq-question">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#faq" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <i class="fa fa-plus"></i> Why don't you contribute the packaging directly to the Dynomite repo?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <p>Dynomite is a generic Dynamo-layer that supports multiple backends. Dynomite is designed for maximum flexibility which means that configuration is left to the user.</p>
 
-                                <p>DynomiteDB builds on Dynomite by building backend specific packages. The first DynomiteDB package is Dynomite with a Redis backend. Future releases of DynomiteDB will combine Dynomite with other backends.</p>
+                                    <p>DynomiteDB builds on Dynomite by building backend specific packages. The first DynomiteDB package is Dynomite with a Redis backend. Future releases of DynomiteDB will combine Dynomite with other backends.</p>
 
-                                <p>In other words, adding opinionated packaging to Dynomite is in conflict with the project's goals, however there is value to an integrated package, thus the need for a separate DynomiteDB repo.</p>
+                                    <p>In other words, adding opinionated packaging to Dynomite is in conflict with the project's goals, however there is value to an integrated package, thus the need for a separate DynomiteDB repo.</p>
 
-                                <p>You can view the original discussion on the need to keep a separate packaging repo on <a href="https://github.com/Netflix/dynomite/issues/242" target="_blank">GitHub issues</a></p>
+                                    <p>You can view the original discussion on the need to keep a separate packaging repo on <a href="https://github.com/Netflix/dynomite/issues/242" target="_blank">GitHub issues</a></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="panel">
-                        <div class="panel-heading" role="tab" id="headingFour">
-                            <h4 class="panel-title dyno-faq-question">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#faq" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    <i class="fa fa-plus"></i> What value does DynomiteDB provide vs. the default Dynomite repo?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                            <div class="panel-body">
-                                DynomiteDB provides installation and configuration via a single package.
+                        <div class="panel">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title dyno-faq-question">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#faq" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        <i class="fa fa-plus"></i> What value does DynomiteDB provide vs. the default Dynomite repo?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    DynomiteDB provides installation and configuration via a single package.
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="panel">
-                        <div class="panel-heading" role="tab" id="headingFive">
-                            <h4 class="panel-title dyno-faq-question">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#faq" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    <i class="fa fa-plus"></i> How can I view the original repos?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                            <div class="panel-body">
-                                <p>Each of DynomiteDB's components are available on GitHub:</p>
+                        <div class="panel">
+                            <div class="panel-heading" role="tab" id="headingFive">
+                                <h4 class="panel-title dyno-faq-question">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#faq" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        <i class="fa fa-plus"></i> How can I view the original repos?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                <div class="panel-body">
+                                    <p>Each of DynomiteDB's components are available on GitHub:</p>
 
-                                <ul>
-                                    <li><a href="https://github.com/Netflix/dynomite" target="_blank">Dynomite</a></li>
-                                    <li><a href="https://github.com/Netflix/dyno" target="_blank">Dyno</a></li>
-                                    <li><a href="https://github.com/antirez/redis" target="_blank">Redis</a></li>
-                                </ul>
+                                    <ul>
+                                        <li><a href="https://github.com/Netflix/dynomite" target="_blank">Dynomite</a></li>
+                                        <li><a href="https://github.com/Netflix/dyno" target="_blank">Dyno</a></li>
+                                        <li><a href="https://github.com/antirez/redis" target="_blank">Redis</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="col-xs-12 col-md-3">
