@@ -12,4 +12,4 @@ The roadmap does not include bugs.
 
 - project: Dyno, Dynomite, Redis
 - timeframe: Short-term, Mid-term, Long-term
-- featurestatus: New, In process, Complete
+- featurestatus: New, In process, Done

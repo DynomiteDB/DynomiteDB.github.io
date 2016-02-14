@@ -499,3 +499,29 @@ div.dyno-panel-group > div.panel {
 .dyno-roadmap-task > p.lead {
     font-size: 18px;
 }
+
+/* Status */
+.dyno-roadmap-task-status-new {
+    background-color: #F9CC85;
+}
+
+.dyno-roadmap-task-status-inprocess {
+    background-color: #F39C12;
+}
+
+.dyno-roadmap-task-status-done {
+    background-color: #915B07;
+}
+
+/* Time frame */
+.dyno-roadmap-task-timeframe-st {
+    background-color: #232929;
+}
+
+.dyno-roadmap-task-timeframe-mt {
+    background-color: #95A5A6;
+}
+
+.dyno-roadmap-task-timeframe-lt {
+    background-color: #F1F3F3;
+}

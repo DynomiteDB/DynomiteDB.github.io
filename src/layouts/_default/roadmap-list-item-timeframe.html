@@ -2,7 +2,7 @@
 	<h2><a class="text-primary" href="{{.Permalink}}">{{ .Title }}</a></h2>
 
 	<div>
-		<span class="label label-info">{{ .Params.project }}</span>
-		<span class="label label-warning">{{ .Params.featurestatus }}</span>
+		<span class='label {{if eq .Params.project "Dynomite"}}label-info{{end}}{{if eq .Params.project "Dyno"}}label-success{{end}}'>{{ .Params.project }}</span>
+		<span class='label {{if eq .Params.featurestatus "New"}}dyno-roadmap-task-status-new{{end}}{{if eq .Params.featurestatus "In process"}}dyno-roadmap-task-status-inprocess{{end}}{{if eq .Params.featurestatus "Done"}}dyno-roadmap-task-status-done{{end}}'>{{ .Params.featurestatus }}</span>
 	</div>
 </div>

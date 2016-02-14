@@ -2,7 +2,7 @@
 	<h2><a class="text-primary" href="{{.Permalink}}">{{ .Title }}</a></h2>
 
 	<div>
-		<span class="label label-success">{{ .Params.timeframe }}</span>
-		<span class="label label-warning">{{ .Params.featurestatus }}</span>
+		<span class='label {{if eq .Params.timeframe "Short-term"}}dyno-roadmap-task-timeframe-st{{end}}{{if eq .Params.timeframe "Mid-term"}}dyno-roadmap-task-timeframe-mt{{end}}{{if eq .Params.timeframe "Long-term"}}dyno-roadmap-task-timeframe-lt{{end}}'>{{ .Params.timeframe }}</span>
+		<span class='label {{if eq .Params.featurestatus "New"}}dyno-roadmap-task-status-new{{end}}{{if eq .Params.featurestatus "In process"}}dyno-roadmap-task-status-inprocess{{end}}{{if eq .Params.featurestatus "Done"}}dyno-roadmap-task-status-done{{end}}'>{{ .Params.featurestatus }}</span>
 	</div>
 </div>
