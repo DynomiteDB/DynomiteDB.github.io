@@ -9,7 +9,11 @@ docurl: "/docs/dynomite/v0.5.6/"
 weight: 300
 draft: false
 
---- 
+---
+
+<img class="img-responsive center-block"
+     src="/img/dynomite/v0.5.6/dynomite-architecture.png" 
+     alt="Dynomite Architecture">
 
 <!-- LARGE DIAGRAM OF ENTIRE CLUSTER as banner image -->
 
