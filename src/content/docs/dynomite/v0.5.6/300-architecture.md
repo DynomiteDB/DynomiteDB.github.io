@@ -6,6 +6,7 @@ product: "Dynomite"
 version: "v0.5.6"
 type: "dynomite-v0.5.6"
 docurl: "/docs/dynomite/v0.5.6/"
+docsection: "Architecture"
 weight: 300
 draft: false
 
@@ -97,7 +98,7 @@ GET product
 
 <!-- show entire cluster access via Redis API -->
 
-See [API](../api/) for more information.
+<!-- See [API](../api/) for more information. -->
 
 # Summary
 
