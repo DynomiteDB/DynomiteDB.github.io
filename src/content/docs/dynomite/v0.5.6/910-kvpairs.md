@@ -12,6 +12,8 @@ draft: false
 
 ---
 
+**Backend**: `Redis`
+
 A key/value pair is the main physical unit of data in DynomiteDB. As the unit of data, each key/value pair is replicated around the cluster based on the replication factor (RF). In DynomiteDB the RF is set based on the network topology.
 
 DynomiteDB's key/value pairs support rich data structures where the value side of the key value pair may be a String, Hash, List, Set or Sorted Set. You can compose these primitive types (i.e String, Hash, List, Set and Sorted Set) into complex data models. 
