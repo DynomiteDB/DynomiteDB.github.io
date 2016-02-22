@@ -20,7 +20,7 @@ params:
   keywords: "dynomite, cache, high availability, HA, linearly scalable, scalable, distributed, distributed cache"
   languagecode: "en-US"
   author: "The DynomiteDB community"
-  copyright: "2015 DynomiteDB.com"
+  copyright: "2016 DynomiteDB.com"
 
   # Social links are displayed in the footer
   twitter: "https://twitter.com/DynomiteDB"
@@ -100,6 +100,10 @@ menu:
         Weight: -90
         Identifier: "faq"
         URL: "/faq/"
+#      - Name: "Why DynomiteDB"
+#        Weight: -80
+#        Identifier: "why"
+#        URL: "/why-dynomitedb/"
       - Name: "Roadmap"
         Weight: -80
         Identifier: "roadmap"
