@@ -12,11 +12,10 @@ draft: false
 
 ---
 
-<img class="img-responsive center-block"
-     src="/img/dynomite/v0.5.6/dynomite-architecture.png" 
-     alt="Dynomite Architecture">
-
-<!-- LARGE DIAGRAM OF ENTIRE CLUSTER as banner image -->
+<a href="/img/dynomite/v0.5.6/architecture-2dc-3racks-3servers.svg" target="_blank"><img class="img-responsive center-block"
+     src="/img/dynomite/v0.5.6/architecture-2dc-3racks-3servers.svg"
+     alt="Dynomite Architecture"></a>
+<p class="dyno-image-caption text-center">Dynomite architecture: 2 DCs w/3 racks per DC</p>
 
 DynomiteDB is a distributed caching database that is designed to run with multiple servers working together as part of a cluster. The servers in a DynomiteDB cluster use a shared nothing architecture as part of a peer-to-peer token ring. There is no single point of failure (SFOF) and each server in the cluster has the same functionality.
 
@@ -34,13 +33,15 @@ A shared nothing architecture contributes to DynomiteDB's high availability and 
 
 Each node in a DynomiteDB cluster is equal to every other node. Specifically, each node runs the exact same `dynomite` daemon and provides the exact same functionality as every other node.
 
-<!-- SHOW DIAGRAM OF DYNOMITE'S INTERNAL BLOCK DIAGRAM HERE -->
+<!-- TODO: SHOW DIAGRAM OF DYNOMITE'S INTERNAL BLOCK DIAGRAM HERE -->
 
 # Cluster
 
 <!-- SHOW IMAGE HERE OF ENTIRE CLUSTER -->
 
-DynomiteDB's top level container is the cluster. A DynomiteDB cluster operates as a single, large cache that may span one or more data centers. The ability to span multiple data centers allows DynomiteDB to operate normally even when an entire data is offline.
+DynomiteDB's top level container is the cluster. A DynomiteDB cluster operates as a single, large database that may span one or more data centers. The ability to span multiple data centers allows DynomiteDB to operate normally even when an entire data is offline.
+
+DynomiteDB functions as a multi-DC cache when paired with an in-memory, such as Redis.
 
 ## Data center (DC)
 
@@ -96,7 +97,7 @@ SET product "DynomiteDB"
 GET product
 ```
 
-<!-- show entire cluster access via Redis API -->
+<!-- show that a programmer accesses the cluster via a Redis API, which is the same as for accessing a single Redis instance -->
 
 <!-- See [API](../api/) for more information. -->
 
