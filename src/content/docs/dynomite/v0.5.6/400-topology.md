@@ -333,7 +333,7 @@ TODO: Delete the original image after I create a new image.
 
 The cluster is comprised of a single DC which contains three racks and each rack contains three servers. Each server contains a node (a `dynomite` instance) and a backend (a `redis-server` instance).
 
-A cluster with a two DCs that contains three racks per DC and 3 servers per rack is a robust, production ready topology that is resilient against server, rack and DC failure.
+A cluster with a two DCs that contains three racks per DC and three servers per rack is a robust, production ready topology that is resilient against server, rack and DC failure.
  
 The following are the names of the various topology elements (indentation indicates the topology hierarchy):
 
