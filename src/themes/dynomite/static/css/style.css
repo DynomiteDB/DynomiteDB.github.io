@@ -87,9 +87,9 @@ div.dyno-doc-nav ul li a:hover {
 .dyno-roadmap-task h1,
 .dyno-blog-post h1,
 .dyno-doc h1 {
-    /*font-size: 27px;*/
+    font-size: 27px;
     /*margin-bottom: 22px;*/
-    font-size: 24px;
+    /*font-size: 24px;*/
     margin-bottom: 13px;
     font-weight: bold;
 }
