@@ -13,25 +13,25 @@ draft: false
 
 In this setup, we will use Redis with Dynomite. For Memcached, it is very similar replacing Redis installation step with Memcached installation step. We will also show you the configurations to simulate a one-node Dynomite cluster and a two-node Dynomite cluster.
 
-## 1.) Install Redis
+## Install Redis
 
 Please follow the instructions on this website to download and install Redis: http://redis.io/
 
-## 2.) Build Dynomite
+## Build Dynomite
 
 Please follow our [README.md](https://github.com/Netflix/dynomite/blob/master/README.md) to compile and build Dynomite from source. Note that we only test Dynomite on Linux environments so we recommend compiling and building Dynomite on a Linux system.
 
-## 3.) Configuration
+## Configure a one-node cluster
 
 These examples are for redis. If you remove redis property, they will become memcached configured files.
 
-### a. One node cluster:
+### One node cluster
 
 ```bash
 https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_single.yml  
 ```
 
-### b. Two-nodes cluster in one datacenter with 2 racks
+### Two-nodes cluster in one datacenter with 2 racks
 
 ```bash
 https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_dc1_rack1.yml
@@ -39,7 +39,7 @@ https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_dc1_rack1.yml
 https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_dc1_rack2.yml
 ```
 
-### c. Two-nodes cluster in two datacenters each having one rack
+### Two-nodes cluster in two datacenters each having one rack
 
 ```bash
 https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_mul_dc1.yml
@@ -47,7 +47,7 @@ https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_mul_dc1.yml
 https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_mul_dc2.yml
 ```
 
-### d. 6-node cluster in one datacenter with 3 racks, each having 2 nodes
+### 6-node cluster in one datacenter with 3 racks, each having 2 nodes
 
 ```bash
 dyn_o_mite:
@@ -170,7 +170,7 @@ dyn_o_mite:
      data_store: 0
 ```
 
-## 4.) Start the cluster(s)
+## Start the cluster
 
 Assume you have gone through the build process and produced the binary file `dynomite`.
 

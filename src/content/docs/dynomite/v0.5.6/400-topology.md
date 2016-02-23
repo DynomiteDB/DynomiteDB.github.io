@@ -32,6 +32,14 @@ A cluster's topology includes the following elements:
 
 # Topology hierarchy
 
+<a href="/img/dynomite/v0.5.6/topology-hierarchy.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/topology-hierarchy.svg"
+         alt="Topology hierarchy"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Topology hierarchy</p>
+
 A DynomiteDB cluster has a well defined hierarchy.
 
 - A cluster is comprised of one or more data centers (DCs)
@@ -39,8 +47,6 @@ A DynomiteDB cluster has a well defined hierarchy.
 - Each rack contains one or more servers
 - Each server contains a node (i.e. a `dynomite` instance) and a backend (ex. Redis or ForestDB)
 - Each node has a node token between 0 and 4,294,967,295
-
-<!-- Show topology hierarchy visually -->
 
 # Cluster
 
@@ -97,12 +103,13 @@ maxDataToken = nextNodeToken - 1
 A node owns all key/value pairs with a data token from `minDataToken` to `maxDataToken`.
 
 ## Single DC cluster with single rack
-<!-- TODO: Diagram -->
 
-<img class="img-responsive center-block"
-     style="width: 75%;"
-     src="/img/dynomite/v0.5.6/topology-1dc-1rack.svg"
-     alt="1 DC, 1 rack, 3 servers">
+<a href="/img/dynomite/v0.5.6/topology-1dc-1rack.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/topology-1dc-1rack.svg"
+         alt="1 DC, 1 rack, 3 servers"
+         style="height: 600px;">
+</a>
 <p class="dyno-image-caption text-center">1 DC, 1 rack, 3 servers</p>
 
 > Never use a single DC with a single rack in production as this topology lacks replication, redundancy and HA. It is discussed here for learning purposes only.
@@ -112,11 +119,11 @@ A cluster with a single DC that contains a single rack is an overly simple topol
 The following are the names of the various topology elements (indentation indicates the topology hierarchy):
 
 - **DC**: sfo (San Francisco)
-    - **Rack**: dev
+    - **Rack**: r1
         - **Servers**:
-            - s1 (node token = 0)
-            - s2 (node token = 1431655765)
-            - s3 (node token = 2863311530)
+            - sfo-r1-s1 (node token = 0)
+            - sfo-r1-s2 (node token = 1431655765)
+            - sfo-r1-s3 (node token = 2863311530)
 
 Each rack in a DynomiteDB cluster contains the entire token range which means that the number of racks per DC is how you determine the replication factor (RF) per DC. Replication factor (RF) is the number of replicas (i.e. copies) of each key/value pair.
 
@@ -124,16 +131,16 @@ In this example we have one rack which means `RF = 1`.
 
 > A rack contains the entire token range. The number of racks per data center (DC) sets the replication factor (RF) per DC.
 
-In the diagram above, the rack contains 3 servers with the node token specified next to each server's hostname. Each server contains one instance of `dynomite` (i.e. the node) and one instance of `redis-server` (i.e. the backend). Please note that DynomiteDB supports pluggable backends which means that you can replace `redis-server` with a different backend. 
+In the diagram above, the rack contains 3 servers with the node token specified in the center of each node. Each server contains one instance of `dynomite` (i.e. the node) and one instance of `redis-server` (i.e. the backend). Please note that DynomiteDB supports pluggable backends which means that you can replace `redis-server` with a different backend. 
 
 The entire cluster is exposed to clients via a Redis-compatible API. From an application developers perspective the DynomiteDB cluster operates similarly to a single Redis server. The fact that an application developer does not have to think about sharding, replication, redundancy or another other distributed database concepts is extremely powerful as it contributes to faster development velocity.
 
 ### Servers and nodes
 
 <img class="img-responsive center-block"
-     style="height: 275px;"
-     src="/img/dynomite/v0.5.6/intra-node-architecture.png" 
-     alt="Intra-server Architecture">
+     src="/img/dynomite/v0.5.6/architecture-intra-node.svg" 
+     alt="Intra-server architecture">
+<p class="dyno-image-caption text-center">Intra-server architecture</p>
 
 A server is either a physical server or a virtual machine (such as an AWS EC2 instance).
 
@@ -167,17 +174,17 @@ The following table shows the node tokens and data token ownership range.
         <th>Max data token</th>
     </tr>
     <tr>
-        <td>s1</td>
+        <td>sfo-r1-s1</td>
         <td>0</td>
         <td>0</td>
         <td>1431655764</td>
     </tr>
-        <td>s2</td>
+        <td>sfo-r1-s2</td>
         <td>1431655765</td>
         <td>1431655765</td>
         <td>2863311529</td>
     </tr>
-        <td>s3</td>
+        <td>sfo-r1-s3</td>
         <td>2863311530</td>
         <td>2863311530</td>
         <td>4294967295</td>
@@ -193,13 +200,14 @@ maxDataToken = nextNodeToken - 1
 ```
 
 ## Single DC cluster with three racks
-<!-- TODO: Diagram -->
 
-<img class="img-responsive center-block"
-     style="width: 75%;"
-     src="/img/dynomite/v0.5.6/topology-1dc-3racks.svg"
-     alt="1 DC, 3 rack, 9 servers">
-<p class="dyno-image-caption text-center">1 DC, 3 racks, 3 servers per rack</p>
+<a href="/img/dynomite/v0.5.6/topology-1dc-3racks.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/topology-1dc-3racks.svg"
+         alt="1 DC, 3 rack, 9 servers"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">1 DC with 3 racks</p>
 
 The cluster is comprised of a single DC which contains three racks and each rack contains three servers. Each server contains a node (a `dynomite` instance) and a backend (a `redis-server` instance).
 
@@ -210,21 +218,21 @@ The following are the names of the various topology elements (indentation indica
 - **DC**: sfo (San Francisco)
     - **Rack**: r1
         - **Servers**:
-            - r1s1 (node token = 0)
-            - r1s2 (node token = 1431655765)
-            - r1s3 (node token = 2863311530)
+            - sfo-r1-s1 (node token = 0)
+            - sfo-r1-s2 (node token = 1431655765)
+            - sfo-r1-s3 (node token = 2863311530)
     - **Rack**: r2
         - **Servers**:
-            - r2s1 (node token = 0)
-            - r2s2 (node token = 1431655765)
-            - r2s3 (node token = 2863311530)
+            - sfo-r2-s1 (node token = 0)
+            - sfo-r2-s2 (node token = 1431655765)
+            - sfo-r2-s3 (node token = 2863311530)
     - **Rack**: r3
         - **Servers**:
-            - r3s1 (node token = 0)
-            - r3s2 (node token = 1431655765)
-            - r3s3 (node token = 2863311530)
+            - sfo-r3-s1 (node token = 0)
+            - sfo-r3-s2 (node token = 1431655765)
+            - sfo-r3-s3 (node token = 2863311530)
 
-Each rack contains the entire token range which means that `RF = 3` in this example. Specifically, a key/value pair where the data token = `100` will be replicated on r1s1, r2s1 and r3s1.
+Each rack contains the entire token range which means that `RF = 3` in this example. Specifically, a key/value pair where the data token = `100` will be replicated on sfo-r1-s1, sfo-r2-s1 and sfo-r3-s1.
 
 ### Node tokens
 
@@ -237,9 +245,9 @@ The following are the some salient points about the topology described in the ta
 - Data token ownership is repeated three times, which indicates how data is replicated across the three racks
 - Data token ownership is repeated across racks, but not within a rack
 - Replication
-    - Data tokens from 0 to 1431655764 are replicated on r1s1, r2s1 and r3s1
-    - Data tokens from 1431655765 to 2863311529 are replicated on r1s2, r2s2 and r3s2
-    - Data tokens from 2863311530 to 4294967295 are replicated on r1s3, r2s3 and r3s3
+    - Data tokens from 0 to 1431655764 are replicated on sfo-r1-s1, sfo-r2-s1 and sfo-r3-s1
+    - Data tokens from 1431655765 to 2863311529 are replicated on sfo-r1-s2, sfo-r2-s2 and sfo-r3-s2
+    - Data tokens from 2863311530 to 4294967295 are replicated on sfo-r1-s3, sfo-r2-s3 and sfo-r3-s3
 
 <table class="table table-condensed table-bordered">
     <tr class="active">
@@ -251,56 +259,56 @@ The following are the some salient points about the topology described in the ta
     </tr>
     <tr>
         <td>r1</td>
-        <td>r1s1</td>
+        <td>sfo-r1-s1</td>
         <td>0</td>
         <td>0</td>
         <td>1431655764</td>
     </tr>
-        <td>r1</td>
-        <td>r1s2</td>
+        <td></td>
+        <td>sfo-r1-s2</td>
         <td>1431655765</td>
         <td>1431655765</td>
         <td>2863311529</td>
     </tr>
-        <td>r1</td>
-        <td>r1s3</td>
+        <td></td>
+        <td>sfo-r1-s3</td>
         <td>2863311530</td>
         <td>2863311530</td>
         <td>4294967295</td>
     </tr>
     <tr>
         <td>r2</td>
-        <td>r2s1</td>
+        <td>sfo-r2-s1</td>
         <td>0</td>
         <td>0</td>
         <td>1431655764</td>
     </tr>
-        <td>r2</td>
-        <td>r2s2</td>
+        <td></td>
+        <td>sfo-r2-s2</td>
         <td>1431655765</td>
         <td>1431655765</td>
         <td>2863311529</td>
     </tr>
-        <td>r2</td>
-        <td>r2s3</td>
+        <td></td>
+        <td>sfo-r2-s3</td>
         <td>2863311530</td>
         <td>2863311530</td>
         <td>4294967295</td>
     </tr>
         <td>r3</td>
-        <td>r3s1</td>
+        <td>sfo-r3-s1</td>
         <td>0</td>
         <td>0</td>
         <td>1431655764</td>
     </tr>
-        <td>r3</td>
-        <td>r3s2</td>
+        <td></td>
+        <td>sfo-r3-s2</td>
         <td>1431655765</td>
         <td>1431655765</td>
         <td>2863311529</td>
     </tr>
-        <td>r3</td>
-        <td>r3s3</td>
+        <td></td>
+        <td>sfo-r3-s3</td>
         <td>2863311530</td>
         <td>2863311530</td>
         <td>4294967295</td>
@@ -316,20 +324,13 @@ maxDataToken = nextNodeToken - 1
 ```
 
 ## Two DC cluster with three racks per DC
-<!-- TODO: Diagram -->
 
-TODO: Delete the original image after I create a new image.
-
-<img class="img-responsive center-block"
-     style="width: 75%;"
-     src="/img/dynomite/v0.5.6/cluster-topology.png"
-     alt="Cluster Topology">
-
-<img class="img-responsive center-block"
-     style="width: 75%;"
-     src="/img/dynomite/v0.5.6/topology-2dcs-6racks.svg"
-     alt="Single DC cluster with single rack">
-<p class="dyno-image-caption text-center">2 DCs, 3 racks per DC, 3 servers per rack</p>
+<a href="/img/dynomite/v0.5.6/topology-2dc-3racks.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/topology-2dc-3racks.svg"
+         alt="Two DC cluster with three racks per DC">
+</a>
+<p class="dyno-image-caption text-center">2 DCs with 3 racks per DC</p>
 
 The cluster is comprised of a single DC which contains three racks and each rack contains three servers. Each server contains a node (a `dynomite` instance) and a backend (a `redis-server` instance).
 
@@ -370,7 +371,7 @@ The following are the names of the various topology elements (indentation indica
             - jfk-r3-s2 (node token = 1431655765)
             - jfk-r3-s3 (node token = 2863311530)
 
-Each rack contains the entire token range which means that `RF = 3` for each of the SFO and JFK DCs. The RF cluster-wide is 6. Specifically, a key/value pair where the data token = `100` will be replicated on sfo-r1-s1, sfo-r2-s1 and sfo-r3-s1 within the SFO DC, plus jfk-r1-s1, jfk-r2-s1 AND jfk-r3-s1 within the JFK DC.
+Each rack contains the entire token range which means that `RF = 3` for the SFO DC and JFK DC. Specifically, a key/value pair where the data token = `100` will be replicated on sfo-r1-s1, sfo-r2-s1 and sfo-r3-s1 within the SFO DC, plus jfk-r1-s1, jfk-r2-s1 AND jfk-r3-s1 within the JFK DC.
 
 ### Node tokens
 
@@ -401,7 +402,7 @@ The following are the some salient points about the topology described in the ta
     </tr>
     <tr>
         <td>sfo</td>
-        <td>r1</td>
+        <td>sfo-r1</td>
         <td>sfo-r1-s1</td>
         <td>0</td>
         <td>0</td>
@@ -423,7 +424,7 @@ The following are the some salient points about the topology described in the ta
     </tr>
     <tr>
         <td></td>
-        <td>r2</td>
+        <td>sfo-r2</td>
         <td>sfo-r2-s1</td>
         <td>0</td>
         <td>0</td>
@@ -444,7 +445,7 @@ The following are the some salient points about the topology described in the ta
         <td>4294967295</td>
     </tr>
         <td></td>
-        <td>r3</td>
+        <td>sfo-r3</td>
         <td>sfo-r3-s1</td>
         <td>0</td>
         <td>0</td>
@@ -466,7 +467,7 @@ The following are the some salient points about the topology described in the ta
     </tr>
     <tr>
         <td>jfk</td>
-        <td>r1</td>
+        <td>jfk-r1</td>
         <td>jfk-r1-s1</td>
         <td>0</td>
         <td>0</td>
@@ -488,7 +489,7 @@ The following are the some salient points about the topology described in the ta
     </tr>
     <tr>
         <td></td>
-        <td>r2</td>
+        <td>jfk-r2</td>
         <td>jfk-r2-s1</td>
         <td>0</td>
         <td>0</td>
@@ -509,7 +510,7 @@ The following are the some salient points about the topology described in the ta
         <td>4294967295</td>
     </tr>
         <td></td>
-        <td>r3</td>
+        <td>jfk-r3</td>
         <td>jfk-r3-s1</td>
         <td>0</td>
         <td>0</td>
