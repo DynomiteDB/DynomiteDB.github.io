@@ -23,13 +23,13 @@ DynomiteDB is queried using a Redis-compatible API that is easy to learn and sim
 
 In terms of the CAP theorem, DynomiteDB chooses <strong>A</strong>vailability and <strong>P</strong>artition tolerance over <strong>C</strong>onsistency. Specifically, DynomiteDB has tunable consistency on a cluster-wide basis where queries can make tradeoffs between consistency, latency and availability.
 
-DynomiteDB is designed for big data workloads that have a large volume of data combined with a high volume of reads, writes or both. The primary use case for DynomiteDB is as a big data cache that can store your entire data set in cache.
+DynomiteDB is designed for big data workloads that have a large volume of data combined with a high volume of reads, writes or both. The primary use case for DynomiteDB is as a big data cache that can store your entire data set in memory or as a big data database when combined with a persistent backend.
 
 # Shared nothing, masterless architecture
 
 DynomiteDB has a shared nothing, masterless architecture which means that each DynomiteDB node is independent of every other node. The benefit of a shared nothing architecture is there is no centralized component that can bring down the entire cluster. In other words, DynomiteDB has no single point of failure (SPOF).
 
-A shared nothing architecture contributes to DynomiteDB's high availability and linear scalability. The fact that DynomiteDB has no SPOF means that the cluster will continue to work even when a server, rack or data center (DC) is offline. This means that you can perform maintenance and upgrades with zero downtime to your cache infrastructure.
+A shared nothing architecture contributes to DynomiteDB's high availability and linear scalability. The fact that DynomiteDB has no SPOF means that the cluster will continue to work even when a server, rack or data center (DC) is offline. This means that you can perform maintenance and upgrades with zero downtime to your cache and storage infrastructure.
 
 Each node in a DynomiteDB cluster is equal to every other node. Specifically, each node runs the exact same `dynomite` daemon and provides the exact same functionality as every other node.
 

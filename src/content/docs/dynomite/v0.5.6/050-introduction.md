@@ -51,7 +51,7 @@ The following value data types are supported:
 
 ### High performance
 
-Dynomite provides high performance cache via linear scalability. Linear scalability means that Dynomite's capacity scales as you add more clusters to the server. Specifically, if one Dynomite server can handle 40,000 ops/second then we know that two Dynomite servers will handle 80,000 ops/second.
+Dynomite provides a high performance cache and database combined with linear scalability. Linear scalability means that Dynomite's capacity scales as you add more clusters to the server. Specifically, if one Dynomite server can handle 40,000 ops/second then we know that two Dynomite servers will handle 80,000 ops/second.
 
 ### High availability (HA)
 
