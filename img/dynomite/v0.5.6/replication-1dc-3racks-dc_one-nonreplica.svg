@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1076px" height="1067px" viewBox="0 0 1076 1067" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+    <title>replication-1dc-3racks-dc_one-nonreplica</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="replication-1dc-3racks-dc_one-nonreplica" sketch:type="MSArtboardGroup">
+            <rect id="Cluster-container" stroke="#ECF0F1" stroke-width="5" sketch:type="MSShapeGroup" x="3" y="3" width="1070" height="1060" rx="15"></rect>
+            <g id="Cluster" sketch:type="MSLayerGroup" transform="translate(3.000000, 3.000000)">
+                <rect id="cluster-name-bg" stroke="#ECF0F1" stroke-width="5" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="83" height="34" rx="15"></rect>
+                <text id="cluster" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan x="9.5" y="23">cluster</tspan>
+                </text>
+            </g>
+            <g id="SFO-DC" sketch:type="MSLayerGroup" transform="translate(32.000000, 65.000000)">
+                <rect id="DC1-container" stroke="#979797" stroke-width="6" sketch:type="MSShapeGroup" x="0" y="0" width="1008" height="975" rx="8"></rect>
+                <g id="Rack-3" transform="translate(709.000000, 233.000000)">
+                    <rect id="Rack-container" stroke="#979797" stroke-width="6" sketch:type="MSShapeGroup" x="9" y="15" width="273" height="707" rx="8"></rect>
+                    <g id="Server-3" transform="translate(17.000000, 497.000000)">
+                        <rect id="Server-container" stroke="#BD1E2B" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" x="8" y="11" width="243" height="180" rx="8"></rect>
+                        <g id="Backend" transform="translate(16.000000, 144.000000)">
+                            <rect id="Backend-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="41" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="4" y="35">Backend</tspan>
+                            </text>
+                        </g>
+                        <g id="Down-arrow" transform="translate(139.500000, 130.500000) scale(-1, -1) rotate(-90.000000) translate(-139.500000, -130.500000) translate(128.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Up-arrow" transform="translate(112.500000, 130.500000) scale(-1, 1) rotate(-90.000000) translate(-112.500000, -130.500000) translate(101.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Node" transform="translate(16.000000, 37.000000)">
+                            <rect id="Dynomite-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="79" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="5" y="74">Node</tspan>
+                            </text>
+                            <text id="Token" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                                <tspan x="59.4" y="43">2863311530</tspan>
+                            </text>
+                        </g>
+                        <g id="Server-name">
+                            <rect id="server-name" stroke="#000000" fill="#BD1E2B" sketch:type="MSShapeGroup" x="0" y="0" width="108" height="34" rx="8"></rect>
+                            <text id="sfo-r3-r3s3" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                                <tspan x="14.07" y="23">sfo-r3-s3</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="Server-2" transform="translate(17.000000, 274.000000)">
+                        <rect id="Server-container" stroke="#BD1E2B" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" x="8" y="11" width="243" height="180" rx="8"></rect>
+                        <g id="Backend" transform="translate(16.000000, 144.000000)">
+                            <rect id="Backend-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="41" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="4" y="35">Backend</tspan>
+                            </text>
+                        </g>
+                        <g id="Down-arrow" transform="translate(139.500000, 130.500000) scale(-1, -1) rotate(-90.000000) translate(-139.500000, -130.500000) translate(128.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Up-arrow" transform="translate(112.500000, 130.500000) scale(-1, 1) rotate(-90.000000) translate(-112.500000, -130.500000) translate(101.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Node" transform="translate(16.000000, 37.000000)">
+                            <rect id="Dynomite-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="79" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="5" y="74">Node</tspan>
+                            </text>
+                            <text id="Token" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#2C3E50">
+                                <tspan x="55" y="33">1431655765</tspan>
+                            </text>
+                        </g>
+                        <g id="Server-name">
+                            <rect id="server-name" stroke="#000000" fill="#BD1E2B" sketch:type="MSShapeGroup" x="0" y="0" width="108" height="34" rx="8"></rect>
+                            <text id="sfo-r3-r3r2" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                                <tspan x="14.07" y="23">sfo-r3-s2</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="Server-1" transform="translate(17.000000, 52.000000)">
+                        <rect id="Server-container" stroke="#BD1E2B" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" x="8" y="11" width="243" height="180" rx="8"></rect>
+                        <g id="Backend" transform="translate(16.000000, 144.000000)">
+                            <rect id="Backend-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="41" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="4" y="35">Backend</tspan>
+                            </text>
+                        </g>
+                        <g id="Down-arrow" transform="translate(139.500000, 130.500000) scale(-1, -1) rotate(-90.000000) translate(-139.500000, -130.500000) translate(128.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Up-arrow" transform="translate(112.500000, 130.500000) scale(-1, 1) rotate(-90.000000) translate(-112.500000, -130.500000) translate(101.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Node" transform="translate(16.000000, 37.000000)">
+                            <rect id="Dynomite-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="79" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="5" y="74">Node</tspan>
+                            </text>
+                            <text id="Token" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                                <tspan x="108.94" y="43">0</tspan>
+                            </text>
+                        </g>
+                        <g id="Server-name">
+                            <rect id="server-name" stroke="#000000" fill="#BD1E2B" sketch:type="MSShapeGroup" x="0" y="0" width="108" height="34" rx="8"></rect>
+                            <text id="sfo-r3-r3s1" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                                <tspan x="14.07" y="23">sfo-r3-s1</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="Rack-name">
+                        <rect id="rack-name-bg" stroke="#979797" stroke-width="5" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="67" height="34" rx="8"></rect>
+                        <text id="r3" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                            <tspan x="24.61" y="24">r3</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="Rack-2" transform="translate(359.000000, 233.000000)">
+                    <rect id="Rack-container" stroke="#979797" stroke-width="6" sketch:type="MSShapeGroup" x="9" y="15" width="273" height="707" rx="8"></rect>
+                    <g id="Server-3" transform="translate(17.000000, 497.000000)">
+                        <rect id="Server-container" stroke="#BD1E2B" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" x="8" y="11" width="243" height="180" rx="8"></rect>
+                        <g id="Backend" transform="translate(16.000000, 144.000000)">
+                            <rect id="Backend-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="41" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="4" y="35">Backend</tspan>
+                            </text>
+                        </g>
+                        <g id="Down-arrow" transform="translate(139.500000, 130.500000) scale(-1, -1) rotate(-90.000000) translate(-139.500000, -130.500000) translate(128.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Up-arrow" transform="translate(112.500000, 130.500000) scale(-1, 1) rotate(-90.000000) translate(-112.500000, -130.500000) translate(101.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Node" transform="translate(16.000000, 37.000000)">
+                            <rect id="Dynomite-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="79" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="5" y="74">Node</tspan>
+                            </text>
+                            <text id="Token" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                                <tspan x="59.4" y="43">2863311530</tspan>
+                            </text>
+                        </g>
+                        <g id="Server-name">
+                            <rect id="server-name" stroke="#000000" fill="#BD1E2B" sketch:type="MSShapeGroup" x="0" y="0" width="108" height="34" rx="8"></rect>
+                            <text id="sfo-r2-r2s3" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                                <tspan x="14.07" y="23">sfo-r2-s3</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="Server-2" transform="translate(17.000000, 274.000000)">
+                        <rect id="Server-container" stroke="#BD1E2B" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" x="8" y="11" width="243" height="180" rx="8"></rect>
+                        <g id="Backend" transform="translate(16.000000, 144.000000)">
+                            <rect id="Backend-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="41" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="4" y="35">Backend</tspan>
+                            </text>
+                        </g>
+                        <g id="Down-arrow" transform="translate(139.500000, 130.500000) scale(-1, -1) rotate(-90.000000) translate(-139.500000, -130.500000) translate(128.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Up-arrow" transform="translate(112.500000, 130.500000) scale(-1, 1) rotate(-90.000000) translate(-112.500000, -130.500000) translate(101.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Node" transform="translate(16.000000, 37.000000)">
+                            <rect id="Dynomite-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="79" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="5" y="74">Node</tspan>
+                            </text>
+                            <text id="Token" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#2C3E50">
+                                <tspan x="55" y="33">1431655765</tspan>
+                            </text>
+                        </g>
+                        <g id="Server-name">
+                            <rect id="server-name" stroke="#000000" fill="#BD1E2B" sketch:type="MSShapeGroup" x="0" y="0" width="108" height="34" rx="8"></rect>
+                            <text id="sfo-r2-r2s2" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                                <tspan x="14.07" y="23">sfo-r2-s2</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="Server-1" transform="translate(17.000000, 52.000000)">
+                        <rect id="Server-container" stroke="#BD1E2B" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" x="8" y="11" width="243" height="180" rx="8"></rect>
+                        <g id="Backend" transform="translate(16.000000, 144.000000)">
+                            <rect id="Backend-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="41" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="4" y="35">Backend</tspan>
+                            </text>
+                        </g>
+                        <g id="Down-arrow" transform="translate(139.500000, 130.500000) scale(-1, -1) rotate(-90.000000) translate(-139.500000, -130.500000) translate(128.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Up-arrow" transform="translate(112.500000, 130.500000) scale(-1, 1) rotate(-90.000000) translate(-112.500000, -130.500000) translate(101.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Node" transform="translate(16.000000, 37.000000)">
+                            <rect id="Dynomite-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="79" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="5" y="74">Node</tspan>
+                            </text>
+                            <text id="Token" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                                <tspan x="108.94" y="43">0</tspan>
+                            </text>
+                        </g>
+                        <g id="Server-name">
+                            <rect id="server-name" stroke="#000000" fill="#BD1E2B" sketch:type="MSShapeGroup" x="0" y="0" width="108" height="34" rx="8"></rect>
+                            <text id="sfo-r2-r2s1" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                                <tspan x="14.07" y="23">sfo-r2-s1</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="Rack-name">
+                        <rect id="rack-name-bg" stroke="#979797" stroke-width="5" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="67" height="34" rx="8"></rect>
+                        <text id="r2" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                            <tspan x="24.61" y="24">r2</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="Rack-1" transform="translate(9.000000, 233.000000)">
+                    <rect id="Rack-container" stroke="#979797" stroke-width="6" sketch:type="MSShapeGroup" x="9" y="15" width="273" height="707" rx="8"></rect>
+                    <g id="Server-3" transform="translate(17.000000, 497.000000)">
+                        <rect id="Server-container" stroke="#BD1E2B" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" x="8" y="11" width="243" height="180" rx="8"></rect>
+                        <g id="Backend" transform="translate(16.000000, 144.000000)">
+                            <rect id="Backend-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="41" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="4" y="35">Backend</tspan>
+                            </text>
+                        </g>
+                        <g id="Down-arrow" transform="translate(139.500000, 130.500000) scale(-1, -1) rotate(-90.000000) translate(-139.500000, -130.500000) translate(128.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Up-arrow" transform="translate(112.500000, 130.500000) scale(-1, 1) rotate(-90.000000) translate(-112.500000, -130.500000) translate(101.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Node" transform="translate(16.000000, 37.000000)">
+                            <rect id="Dynomite-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="79" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="5" y="74">Node</tspan>
+                            </text>
+                            <text id="Token" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                                <tspan x="59.4" y="43">2863311530</tspan>
+                            </text>
+                        </g>
+                        <g id="Server-name">
+                            <rect id="server-name" stroke="#000000" fill="#BD1E2B" sketch:type="MSShapeGroup" x="0" y="0" width="108" height="34" rx="8"></rect>
+                            <text id="sfo-r1-r1s3" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                                <tspan x="14.07" y="23">sfo-r1-s3</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="Server-2" transform="translate(17.000000, 274.000000)">
+                        <rect id="Server-container" stroke="#BD1E2B" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" x="8" y="11" width="243" height="180" rx="8"></rect>
+                        <g id="Backend" transform="translate(16.000000, 144.000000)">
+                            <rect id="Backend-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="41" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="4" y="35">Backend</tspan>
+                            </text>
+                        </g>
+                        <g id="Down-arrow" transform="translate(139.500000, 130.500000) scale(-1, -1) rotate(-90.000000) translate(-139.500000, -130.500000) translate(128.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Up-arrow" transform="translate(112.500000, 130.500000) scale(-1, 1) rotate(-90.000000) translate(-112.500000, -130.500000) translate(101.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Node" transform="translate(16.000000, 37.000000)">
+                            <rect id="Dynomite-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="79" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="5" y="74">Node</tspan>
+                            </text>
+                            <text id="Token" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#2C3E50">
+                                <tspan x="59" y="43">1431655765</tspan>
+                            </text>
+                        </g>
+                        <g id="Server-name">
+                            <rect id="server-name" stroke="#000000" fill="#BD1E2B" sketch:type="MSShapeGroup" x="0" y="0" width="108" height="34" rx="8"></rect>
+                            <text id="sfo-r1-r1s2" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                                <tspan x="14.07" y="23">sfo-r1-s2</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="Server-1" transform="translate(17.000000, 52.000000)">
+                        <rect id="Server-container" stroke="#BD1E2B" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" x="8" y="11" width="243" height="180" rx="8"></rect>
+                        <g id="Backend" transform="translate(16.000000, 144.000000)">
+                            <rect id="Backend-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="41" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="4" y="35">Backend</tspan>
+                            </text>
+                        </g>
+                        <g id="Down-arrow" transform="translate(139.500000, 130.500000) scale(-1, -1) rotate(-90.000000) translate(-139.500000, -130.500000) translate(128.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Up-arrow" transform="translate(112.500000, 130.500000) scale(-1, 1) rotate(-90.000000) translate(-112.500000, -130.500000) translate(101.500000, 123.500000)" sketch:type="MSShapeGroup">
+                            <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                                <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                            </g>
+                            <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                        </g>
+                        <g id="Node" transform="translate(16.000000, 37.000000)">
+                            <rect id="Dynomite-box" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="0" width="228" height="79" rx="2"></rect>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                                <tspan x="5" y="74">Node</tspan>
+                            </text>
+                            <text id="Token" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                                <tspan x="5.94" y="20">0</tspan>
+                            </text>
+                        </g>
+                        <g id="Server-name">
+                            <rect id="server-name" stroke="#000000" fill="#BD1E2B" sketch:type="MSShapeGroup" x="0" y="0" width="108" height="34" rx="8"></rect>
+                            <text id="sfo-r1-r1s1" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                                <tspan x="14.07" y="23">sfo-r1-s1</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="Rack-name">
+                        <rect id="rack-name-bg" stroke="#979797" stroke-width="5" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="67" height="34" rx="8"></rect>
+                        <text id="r1" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                            <tspan x="24.61" y="24">r1</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="DC-name">
+                    <rect id="rack-name-bg" stroke="#979797" stroke-width="5" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="67" height="34" rx="8"></rect>
+                    <text id="sfo" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                        <tspan x="19.8" y="24">sfo</tspan>
+                    </text>
+                </g>
+                <rect id="Coordinator-box" stroke="#979797" stroke-dasharray="1" sketch:type="MSShapeGroup" x="87" y="333" width="129" height="31" rx="8"></rect>
+                <text id="Coordinator" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan x="98.85" y="355">Coordinator</tspan>
+                </text>
+            </g>
+            <g id="Step-2" sketch:type="MSLayerGroup" transform="translate(274.000000, 425.000000)">
+                <path d="M0.995061398,0.678657532 L65.9999976,0.678657532 L66,221.545933 L4.20328331,221.545929" id="Step-2-line" stroke="#E74C3C" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Step-2-line-decoration-1" d="M15.0032835,218.54593 L4.20328331,221.545929 L15.0032831,224.54593" stroke="#E74C3C" stroke-width="3" stroke-linecap="square"></path>
+                <g transform="translate(52.000000, 98.000000)">
+                    <circle id="Oval-1-Copy" stroke="#E74C3C" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="14" cy="14" r="14"></circle>
+                    <text id="2" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                        <tspan x="8.44" y="21">2</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="Step-1" sketch:type="MSLayerGroup" transform="translate(278.000000, 157.000000)">
+                <path d="M10.5,0.5 C10.5,0.5 47.3124756,70.2605617 53.9330197,104.348602 C61.9934826,145.850537 62,249.545933 62,249.545933 L0.20328331,249.545929" id="Request" stroke="#3498DB" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Request-decoration-1" d="M11.0032835,246.54593 L0.20328331,249.545929 L11.0032831,252.54593" stroke="#3498DB" stroke-width="3" stroke-linecap="square"></path>
+                <circle id="Oval-1" stroke="#3498DB" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="47" cy="81" r="14"></circle>
+                <text id="1" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan x="41.44" y="88">1</tspan>
+                </text>
+            </g>
+            <g id="Step-3" sketch:type="MSLayerGroup" transform="translate(169.000000, 657.000000)">
+                <path d="M14.5,28.5 L14.5,75.5" id="Write-to-backend" stroke="#E74C3C" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Write-to-backend-decoration-1" d="M14.5,75.5 L17.5,64.7 L11.5,64.7 L14.5,75.5 Z" stroke="#E74C3C" stroke-width="3" stroke-linecap="square"></path>
+                <circle id="Oval-1" stroke="#E74C3C" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="14" cy="14" r="14"></circle>
+                <text id="3" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan x="8.44" y="21">3</tspan>
+                </text>
+            </g>
+            <g id="Step-4" sketch:type="MSLayerGroup" transform="translate(274.000000, 253.000000)">
+                <path d="M260.5,432.5 L260.5,479.5" id="Write-to-backend-Copy" stroke="#18BC9C" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Write-to-backend-Copy-decoration-1" d="M260.5,479.5 L263.5,468.7 L257.5,468.7 L260.5,479.5 Z" stroke="#18BC9C" stroke-width="3" stroke-linecap="square"></path>
+                <path d="M610.5,432.5 L610.5,479.5" id="Write-to-backend-Copy-2" stroke="#18BC9C" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Write-to-backend-Copy-2-decoration-1" d="M610.5,479.5 L613.5,468.7 L607.5,468.7 L610.5,479.5 Z" stroke="#18BC9C" stroke-width="3" stroke-linecap="square"></path>
+                <g id="5-circle" transform="translate(246.500000, 403.000000)">
+                    <circle id="Circle" stroke="#18BC9C" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="14" cy="14" r="14"></circle>
+                    <text id="5" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                        <tspan x="8.44" y="21">5</tspan>
+                    </text>
+                </g>
+                <g id="5-circle" transform="translate(596.500000, 403.000000)">
+                    <circle id="Circle" stroke="#18BC9C" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="14" cy="14" r="14"></circle>
+                    <text id="5" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                        <tspan x="8.44" y="21">5</tspan>
+                    </text>
+                </g>
+                <path d="M0.91707981,163.164123 L81.85963,163.164123 C81.85963,163.164123 82.3552381,110.016552 82.3501968,61.8275099 C82.3493328,53.5686211 82.236862,44.7804699 82.3501968,38.240491 C82.5808827,24.9287827 82.8982901,14.7228994 83.8591003,14.2283236 C84.2723208,14.0156189 89.6942062,14.2283236 98.0182266,14.2283236 C106.342247,14.2283236 169.222981,14.2283236 223.318481,14.2283236 C297.542648,14.2283236 404.45729,14.5337704 438.136978,14.8628996 C437.779351,16.8433356 438.136989,390.781463 438.136989,390.781463" id="Replication-line-to-replicas" stroke="#18BC9C" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <g id="4-circle" transform="translate(245.000000, 0.000000)">
+                    <circle id="Circle" stroke="#18BC9C" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="14" cy="14" r="14"></circle>
+                    <text id="4" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                        <tspan x="8.44" y="21">4</tspan>
+                    </text>
+                </g>
+            </g>
+            <path d="M625.5,644.5 L802.5,644.5" id="Line" stroke="#18BC9C" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path id="Line-decoration-1" d="M625.5,644.5 L636.3,641.5 L636.3,647.5 L625.5,644.5 Z" stroke="#18BC9C" stroke-width="3" stroke-linecap="square"></path>
+            <path id="Line-decoration-2" d="M802.5,644.5 L791.7,641.5 L791.7,647.5 L802.5,644.5 Z" stroke="#18BC9C" stroke-width="3" stroke-linecap="square"></path>
+            <g id="API-servers" sketch:type="MSLayerGroup" transform="translate(148.000000, 110.000000)">
+                <g id="API-Server-1">
+                    <rect id="Dynomite-box" stroke="#2C3E50" stroke-width="3" fill="#56799C" sketch:type="MSShapeGroup" x="0" y="0" width="315" height="85" rx="8"></rect>
+                    <text id="API-Server" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                        <tspan x="29.037614" y="30.1666667">API Server with Redis client</tspan>
+                    </text>
+                    <text id="Client" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="24" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                        <tspan x="124.490047" y="70.1666667">Client</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="Synchronous" sketch:type="MSLayerGroup" transform="translate(826.000000, 91.000000)">
+                <rect id="Rectangle-122" fill="#E74C3C" sketch:type="MSShapeGroup" x="0" y="0" width="190" height="36"></rect>
+                <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                    <tspan x="39.28" y="24">Synchronous</tspan>
+                </text>
+            </g>
+            <g id="Asynchronous" sketch:type="MSLayerGroup" transform="translate(826.000000, 131.000000)">
+                <rect id="Rectangle-122" fill="#18BC9C" sketch:type="MSShapeGroup" x="0" y="0" width="190" height="36"></rect>
+                <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                    <tspan x="34.28" y="24">Asynchronous</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

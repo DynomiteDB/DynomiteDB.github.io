@@ -177,6 +177,18 @@
 					
 					
 				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
 			
 		
 		<div class="col-sm-3 dyno-doc-nav">
@@ -240,6 +252,13 @@
 					
 						
 
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/introduction/">Introduction</a></li>
+
+					
+				
+					
+						
+
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/quick-start/">Quick Start</a></li>
 
 					
@@ -248,6 +267,13 @@
 						
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/terminology/">Terminology</a></li>
 
 					
 				
@@ -286,22 +312,138 @@
 
 					
 				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/coordinator/">Coordinator</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/kvpairs/">Key/value pairs</a></li>
+
+					
+				
 			</ul>
 		</div>
 
 		<div class="col-xs-12 col-sm-9 dyno-doc">
 			<h1>Architecture</h1>
-			<p>In the open source world, there are various single-server datastore solutions, e.g. Memcached, Redis, BerkeleyDb, LevelDb, Mysql (datastore). The availability story for these single-server datastores usually ends up being a master-slave setup. Once traffic demands overrun this setup, the next logical progression is to introduce sharding. Most would agree that it is non trivial to operate this kind of a setup. Furthermore, managing data from different shards is also a challenge for application developers.</p>
+			
 
-<p>In the age of high scalability and big data, Dynomite’s design goal is to turn those single-server datastore solutions into peer-to-peer, linearly scalable, clustered systems while still preserving the native client/server protocols of the datastores, e.g., Redis protocol.</p>
+<p><a href="/img/dynomite/v0.5.6/architecture-2dc-3racks-3servers.svg" target="_blank"><img class="img-responsive center-block"
+     src="/img/dynomite/v0.5.6/architecture-2dc-3racks-3servers.svg"
+     alt="Dynomite Architecture"></a>
+<p class="dyno-image-caption text-center">Dynomite architecture: 2 DCs w/3 racks per DC</p></p>
 
-<p>Dynomite and the target storage engine run on the same node. Clients connect to Dynomite, and requests are proxied to either the storage engine on the same node or to Dynomite processes running on other nodes.</p>
+<p>DynomiteDB is a distributed caching database that is designed to run with multiple servers working together as part of a cluster. The servers in a DynomiteDB cluster use a shared nothing architecture as part of a peer-to-peer token ring. There is no single point of failure (SFOF) and each server in the cluster has the same functionality.</p>
 
-<p><img class="img-responsive center-block"
-     src="/img/dynomite/v0.5.6/dynomite-architecture.png" 
-     alt="Dynomite Architecture"></p>
+<p>DynomiteDB is queried using a Redis-compatible API that is easy to learn and simple to use. The Redis API is a simple API that allows you to <code>GET</code> and <code>SET</code> key/value pairs. DynomiteDB supports multiple data types for the value side of the key/value pair including String, Hash, List, Set and Sorted Set.</p>
 
-<p>As the request goes through a Dynomite node, the data gets replicated and eventually stored in the target storage. The data can then be read back either through Dynomite or directly from the underlying storage’s API.</p>
+<p>In terms of the CAP theorem, DynomiteDB chooses <strong>A</strong>vailability and <strong>P</strong>artition tolerance over <strong>C</strong>onsistency. Specifically, DynomiteDB has tunable consistency on a cluster-wide basis where queries can make tradeoffs between consistency, latency and availability.</p>
+
+<p>DynomiteDB is designed for big data workloads that have a large volume of data combined with a high volume of reads, writes or both. The primary use case for DynomiteDB is as a big data cache that can store your entire data set in cache.</p>
+
+<h1 id="shared-nothing-masterless-architecture:8895d24bf8e9d58399b1b72c3b065130">Shared nothing, masterless architecture</h1>
+
+<p>DynomiteDB has a shared nothing, masterless architecture which means that each DynomiteDB node is independent of every other node. The benefit of a shared nothing architecture is there is no centralized component that can bring down the entire cluster. In other words, DynomiteDB has no single point of failure (SPOF).</p>
+
+<p>A shared nothing architecture contributes to DynomiteDB&rsquo;s high availability and linear scalability. The fact that DynomiteDB has no SPOF means that the cluster will continue to work even when a server, rack or data center (DC) is offline. This means that you can perform maintenance and upgrades with zero downtime to your cache infrastructure.</p>
+
+<p>Each node in a DynomiteDB cluster is equal to every other node. Specifically, each node runs the exact same <code>dynomite</code> daemon and provides the exact same functionality as every other node.</p>
+
+<!-- TODO: SHOW DIAGRAM OF DYNOMITE'S INTERNAL BLOCK DIAGRAM HERE -->
+
+<h1 id="cluster:8895d24bf8e9d58399b1b72c3b065130">Cluster</h1>
+
+<!-- SHOW IMAGE HERE OF ENTIRE CLUSTER -->
+
+<p>DynomiteDB&rsquo;s top level container is the cluster. A DynomiteDB cluster operates as a single, large database that may span one or more data centers. The ability to span multiple data centers allows DynomiteDB to operate normally even when an entire data is offline.</p>
+
+<p>DynomiteDB functions as a multi-DC cache when paired with an in-memory, such as Redis.</p>
+
+<h2 id="data-center-dc:8895d24bf8e9d58399b1b72c3b065130">Data center (DC)</h2>
+
+<p>A data center (DC) contains one or more racks. A DC is equivalent to an AWS region.</p>
+
+<h2 id="rack:8895d24bf8e9d58399b1b72c3b065130">Rack</h2>
+
+<p>A rack contains one or more servers. Importantly, data replication happens at the rack level as each rack contains the entire token ring. In other words, if a DC contains 3 racks, then the DC will have a replication factor (RF) of 3.</p>
+
+<p>A rack is equivalent to an AWS availability zone (AZ).</p>
+
+<h2 id="server:8895d24bf8e9d58399b1b72c3b065130">Server</h2>
+
+<!-- TODO: Update the Server definition to include the concept of a Container -->
+
+<p>A server represents either a physical server in your data center or a virtual machine hosted by a cloud provider (ex. an EC2 instance on AWS).</p>
+
+<p>Each server contains a Dynomite instance and a Redis instance.</p>
+
+<h2 id="dynomite-node-aka-node:8895d24bf8e9d58399b1b72c3b065130">Dynomite node (aka Node)</h2>
+
+<p>A Dynomite node is an instance of the <code>dynomite</code> daemon that runs on a server. Each <code>dynomite</code> instance uses one Redis instance as its backend storage.</p>
+
+<p>Each Dynomite node has a node token that is unique within a rack. In other words, only 1 node per rack may have the same token. However, tokens may repeat across different racks. In fact, it is normal and expected for node tokens to repeat on different racks.</p>
+
+<p>Importantly, DynomiteDB identifies each node as a combination of the node&rsquo;s data center, rack and token.</p>
+
+<h3 id="node-token:8895d24bf8e9d58399b1b72c3b065130">Node token</h3>
+
+<p>Each node has a node token with a value from 0 to 4,294,967,295. The node token indicates the range of data that the node owns. For example, if a node (Node1) has node token = 0 and the next node in the same rack (Node2) has a node token = 1000, then Node1 owns all data with a token value from 0 to 999.</p>
+
+<blockquote>
+<p>The token value for each key/value pair is calculated as a hash of the key.</p>
+</blockquote>
+
+<p>If two nodes in different racks are assigned the same node token then they share a replica of each key/value pair that is within their token range. To continue the example above, if a 2<sup>nd</sup> rack has a node (Node3) with node token = 0, then all data with a data token from 0 to 999 is replicated on both Rack1 Node1 and Rack2 Node3.</p>
+
+<p>See <a href="../replication/">Replication</a> or <a href="../topology/">Topology</a> for more information.</p>
+
+<h2 id="redis:8895d24bf8e9d58399b1b72c3b065130">Redis</h2>
+
+<p>Each DynomiteDB node uses Redis as its backend storage engine. A Redis instance is an instance of the <code>redis-server</code> process that runs on a server.</p>
+
+<h3 id="redis-api:8895d24bf8e9d58399b1b72c3b065130">Redis API</h3>
+
+<p>DynomiteDB exposes a standard Redis API which means that you can use any Redis client to access DynomiteDB. The use of a standard Redis API means that DynomiteDB frees you to focus on your application and eliminates the complexity of sharding, replication and other complex distributed database topics.</p>
+
+<p>Upgrading from a single Redis instance to DynomiteDB is easy as very few, if any, changes are required for your application.</p>
+
+<p>For example, the following Redis commands work both on a single server Redis instance and on a DynomiteDB cluster:</p>
+
+<pre><code class="language-bash">SET product &quot;DynomiteDB&quot;
+
+GET product
+</code></pre>
+
+<!-- show that a programmer accesses the cluster via a Redis API, which is the same as for accessing a single Redis instance -->
+
+<!-- See [API](../api/) for more information. -->
+
+<h1 id="summary:8895d24bf8e9d58399b1b72c3b065130">Summary</h1>
+
+<p>DynomiteDB is a high performance, highly available (HA) and distributed caching database. DynomiteDB chooses to be highly available and partition tolerant, while providing tunable consistency.</p>
+
+<p>DynomiteDB has a shared nothing, masterless architecture with no single point of failure (SPOF). DynomiteDB&rsquo;s architecture allows it to scale linearly while being highly resilient against server, rack or DC failure.</p>
+
+<p>The key concepts used by DynomiteDB are:</p>
+
+<ul>
+<li>Cluster</li>
+<li>Data center (DC)</li>
+<li>Rack</li>
+<li>Server
+
+<ul>
+<li>Dynomite node (node)</li>
+<li>Redis</li>
+</ul></li>
+</ul>
+
+<p>DynomiteDB encapsulates the complexity of a distributed caching database and simplifies the development of applications with a Redis-compatible API. In other words, developers can focus on their application while DynomiteDB automatically provides sharding, replication and other advanced distributed database capabilities.</p>
 
 		</div>
 	</div>
@@ -316,7 +458,7 @@
     <div class="row col-xs-12">
         <footer>
             <div class="pull-left">
-                <p>&copy; 2015 DynomiteDB.com</p>
+                <p>&copy; 2016 DynomiteDB.com</p>
             </div>
 
             

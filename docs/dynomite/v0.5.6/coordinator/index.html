@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Coordinator">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>Coordinator &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://www.dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="http://www.dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://www.dynomitedb.com/css/style.css">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/dynomite/v0.5.6/quick-start/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+                  <li class=''><a href="/faq/"> FAQ </a></li>
+                
+                  <li class=''><a href="/roadmap/"> Roadmap </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	
+		
+			
+			
+			
+			
+		
+	
+	<div class="row">
+		
+			
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+			
+		
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Dynomite v0.5.6</h3>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/introduction/">Introduction</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/quick-start/">Quick Start</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/terminology/">Terminology</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/architecture/">Architecture</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/topology/">Topology</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/replication/">Replication</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/consistency/">Consistency</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/membership-protocols/">Membership Protocols</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/coordinator/">Coordinator</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/kvpairs/">Key/value pairs</a></li>
+
+					
+				
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>Coordinator</h1>
+			
+
+<p>The coordinator is a per request role that involves receiving a request from a client, communicating the request with one or more replica nodes, receiving responses from the replica nodes, and finally sending a response to the client.</p>
+
+<p>A client (typically an API server) may contact any node within the DynomiteDB cluster for any given request. This means that any node may act as the coordinator for any given request. Further, this means that the coordinator is not a centralized function, it is not a specialized server and it is not a single point of failure.</p>
+
+<p>The workflow of the coordinator is as follows:</p>
+
+<ol>
+<li>Receive a request from a client</li>
+<li>Hash the key portion of the request&rsquo;s key/value pair using a consistent hashing algorithm to obtain a data token</li>
+<li>Use the node&rsquo;s knowledge of the network topology and the data token to determine which node owns the requested key/value pair</li>
+<li>Query the requested data
+
+<ul>
+<li>If consistency level (CL) = <code>DC_ONE</code> and the coordinator&rsquo;s node owns the requested data token, then:
+
+<ul>
+<li>Forward the request to the node&rsquo;s Redis backend</li>
+<li>Receive a response from the Redis backend</li>
+<li>Go to step #6 below</li>
+</ul></li>
+<li>If consistency level (CL) = <code>DC_ONE</code> and a remote node owns the requested data token, then:
+
+<ul>
+<li>Asynchronously forward the request to the remote node that owns the data token</li>
+<li>The remote node then forwards the request to its Redis backend</li>
+<li>The remote node receives a response from its Redis backend and then forwards the response to the coordinator</li>
+<li>Go to step #6 below</li>
+</ul></li>
+<li>If consistency level (CL) = <code>DC_QUORUM</code> and the coordinator&rsquo;s node owns the requested data token, then:
+
+<ul>
+<li>Forward the request to the coordinator node&rsquo;s Redis backend and asynchronously forward the request to enough remote nodes that own the data token to satisfy the quorum</li>
+<li>Receive a response from the coordinator node&rsquo;s Redis backend and wait until the coordinator receives a response from each remote node</li>
+<li>Go to step #6 below</li>
+</ul></li>
+<li>If consistency level (CL) = <code>DC_QUORUM</code> and only remote nodes own the requested data token, then:
+
+<ul>
+<li>Asynchronously forward the request to enough remote nodes that own the data token to satisfy the quorum</li>
+<li>Wait until the coordinator receives a response from each remote node</li>
+<li>Go to step #6 below</li>
+</ul></li>
+</ul></li>
+<li>Send a response to the client
+
+<ul>
+<li>If consistency level (CL) = DC_ONE, then the coordinator sends the response to the client</li>
+<li>If consistency level (CL) = DC_QUORUM, then:
+
+<ul>
+<li>If enough nodes responded with a success status to satisfy the quorum, then send a success response to the client</li>
+<li>If a majority of the nodes responded with a failure status, then send a failure response to the client</li>
+</ul></li>
+</ul></li>
+</ol>
+
+<h1 id="data-token-via-consistent-hashing:ab03d1453a293f8f57c3c861543dea45">Data token via consistent hashing</h1>
+
+<p>The coordinator hashes the key portion of the key/value pair sent in the request. The key is hashed using a consistent hashing algorithm that yields a value from 0 to 4,294,967,295.</p>
+
+<p>The coordinator then uses the data token, the consistency level, the replication factor, and its knowledge of the network topology route the request to the node or nodes that own the requested data.</p>
+
+<h1 id="summary:ab03d1453a293f8f57c3c861543dea45">Summary</h1>
+
+<p>The coordinator is a per request role that can be performed by any node. Each client request may be coordinated by a different node. The coordinator has no single point of failure (SPOF).</p>
+
+<p>The client driver determines which node will coordinate each request. The Dyno client is topology aware and can therefore route each request to a node that owns the requested data token</p>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2016 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script src="http://www.dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+<script src="http://www.dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+<script src="http://www.dynomitedb.com/js/dynomite.js"></script>
+
+	</body>
+</html>

@@ -177,6 +177,18 @@
 					
 					
 				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
 			
 		
 		<div class="col-sm-3 dyno-doc-nav">
@@ -240,6 +252,13 @@
 					
 						
 
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/introduction/">Introduction</a></li>
+
+					
+				
+					
+						
+
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/quick-start/">Quick Start</a></li>
 
 					
@@ -248,6 +267,13 @@
 						
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/terminology/">Terminology</a></li>
 
 					
 				
@@ -286,6 +312,20 @@
 
 					
 				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/coordinator/">Coordinator</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/kvpairs/">Key/value pairs</a></li>
+
+					
+				
 			</ul>
 		</div>
 
@@ -295,38 +335,38 @@
 
 <p>In this setup, we will use Redis with Dynomite. For Memcached, it is very similar replacing Redis installation step with Memcached installation step. We will also show you the configurations to simulate a one-node Dynomite cluster and a two-node Dynomite cluster.</p>
 
-<h2 id="1-install-redis:e3f45fc764592010fd1ca88ac8fff243">1.) Install Redis</h2>
+<h2 id="install-redis:e3f45fc764592010fd1ca88ac8fff243">Install Redis</h2>
 
 <p>Please follow the instructions on this website to download and install Redis: <a href="http://redis.io/">http://redis.io/</a></p>
 
-<h2 id="2-build-dynomite:e3f45fc764592010fd1ca88ac8fff243">2.) Build Dynomite</h2>
+<h2 id="build-dynomite:e3f45fc764592010fd1ca88ac8fff243">Build Dynomite</h2>
 
 <p>Please follow our <a href="https://github.com/Netflix/dynomite/blob/master/README.md">README.md</a> to compile and build Dynomite from source. Note that we only test Dynomite on Linux environments so we recommend compiling and building Dynomite on a Linux system.</p>
 
-<h2 id="3-configuration:e3f45fc764592010fd1ca88ac8fff243">3.) Configuration</h2>
+<h2 id="configure-a-one-node-cluster:e3f45fc764592010fd1ca88ac8fff243">Configure a one-node cluster</h2>
 
 <p>These examples are for redis. If you remove redis property, they will become memcached configured files.</p>
 
-<h3 id="a-one-node-cluster:e3f45fc764592010fd1ca88ac8fff243">a. One node cluster:</h3>
+<h3 id="one-node-cluster:e3f45fc764592010fd1ca88ac8fff243">One node cluster</h3>
 
 <pre><code class="language-bash">https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_single.yml  
 </code></pre>
 
-<h3 id="b-two-nodes-cluster-in-one-datacenter-with-2-racks:e3f45fc764592010fd1ca88ac8fff243">b. Two-nodes cluster in one datacenter with 2 racks</h3>
+<h3 id="two-nodes-cluster-in-one-datacenter-with-2-racks:e3f45fc764592010fd1ca88ac8fff243">Two-nodes cluster in one datacenter with 2 racks</h3>
 
 <pre><code class="language-bash">https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_dc1_rack1.yml
 
 https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_dc1_rack2.yml
 </code></pre>
 
-<h3 id="c-two-nodes-cluster-in-two-datacenters-each-having-one-rack:e3f45fc764592010fd1ca88ac8fff243">c. Two-nodes cluster in two datacenters each having one rack</h3>
+<h3 id="two-nodes-cluster-in-two-datacenters-each-having-one-rack:e3f45fc764592010fd1ca88ac8fff243">Two-nodes cluster in two datacenters each having one rack</h3>
 
 <pre><code class="language-bash">https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_mul_dc1.yml
 
 https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_mul_dc2.yml
 </code></pre>
 
-<h3 id="d-6-node-cluster-in-one-datacenter-with-3-racks-each-having-2-nodes:e3f45fc764592010fd1ca88ac8fff243">d. 6-node cluster in one datacenter with 3 racks, each having 2 nodes</h3>
+<h3 id="6-node-cluster-in-one-datacenter-with-3-racks-each-having-2-nodes:e3f45fc764592010fd1ca88ac8fff243">6-node cluster in one datacenter with 3 racks, each having 2 nodes</h3>
 
 <pre><code class="language-bash">dyn_o_mite:
      datacenter: us-east-1
@@ -443,7 +483,7 @@ https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_mul_dc2.yml
      data_store: 0
 </code></pre>
 
-<h2 id="4-start-the-cluster-s:e3f45fc764592010fd1ca88ac8fff243">4.) Start the cluster(s)</h2>
+<h2 id="start-the-cluster:e3f45fc764592010fd1ca88ac8fff243">Start the cluster</h2>
 
 <p>Assume you have gone through the build process and produced the binary file <code>dynomite</code>.</p>
 
@@ -477,7 +517,7 @@ https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_mul_dc2.yml
     <div class="row col-xs-12">
         <footer>
             <div class="pull-left">
-                <p>&copy; 2015 DynomiteDB.com</p>
+                <p>&copy; 2016 DynomiteDB.com</p>
             </div>
 
             

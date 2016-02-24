@@ -143,6 +143,11 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/introduction/</loc>
+        <lastmod>2016-02-07T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/quick-start/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
@@ -150,6 +155,11 @@
     <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/faq/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/terminology/</loc>
+        <lastmod>2016-02-18T20:22:33-08:00</lastmod>
     </url>
     
     <url>
@@ -175,6 +185,16 @@
     <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/membership-protocols/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/coordinator/</loc>
+        <lastmod>2016-02-18T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/kvpairs/</loc>
+        <lastmod>2016-02-18T20:22:33-08:00</lastmod>
     </url>
     
 </urlset>

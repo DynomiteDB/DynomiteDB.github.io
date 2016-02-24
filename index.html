@@ -65,7 +65,7 @@
 <section class="dyno-home-banner section offset-header">
     <div class="container text-center">
         <h2>DynomiteDB</h2>
-        <p>A high performance, linearly scalable, highly available (HA) and distributed cache.</p>
+        <p>A high performance, linearly scalable, highly available (HA) and distributed open-source database with support for pluggable persistent and in-memory storage engines.</p>
         <div>
             <a class="btn" href="/download/">Download DynomiteDB</a>
             <a href="/docs/dynomite/v0.5.6/quick-start/" class="btn">Get Started</a>
@@ -77,7 +77,7 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
-                <p>DynomiteDB is a high performance Dynamo layer that adds data replication and sharding to Redis, plus the ability to scale linearly, a shared nothing architecture with no single point of failure (SPOF), and support for 1000+ node clusters that span multiple data centers.</p>
+                <p>DynomiteDB is a high performance Dynamo layer that adds data replication and sharding to Redis and other single-server storage engines, plus the ability to scale linearly, high availability via a shared nothing architecture with no single point of failure (SPOF), and support for 1000+ node clusters that span multiple data centers.</p>
             </div>
         </div>
     </div>
@@ -96,9 +96,8 @@
                 <h2>Architecture</h2>
                 <p>DynomiteDB has three components:</p>
                 <ul>
-                    <li><strong>Server</strong>: Each server in a DynomiteDB cluster runs an instance of Dynomite and Redis.</li>
-                    <li><strong>Dynomite</strong>: A high performance Dynamo layer that adds linearly scalability, data replication, sharding, and high availability to Redis.</li>
-                    <li><strong>Redis</strong>: The primary data store used by Dynomite to store cached data.</li>
+                    <li><strong>Dynomite</strong>: A high performance Dynamo layer that provides high availability (HA), linearly scalability, sharding, and replication to a variety of pluggable backends. Dynomite supports in-memory and persistent storage engines.</li>
+                    <li><strong>Backend</strong>: The backend is the storage engine used by Dynomite. When combined with Redis Dynomite operates as a big data cache. When combined with a persistent backend Dynomite operates as a big data database.</li>
                     <li><strong>Dyno</strong>: A Java client that communicates with Dynomite using the Redis protocol.</li>
                 </ul>
 
@@ -139,7 +138,7 @@
     <div class="row col-xs-12">
         <footer>
             <div class="pull-left">
-                <p>&copy; 2015 DynomiteDB.com</p>
+                <p>&copy; 2016 DynomiteDB.com</p>
             </div>
 
             

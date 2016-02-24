@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="757px" height="761px" viewBox="0 0 757 761" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+    <title>replication-data-token-ownership-ring</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="replication-data-token-ownership-ring" sketch:type="MSArtboardGroup">
+            <ellipse id="Oval-6-Copy-2" stroke="#ECF0F1" stroke-width="7" stroke-dasharray="3,6" sketch:type="MSShapeGroup" cx="362" cy="365.189861" rx="352" ry="352.189861"></ellipse>
+            <g id="logo" sketch:type="MSLayerGroup" transform="translate(6.000000, 36.000000)">
+                <ellipse id="Oval-6" stroke="#ECF0F1" stroke-width="7" sketch:type="MSShapeGroup" cx="356.951574" cy="328.338256" rx="328.161253" ry="328.338256"></ellipse>
+                <path d="M356.951574,656.676512 C538.19003,656.676512 685.112827,509.674468 685.112827,328.338256 C685.112827,270.306236 660.462776,191.091801 660.462776,191.091801" id="Orange" stroke="#F39C12" stroke-width="7" sketch:type="MSShapeGroup"></path>
+                <path d="M69.2520975,170.269088 C43.4620769,217.159918 28.7903208,271.034777 28.7903208,328.338256 C28.7903208,509.674468 175.713118,656.676512 356.951574,656.676512" id="Green" stroke="#18BC9C" stroke-width="7" sketch:type="MSShapeGroup"></path>
+                <path d="M655.525154,191.897317 C603.754043,78.6683678 489.534847,0 356.951574,0 C222.886579,0 107.59842,80.436555 56.6657057,195.706473 C50.3153888,210.078385 44.9654921,224.99179 40.7043554,240.3583" id="Blue" stroke="#3498DB" stroke-width="7" sketch:type="MSShapeGroup"></path>
+                <path d="M353.264369,715.703615 C389.919338,715.703615 419.634061,685.972864 419.634061,649.298125 C419.634061,612.623385 389.919338,582.892635 353.264369,582.892635 C316.6094,582.892635 286.894677,612.623385 286.894677,649.298125 C286.894677,685.972864 316.6094,715.703615 353.264369,715.703615 Z" id="Bottom-node" fill="#18BC9C" sketch:type="MSShapeGroup"></path>
+                <ellipse id="Top-left-node" fill="#3498DB" sketch:type="MSShapeGroup" cx="66.6093878" cy="200.052845" rx="66.3696917" ry="66.40549"></ellipse>
+                <ellipse id="Top-right-node" fill="#F39C12" sketch:type="MSShapeGroup" cx="652.650393" cy="200.052845" rx="66.3696917" ry="66.40549"></ellipse>
+            </g>
+            <text id="sfo-r1-s1" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                <tspan x="620.07" y="228">sfo-r1-s1</tspan>
+                <tspan x="655.44" y="251.559998">0</tspan>
+            </text>
+            <text id="sfo-r1-s2" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                <tspan x="318.07" y="677">sfo-r1-s2</tspan>
+                <tspan x="295.06" y="700.559998">1,431,655,765</tspan>
+            </text>
+            <text id="sfo-r1-s3" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                <tspan x="32.07" y="227">sfo-r1-s3</tspan>
+                <tspan x="9.06" y="250.559998">2,863,311,530</tspan>
+            </text>
+            <rect id="Rectangle-1-Copy" stroke="#3498DB" stroke-width="6" fill="#FFFFFF" sketch:type="MSShapeGroup" x="532" y="112" width="128" height="34" rx="8"></rect>
+            <text id="4000000000" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="18" font-weight="normal" sketch:alignment="middle" fill="#3498DB">
+                <tspan x="546.96" y="135">4000000000</tspan>
+            </text>
+            <rect id="Rectangle-1-Copy-2" stroke="#F39C12" stroke-width="6" fill="#FFFFFF" sketch:type="MSShapeGroup" x="621" y="340" width="128" height="34" rx="8"></rect>
+            <text id="100" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="18" font-weight="normal" sketch:alignment="middle" fill="#F39C12">
+                <tspan x="673.988" y="363">100</tspan>
+            </text>
+            <text id="3-node-token-ring" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="36" font-weight="normal" sketch:alignment="middle" fill="#979797">
+                <tspan x="218.452" y="317">3 node token ring</tspan>
+                <tspan x="208.39" y="360.007996">0 to </tspan>
+                <tspan x="280.426" y="360.007996">4,294,967,295</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

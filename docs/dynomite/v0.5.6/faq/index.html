@@ -177,6 +177,18 @@
 					
 					
 				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
 			
 		
 		<div class="col-sm-3 dyno-doc-nav">
@@ -240,6 +252,13 @@
 					
 						
 
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/introduction/">Introduction</a></li>
+
+					
+				
+					
+						
+
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/quick-start/">Quick Start</a></li>
 
 					
@@ -248,6 +267,13 @@
 						
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/terminology/">Terminology</a></li>
 
 					
 				
@@ -286,6 +312,20 @@
 
 					
 				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/coordinator/">Coordinator</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/kvpairs/">Key/value pairs</a></li>
+
+					
+				
 			</ul>
 		</div>
 
@@ -293,64 +333,114 @@
 			<h1>FAQ</h1>
 			
 
-<h2 id="what-is-the-relationship-between-a-rack-and-a-data-center:3c4cfe10458f6c35c5fa87d5a5ac8354">What is the relationship between a rack and a data center?</h2>
+<h1 id="how-should-i-use-dynomitedb:3c4cfe10458f6c35c5fa87d5a5ac8354">How should I use DynomiteDB?</h1>
 
-<p>A Dynomite cluster consists of a group of data centers and each data center has a number of racks. Each rack consists of a number of nodes. Note that different racks can have different numbers of nodes. Similarly, different data centers can have different numbers of racks.</p>
+<p>The currently recommended use case is to use DynomiteDB with a Redis backend as a globally distributed, highly available cache.</p>
 
-<h2 id="what-is-a-replication-factor:3c4cfe10458f6c35c5fa87d5a5ac8354">What is a replication factor?</h2>
+<p>Using Redis as a backend will provide you with a high performance cache that can scale to support your entire dataset in memory.</p>
 
-<p>In a Dynomite cluster, each rack contains a complete set of data. Replication factor is the number of complete data copies in a data center. In other words, it is the number of racks in a data center.</p>
+<h1 id="what-is-different-about-dynomitedb:3c4cfe10458f6c35c5fa87d5a5ac8354">What is different about DynomiteDB?</h1>
 
-<h2 id="what-are-the-currently-supported-datastore-servers:3c4cfe10458f6c35c5fa87d5a5ac8354">What are the currently supported datastore servers?</h2>
+<p>DynomiteDB is a modern NoSQL distributed database that achieves high performance and high availability (HA) via a modular architecture.</p>
 
-<p>Redis and Memcached.</p>
+<p>DynomiteDB supports pluggable backends which means that you can use the Dynomite clustering layer with different backends to support a variety of use cases. For example, you can combine Dynomite with Redis to use DynomiteDB as a big data cache. Alternatively, you can setup another cluster that combines Dynomite with RocksDB as a big data database. These two solutions reuse the same Dynomite layer to support vastly different use cases. With Redis, you gain exceptionall fast in-memory performance. With RocksDB, you gain strong persistent performance combined with minimal write amplification (which is ideal when you need to store massive amounts of data).</p>
 
-<h2 id="why-not-just-use-cassandra:3c4cfe10458f6c35c5fa87d5a5ac8354">Why not just use Cassandra?</h2>
+<p>The fact that you can use DynomiteDB for both your cache and persistent database needs means that your operations staff can reuse tools and knowledge for both solutions.</p>
 
-<p>Cassandra is written in Java and at runtime, GC trigger can result in unexpected latencies in some cases. Cassandra is fast for writing but in very high frequency writes, Cassandra node will get blown up very soon as the compaction can&rsquo;t catch up. Also during a compaction is running on a Cassandra node, read latency is also affected due to the extra CPU and disk loads.</p>
+<p>Last, and certainly not least, DynomiteDB helps improve developer velocity by abstracting away sharding, replication and other distributed systems concepts. Developers can focus on application requirements by using a simple, Redis-compatible API to access DynomiteDB.</p>
 
-<p>Furthermore, to achieve the same throughputs, and latencies as Dynomite, using Cassandra, you probably need to spend 15X-20X of the cost of a Dynomite cluster.</p>
+<h1 id="what-is-the-difference-between-a-rack-and-a-data-center:3c4cfe10458f6c35c5fa87d5a5ac8354">What is the difference between a rack and a data center?</h1>
 
-<p>If you need more consistency, Cassandra at this point provides a better solution. However, Dynomite is going to provide different levels of consistencies very soon. Stay tuned.</p>
+<p>Let&rsquo;s start at the top of the DynomiteDB hierarchy. The top level contain is the cluster. A cluster contains one or more data centers (DC) and each DC contains multiple racks. Racks contain multiple servers.</p>
 
-<h2 id="why-not-use-mcrouter:3c4cfe10458f6c35c5fa87d5a5ac8354">Why not use McRouter?</h2>
+<p>Additional information is provided in the <a href="../terminology/">Terminology</a> document.</p>
 
-<p>Do you employ a Read-Modify-Write pattern? Do you love Redis and its API (set, list, hash)? Do you want to simplify your cluster management leveraging a peer-to-peer system? Do you want to avoid an extra network hop that McRouter introduces? If you answered yes to these questions, then Dynomite is for you.</p>
+<h1 id="what-is-a-backend:3c4cfe10458f6c35c5fa87d5a5ac8354">What is a backend?</h1>
 
-<h2 id="why-not-use-redis-cluster:3c4cfe10458f6c35c5fa87d5a5ac8354">Why not use Redis cluster?</h2>
+<p>A backend is a database storage engine and can be either volatile (in-memory) or persistent (on disk).</p>
 
-<p>Dynomite is a peer-to-peer system. Redis cluster is multi master/slave system. You should choose whichever system works best for you.</p>
+<h1 id="which-backends-are-supported-by-dynomitedb:3c4cfe10458f6c35c5fa87d5a5ac8354">Which backends are supported by DynomiteDB?</h1>
 
-<h2 id="why-not-use-twemproxy:3c4cfe10458f6c35c5fa87d5a5ac8354">Why not use Twemproxy?</h2>
+<ul>
+<li>Redis</li>
+<li>Memcached</li>
+</ul>
 
-<p>Twemproxy, as the name recalls, is just a proxy to route Memcached or Redis requests in a consistent hashing mechanism to a pool of Memcached or Redis servers. In a way, it is similar to McRouter but without any replications. You can consider Dynomite as a superset of Twemproxy&rsquo;s features. Indeed, Dynomite was originally a fork of Twemproxy before we went off to our own path.</p>
+<h1 id="why-not-cassandra:3c4cfe10458f6c35c5fa87d5a5ac8354">Why not Cassandra?</h1>
 
-<h2 id="what-do-we-need-to-install-before-building-dynomite:3c4cfe10458f6c35c5fa87d5a5ac8354">What do we need to install before building Dynomite?</h2>
+<p>While DynomiteDB and Cassandra are both Dynamo-inspired systems, each database has very different performance characteristics.</p>
 
-<p>You need to install libevent, autoconf, libtool, and either Memcached or Redis</p>
+<p>Cassandra is written in Java and uses compaction in its storage engine. As a result, Cassandra experiences garbage collection (GC) pauses at runtime which can result in unexpected latency.</p>
 
-<h2 id="how-can-we-monitor-a-dynomite-process:3c4cfe10458f6c35c5fa87d5a5ac8354">How can we monitor a Dynomite process?</h2>
+<p>While Cassandra has fast write performance under normal conditions, the use of compaction hurts Cassandra&rsquo;s write performance under very high frequency writes which causes node failure when compaction cannot catch up with the frequency of writes. Compaction also increases read latency due to the use of extra CPU and disk.</p>
 
-<p>There is an admin port that you can access with HTTP protocol to pull out statistical information from a running Dynomite process.</p>
+<p>A benefit if DynomiteDB is that it achieves the same throughput and latency as Cassandra at a 15x to 20x cost reduction. In other words, DynomiteDB fundamentally improves the economics of a distributed database.</p>
+
+<h1 id="why-not-redis-cluster:3c4cfe10458f6c35c5fa87d5a5ac8354">Why not Redis cluster?</h1>
+
+<p>DynomiteDB provides substantially better availability and scalability than Redis cluster.</p>
+
+<p>Redis cluster is a multi-master/slave system and therefore suffers from the problems of master/slave systems including coordination overhead.</p>
+
+<p>DynomiteDB is a masterless system that scales linearly. It supports multiple data centers (DC) and is highly available as each node is independent of every other node. In other words, DynomiteDB will continue to function normally even when a server, rack or DC is offline.</p>
+
+<h1 id="why-not-use-twemproxy:3c4cfe10458f6c35c5fa87d5a5ac8354">Why not use Twemproxy?</h1>
+
+<p>Twemproxy and DynomiteDB solve different problems. Twemproxy provides consistent hashing, proxying and connection pooling. Dynomite, which was originally a fork of Twemproxy, add a complete Dynamo-inspired layer on top of the base Twemproxy functionality.</p>
+
+<h2 id="is-dynomite-a-fork-from-twemproxy:3c4cfe10458f6c35c5fa87d5a5ac8354">Is Dynomite a fork from Twemproxy?</h2>
+
+<p>Yes, Dynomite is a fork of Twemproxy. Twemproxy was used to jump start development. However, Dynomite&rsquo;s design is substantially different from Twemproxy, so eventually Dynomite went off in its own direction. Importantly, Dynomite has retained all of Twemproxy&rsquo;s commit histories, its copyright notices and copyright notices for other open source software that Twemproxy uses (such as the FreeBSD code from University of Berkeley).</p>
+
+<h1 id="what-do-i-need-to-install-before-building-dynomite:3c4cfe10458f6c35c5fa87d5a5ac8354">What do I need to install before building Dynomite?</h1>
+
+<p>The following prerequisites are required to build Dynomite:</p>
+
+<ul>
+<li>libevent</li>
+<li>autoconf</li>
+<li>libtool</li>
+<li>Redis or Memcached</li>
+</ul>
+
+<h1 id="how-can-i-monitor-a-dynomite-process:3c4cfe10458f6c35c5fa87d5a5ac8354">How can I monitor a Dynomite process?</h1>
+
+<p>Dynomite provides statistics on the running process on port <code>22222</code> by default. The statistics are accessible via the HTTP protocol.</p>
 
 <pre><code class="language-bash">curl 'http://localhost:22222/info'
 </code></pre>
 
-<h2 id="is-this-a-fork-from-twemproxy:3c4cfe10458f6c35c5fa87d5a5ac8354">Is this a fork from twemproxy?</h2>
+<h1 id="why-is-dynomite-written-in-c:3c4cfe10458f6c35c5fa87d5a5ac8354">Why is Dynomite written in C?</h1>
 
-<p>Yes, it is. When we started we realized that a bunch of work already there in twemproxy to get us progress quickly. However, since our design is so different from twemproxy&rsquo;s design, we eventually had to do what is best for our project while still retaining all twemproxy&rsquo;s commit histories, its copyright notices and also other open sources&rsquo; copyright notices that twemproxy uses, e.g. the FreeBSD code from University of Berkeley.</p>
+<p>Dynomite was written in C for the following reasons:</p>
 
-<h2 id="why-is-it-written-in-c:3c4cfe10458f6c35c5fa87d5a5ac8354">Why is it written in C?</h2>
+<ul>
+<li>C/C++ is fast and provides excellent performance for Dynomite</li>
+<li>C/C++ provides total control</li>
+<li>C was chosen over C++ as the additional features provided by C++ are not used by Dynomite</li>
+</ul>
 
-<p>We were evaluating the pros and cons between a JVM language (Java/Scala), Go, or C/C++. A JVM language will force us to worry about GC and we don&rsquo;t have a deterministic control over it. Go seems to be a new and interesting language. However, at the time we explored it, it still had long GC issues in some cases and plus, not many detailed documents available on the internet to give us the confidence. C/C++ give us a total control we can get the best possible performance to avoid the bottleneck issue in our layer. We finally settled on C as we don&rsquo;t need many features from C++ and if we do, converting a C project to a C++ project should be straight forward.</p>
+<p>JVM languages (Java/Scala) were evaluated before Dynomite development began. Unlike C, a JVM language suffers from GC pauses and would provide with no deterministic control over GC.</p>
 
-<h2 id="is-there-something-like-priam-for-cassandra:3c4cfe10458f6c35c5fa87d5a5ac8354">Is there something like Priam for Cassandra?</h2>
+<p>Go was also evaluated before development began. While Go was a new and interesting language, at the time it was evaluated it still suffered from long GC pauses.</p>
+
+<h1 id="is-there-something-like-priam-for-cassandra:3c4cfe10458f6c35c5fa87d5a5ac8354">Is there something like Priam for Cassandra?</h1>
 
 <p>Yes, there is. We call this &lsquo;Florida&rsquo; and it will play the similar role as Priam for helping to manage a multi-region Dynomite cluster in AWS cloud. We will open source this soon.</p>
 
-<h2 id="what-client-can-we-use-to-connect-to-dynomite:3c4cfe10458f6c35c5fa87d5a5ac8354">What client can we use to connect to Dynomite?</h2>
+<h1 id="what-client-can-we-use-to-connect-to-dynomitedb:3c4cfe10458f6c35c5fa87d5a5ac8354">What client can we use to connect to DynomiteDB?</h1>
 
-<p>If you are using a JVM language, we have our Java client, Dyno, for you. It has many advanced features and you can read more about it at <a href="http://github.com/Netflix/dyno">http://github.com/Netflix/dyno</a>. Otherwise, you can use just any other Memcached or Redis client out there to connect but of course, you will not have those advanced features Dyno provide such as failover strategy, retries strategy, etc.</p>
+<p>You can use any Redis client to connect to DynomiteDB.</p>
+
+<p>However, if you are using a JVM language then we strongly recommend that you use the <a href="http://github.com/Netflix/dyno" target="_blank">Dyno</a> client. Dyno provides additional functional beyond a default Redis client, including:</p>
+
+<ul>
+<li>Connection pooling</li>
+<li>Network topology aware routing (intelligent request routing)</li>
+<li>Connection pool metrics</li>
+<li>Ability to route traffic away from nodes (helpful for maintenance)</li>
+<li>And many other advanced features</li>
+</ul>
 
 		</div>
 	</div>
@@ -365,7 +455,7 @@
     <div class="row col-xs-12">
         <footer>
             <div class="pull-left">
-                <p>&copy; 2015 DynomiteDB.com</p>
+                <p>&copy; 2016 DynomiteDB.com</p>
             </div>
 
             
