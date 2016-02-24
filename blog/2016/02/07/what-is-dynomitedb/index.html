@@ -69,12 +69,24 @@
             <div class="col-xs-12">
                 <div class="dyno-blog-post">
                     <h1>What is DynomiteDB?</h1>
-                    <p class="lead">A high-performance distributed cache</p>
+                    <p class="lead">A modern, modular NoSQL distributed database</p>
                     <div><p>
 
-<p>DynomiteDB is a high performance, linearly scalable, highly available (HA) and distributed cache. Dynomite&rsquo;s clustering has a Dynamo-inspired shared nothing architecture with no single point of failure (SPOF). High speed storage is provided by Redis while the clustering layer allows Redis to span 10s, 100s or 1000s of servers.</p>
+<p>DynomiteDB is a high performance, linearly scalable, highly available (HA) and distributed database. Dynomite&rsquo;s clustering has a Dynamo-inspired shared nothing architecture with no single point of failure (SPOF). High speed storage is provided by Redis while the clustering layer allows Redis to span 10s, 100s or 1000s of servers.</p>
 
-<p>DynomiteDB combines three upstream projects into a comprehensive solution:</p>
+<p>DynomiteDB has a modular architecture that supports pluggable backends. Support for pluggable backends means that you can use the Dynomite clustering layer with different backends to support a variety of use cases.</p>
+
+<p>For example, you can combine Dynomite with Redis to use DynomiteDB as a big data cache.</p>
+
+<p>Alternatively, you can setup another cluster that combines Dynomite with RocksDB as a big data database.</p>
+
+<p>The two solutions described above reuse the same Dynomite layer to support vastly different use cases. With Redis, you gain exceptionally fast in-memory performance. With RocksDB, you gain strong persistent performance combined with minimal write amplification (which is ideal when you need to store massive amounts of data).</p>
+
+<p>The fact that you can use DynomiteDB for both your cache and persistent database means that your operations staff can reuse tooling and knowledge for both solutions.</p>
+
+<p>Also, DynomiteDB helps improve developer velocity by abstracting away sharding, replication and other distributed systems concepts. Developers can focus on application requirements by using a simple, Redis-compatible API to access DynomiteDB.</p>
+
+<p>The current version of DynomiteDB combines three upstream projects into a comprehensive solution:</p>
 
 <ul>
 <li><strong>Dynomite</strong>: A high performance Dynamo layer that adds linearly scalability, data replication, sharding, and high availability to Redis.</li>
@@ -96,7 +108,7 @@
 
 <p>Dynomite is a generic Dynamo implementation that supports multiple key/value stores on the backend. It is unopinionated about which backend you use, Redis or Memcached. Therefore, an installation of Dynomite requires more configuration of both Dynomite plus Redis or Memcached.</p>
 
-<p>DynomiteDB on the other hand is opinionated in its use of Redis as the backend for Dynomite. Dynomite installs and configures Dynomite to work with Redis out of the box.</p>
+<p>DynomiteDB on the other hand is opinionated in its use of Redis as the backend for Dynomite. Dynomite installs and configures Dynomite to work with Redis out of the box as a big data cache.</p>
 </p></div>
 
                     <div class="dyno-blog-post-footer">
