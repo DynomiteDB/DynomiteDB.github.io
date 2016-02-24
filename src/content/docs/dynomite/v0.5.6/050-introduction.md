@@ -64,3 +64,7 @@ Dynomite shards data by distributing various key/value pairs across the cluster.
 ## Summary
 
 Dynomite is a high performance, linearly scalable Dynamo layer that allows single-server database engines to operate as a cluster. Dynomite supports a variety of value data types.
+
+<span class="pull-left">
+    <a href="../quick-start/">Continue to the Quick Start to install DynomiteDB</a>
+</span>
