@@ -24,10 +24,12 @@ DynomiteDB has a masterless, peer-to-peer architecture which means that each rep
 
 ## Data token ownership
 
-<img class="img-responsive center-block"
-     style="width: 50%;"
-     src="/img/dynomite/v0.5.6/token-ownership.png"
-     alt="Token ownership">
+<a href="/img/dynomite/v0.5.6/replication-data-token-ownership.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-data-token-ownership.svg"
+         alt="Token ownership"
+         style="height: 600px;">
+</a>
 <p class="dyno-image-caption text-center">Data token ownership</p>
 
 The diagram above focuses on a single rack with three servers. `s1`'s node token is 0, `s2`'s node token is 1431655765 and `s3`'s node token is 2863311530.
@@ -37,6 +39,16 @@ We can determine which nodes are replica nodes for a given key/value pair as fol
 1. Calculate the data token by hashing the key portion of the key/value pair with a consistent hashing algorithm
 2. For each node set the data token ownership range from `nodeToken` to `nextNodeToken - 1`
 3. Check if the data token is within the range of data tokens owned by each node
+
+<a href="/img/dynomite/v0.5.6/replication-data-token-ownership-ring.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-data-token-ownership-ring.svg"
+         alt="Token ownership (ring view)"
+         style="height: 300px;">
+</a>
+<p class="dyno-image-caption text-center">Data token ownership (token ring)</p>
+
+The diagram above displays the same token ownership information as the earlier diagram, except that a token ring is used for display.
 
 To continue the example in the diagram above we will determine the replica node for a key/value pair with data token = 100 and another key/value pair with data token = 4000000000.
 
@@ -50,7 +62,13 @@ Importantly, an application developer never sees or thinks about data tokens. In
 
 # Replication factor (RF)
 
-- SHOW TOPOLOGY DIAGRAM OF 1 DC, 3 RACKS, 3 SERVERS PER RACK
+<a href="/img/dynomite/v0.5.6/replication-factor.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-factor.svg"
+         alt="Replication factor"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">3 racks means replication factor (RF) = 3</p>
 
 Replication factor (RF) determines how many replicas exist per DC. The RF for a DC is equal to the number of racks in a DC. For example, if a DC has 3 racks then we know that `RF = 3` which means that there are 3 replicas of each key/value pair.
 
@@ -69,7 +87,13 @@ In the next few sections we will discuss a few variations of replication:
 
 ## Coordinator's role in replication
 
-- Show diagram of topology with flow lines from client to coordinator to replica node in one rack client to coordinator to a replica node
+<a href="/img/dynomite/v0.5.6/replication-coordinator-topology-unaware.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-coordinator-topology-unaware.svg"
+         alt="Coordinator"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Coordinator</p>
 
 The diagram above shows how a write request flows from a client to Dynomite to a backend. Importantly, the client (which is typically an API server) uses a standard Redis client to communicate with the Redis-compatible API on a `dynomite` instance. From the client's perspective, it thinks it is communicating to a single server.
 
@@ -77,9 +101,13 @@ The diagram above shows how a write request flows from a client to Dynomite to a
 
 ### Write consistency level (CL) = dc_one
 
-```bash
-TODO: SHOW DIAGRAM WITH 1 DC, 3 RACKS, 3 SERVERS PER RACK AND WRITE PATH LINES 
-```
+<a href="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_one.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_one.svg"
+         alt="Write CL dc_one with topology awareness"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Write CL <code>dc_one</code> with topology awareness</p>
 
 When write CL = `dc_one` and the coordinator's node is a replica node, then a write request flows as follows:
 
@@ -91,9 +119,13 @@ When write CL = `dc_one` and the coordinator's node is a replica node, then a wr
 - if the coordinator receives a failure response from its backend then:
     - the coordinator sends a failure message to the client 
 
-```bash
-TODO: SHOW DIAGRAM WITH 1 DC, 3 RACKS, 3 SERVERS PER RACK AND WRITE PATH LINES 
-```
+<a href="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_one-nonreplica.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_one-nonreplica.svg"
+         alt="Write CL dc_one without topology awareness"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Write CL <code>dc_one</code> without topology awareness</p>
 
 When write CL = `dc_one` and the coordinator's node is **not** a replica node, then a write request flows as follows:
 
@@ -107,9 +139,13 @@ When write CL = `dc_one` and the coordinator's node is **not** a replica node, t
 
 ### Write consistency level (CL) = dc_quorum
 
-```bash
-TODO: SHOW DIAGRAM WITH 1 DC, 3 RACKS, 3 SERVERS PER RACK AND WRITE PATH LINES 
-```
+<a href="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_quorum.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_quorum.svg"
+         alt="Write CL dc_quorum with topology awareness"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Write CL <code>dc_quorum</code> with topology awareness</p>
 
 When write CL = `dc_quorum` and the coordinator's node is a replica node, then a write request flows as follows:
 
@@ -121,9 +157,13 @@ When write CL = `dc_quorum` and the coordinator's node is a replica node, then a
 - if the coordinator does not receive a success response from a quorum of replica nodes then:
     - the coordinator sends a failure message to the client
 
-```bash
-TODO: SHOW DIAGRAM WITH 1 DC, 3 RACKS, 3 SERVERS PER RACK AND WRITE PATH LINES 
-```
+<a href="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_quorum-nonreplica.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_quorum-nonreplica.svg"
+         alt="Write CL dc_quorum without topology awareness"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Write CL <code>dc_quorum</code> without topology awareness</p>
 
 When write CL = `dc_quorum` and the coordinator's node is **not** a replica node, then a write request flows as follows:
 
@@ -137,27 +177,29 @@ When write CL = `dc_quorum` and the coordinator's node is **not** a replica node
 
 ### Topology-aware Dyno client
 
-<img class="img-responsive center-block"
-     style="width: 50%;"
-     src="/img/dynomite/v0.5.6/topology-aware-load-balancing.png"
-     alt="Dyno token aware load balancing">
-<p class="dyno-image-caption text-center">Topology-aware Dyno client</p>
+<a href="/img/dynomite/v0.5.6/replication-coordinator-topology-aware.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-coordinator-topology-aware.svg"
+         alt="Topology-aware Dyno Client"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Topology-aware Dyno Client</p>
 
 The Dyno client is topology aware which means that it always sends each request to a replica node. The benefit of this feature is that the coordinator will always be on a replica node which reduces latency and intra-cluster communication.
 
 ## Symmetric replication
 
-```bash
-TODO: USE DIAGRAM FROM TOPOLOGY WITH REPLICATION LINES. 1 DC, 2 RACKS, 3 SERVERS PER RACK
-```
+<a href="/img/dynomite/v0.5.6/replication-symmetric.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-symmetric.svg"
+         alt="Symmetric replication"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Symmetric replication</p>
 
-<img class="img-responsive center-block"
-     src="/img/dynomite/v0.5.6/topology-aware-local-writes.png"
-     alt="Dyno writes to local DC">
+The diagram above shows symmetric replication as the single DC has two racks where each rack has three equal size servers (i.e. same CPU, memory, disk, etc.).
 
-The diagram above shows symmetric replication as the single DC has three racks where each rack has three equal size servers (i.e. same CPU, memory, disk, etc.).
-
-A server in each rack owns the same data token range as a server in the other two racks. The table below shows each of the three data token ranges and the three nodes (one from each rack) that owns the range.
+A server in each rack owns the same data token range as a server in the other rack. The table below shows each of the three data token ranges and the two nodes (one from each rack) that owns the range.
 
 <table class="table table-condensed table-bordered">
     <tr class="active">
@@ -170,31 +212,31 @@ A server in each rack owns the same data token range as a server in the other tw
         <td>0</td>
         <td>0</td>
         <td>1431655764</td>
-        <td>r1s1, r2s1, r3s1</td>
+        <td>sfo-r1-s1, sfo-r2-s1</td>
     </tr>
         <td>1431655765</td>
         <td>1431655765</td>
         <td>2863311529</td>
-        <td>r1s2, r2s2, r3s2</td>
+        <td>sfo-r1-s2, sfo-r2-s2</td>
     </tr>
         <td>2863311530</td>
         <td>2863311530</td>
         <td>4294967295</td>
-        <td>r1s3, r2s3, r3s3</td>
+        <td>sfo-r1-s3, sfo-r2-s3</td>
     </tr>
 </table>
 
-When the client sends a write request for a key/value pair with data token = 3000000000 with write CL = `dc_one`, then the data is written synchronously to one node and asynchronously to the other two replica nodes. 
+When the client sends a write request for a key/value pair with data token = 3000000000 with write CL = `dc_one`, then the data is written synchronously to one node and asynchronously to the other replica node.
 
 ## Asymmetric replication
 
-```bash
-TODO: USE DIAGRAM FROM TOPOLOGY WITH REPLICATION LINES. 1 DC. 2 RACKS. 3 SERVERS IN R1, 6 SERVERS IN R2
-```
-
-<img class="img-responsive center-block"
-     src="/img/dynomite/v0.5.6/topology-aware-multi-dc-local-writes.png"
-     alt="Dyno writes to local DC in multi-DC environment">
+<a href="/img/dynomite/v0.5.6/replication-asymmetric.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-asymmetric.svg"
+         alt="Asymmetric replication"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Asymmetric replication</p>
 
 The diagram above shows asymmetric replication as the single DC has two racks where one rack has three servers and the other rack has six servers.
 
@@ -211,17 +253,17 @@ Each node in rack `r1` owns 1/3 of the data token range as shown in the table be
         <td>0</td>
         <td>0</td>
         <td>1431655764</td>
-        <td>r1s1</td>
+        <td>sfo-r1-s1</td>
     </tr>
         <td>1431655765</td>
         <td>1431655765</td>
         <td>2863311529</td>
-        <td>r1s2</td>
+        <td>sfo-r1-s2</td>
     </tr>
         <td>2863311530</td>
         <td>2863311530</td>
         <td>4294967295</td>
-        <td>r1s3</td>
+        <td>sfo-r1-s3</td>
     </tr>
 </table>
 
@@ -238,51 +280,53 @@ Each node in rack `r2` owns 1/6 of the data token range as shown in the table be
         <td>0</td>
         <td>0</td>
         <td>715827881</td>
-        <td>r2s1</td>
+        <td>sfo-r2-s1</td>
     </tr>
         <td>715827882</td>
         <td>715827882</td>
         <td>1431655764</td>
-        <td>r2s2</td>
+        <td>sfo-r2-s2</td>
     </tr>
         <td>1431655765</td>
         <td>1431655765</td>
         <td>2147483646</td>
-        <td>r2s3</td>
+        <td>sfo-r2-s3</td>
     </tr>
     </tr>
         <td>2147483647</td>
         <td>2147483647</td>
         <td>2863311529</td>
-        <td>r2s4</td>
+        <td>sfo-r2-s4</td>
     </tr>
     </tr>
         <td>2863311530</td>
         <td>2863311530</td>
         <td>3579139411</td>
-        <td>r2s5</td>
+        <td>sfo-r2-s5</td>
     </tr>
     </tr>
         <td>3579139412</td>
         <td>3579139412</td>
         <td>4294967295</td>
-        <td>r2s6</td>
+        <td>sfo-r2-s6</td>
     </tr>
 </table>
 
-When the client sends a write request for a key/value pair with data token = 3000000000 with write CL = `dc_one`, then the data is written synchronously to `r1s3` and asynchronously to `r2s5`. 
+If the client connects to a node in `r1`, then when the client sends a write request for a key/value pair with data token = 3000000000 with write CL = `dc_one`, then the data is written synchronously to `r1s3` and asynchronously to `r2s5`.
+
+In general, the data on a node in `r1` will be split among two nodes in `r2`. Conversely, data stored separately on two nodes in `r2` is consolidated on one node in `r1`.
 
 ## Multi-DC replication
 
-```bash
-SHOW IMAGE OF MULTI-DC TOPOLOGY WITH REPLICATION LINES DRAWN
-```
+<a href="/img/dynomite/v0.5.6/replication-multi-dc.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-multi-dc.svg"
+         alt="Multi-DC symmetric replication"
+         style="height: 500px;">
+</a>
+<p class="dyno-image-caption text-center">Multi-DC symmetric replication</p>
 
-<img class="img-responsive center-block"
-     src="/img/dynomite/v0.5.6/cross-dc-replication.png"
-     alt="Cross data center (DC) replication">
-
-The diagram above show a cluster with a two DCs that each contain three racks with three servers per rack. The servers are all equal size. Therefore this example shows symmetric multi-DC replication.
+The diagram above show a cluster with a two DCs that each contain three racks with three servers per rack. The servers are all equal size. Therefore this example shows multi-DC symmetric replication.
 
 Multi-DC replication is nearly identical to the replication within a single DC with multiple racks. During multi-DC replication, the coordinator in the local DC picks a coordinator in the remote DC. The local coordinator then forwards the request to the remote coordinator asynchronously. The remote coordinator then forwards the request to all replica nodes in the remote DC.
 

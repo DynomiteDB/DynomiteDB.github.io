@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="341px" height="277px" viewBox="0 0 341 277" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+    <title>architecture-intra-node</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="architecture-intra-node" sketch:type="MSArtboardGroup">
+            <g id="Server-1" sketch:type="MSLayerGroup" transform="translate(7.000000, 10.000000)">
+                <rect id="Server-container" stroke="#BD1E2B" stroke-width="3" sketch:type="MSShapeGroup" x="8" y="11" width="317" height="247" rx="8"></rect>
+                <g id="Backend" transform="translate(16.000000, 188.000000)">
+                    <rect id="Backend-box" stroke="#979797" stroke-width="2" fill="#EFEFEF" sketch:type="MSShapeGroup" x="0" y="0" width="302" height="64" rx="2"></rect>
+                    <g id="Redis" transform="translate(14.000000, 30.000000)">
+                        <rect id="Box" stroke="#18BC9C" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0.622807018" y="0.392405063" width="64.377193" height="24" rx="2"></rect>
+                        <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                            <tspan x="6.2922807" y="19.8860759">Redis</tspan>
+                        </text>
+                    </g>
+                    <g id="LMDB" transform="translate(82.000000, 30.000000)">
+                        <rect id="Box" stroke="#18BC9C" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0.622807018" y="0.392405063" width="64.377193" height="24" rx="2"></rect>
+                        <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                            <tspan x="3.5022807" y="19.8860759">LMDB</tspan>
+                        </text>
+                    </g>
+                    <g id="RocksDB" transform="translate(150.000000, 30.000000)">
+                        <rect id="Box" stroke="#18BC9C" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0.622807018" y="0.392405063" width="92.377193" height="24" rx="2"></rect>
+                        <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                            <tspan x="4.6222807" y="19.8860759">RocksDB</tspan>
+                        </text>
+                    </g>
+                    <g id="..." transform="translate(248.000000, 30.000000)">
+                        <rect id="Box" stroke="#18BC9C" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0.622807018" y="0.392405063" width="41.0394737" height="24" rx="2"></rect>
+                        <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                            <tspan x="11.6622807" y="19.8860759">…</tspan>
+                        </text>
+                    </g>
+                    <g id="Title">
+                        <rect id="Title-box" stroke="#979797" stroke-width="2" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="183" height="24" rx="2"></rect>
+                        <text id="Backend" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="18" font-weight="normal" fill="#000000">
+                            <tspan x="15.2982456" y="18.9756098">Pluggable backend</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="Arrows" transform="translate(146.000000, 162.000000)" sketch:type="MSShapeGroup">
+                    <g id="Down-arrow" transform="translate(34.500000, 11.500000) scale(-1, -1) rotate(-90.000000) translate(-34.500000, -11.500000) translate(23.500000, 4.500000)">
+                        <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                            <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                        </g>
+                        <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                    </g>
+                    <g id="Up-arrow" transform="translate(7.500000, 11.500000) scale(-1, 1) rotate(-90.000000) translate(-7.500000, -11.500000) translate(-3.500000, 4.500000)">
+                        <g id="Arrow-Copy" transform="translate(15.071068, 6.692388) rotate(-45.000000) translate(-15.071068, -6.692388) translate(10.571068, 2.192388)" fill="#2C3E50">
+                            <path d="M6.78999953,7.20089988 L0.943486393,7.20089988 C0.528722942,7.20089988 0.205205143,7.52704485 0.205205143,7.92936506 C0.205205143,8.33449018 0.535744917,8.65783025 0.943486393,8.65783025 L7.46692389,8.65783025 C7.47075477,8.65783025 7.47457787,8.65780242 7.478393,8.65774697 C7.49165894,8.65846096 7.50501929,8.65882229 7.51846472,8.65882229 C7.92358984,8.65882229 8.24692991,8.32828252 8.24692991,7.92054104 L8.24692991,1.39710354 C8.24692991,0.982340094 7.92078493,0.658822295 7.51846472,0.658822295 C7.1133396,0.658822295 6.78999953,0.989362069 6.78999953,1.39710354 L6.78999953,7.20089988 Z" id="Rectangle-10"></path>
+                        </g>
+                        <path d="M0.939453125,7 L15.9394531,7" id="Dashed-line" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"></path>
+                    </g>
+                </g>
+                <g id="Node" transform="translate(16.000000, 36.000000)">
+                    <rect id="Dynomite-box" stroke="#979797" stroke-width="2" fill="#EFEFEF" sketch:type="MSShapeGroup" x="0" y="1" width="302" height="122" rx="2"></rect>
+                    <g id="Redis-API" transform="translate(6.000000, 30.000000)">
+                        <rect id="Redis-API-box" stroke="#18BC9C" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0.622807018" y="0.392405063" width="288.754386" height="24" rx="2"></rect>
+                        <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="16" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                            <tspan x="67.7262807" y="15.8860759">Redis-compatible API</tspan>
+                        </text>
+                    </g>
+                    <g id="Coordinator" transform="translate(97.000000, 60.000000)">
+                        <rect id="Box" stroke="#18BC9C" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0.622807018" y="0.392405063" width="118.377193" height="24" rx="2"></rect>
+                        <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="16" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                            <tspan x="15.9982807" y="15.8860759">Coordinator</tspan>
+                        </text>
+                    </g>
+                    <g id="Gossiper" transform="translate(6.000000, 60.000000)">
+                        <rect id="Box" stroke="#18BC9C" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0.622807018" y="0.392405063" width="77.5394737" height="24" rx="2"></rect>
+                        <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="16" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                            <tspan x="7.5182807" y="15.8860759">Gossiper</tspan>
+                        </text>
+                    </g>
+                    <g id="Snitch" transform="translate(230.000000, 60.000000)">
+                        <rect id="Box" stroke="#18BC9C" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0.622807018" y="0.392405063" width="65" height="24" rx="2"></rect>
+                        <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="16" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                            <tspan x="12.9902807" y="15.8860759">Snitch</tspan>
+                        </text>
+                    </g>
+                    <g id="Proxy" transform="translate(7.000000, 90.000000)">
+                        <rect id="Box" stroke="#18BC9C" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0.622807018" y="0.392405063" width="92.377193" height="24" rx="2"></rect>
+                        <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="16" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                            <tspan x="25.0782807" y="15.8860759">Proxy</tspan>
+                        </text>
+                    </g>
+                    <g id="Stats" transform="translate(105.000000, 90.000000)">
+                        <rect id="Box" stroke="#18BC9C" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0.622807018" y="0.392405063" width="92.377193" height="24" rx="2"></rect>
+                        <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="16" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                            <tspan x="27.1422807" y="15.8860759">Stats</tspan>
+                        </text>
+                    </g>
+                    <g id="Hash" transform="translate(204.000000, 90.000000)">
+                        <rect id="Box" stroke="#18BC9C" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0.622807018" y="0.392405063" width="92.377193" height="24" rx="2"></rect>
+                        <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="16" font-weight="normal" sketch:alignment="middle" fill="#2C3E50">
+                            <tspan x="27.1422807" y="15.8860759">Hash</tspan>
+                        </text>
+                    </g>
+                    <g id="Title">
+                        <rect id="Title-box" stroke="#979797" stroke-width="2" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="1" width="66" height="24" rx="2"></rect>
+                        <text id="Node" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="18" font-weight="normal" fill="#000000">
+                            <tspan x="13.2982456" y="17.9756098">Node</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="Server-name">
+                    <rect id="server-name" stroke="#000000" fill="#BD1E2B" sketch:type="MSShapeGroup" x="0" y="0" width="108" height="34" rx="8"></rect>
+                    <text id="sfo-r1-r1s1" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                        <tspan x="27.6" y="23">server</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
