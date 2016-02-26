@@ -6,7 +6,7 @@ product: "Dynomite"
 version: "v0.5.6"
 type: "dynomite-v0.5.6"
 docurl: "/docs/dynomite/v0.5.6/"
-docsection: "Key/value pairs"
+docsection: "Data"
 weight: 910
 draft: false
 

@@ -6,6 +6,7 @@ product: "Dynomite"
 version: "v0.5.6"
 type: "dynomite-v0.5.6"
 docurl: "/docs/dynomite/v0.5.6/"
+docsection: "Architecture"
 weight: 700
 draft: false
 

@@ -7,6 +7,7 @@ version: "v0.5.6"
 type: "dynomite-v0.5.6"
 docurl: "/docs/dynomite/v0.5.6/"
 weight: 100
+docsection: "Introduction"
 draft: false
 
 ---
