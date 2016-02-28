@@ -1,8 +1,18 @@
 # dynomitedb.com
 
+[![Join the chat at https://gitter.im/DynomiteDB/DynomiteDB](https://badges.gitter.im/DynomiteDB/DynomiteDB.svg)](https://gitter.im/DynomiteDB/DynomiteDB?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This repo contains the source and generated HTML for dynomitedb.com. HTML is generated with [Hugo](https://gohugo.io).
 
 Sources for this site are in the `src/` directory.
+
+DynomiteDB is built using the following open source projects:
+
+- [Netflix/dynomite](https://github.com/Netflix/dynomite)
+- [Netflix/dyno](https://github.com/Netflix/dyno)
+- [DynomiteDB/dyno-cli](https://github.com/DynomiteDB/dyno-cli)
+
+Documentation for DynomiteDB is available at http://www.dynomitedb.com.
 
 ## Run the development server
 
