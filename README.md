@@ -1,15 +1,6 @@
 # dynomitedb.com
 
-<!--
 [![Join the chat at https://gitter.im/DynomiteDB/DynomiteDB](https://badges.gitter.im/DynomiteDB/DynomiteDB.svg)](https://gitter.im/DynomiteDB/DynomiteDB?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
--->
-
-<a href="https://gitter.im/DynomiteDB/DynomiteDB?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge" target="_blank">
-    <img src="https://camo.githubusercontent.com/5e8b09657d5d34b4b053540c3eac3017a4847f6b/68747470733a2f2f6261646765732e6769747465722e696d2f44796e6f6d69746544422f44796e6f6d69746544422e737667" 
-        alt="Join the chat at https://gitter.im/DynomiteDB/DynomiteDB" 
-        data-canonical-src="https://badges.gitter.im/DynomiteDB/DynomiteDB.svg" 
-        style="max-width:100%;">
-</a>
 
 This repo contains the source and generated HTML for dynomitedb.com. HTML is generated with [Hugo](https://gohugo.io).
 
