@@ -450,11 +450,17 @@
 sudo apt-get upgrade -y
 </code></pre>
 
-<pre><code class="language-bash">sudo apt-get install apt-transport-https ca-certificates
+<p>Install Docker prerequisites.</p>
+
+<pre><code class="language-bash">sudo apt-get install apt-transport-https ca-certificates curl
 </code></pre>
+
+<p>Get the docker GPG key.</p>
 
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 </code></pre>
+
+<p>Add Docker to the list of repositories.</p>
 
 <pre><code class="language-bash">sudo vi /etc/apt/sources.list.d/docker.list
 </code></pre>
@@ -464,20 +470,27 @@ sudo apt-get upgrade -y
 <pre><code class="language-bash">deb https://apt.dockerproject.org/repo ubuntu-trusty main
 </code></pre>
 
+<p>Update the packages list.</p>
+
 <pre><code class="language-bash">sudo apt-get update
 </code></pre>
+
+<p>Add docker to the cache to speed up subsequent access.</p>
 
 <pre><code class="language-bash">sudo apt-cache policy docker-engine
 </code></pre>
 
-<pre><code class="language-bash">sudo apt-get install -y linux-image-extra-$(uname -r)
+<p>Install the kernel extras package.</p>
+
+<pre><code class="language-bash">sudo apt-get install -y linux-image-extra-$(uname -r) 
 </code></pre>
 
-<pre><code class="language-bash">sudo apt-get install -y apparmor
+<p>Install the Application Armar and Docker Enginee.</p>
+
+<pre><code class="language-bash">sudo apt-get install -y apparmor docker-engine
 </code></pre>
 
-<pre><code class="language-bash">sudo apt-get install -y docker-engine
-</code></pre>
+<p>Start Docker.</p>
 
 <pre><code class="language-bash">sudo service docker start
 </code></pre>
@@ -489,33 +502,49 @@ sudo apt-get upgrade -y
 <pre><code class="language-bash">sudo usermod -aG docker $USER
 </code></pre>
 
-<p>Logout and then login again.</p>
+<p>Logout and then login again, then run the <code>hello-world</code> container.</p>
 
 <pre><code class="language-bash">docker run hello-world
 </code></pre>
 
 <h1 id="install-docker-compose:f884542273f7b723d850da75f1f10a38">Install Docker Compose</h1>
 
-<pre><code class="language-bash">mkdir -p ~/opt/packages/docker &amp;&amp; cd $_
+<p><code>cd</code> to your home directory.</p>
+
+<pre><code class="language-bash">cd
 </code></pre>
 
-<pre><code class="language-bash">curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` &gt; ./docker-compose
+<p>Download the <code>docker-compose</code> script.</p>
+
+<pre><code class="language-bash">curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` &gt; ~/docker-compose
 </code></pre>
+
+<p>Move <code>docker-compose</code> into the <code>bin</code> directory.</p>
 
 <pre><code class="language-bash">sudo mv docker-compose /usr/local/bin/docker-compose
 </code></pre>
 
+<p>Make <code>docker-compose</code> executable.</p>
+
 <pre><code class="language-bash">sudo chmod +x /usr/local/bin/docker-compose
 </code></pre>
+
+<p>Download the Bash completion file for <code>docker-compose</code>.</p>
 
 <pre><code class="language-bash">curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose &gt; ./docker-compose-bash-completion
 </code></pre>
 
+<p>Move the Bash completion file into the system-wide <code>/etc/bash_completion.d</code> directory.</p>
+
 <pre><code class="language-bash">sudo mv  ./docker-compose-bash-completion /etc/bash_completion.d/docker-compose
 </code></pre>
 
+<p>Check that you&rsquo;ve installed <code>docker-compose</code> correctly by viewing the installed version number.</p>
+
 <pre><code class="language-bash">docker-compose --version
 </code></pre>
+
+<p>Congratulations, you have successfully installed Docker on Ubuntu 14.04.</p>
 
 		</div>
 	</div>
