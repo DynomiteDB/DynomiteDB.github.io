@@ -12,185 +12,112 @@ draft: false
 
 ---
 
-In this setup, we will use Redis with Dynomite. For Memcached, it is very similar replacing Redis installation step with Memcached installation step. We will also show you the configurations to simulate a one-node Dynomite cluster and a two-node Dynomite cluster.
+In this quick start we will setup a single node cluster using Docker. Setup requires 3 steps:
 
-## Install Redis
+- Create the `dynomitedb_net` network
+- Run the `backend-redis` container
+- Run the `dynomite` container
 
-Please follow the instructions on this website to download and install Redis: http://redis.io/
+DynomiteDB automatically configures the `dynomite` and `backend-redis` containers to run as a single server cluster.
 
-## Build Dynomite
+# Install Docker
 
-Please follow our [README.md](https://github.com/Netflix/dynomite/blob/master/README.md) to compile and build Dynomite from source. Note that we only test Dynomite on Linux environments so we recommend compiling and building Dynomite on a Linux system.
+> You must install Docker before running the commands below.
 
-## Configure a one-node cluster
+Mac and Windows users should follow the Docker installation instructions on Docker.com.
 
-These examples are for redis. If you remove redis property, they will become memcached configured files.
+Ubuntu 14.04 users may install Docker using the <a href="/docs/dynomite/v0.5.7/install-docker-ubuntu-14-04/">Install Docker on Ubuntu 14.04</a> instructions.
 
-### One node cluster
+# Networking
+
+Create a bridge network named `dynomitedb_net`. The `dynomite` server and the Redis backend (`backend-redis`) will communicate over this network.
 
 ```bash
-https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_single.yml  
+docker network create -d bridge --subnet=192.168.6.0/24 --gateway=192.168.6.1 dynomitedb_net
 ```
 
-### Two-nodes cluster in one datacenter with 2 racks
+# Run the `dynomite-backend-redis` and `dynomite` containers.
+
+Run the `backend-redis` container.
 
 ```bash
-https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_dc1_rack1.yml
-
-https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_dc1_rack2.yml
+docker run --name backend-redis -h redis.dynomitedb.net --ip=192.168.6.20 --net=dynomitedb_net --add-host dynomite.dynomitedb.net:192.168.6.10 -d dynomitedb/backend-redis
 ```
 
-### Two-nodes cluster in two datacenters each having one rack
+Run the `dynomite` container.
 
 ```bash
-https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_mul_dc1.yml
-
-https://github.com/Netflix/dynomite/blob/master/conf/dyn_redis_mul_dc2.yml
+docker run --name dynomite -h dynomite.dynomitedb.net --ip=192.168.6.10 --net=dynomitedb_net --add-host redis.dynomitedb.net:192.168.6.20 -d dynomitedb/dynomite
 ```
 
-### 6-node cluster in one datacenter with 3 racks, each having 2 nodes
+## Run the client tools container to test
 
 ```bash
-dyn_o_mite:
-     datacenter: us-east-1
-     dyn_listen: 0.0.0.0:9101
-     dyn_seed_provider: simple_provider
-     dyn_seeds:
-     - ec2-54-162-161-10.compute-1.amazonaws.com:9101:rack-v0:us-east-1:1383429731
-     - ec2-54-191-177-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:1383429731
-     - ec2-54-181-51-12.compute-1.amazonaws.com:9101:rack-v1:us-east-1:3530913378
-     - ec2-54-129-121-134.compute-1.amazonaws.com:9101:rack-v0:us-east-1:3530913378
-     - ec2-23-123-53-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:3530913378
-     listen: 0.0.0.0:9102
-     servers:
-     - 127.0.0.1:6380:1
-     timeout: 30000
-     tokens: '1383429731'
-     rack: rack-v1
-     data_store: 0
+docker run -it --rm --ip=192.168.6.30 --net=dynomitedb_net --add-host dynomite.dynomitedb.net:192.168.6.10 --add-host redis.dynomitedb.net:192.168.6.20 redis:2.8.23 bash
 ```
 
+Test network connectivity from the tools container to the Dynomite container.
+
 ```bash
-dyn_o_mite:
-     datacenter: us-east-1
-     dyn_listen: 0.0.0.0:9101
-     dyn_seed_provider: simple_provider
-     dyn_seeds:
-     - ec2-54-111-131-14.compute-1.amazonaws.com:9101:rack-v1:us-east-1:1383429731
-     - ec2-54-191-177-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:1383429731
-     - ec2-23-123-53-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:3530913378
-     - ec2-54-129-121-134.compute-1.amazonaws.com:9101:rack-v0:us-east-1:3530913378
-     - ec2-54-181-51-12.compute-1.amazonaws.com:9101:rack-v1:us-east-1:3530913378
-     listen: 0.0.0.0:9102
-     servers:
-     - 127.0.0.1:6380:1
-     timeout: 30000
-     tokens: '1383429731'
-     rack: rack-v0
-     data_store: 0
+ping -c 3 dynomite.dynomitedb.net
 ```
 
+Test network connectivity from the tools container to the Redis container.
+
 ```bash
-dyn_o_mite:
-     datacenter: us-east-1
-     dyn_listen: 0.0.0.0:9101
-     dyn_seed_provider: simple_provider
-     dyn_seeds:
-     - ec2-54-162-161-10.compute-1.amazonaws.com:9101:rack-v0:us-east-1:1383429731
-     - ec2-54-111-131-14.compute-1.amazonaws.com:9101:rack-v1:us-east-1:1383429731
-     - ec2-54-129-121-134.compute-1.amazonaws.com:9101:rack-v0:us-east-1:3530913378
-     - ec2-23-123-53-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:3530913378
-     - ec2-54-181-51-12.compute-1.amazonaws.com:9101:rack-v1:us-east-1:3530913378
-     listen: 0.0.0.0:9102
-     servers:
-     - 127.0.0.1:6380:1
-     timeout: 30000
-     tokens: '1383429731'
-     rack: rack-v2
-     data_store: 0
+ping -c 3 redis.dynomitedb.net
 ```
 
+Connect directly to the Redis container to ensure that Redis is working properly.
+
 ```bash
-dyn_o_mite:
-     datacenter: us-east-1
-     dyn_listen: 0.0.0.0:9101
-     dyn_seed_provider: simple_provider
-     dyn_seeds:
-     - ec2-54-162-161-10.compute-1.amazonaws.com:9101:rack-v0:us-east-1:1383429731
-     - ec2-54-191-177-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:1383429731
-     - ec2-54-111-131-14.compute-1.amazonaws.com:9101:rack-v1:us-east-1:1383429731
-     - ec2-23-123-53-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:3530913378
-     - ec2-54-129-121-134.compute-1.amazonaws.com:9101:rack-v0:us-east-1:3530913378
-     listen: 0.0.0.0:9102
-     servers:
-     - 127.0.0.1:6380:1
-     timeout: 30000
-     tokens: '3530913378'
-     rack: rack-v1
-     data_store: 0
+redis-cli -h redis.dynomitedb.net -p 6379
 ```
 
+Enter the following commands at the `redis-cli` prompt. Expected output is shown below each command.
+
 ```bash
-dyn_o_mite:
-     datacenter: us-east-1
-     dyn_listen: 0.0.0.0:9101
-     dyn_seed_provider: simple_provider
-     dyn_seeds:
-     - ec2-54-162-161-10.compute-1.amazonaws.com:9101:rack-v0:us-east-1:1383429731
-     - ec2-54-111-131-14.compute-1.amazonaws.com:9101:rack-v1:us-east-1:1383429731
-     - ec2-54-191-177-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:1383429731
-     - ec2-54-181-51-12.compute-1.amazonaws.com:9101:rack-v1:us-east-1:3530913378
-     - ec2-23-123-53-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:3530913378
-     listen: 0.0.0.0:9102
-     servers:
-     - 127.0.0.1:6380:1
-     timeout: 30000
-     tokens: '3530913378'
-     rack: rack-v0
-     data_store: 0
+redis.dynomitedb.net:6379> set fname "Bob"
+OK
+redis.dynomitedb.net:6379> set lname "Smith"
+OK
+redis.dynomitedb.net:6379> get fname
+"Bob"
+redis.dynomitedb.net:6379> get lname
+"Smith"
+redis.dynomitedb.net:6379> quit
 ```
 
+Next, connect to the Dynomite container.
+
 ```bash
-dyn_o_mite:
-     auto_eject_hosts: true
-     datacenter: us-east-1
-     dyn_listen: 0.0.0.0:9101
-     dyn_seed_provider: simple_provider
-     dyn_seeds:
-     - ec2-54-111-131-14.compute-1.amazonaws.com:9101:rack-v1:us-east-1:1383429731
-     - ec2-54-162-161-10.compute-1.amazonaws.com:9101:rack-v0:us-east-1:1383429731
-     - ec2-54-191-177-122.compute-1.amazonaws.com:9101:rack-v2:us-east-1:1383429731
-     - ec2-54-181-51-12.compute-1.amazonaws.com:9101:rack-v1:us-east-1:3530913378
-     - ec2-54-129-121-134.compute-1.amazonaws.com:9101:rack-v0:us-east-1:3530913378
-     listen: 0.0.0.0:9102
-     servers:
-     - 127.0.0.1:6380:1
-     timeout: 30000
-     tokens: '3530913378'
-     rack: rack-v2
-     data_store: 0
+redis-cli -h dynomite.dynomitedb.net -p 8102
 ```
 
-## Start the cluster
+Enter the following commands at the `redis-cli` prompt. Expected output is shown below each command.
 
-Assume you have gone through the build process and produced the binary file `dynomite`.
-
-To run a one node dynomite cluster using the above config, you can run 
+Each of the commands below are sent from the `redis-cli` client to the `dynomite` server which then forwards the request to the `redis-server` backend.
 
 ```bash
-dynomite -c dynomite.yml
+dynomite.dynomitedb.net:8102> get fname
+"Bob"
+dynomite.dynomitedb.net:8102> get lname
+"Smith"
+dynomite.dynomitedb.net:8102> set fname "Bill"
+OK
+dynomite.dynomitedb.net:8102> get fname
+"Bill"
+dynomite.dynomitedb.net:8102> quit
 ```
 
-If you want to start a 2 node cluster with those two yaml files, you can open 2 terminals and run:
- 
-In the first terminal run the following:
+Exit the tools container.
 
 ```bash
-dynomite -c dynomite1.yml
+exit
 ```
 
-In the second terminal run the following:
+Stop the `dynomite` and `backend-redis` containers.
 
 ```bash
-dynomite -c dynomite2.yml
+docker stop $(docker ps -aq)
 ```
