@@ -40,14 +40,27 @@ p.dyno-footer-copyright {
 div.dyno-doc-nav h3 {
     font-size: 15px;
     font-weight: bold;
-    border-bottom: 1px solid #ecf0f1;
-    padding-bottom: 7px
+    /*border-bottom: 1px solid #ecf0f1;*/
+    padding-bottom: 7px;
+}
+
+div.dyno-doc-nav h4 {
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 11px;
+    padding-bottom: 7px;
 }
 
 div.dyno-doc-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 11px;
+}
+
+div.dyno-doc-nav ul:last-child {
+    border-bottom: none;
 }
 
 div.dyno-doc-nav ul li {
