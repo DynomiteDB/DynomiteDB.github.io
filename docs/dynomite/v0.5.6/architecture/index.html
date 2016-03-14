@@ -47,7 +47,7 @@
             <ul class="nav navbar-nav navbar-left">
                 
                 
-                  <li class=''><a href="/docs/dynomite/v0.5.6/quick-start/"> Docs </a></li>
+                  <li class=''><a href="/docs/"> Docs </a></li>
                 
                   <li class=''><a href="/blog/"> Blog </a></li>
                 
@@ -189,65 +189,48 @@
 					
 					
 				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
 			
 		
 		<div class="col-sm-3 dyno-doc-nav">
 			<h3>Dynomite v0.5.6</h3>
+			<h4>Introduction</h4>
 			<ul>
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 				
 					
 						
@@ -275,6 +258,32 @@
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/terminology/">Terminology</a></li>
 
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Architecture</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
 					
 				
 					
@@ -313,6 +322,32 @@
 					
 				
 					
+				
+					
+				
+			</ul>
+			<h4>Servers and nodes</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
 						
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/coordinator/">Coordinator</a></li>
@@ -320,10 +355,62 @@
 					
 				
 					
+				
+			</ul>
+			<h4>Data</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
 						
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/kvpairs/">Key/value pairs</a></li>
 
+					
+				
+			</ul>
+			<h4>Configuration</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
 					
 				
 			</ul>
@@ -346,7 +433,7 @@
 
 <p>DynomiteDB is designed for big data workloads that have a large volume of data combined with a high volume of reads, writes or both. The primary use case for DynomiteDB is as a big data cache that can store your entire data set in memory or as a big data database when combined with a persistent backend.</p>
 
-<h1 id="shared-nothing-masterless-architecture:8895d24bf8e9d58399b1b72c3b065130">Shared nothing, masterless architecture</h1>
+<h1 id="shared-nothing-masterless-architecture:bca591e17c757f6a7e71b747558d7c4d">Shared nothing, masterless architecture</h1>
 
 <p>DynomiteDB has a shared nothing, masterless architecture which means that each DynomiteDB node is independent of every other node. The benefit of a shared nothing architecture is there is no centralized component that can bring down the entire cluster. In other words, DynomiteDB has no single point of failure (SPOF).</p>
 
@@ -356,7 +443,7 @@
 
 <!-- TODO: SHOW DIAGRAM OF DYNOMITE'S INTERNAL BLOCK DIAGRAM HERE -->
 
-<h1 id="cluster:8895d24bf8e9d58399b1b72c3b065130">Cluster</h1>
+<h1 id="cluster:bca591e17c757f6a7e71b747558d7c4d">Cluster</h1>
 
 <!-- SHOW IMAGE HERE OF ENTIRE CLUSTER -->
 
@@ -364,17 +451,17 @@
 
 <p>DynomiteDB functions as a multi-DC cache when paired with an in-memory, such as Redis.</p>
 
-<h2 id="data-center-dc:8895d24bf8e9d58399b1b72c3b065130">Data center (DC)</h2>
+<h2 id="data-center-dc:bca591e17c757f6a7e71b747558d7c4d">Data center (DC)</h2>
 
 <p>A data center (DC) contains one or more racks. A DC is equivalent to an AWS region.</p>
 
-<h2 id="rack:8895d24bf8e9d58399b1b72c3b065130">Rack</h2>
+<h2 id="rack:bca591e17c757f6a7e71b747558d7c4d">Rack</h2>
 
 <p>A rack contains one or more servers. Importantly, data replication happens at the rack level as each rack contains the entire token ring. In other words, if a DC contains 3 racks, then the DC will have a replication factor (RF) of 3.</p>
 
 <p>A rack is equivalent to an AWS availability zone (AZ).</p>
 
-<h2 id="server:8895d24bf8e9d58399b1b72c3b065130">Server</h2>
+<h2 id="server:bca591e17c757f6a7e71b747558d7c4d">Server</h2>
 
 <!-- TODO: Update the Server definition to include the concept of a Container -->
 
@@ -382,7 +469,7 @@
 
 <p>Each server contains a Dynomite instance and a Redis instance.</p>
 
-<h2 id="dynomite-node-aka-node:8895d24bf8e9d58399b1b72c3b065130">Dynomite node (aka Node)</h2>
+<h2 id="dynomite-node-aka-node:bca591e17c757f6a7e71b747558d7c4d">Dynomite node (aka Node)</h2>
 
 <p>A Dynomite node is an instance of the <code>dynomite</code> daemon that runs on a server. Each <code>dynomite</code> instance uses one Redis instance as its backend storage.</p>
 
@@ -390,7 +477,7 @@
 
 <p>Importantly, DynomiteDB identifies each node as a combination of the node&rsquo;s data center, rack and token.</p>
 
-<h3 id="node-token:8895d24bf8e9d58399b1b72c3b065130">Node token</h3>
+<h3 id="node-token:bca591e17c757f6a7e71b747558d7c4d">Node token</h3>
 
 <p>Each node has a node token with a value from 0 to 4,294,967,295. The node token indicates the range of data that the node owns. For example, if a node (Node1) has node token = 0 and the next node in the same rack (Node2) has a node token = 1000, then Node1 owns all data with a token value from 0 to 999.</p>
 
@@ -402,11 +489,11 @@
 
 <p>See <a href="../replication/">Replication</a> or <a href="../topology/">Topology</a> for more information.</p>
 
-<h2 id="redis:8895d24bf8e9d58399b1b72c3b065130">Redis</h2>
+<h2 id="redis:bca591e17c757f6a7e71b747558d7c4d">Redis</h2>
 
 <p>Each DynomiteDB node uses Redis as its backend storage engine. A Redis instance is an instance of the <code>redis-server</code> process that runs on a server.</p>
 
-<h3 id="redis-api:8895d24bf8e9d58399b1b72c3b065130">Redis API</h3>
+<h3 id="redis-api:bca591e17c757f6a7e71b747558d7c4d">Redis API</h3>
 
 <p>DynomiteDB exposes a standard Redis API which means that you can use any Redis client to access DynomiteDB. The use of a standard Redis API means that DynomiteDB frees you to focus on your application and eliminates the complexity of sharding, replication and other complex distributed database topics.</p>
 
@@ -423,7 +510,7 @@ GET product
 
 <!-- See [API](../api/) for more information. -->
 
-<h1 id="summary:8895d24bf8e9d58399b1b72c3b065130">Summary</h1>
+<h1 id="summary:bca591e17c757f6a7e71b747558d7c4d">Summary</h1>
 
 <p>DynomiteDB is a high performance, highly available (HA) and distributed caching database. DynomiteDB chooses to be highly available and partition tolerant, while providing tunable consistency.</p>
 

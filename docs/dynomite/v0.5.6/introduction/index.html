@@ -47,7 +47,7 @@
             <ul class="nav navbar-nav navbar-left">
                 
                 
-                  <li class=''><a href="/docs/dynomite/v0.5.6/quick-start/"> Docs </a></li>
+                  <li class=''><a href="/docs/"> Docs </a></li>
                 
                   <li class=''><a href="/blog/"> Blog </a></li>
                 
@@ -189,65 +189,48 @@
 					
 					
 				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
 			
 		
 		<div class="col-sm-3 dyno-doc-nav">
 			<h3>Dynomite v0.5.6</h3>
+			<h4>Introduction</h4>
 			<ul>
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 				
 					
 						
@@ -275,6 +258,32 @@
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/terminology/">Terminology</a></li>
 
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Architecture</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
 					
 				
 					
@@ -313,6 +322,32 @@
 					
 				
 					
+				
+					
+				
+			</ul>
+			<h4>Servers and nodes</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
 						
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/coordinator/">Coordinator</a></li>
@@ -320,10 +355,62 @@
 					
 				
 					
+				
+			</ul>
+			<h4>Data</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
 						
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/kvpairs/">Key/value pairs</a></li>
 
+					
+				
+			</ul>
+			<h4>Configuration</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
 					
 				
 			</ul>
@@ -335,13 +422,13 @@
 
 <p>Welcome to Dynomite. This document provides a brief introduction to Dynomite and it introduces you to some key concepts and terminology.</p>
 
-<h2 id="what-is-dynomite:b83c2a7bfb2d5ff1b68684cbb75a3ff1">What is Dynomite</h2>
+<h2 id="what-is-dynomite:a30249b4c82f8568bb305fac6a23711f">What is Dynomite</h2>
 
 <p>Dynomite is an open source Dynamo layer that provides sharding, data replication and high availability for various single-server key/value database engines.</p>
 
 <p>Specifically, Dynomite turns a single-server key/value database (ex. Redis) into a scalable, highly available clustered key/value database.</p>
 
-<h2 id="key-value-database-engine:b83c2a7bfb2d5ff1b68684cbb75a3ff1">Key/value database engine</h2>
+<h2 id="key-value-database-engine:a30249b4c82f8568bb305fac6a23711f">Key/value database engine</h2>
 
 <p>A key/value database engine exposes a data model that is similar to a dictionary or hash. Data is saved by setting a key such as <code>city</code> to a value of <code>Palo Alto</code>. You retrieve the value by getting the key&rsquo;s value.</p>
 
@@ -355,7 +442,7 @@
 <pre><code class="language-bash">get city
 </code></pre>
 
-<h3 id="value-data-types:b83c2a7bfb2d5ff1b68684cbb75a3ff1">Value data types</h3>
+<h3 id="value-data-types:a30249b4c82f8568bb305fac6a23711f">Value data types</h3>
 
 <p>Dynomite supports a variety of value data type when the Redis database engine is used as a backend. Importantly, Redis is the primary and default backend used by Dynomite.</p>
 
@@ -369,21 +456,21 @@
 <li>Sorted Set</li>
 </ul>
 
-<h2 id="key-features:b83c2a7bfb2d5ff1b68684cbb75a3ff1">Key features</h2>
+<h2 id="key-features:a30249b4c82f8568bb305fac6a23711f">Key features</h2>
 
-<h3 id="high-performance:b83c2a7bfb2d5ff1b68684cbb75a3ff1">High performance</h3>
+<h3 id="high-performance:a30249b4c82f8568bb305fac6a23711f">High performance</h3>
 
 <p>Dynomite provides a high performance cache and database combined with linear scalability. Linear scalability means that Dynomite&rsquo;s capacity scales as you add more clusters to the server. Specifically, if one Dynomite server can handle 40,000 ops/second then we know that two Dynomite servers will handle 80,000 ops/second.</p>
 
-<h3 id="high-availability-ha:b83c2a7bfb2d5ff1b68684cbb75a3ff1">High availability (HA)</h3>
+<h3 id="high-availability-ha:a30249b4c82f8568bb305fac6a23711f">High availability (HA)</h3>
 
 <p>Dynomite is a highly available server which means that Dynomite is able to <code>SET</code> and <code>GET</code> your cache data even when a server, rack or entire data center goes offline.</p>
 
-<h3 id="sharding-and-replication:b83c2a7bfb2d5ff1b68684cbb75a3ff1">Sharding and replication</h3>
+<h3 id="sharding-and-replication:a30249b4c82f8568bb305fac6a23711f">Sharding and replication</h3>
 
 <p>Dynomite shards data by distributing various key/value pairs across the cluster. It then replicates each key/value pair by creating extra copies on multiple servers.</p>
 
-<h2 id="summary:b83c2a7bfb2d5ff1b68684cbb75a3ff1">Summary</h2>
+<h2 id="summary:a30249b4c82f8568bb305fac6a23711f">Summary</h2>
 
 <p>Dynomite is a high performance, linearly scalable Dynamo layer that allows single-server database engines to operate as a cluster. Dynomite supports a variety of value data types.</p>
 

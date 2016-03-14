@@ -143,8 +143,18 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/introduction/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/introduction/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/quick-start/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
     </url>
     
     <url>
@@ -153,8 +163,23 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/install-docker-ubuntu-14-04/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/faq/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/faq/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/terminology/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
     </url>
     
     <url>
@@ -163,8 +188,18 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/architecture/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/architecture/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/topology/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
     </url>
     
     <url>
@@ -173,8 +208,18 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/replication/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/replication/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/consistency/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
     </url>
     
     <url>
@@ -183,13 +228,28 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/membership-protocols/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/membership-protocols/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/coordinator/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/coordinator/</loc>
         <lastmod>2016-02-18T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/kvpairs/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
     </url>
     
     <url>

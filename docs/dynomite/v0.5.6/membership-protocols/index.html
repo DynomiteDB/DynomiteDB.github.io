@@ -47,7 +47,7 @@
             <ul class="nav navbar-nav navbar-left">
                 
                 
-                  <li class=''><a href="/docs/dynomite/v0.5.6/quick-start/"> Docs </a></li>
+                  <li class=''><a href="/docs/"> Docs </a></li>
                 
                   <li class=''><a href="/blog/"> Blog </a></li>
                 
@@ -189,65 +189,48 @@
 					
 					
 				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
 			
 		
 		<div class="col-sm-3 dyno-doc-nav">
 			<h3>Dynomite v0.5.6</h3>
+			<h4>Introduction</h4>
 			<ul>
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 				
 					
 						
@@ -275,6 +258,32 @@
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/terminology/">Terminology</a></li>
 
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Architecture</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
 					
 				
 					
@@ -313,6 +322,32 @@
 					
 				
 					
+				
+					
+				
+			</ul>
+			<h4>Servers and nodes</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
 						
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/coordinator/">Coordinator</a></li>
@@ -320,10 +355,62 @@
 					
 				
 					
+				
+			</ul>
+			<h4>Data</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
 						
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/kvpairs/">Key/value pairs</a></li>
 
+					
+				
+			</ul>
+			<h4>Configuration</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
 					
 				
 			</ul>
@@ -335,11 +422,11 @@
 
 <p>Dynomite supports 2 methods to maintain a node&rsquo;s membership status:</p>
 
-<h2 id="1-centralized-membership-system:39f57d96a860e8af71e655f4ac57131f">1.) Centralized membership system</h2>
+<h2 id="1-centralized-membership-system:2c2e2bfa443fb9e74996ad363e9c81eb">1.) Centralized membership system</h2>
 
 <p>Each dynomite node will periodically reach out to a local service (a proxy to the centralized service) to obtain the cluster members. For more information, please look at this code: <a href="https://github.com/Netflix/dynomite/blob/master/src/seedsprovider/dyn_florida.c#L13">https://github.com/Netflix/dynomite/blob/master/src/seedsprovider/dyn_florida.c#L13</a></p>
 
-<h2 id="2-gossip:39f57d96a860e8af71e655f4ac57131f">2.) Gossip</h2>
+<h2 id="2-gossip:2c2e2bfa443fb9e74996ad363e9c81eb">2.) Gossip</h2>
 
 <p>Gossip is disabled by default and can be turned on by providing &ldquo;-g&rdquo; flag on the command line. Each node maintains a data structure on the rest of the cluster topology and periodically pick a random node to spread out its data. Note that in using this you still need to provide a seed list for each node. <a href="https://www.cs.cornell.edu/~asdas/research/dsn02-swim.pdf">https://www.cs.cornell.edu/~asdas/research/dsn02-swim.pdf</a></p>
 

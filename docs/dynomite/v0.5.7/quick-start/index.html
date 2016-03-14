@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Quick Start">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>Quick Start &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://www.dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="http://www.dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://www.dynomitedb.com/css/style.css">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+                  <li class=''><a href="/faq/"> FAQ </a></li>
+                
+                  <li class=''><a href="/roadmap/"> Roadmap </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	
+		
+			
+			
+			
+			
+		
+	
+	<div class="row">
+		
+			
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+			
+		
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Dynomite v0.5.7</h3>
+			<h4>Introduction</h4>
+			<ul>
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/introduction/">Introduction</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/quick-start/">Quick Start</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/install-docker-ubuntu-14-04/">Install Docker on Ubuntu 14.04</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/terminology/">Terminology</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Architecture</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/architecture/">Architecture</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/topology/">Topology</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/replication/">Replication</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/consistency/">Consistency</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/membership-protocols/">Membership Protocols</a></li>
+
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Servers and nodes</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/coordinator/">Coordinator</a></li>
+
+					
+				
+					
+				
+			</ul>
+			<h4>Data</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/kvpairs/">Key/value pairs</a></li>
+
+					
+				
+			</ul>
+			<h4>Configuration</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>Quick Start</h1>
+			
+
+<p>In this quick start we will setup a single node cluster using Docker. Setup requires 3 steps:</p>
+
+<ul>
+<li>Create the <code>dynomitedb_net</code> network</li>
+<li>Run the <code>backend-redis</code> container</li>
+<li>Run the <code>dynomite</code> container</li>
+</ul>
+
+<p>DynomiteDB automatically configures the <code>dynomite</code> and <code>backend-redis</code> containers to run as a single server cluster.</p>
+
+<h1 id="install-docker:48f18de7fcd5a0d09b1a6266caff9cf7">Install Docker</h1>
+
+<blockquote>
+<p>You must install Docker before running the commands below.</p>
+</blockquote>
+
+<p>Mac and Windows users should follow the Docker installation instructions on Docker.com.</p>
+
+<p>Ubuntu 14.04 users may install Docker using the <a href="/docs/dynomite/v0.5.7/install-docker-ubuntu-14-04/">Install Docker on Ubuntu 14.04</a> instructions.</p>
+
+<h1 id="networking:48f18de7fcd5a0d09b1a6266caff9cf7">Networking</h1>
+
+<p>Create a bridge network named <code>dynomitedb_net</code>. The <code>dynomite</code> server and the Redis backend (<code>backend-redis</code>) will communicate over this network.</p>
+
+<pre><code class="language-bash">docker network create -d bridge --subnet=192.168.6.0/24 --gateway=192.168.6.1 dynomitedb_net
+</code></pre>
+
+<h1 id="run-the-dynomite-backend-redis-and-dynomite-containers:48f18de7fcd5a0d09b1a6266caff9cf7">Run the <code>dynomite-backend-redis</code> and <code>dynomite</code> containers.</h1>
+
+<p>Run the <code>backend-redis</code> container.</p>
+
+<pre><code class="language-bash">docker run --name backend-redis -h redis.dynomitedb.net --ip=192.168.6.20 --net=dynomitedb_net --add-host dynomite.dynomitedb.net:192.168.6.10 -d dynomitedb/backend-redis
+</code></pre>
+
+<p>Run the <code>dynomite</code> container.</p>
+
+<pre><code class="language-bash">docker run --name dynomite -h dynomite.dynomitedb.net --ip=192.168.6.10 --net=dynomitedb_net --add-host redis.dynomitedb.net:192.168.6.20 -d dynomitedb/dynomite
+</code></pre>
+
+<h2 id="run-the-client-tools-container-to-test:48f18de7fcd5a0d09b1a6266caff9cf7">Run the client tools container to test</h2>
+
+<pre><code class="language-bash">docker run -it --rm --ip=192.168.6.30 --net=dynomitedb_net --add-host dynomite.dynomitedb.net:192.168.6.10 --add-host redis.dynomitedb.net:192.168.6.20 redis:2.8.23 bash
+</code></pre>
+
+<p>Test network connectivity from the tools container to the Dynomite container.</p>
+
+<pre><code class="language-bash">ping -c 3 dynomite.dynomitedb.net
+</code></pre>
+
+<p>Test network connectivity from the tools container to the Redis container.</p>
+
+<pre><code class="language-bash">ping -c 3 redis.dynomitedb.net
+</code></pre>
+
+<p>Connect directly to the Redis container to ensure that Redis is working properly.</p>
+
+<pre><code class="language-bash">redis-cli -h redis.dynomitedb.net -p 6379
+</code></pre>
+
+<p>Enter the following commands at the <code>redis-cli</code> prompt. Expected output is shown below each command.</p>
+
+<pre><code class="language-bash">redis.dynomitedb.net:6379&gt; set fname &quot;Bob&quot;
+OK
+redis.dynomitedb.net:6379&gt; set lname &quot;Smith&quot;
+OK
+redis.dynomitedb.net:6379&gt; get fname
+&quot;Bob&quot;
+redis.dynomitedb.net:6379&gt; get lname
+&quot;Smith&quot;
+redis.dynomitedb.net:6379&gt; quit
+</code></pre>
+
+<p>Next, connect to the Dynomite container.</p>
+
+<pre><code class="language-bash">redis-cli -h dynomite.dynomitedb.net -p 8102
+</code></pre>
+
+<p>Enter the following commands at the <code>redis-cli</code> prompt. Expected output is shown below each command.</p>
+
+<p>Each of the commands below are sent from the <code>redis-cli</code> client to the <code>dynomite</code> server which then forwards the request to the <code>redis-server</code> backend.</p>
+
+<pre><code class="language-bash">dynomite.dynomitedb.net:8102&gt; get fname
+&quot;Bob&quot;
+dynomite.dynomitedb.net:8102&gt; get lname
+&quot;Smith&quot;
+dynomite.dynomitedb.net:8102&gt; set fname &quot;Bill&quot;
+OK
+dynomite.dynomitedb.net:8102&gt; get fname
+&quot;Bill&quot;
+dynomite.dynomitedb.net:8102&gt; quit
+</code></pre>
+
+<p>Exit the tools container.</p>
+
+<pre><code class="language-bash">exit
+</code></pre>
+
+<p>Stop the <code>dynomite</code> and <code>backend-redis</code> containers.</p>
+
+<pre><code class="language-bash">docker stop $(docker ps -aq)
+</code></pre>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2016 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script src="http://www.dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+<script src="http://www.dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+<script src="http://www.dynomitedb.com/js/dynomite.js"></script>
+
+	</body>
+</html>

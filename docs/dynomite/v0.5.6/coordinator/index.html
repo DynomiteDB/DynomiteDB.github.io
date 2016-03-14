@@ -47,7 +47,7 @@
             <ul class="nav navbar-nav navbar-left">
                 
                 
-                  <li class=''><a href="/docs/dynomite/v0.5.6/quick-start/"> Docs </a></li>
+                  <li class=''><a href="/docs/"> Docs </a></li>
                 
                   <li class=''><a href="/blog/"> Blog </a></li>
                 
@@ -189,65 +189,48 @@
 					
 					
 				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
 			
 		
 		<div class="col-sm-3 dyno-doc-nav">
 			<h3>Dynomite v0.5.6</h3>
+			<h4>Introduction</h4>
 			<ul>
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 				
 					
 						
@@ -275,6 +258,32 @@
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/terminology/">Terminology</a></li>
 
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Architecture</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
 					
 				
 					
@@ -313,6 +322,32 @@
 					
 				
 					
+				
+					
+				
+			</ul>
+			<h4>Servers and nodes</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
 						
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/coordinator/">Coordinator</a></li>
@@ -320,10 +355,62 @@
 					
 				
 					
+				
+			</ul>
+			<h4>Data</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
 						
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/kvpairs/">Key/value pairs</a></li>
 
+					
+				
+			</ul>
+			<h4>Configuration</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
 					
 				
 			</ul>
@@ -389,13 +476,13 @@
 </ul></li>
 </ol>
 
-<h1 id="data-token-via-consistent-hashing:ab03d1453a293f8f57c3c861543dea45">Data token via consistent hashing</h1>
+<h1 id="data-token-via-consistent-hashing:01e6ffbcbc793da8b1057b46f22a1355">Data token via consistent hashing</h1>
 
 <p>The coordinator hashes the key portion of the key/value pair sent in the request. The key is hashed using a consistent hashing algorithm that yields a value from 0 to 4,294,967,295.</p>
 
 <p>The coordinator then uses the data token, the consistency level, the replication factor, and its knowledge of the network topology route the request to the node or nodes that own the requested data.</p>
 
-<h1 id="summary:ab03d1453a293f8f57c3c861543dea45">Summary</h1>
+<h1 id="summary:01e6ffbcbc793da8b1057b46f22a1355">Summary</h1>
 
 <p>The coordinator is a per request role that can be performed by any node. Each client request may be coordinated by a different node. The coordinator has no single point of failure (SPOF).</p>
 

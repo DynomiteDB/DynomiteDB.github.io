@@ -47,7 +47,7 @@
             <ul class="nav navbar-nav navbar-left">
                 
                 
-                  <li class=''><a href="/docs/dynomite/v0.5.6/quick-start/"> Docs </a></li>
+                  <li class=''><a href="/docs/"> Docs </a></li>
                 
                   <li class=''><a href="/blog/"> Blog </a></li>
                 
@@ -189,65 +189,48 @@
 					
 					
 				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
 			
 		
 		<div class="col-sm-3 dyno-doc-nav">
 			<h3>Dynomite v0.5.6</h3>
+			<h4>Introduction</h4>
 			<ul>
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 				
 					
 						
@@ -275,6 +258,32 @@
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/terminology/">Terminology</a></li>
 
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Architecture</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
 					
 				
 					
@@ -313,6 +322,32 @@
 					
 				
 					
+				
+					
+				
+			</ul>
+			<h4>Servers and nodes</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
 						
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/coordinator/">Coordinator</a></li>
@@ -320,10 +355,62 @@
 					
 				
 					
+				
+			</ul>
+			<h4>Data</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
 						
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/kvpairs/">Key/value pairs</a></li>
 
+					
+				
+			</ul>
+			<h4>Configuration</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
 					
 				
 			</ul>
@@ -355,7 +442,7 @@
 <p>On Amazon Web Services (AWS), a DC = region, a rack = availability zone (AZ) and a server = an EC2 instance.</p>
 </blockquote>
 
-<h1 id="topology-hierarchy:c7a2d4f8c29e35eaf49817f53e06e361">Topology hierarchy</h1>
+<h1 id="topology-hierarchy:1f133eab44ee052910d299de6eac066e">Topology hierarchy</h1>
 
 <p><a href="/img/dynomite/v0.5.6/topology-hierarchy.svg" target="_blank">
     <img class="img-responsive center-block"
@@ -375,11 +462,11 @@
 <li>Each node has a node token between 0 and 4,294,967,295</li>
 </ul>
 
-<h1 id="cluster:c7a2d4f8c29e35eaf49817f53e06e361">Cluster</h1>
+<h1 id="cluster:1f133eab44ee052910d299de6eac066e">Cluster</h1>
 
 <p>The DynomiteDB cluster is a conceptual container that contains one or more DCs. In each of the sections below we will discuss various topologies.</p>
 
-<h2 id="tokens:c7a2d4f8c29e35eaf49817f53e06e361">Tokens</h2>
+<h2 id="tokens:1f133eab44ee052910d299de6eac066e">Tokens</h2>
 
 <p>DynomiteDB uses the term <strong>token</strong> in three ways:</p>
 
@@ -391,13 +478,13 @@
 
 <p>The important point is that these three uses of <strong>token</strong> overlap, as explained below.</p>
 
-<h3 id="token-range:c7a2d4f8c29e35eaf49817f53e06e361">Token range</h3>
+<h3 id="token-range:1f133eab44ee052910d299de6eac066e">Token range</h3>
 
 <p>The token range is the entire range of allowed tokens. The token range is from 0 to 4,294,967,295.</p>
 
 <p>The token range defines the minimum and maximum values of both node tokens and data tokens.</p>
 
-<h3 id="node-token:c7a2d4f8c29e35eaf49817f53e06e361">Node token</h3>
+<h3 id="node-token:1f133eab44ee052910d299de6eac066e">Node token</h3>
 
 <p>Each node has a node token that indicates the beginning of the range of data tokens that the node owns. The node token is a value within the token range.</p>
 
@@ -415,7 +502,7 @@ secondNodeToken = (4294967295 / 3) * 1 = 1431655765
 thirsNodeToken = (4294967295 / 3) * 2 = 2863311530
 </code></pre>
 
-<h3 id="data-token:c7a2d4f8c29e35eaf49817f53e06e361">Data token</h3>
+<h3 id="data-token:1f133eab44ee052910d299de6eac066e">Data token</h3>
 
 <p>A data token is a hash of the key portion of a key/value pair. The key is hashed using a consistent hashing algorithm which outputs the data token. The data token is then compared against the node tokens to determine which nodes own the data token. In other words, the data token and node token determine where each key/value pair is located within a rack.</p>
 
@@ -428,7 +515,7 @@ maxDataToken = nextNodeToken - 1
 
 <p>A node owns all key/value pairs with a data token from <code>minDataToken</code> to <code>maxDataToken</code>.</p>
 
-<h2 id="single-dc-cluster-with-single-rack:c7a2d4f8c29e35eaf49817f53e06e361">Single DC cluster with single rack</h2>
+<h2 id="single-dc-cluster-with-single-rack:1f133eab44ee052910d299de6eac066e">Single DC cluster with single rack</h2>
 
 <p><a href="/img/dynomite/v0.5.6/topology-1dc-1rack.svg" target="_blank">
     <img class="img-responsive center-block"
@@ -476,7 +563,7 @@ maxDataToken = nextNodeToken - 1
 
 <p>The entire cluster is exposed to clients via a Redis-compatible API. From an application developers perspective the DynomiteDB cluster operates similarly to a single Redis server. The fact that an application developer does not have to think about sharding, replication, redundancy or another other distributed database concepts is extremely powerful as it contributes to faster development velocity.</p>
 
-<h3 id="servers-and-nodes:c7a2d4f8c29e35eaf49817f53e06e361">Servers and nodes</h3>
+<h3 id="servers-and-nodes:1f133eab44ee052910d299de6eac066e">Servers and nodes</h3>
 
 <p><img class="img-responsive center-block"
      src="/img/dynomite/v0.5.6/architecture-intra-node.svg" 
@@ -505,7 +592,7 @@ maxDataToken = nextNodeToken - 1
 
 <p>A backend, which is technically a database storage engine, can provide volatile storage, persistent storage or a combination of both. Examples of volatile storage engines include Redis and Memcached. Examples of persistent storage engines include LMDB, RocksDB, LevelDB and ForestDB.</p>
 
-<h3 id="node-tokens:c7a2d4f8c29e35eaf49817f53e06e361">Node tokens</h3>
+<h3 id="node-tokens:1f133eab44ee052910d299de6eac066e">Node tokens</h3>
 
 <p>The following table shows the node tokens and data token ownership range.</p>
 
@@ -541,7 +628,7 @@ maxDataToken = nextNodeToken - 1
 maxDataToken = nextNodeToken - 1 
 </code></pre>
 
-<h2 id="single-dc-cluster-with-three-racks:c7a2d4f8c29e35eaf49817f53e06e361">Single DC cluster with three racks</h2>
+<h2 id="single-dc-cluster-with-three-racks:1f133eab44ee052910d299de6eac066e">Single DC cluster with three racks</h2>
 
 <p><a href="/img/dynomite/v0.5.6/topology-1dc-3racks.svg" target="_blank">
     <img class="img-responsive center-block"
@@ -599,7 +686,7 @@ maxDataToken = nextNodeToken - 1
 
 <p>Each rack contains the entire token range which means that <code>RF = 3</code> in this example. Specifically, a key/value pair where the data token = <code>100</code> will be replicated on sfo-r1-s1, sfo-r2-s1 and sfo-r3-s1.</p>
 
-<h3 id="node-tokens-1:c7a2d4f8c29e35eaf49817f53e06e361">Node tokens</h3>
+<h3 id="node-tokens-1:1f133eab44ee052910d299de6eac066e">Node tokens</h3>
 
 <p>In this example there are three racks, each of which contains three servers of equal size. The following table shows the node tokens and data token ownership range.</p>
 
@@ -692,7 +779,7 @@ maxDataToken = nextNodeToken - 1
 maxDataToken = nextNodeToken - 1 
 </code></pre>
 
-<h2 id="two-dc-cluster-with-three-racks-per-dc:c7a2d4f8c29e35eaf49817f53e06e361">Two DC cluster with three racks per DC</h2>
+<h2 id="two-dc-cluster-with-three-racks-per-dc:1f133eab44ee052910d299de6eac066e">Two DC cluster with three racks per DC</h2>
 
 <p><a href="/img/dynomite/v0.5.6/topology-2dc-3racks.svg" target="_blank">
     <img class="img-responsive center-block"
@@ -786,7 +873,7 @@ maxDataToken = nextNodeToken - 1
 
 <p>Each rack contains the entire token range which means that <code>RF = 3</code> for the SFO DC and JFK DC. Specifically, a key/value pair where the data token = <code>100</code> will be replicated on sfo-r1-s1, sfo-r2-s1 and sfo-r3-s1 within the SFO DC, plus jfk-r1-s1, jfk-r2-s1 AND jfk-r3-s1 within the JFK DC.</p>
 
-<h3 id="node-tokens-2:c7a2d4f8c29e35eaf49817f53e06e361">Node tokens</h3>
+<h3 id="node-tokens-2:1f133eab44ee052910d299de6eac066e">Node tokens</h3>
 
 <p>In this example there are six racks, each of which contains three servers of equal size. The following table shows the node tokens and data token ownership range.</p>
 
@@ -957,7 +1044,7 @@ maxDataToken = nextNodeToken - 1
 maxDataToken = nextNodeToken - 1 
 </code></pre>
 
-<h1 id="summary:c7a2d4f8c29e35eaf49817f53e06e361">Summary</h1>
+<h1 id="summary:1f133eab44ee052910d299de6eac066e">Summary</h1>
 
 <p>Understanding the network topology is a critical task for System Administrators and operations staff. However, application developers are free to focus on application requirements as DynomiteDB&rsquo;s Redis-compatible API provides a simple API that abstracts away the implementation details of DynomiteDB&rsquo;s distributed nature.</p>
 

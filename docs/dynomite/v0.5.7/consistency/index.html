@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Consistency">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>Consistency &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://www.dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="http://www.dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://www.dynomitedb.com/css/style.css">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+                  <li class=''><a href="/faq/"> FAQ </a></li>
+                
+                  <li class=''><a href="/roadmap/"> Roadmap </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	
+		
+			
+			
+			
+			
+		
+	
+	<div class="row">
+		
+			
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+			
+		
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Dynomite v0.5.7</h3>
+			<h4>Introduction</h4>
+			<ul>
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/introduction/">Introduction</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/quick-start/">Quick Start</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/install-docker-ubuntu-14-04/">Install Docker on Ubuntu 14.04</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/terminology/">Terminology</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Architecture</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/architecture/">Architecture</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/topology/">Topology</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/replication/">Replication</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/consistency/">Consistency</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/membership-protocols/">Membership Protocols</a></li>
+
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Servers and nodes</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/coordinator/">Coordinator</a></li>
+
+					
+				
+					
+				
+			</ul>
+			<h4>Data</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.7/kvpairs/">Key/value pairs</a></li>
+
+					
+				
+			</ul>
+			<h4>Configuration</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>Consistency</h1>
+			
+
+<p>DynomiteDB allows you to tune the amount of consistency in your cluster. DynomiteDB&rsquo;s tunable consistency supports both eventual consistency and immediate consistency within the local data center (DC). The consistency level is set on a cluster-wide basis for both reads and writes.</p>
+
+<p>Tunable consistency means that you can choose between eventual consistency which optimizes for high performance, high availability and high throughput vs. immediate consistency within the local DC which optimizes for data consistency. The downside to eventual consistency is the potential for stale reads, while the downside to immediate consistency are higher latency and lower availability.</p>
+
+<blockquote>
+<p>Dynomite added support for tunable consistency in version 0.5.3.</p>
+</blockquote>
+
+<h1 id="consistency-level-cl:9637d1f8058592c985f7d7cf0de0978b">Consistency level (CL)</h1>
+
+<p>Consistency level (CL) determines how many nodes must acknowledge a given read or write request. Consistency level is tunable on a cluster-wide basis and defaults to <code>DC_ONE</code>.</p>
+
+<p>DynomiteDB supports two consistency levels:</p>
+
+<ul>
+<li>DC_ONE</li>
+<li>DC_QUORUM</li>
+</ul>
+
+<p>CL = <code>DC_ONE</code> provides the best performance, lowest latency, highest availability and highest throughput at the expense of a few milliseconds of eventual consistency. However, if your application requires immediate consistency within the local DC then you should use CL = <code>DC_QUORUM</code>.</p>
+
+<p>Consistency level on write requests controls how many replicas must acknowledge that they received and wrote the key/value pair. Consistency level on read requests controls how many replicas must acknowledge the request by sending their most recent copy of the key/value pair to the coordinator.</p>
+
+<table class="table table-condensed table-bordered">
+    <tr class="active">
+        <th>Consistency level</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>DC_ONE</td>
+        <td>
+            <ul>
+                <li>When CL = <code>DC_ONE</code> the coordinator contacts one replica node that is located within the same rack as the coordinator. It succeeds when the one replica node successfully replies to the coordinator.</li>
+                <li>CL = <code>DC_ONE</code> has the lowest consistency, highest availability, highest throughput and prevents synchronous cross DC traffic.</li>
+                <li>Write requests with CL = <code>DC_ONE</code> are synchronously written to one replica node within the same rack as the coordinator and asynchronously replicated to replica nodes located in other racks and DCs.</li>
+                <li>Read requests with CL = <code>DC_ONE</code> are synchronously read from one replica node within the same rack as the coordinator.</li>
+            </ul>
+        </td> 
+    </tr>
+    <tr>
+        <td>DC_QUORUM</td>
+        <td>
+            <ul>
+                <li>A request with CL = <code>DC_QUORUM</code> succeeds when a majority of the replica nodes located in the local DC successfully reply to the coordinator. <code>DC_QUORUM</code> only contacts replica nodes located in the local DC.</li>
+                <li>CL = <code>DC_QUORUM</code> has balanced consistency and availability, and prevents synchronous cross DC traffic.</li>
+                <li>CL = <code>DC_QUORUM</code> provides immediate consistency within the local DC and eventual consistency across remote DCs.</li>
+                <li>Write requests with CL = <code>DC_QUORUM</code> are synchronously written to a quorum of replica nodes within the local DC (i.e. the same DC as the coordinator) and asynchronously replicated to replica nodes located in other racks and DCs.</li>
+                <li>Read requests with CL = <code>DC_QUORUM</code> are synchronously read from a quorum of replica nodes within the local DC (i.e. the same DC as the coordinator).</li>
+                <li>Quorum is calculated as <code>roundDown( (numberOfReplicas / 2) + 1 )</code>.</li>
+            </ul>
+        </td> 
+    </tr>
+</table>
+
+<h2 id="consistency-level-cl-configuration:9637d1f8058592c985f7d7cf0de0978b">Consistency level (CL) configuration</h2>
+
+<p>You can configure the consistency level (CL) for reads and writes separately. The two types of CL configuration are:</p>
+
+<ul>
+<li>Read CL</li>
+<li>Write CL</li>
+</ul>
+
+<p>The read and write CL can be configured in two ways:</p>
+
+<ul>
+<li>statically in the <code>dynomite.yaml</code> file</li>
+<li>dynamically at runtime via teh admin port</li>
+</ul>
+
+<h3 id="dynomite-yaml:9637d1f8058592c985f7d7cf0de0978b">dynomite.yaml</h3>
+
+<p>You can configure the read CL and write CL in <code>dynomite.yaml</code> via the <code>read_consistency</code> and <code>write_consistency</code> keys. The possible values for each of the CL keys are <code>dc_one</code> (the default) and <code>dc_quorum</code>.</p>
+
+<blockquote>
+<p>The <code>dynomite.yaml</code> is read once by <code>dynomite</code> during startup.</p>
+</blockquote>
+
+<pre><code class="language-bash">dyn_o_mite:
+  ...
+  read_consistency: dc_quorum
+  write_consistency: dc_quorum
+</code></pre>
+
+<h3 id="admin-port:9637d1f8058592c985f7d7cf0de0978b">Admin port</h3>
+
+<p>You can configure the read CL without restarting <code>dynomite</code> via the admin port. By default, the admin port is set to <code>22222</code>.</p>
+
+<pre><code class="language-bash">curl http://localhost:22222/set_consistency/read/dc_quorum
+</code></pre>
+
+<p>As with the read CL above, you can set the write CL using the admin port.</p>
+
+<pre><code class="language-bash">curl http://localhost:22222/set_consistency/write/dc_quorum
+</code></pre>
+
+<h3 id="view-the-current-consistency-level-cl:9637d1f8058592c985f7d7cf0de0978b">View the current consistency level (CL)</h3>
+
+<p>You can view the current read CL and write CL configuration via the admin port as shown below.</p>
+
+<pre><code class="language-bash">curl http://localhost:22222/get_consistency
+</code></pre>
+
+<p>The <code>curl</code> command above will display the current CLs as follows:</p>
+
+<pre><code class="language-bash">Read Consistency: DC_QUORUM
+Write Consistency: DC_QUORUM
+</code></pre>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2016 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script src="http://www.dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+<script src="http://www.dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+<script src="http://www.dynomitedb.com/js/dynomite.js"></script>
+
+	</body>
+</html>

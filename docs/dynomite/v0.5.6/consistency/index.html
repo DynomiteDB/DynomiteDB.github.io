@@ -47,7 +47,7 @@
             <ul class="nav navbar-nav navbar-left">
                 
                 
-                  <li class=''><a href="/docs/dynomite/v0.5.6/quick-start/"> Docs </a></li>
+                  <li class=''><a href="/docs/"> Docs </a></li>
                 
                   <li class=''><a href="/blog/"> Blog </a></li>
                 
@@ -189,65 +189,48 @@
 					
 					
 				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
 			
 		
 		<div class="col-sm-3 dyno-doc-nav">
 			<h3>Dynomite v0.5.6</h3>
+			<h4>Introduction</h4>
 			<ul>
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 				
 					
 						
@@ -275,6 +258,32 @@
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/terminology/">Terminology</a></li>
 
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Architecture</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
 					
 				
 					
@@ -313,6 +322,32 @@
 					
 				
 					
+				
+					
+				
+			</ul>
+			<h4>Servers and nodes</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
 						
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/coordinator/">Coordinator</a></li>
@@ -320,10 +355,62 @@
 					
 				
 					
+				
+			</ul>
+			<h4>Data</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
 						
 
 <li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/kvpairs/">Key/value pairs</a></li>
 
+					
+				
+			</ul>
+			<h4>Configuration</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
 					
 				
 			</ul>
@@ -341,7 +428,7 @@
 <p>Dynomite added support for tunable consistency in version 0.5.3.</p>
 </blockquote>
 
-<h1 id="consistency-level-cl:589bd115e6e47c06d69cedda34bcaebd">Consistency level (CL)</h1>
+<h1 id="consistency-level-cl:9637d1f8058592c985f7d7cf0de0978b">Consistency level (CL)</h1>
 
 <p>Consistency level (CL) determines how many nodes must acknowledge a given read or write request. Consistency level is tunable on a cluster-wide basis and defaults to <code>DC_ONE</code>.</p>
 
@@ -387,7 +474,7 @@
     </tr>
 </table>
 
-<h2 id="consistency-level-cl-configuration:589bd115e6e47c06d69cedda34bcaebd">Consistency level (CL) configuration</h2>
+<h2 id="consistency-level-cl-configuration:9637d1f8058592c985f7d7cf0de0978b">Consistency level (CL) configuration</h2>
 
 <p>You can configure the consistency level (CL) for reads and writes separately. The two types of CL configuration are:</p>
 
@@ -403,7 +490,7 @@
 <li>dynamically at runtime via teh admin port</li>
 </ul>
 
-<h3 id="dynomite-yaml:589bd115e6e47c06d69cedda34bcaebd">dynomite.yaml</h3>
+<h3 id="dynomite-yaml:9637d1f8058592c985f7d7cf0de0978b">dynomite.yaml</h3>
 
 <p>You can configure the read CL and write CL in <code>dynomite.yaml</code> via the <code>read_consistency</code> and <code>write_consistency</code> keys. The possible values for each of the CL keys are <code>dc_one</code> (the default) and <code>dc_quorum</code>.</p>
 
@@ -417,7 +504,7 @@
   write_consistency: dc_quorum
 </code></pre>
 
-<h3 id="admin-port:589bd115e6e47c06d69cedda34bcaebd">Admin port</h3>
+<h3 id="admin-port:9637d1f8058592c985f7d7cf0de0978b">Admin port</h3>
 
 <p>You can configure the read CL without restarting <code>dynomite</code> via the admin port. By default, the admin port is set to <code>22222</code>.</p>
 
@@ -429,7 +516,7 @@
 <pre><code class="language-bash">curl http://localhost:22222/set_consistency/write/dc_quorum
 </code></pre>
 
-<h3 id="view-the-current-consistency-level-cl:589bd115e6e47c06d69cedda34bcaebd">View the current consistency level (CL)</h3>
+<h3 id="view-the-current-consistency-level-cl:9637d1f8058592c985f7d7cf0de0978b">View the current consistency level (CL)</h3>
 
 <p>You can view the current read CL and write CL configuration via the admin port as shown below.</p>
 
