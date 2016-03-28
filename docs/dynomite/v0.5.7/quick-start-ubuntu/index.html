@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Key/value pairs">
+    <meta name="description" content="Quick Start (Ubuntu)">
     <meta name="author" content="The DynomiteDB community">
 
     <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
     <link rel="shortcut icon" href="/favicon@3x.png">
 
-    <title>Key/value pairs &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+    <title>Quick Start (Ubuntu) &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
 
    	
     
@@ -492,67 +492,113 @@
 		</div>
 
 		<div class="col-xs-12 col-sm-9 dyno-doc">
-			<h1>Key/value pairs</h1>
+			<h1>Quick Start (Ubuntu)</h1>
 			
 
-<p><strong>Backend</strong>: <code>Redis</code></p>
+<p>In this quick start we will setup a single node cluster on Ubuntu.</p>
 
-<p>A key/value pair is the main physical unit of data in DynomiteDB. As the unit of data, each key/value pair is replicated around the cluster based on the replication factor (RF). In DynomiteDB the RF is set based on the network topology.</p>
+<p>The DynomiteDB package automatically installs and configures Dynomite with a Redis backend in a single server configuration.</p>
 
-<p>DynomiteDB&rsquo;s key/value pairs support rich data structures where the value side of the key value pair may be a String, Hash, List, Set or Sorted Set. You can compose these primitive types (i.e String, Hash, List, Set and Sorted Set) into complex data models.</p>
+<h1 id="install-dynomitedb:32b7a7d676fcada9f846994c639bec28">Install DynomiteDB</h1>
 
-<p>When working with DynomiteDB it is important to remember that its key/value pairs support rich data structures that are far more powerful and useful than the simple string key with string value pairs supported by other key/value servers.</p>
+<p>First, get the DynomiteDB gpg key.</p>
 
-<p>DynomiteDB supports a cache size of 4,294,967,295 key/value pairs per cluster.</p>
+<pre><code class="language-bash">apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FB3291D9
+</code></pre>
 
-<p>In production, it is normal to use multiple DynomiteDB clusters to support different microservices. When multiple clusters are deployed the total number of key/value pairs supported by DynomiteDB is <code>4,294,967,295 x numberOfClusters</code>.</p>
+<p>Add the DynomiteDB repository to your list of apt repositories.</p>
 
-<h1 id="data-token:011ada7f5116ba988b9f4f99704d6c01">Data token</h1>
+<pre><code class="language-bash">add-apt-repository &quot;deb https://apt.dynomitedb.com/ trusty main&quot;
 
-<p>When a request is sent to DynomiteDB, the key is hashed using a consistent hashing algorithm that converts the key into a data token. The data token is a value between 0 and 4,294,967,295.</p>
+apt-get update
+</code></pre>
 
-<p>The data token is used to determine which nodes are the replica nodes for each key/value pair. Specifically, each node has a node token that represents the lower bound of the data token range for key/value pairs that it owns. The upper bound of the data token range is <code>nodeTokenOfNextNode - 1</code>.</p>
+<p>Install DynomiteDB.</p>
 
-<p>The table below has an example rack with three nodes nodeA, nodeB and nodeC.</p>
+<pre><code>apt-get install dynomitedb
+</code></pre>
 
-<p>The node tokens for NodeA, NodeB and NodeC are <code>0</code>, <code>1,431,655,765</code> and <code>2,863,311,530</code>, respectively.</p>
+<h1 id="connect-to-redis:32b7a7d676fcada9f846994c639bec28">Connect to Redis</h1>
 
-<p>Notice how each node owns a data token range that starts with its node token and ends with one less than the next node&rsquo;s node token.</p>
+<p>Connect directly to Redis to ensure that Redis is working properly.</p>
 
-<p>If a key/value pair with a data token of 2863311520 is written to DynomiteDB then the key/value pair will be saved in NodeB.</p>
+<pre><code class="language-bash">redis-cli -p 22122
+</code></pre>
 
-<table class="table table-condensed table-bordered">
-    <tr class="active">
-        <th>Node</th>
-        <th>Node token</th>
-        <th>Min data token</th>
-        <th>Max data token</th>
-    </tr>
-    <tr>
-        <td>NodeA</td>
-        <td>0</td> 
-        <td>0</td> 
-        <td>1431655764</td> 
-    </tr> 
-    <tr>
-        <td>NodeB</td>
-        <td>1431655765</td> 
-        <td>1431655765</td> 
-        <td>2863311529</td> 
-    </tr>
-    <tr>
-        <td>NodeC</td>
-        <td>2863311530</td> 
-        <td>2863311530</td> 
-        <td>4294967295</td> 
-    </tr>
-</table>
+<p>Enter the following commands at the <code>redis-cli</code> prompt. Expected output is shown below each command.</p>
 
-<!--
-    TODO
-    1. Add new sections for Key, Value
-    2. In the value section, document each of the supported value types (i.e String, Hash, List, Set and Sorted Set)
--->
+<p>Create a key named <code>fname</code>.</p>
+
+<pre><code class="language-bash">set fname &quot;Bob&quot;
+</code></pre>
+
+<p>Create a key named <code>lname</code>.</p>
+
+<pre><code class="language-bash">set lname &quot;Smith&quot;
+</code></pre>
+
+<p>Get the value of <code>fname</code>.</p>
+
+<pre><code class="language-bash">get fname
+
+Expected output: &quot;Bob&quot;
+</code></pre>
+
+<p>Get the value of <code>lname</code>.</p>
+
+<pre><code class="language-bash">get lname
+
+Expected output: &quot;Smith&quot;
+</code></pre>
+
+<p>Exit the Redis prompt.</p>
+
+<pre><code class="language-bash">quit
+</code></pre>
+
+<h1 id="connect-to-dynomite:32b7a7d676fcada9f846994c639bec28">Connect to Dynomite</h1>
+
+<p>Next, connect to Dynomite.</p>
+
+<pre><code class="language-bash">redis-cli -p 8102
+</code></pre>
+
+<p>Enter the following commands at the <code>redis-cli</code> prompt which is now connected to Dynomite.</p>
+
+<p>Each of the commands below are sent from the <code>redis-cli</code> client to the <code>dynomite</code> server which then forwards the request to the <code>redis-server</code> backend.</p>
+
+<p>Get the value of <code>fname</code>.</p>
+
+<pre><code class="language-bash">get fname
+
+Expected output: &quot;Bob&quot;
+</code></pre>
+
+<p>Get the value of <code>lname</code>.</p>
+
+<pre><code class="language-bash">get lname
+
+Expected output: &quot;Smith&quot;
+</code></pre>
+
+<p>Change the value of <code>fname</code>.</p>
+
+<pre><code class="language-bash">set fname &quot;Bill&quot;
+</code></pre>
+
+<p>Get the new value of <code>fname</code>.</p>
+
+<pre><code class="language-bash">get fname
+
+Expected output: &quot;Bill&quot;
+</code></pre>
+
+<p>Exit the Redis prompt.</p>
+
+<pre><code class="language-bash">quit
+</code></pre>
+
+<p>Congratulations. You have successfully installed DynomiteDB in a single node configuration.</p>
 
 		</div>
 	</div>

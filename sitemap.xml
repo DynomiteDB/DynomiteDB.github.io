@@ -28,6 +28,11 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/401-conf-SPEC-TO-BALIG/</loc>
+        <lastmod>0001-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/roadmap/dynomite/automate-ops-225/</loc>
         <lastmod>2016-02-11T08:08:08-08:00</lastmod>
     </url>
@@ -163,6 +168,11 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/quick-start-ubuntu/</loc>
+        <lastmod>2016-03-27T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/install-docker-ubuntu-14-04/</loc>
         <lastmod>2016-03-13T20:22:33-08:00</lastmod>
     </url>
@@ -253,8 +263,23 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/dynomite-yaml/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/dynomite-yaml/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/kvpairs/</loc>
         <lastmod>2016-02-18T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/seeds-list/</loc>
+        <lastmod>2016-03-14T20:22:33-08:00</lastmod>
     </url>
     
 </urlset>

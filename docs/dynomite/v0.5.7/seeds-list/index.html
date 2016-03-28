@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Key/value pairs">
+    <meta name="description" content="seeds.list">
     <meta name="author" content="The DynomiteDB community">
 
     <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
     <link rel="shortcut icon" href="/favicon@3x.png">
 
-    <title>Key/value pairs &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+    <title>seeds.list &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
 
    	
     
@@ -492,67 +492,57 @@
 		</div>
 
 		<div class="col-xs-12 col-sm-9 dyno-doc">
-			<h1>Key/value pairs</h1>
+			<h1>seeds.list</h1>
 			
 
-<p><strong>Backend</strong>: <code>Redis</code></p>
+<p>The <code>seeds.list</code> contains a list of seed servers that Dynomite&rsquo;s gossiper uses as the starting point to learn the cluster&rsquo;s topology.</p>
 
-<p>A key/value pair is the main physical unit of data in DynomiteDB. As the unit of data, each key/value pair is replicated around the cluster based on the replication factor (RF). In DynomiteDB the RF is set based on the network topology.</p>
+<p><code>seeds.list</code> is used by the seed REST API server (<code>florida.js</code>) when <code>dyn_seed_provider</code> is set to <code>florida_provider</code> in <code>dynomite.yaml</code>.</p>
 
-<p>DynomiteDB&rsquo;s key/value pairs support rich data structures where the value side of the key value pair may be a String, Hash, List, Set or Sorted Set. You can compose these primitive types (i.e String, Hash, List, Set and Sorted Set) into complex data models.</p>
+<p><code>seeds.list</code> is one of three possible ways that you may specify the list of seed servers.</p>
 
-<p>When working with DynomiteDB it is important to remember that its key/value pairs support rich data structures that are far more powerful and useful than the simple string key with string value pairs supported by other key/value servers.</p>
+<p>The choices for seed providers are:</p>
 
-<p>DynomiteDB supports a cache size of 4,294,967,295 key/value pairs per cluster.</p>
+<ul>
+<li><strong>Simple provider</strong>: The simple provider either defines the list of seed servers in <code>dynomite.yaml</code> or excludes the list of seed servers for a single-server cluster.</li>
+<li><strong>Florida provider</strong>: The Florida provider defines the seed servers in <code>seeds.list</code> and shares the list via a REST API.</li>
+<li><strong>DNS provider</strong>: The DNS provider defines the seed servers in a <code>TXT</code> record.</li>
+</ul>
 
-<p>In production, it is normal to use multiple DynomiteDB clusters to support different microservices. When multiple clusters are deployed the total number of key/value pairs supported by DynomiteDB is <code>4,294,967,295 x numberOfClusters</code>.</p>
+<p>It is a best practice to use the same three seed servers on every node within a data center (DC).</p>
 
-<h1 id="data-token:011ada7f5116ba988b9f4f99704d6c01">Data token</h1>
+<p>The default location of <code>seeds.list</code> is <code>/etc/dynomitedb/dynomite/seeds.list</code>.</p>
 
-<p>When a request is sent to DynomiteDB, the key is hashed using a consistent hashing algorithm that converts the key into a data token. The data token is a value between 0 and 4,294,967,295.</p>
+<h1 id="format:2c5802f99ef7c760489f2fe12bda567e">Format</h1>
 
-<p>The data token is used to determine which nodes are the replica nodes for each key/value pair. Specifically, each node has a node token that represents the lower bound of the data token range for key/value pairs that it owns. The upper bound of the data token range is <code>nodeTokenOfNextNode - 1</code>.</p>
+<p>The <code>seeds.list</code> file lists one seed server per line. Each line has the following format:</p>
 
-<p>The table below has an example rack with three nodes nodeA, nodeB and nodeC.</p>
+<p><code>&lt;hostname-or-ip&gt;:&lt;dyn-port&gt;:&lt;rack&gt;:&lt;dc&gt;:&lt;node-token&gt;</code></p>
 
-<p>The node tokens for NodeA, NodeB and NodeC are <code>0</code>, <code>1,431,655,765</code> and <code>2,863,311,530</code>, respectively.</p>
+<ul>
+<li>hostname-or-ip: The hostname or IP address of a seed server that is used by Dynomite for internal communication. Set in <code>dynomite.yaml</code> via <code>dyn_listen</code>.</li>
+<li>dyn-port: The port used by Dynomite for internal communication. Defaults to <code>8101</code> and is set in <code>dynomite.yaml</code> via <code>dyn_listen</code>.</li>
+<li>rack: The seed server&rsquo;s rack. Set in <code>dynomite.yaml</code> via <code>rack</code>.</li>
+<li>dc: The seed server&rsquo;s data center (DC). Set in <code>dynomite.yaml</code> via <code>datacenter</code>.</li>
+<li>node-token: The seed server&rsquo;s node token. Set in <code>dynomite.yaml</code> via <code>tokens</code>.</li>
+</ul>
 
-<p>Notice how each node owns a data token range that starts with its node token and ends with one less than the next node&rsquo;s node token.</p>
+<h1 id="example:2c5802f99ef7c760489f2fe12bda567e">Example</h1>
 
-<p>If a key/value pair with a data token of 2863311520 is written to DynomiteDB then the key/value pair will be saved in NodeB.</p>
+<p>The following example shows three seed servers. The first seed server has the following values:</p>
 
-<table class="table table-condensed table-bordered">
-    <tr class="active">
-        <th>Node</th>
-        <th>Node token</th>
-        <th>Min data token</th>
-        <th>Max data token</th>
-    </tr>
-    <tr>
-        <td>NodeA</td>
-        <td>0</td> 
-        <td>0</td> 
-        <td>1431655764</td> 
-    </tr> 
-    <tr>
-        <td>NodeB</td>
-        <td>1431655765</td> 
-        <td>1431655765</td> 
-        <td>2863311529</td> 
-    </tr>
-    <tr>
-        <td>NodeC</td>
-        <td>2863311530</td> 
-        <td>2863311530</td> 
-        <td>4294967295</td> 
-    </tr>
-</table>
+<ul>
+<li>ip: 192.168.33.41</li>
+<li>port: 8101</li>
+<li>rack: rc1</li>
+<li>dc: dc1</li>
+<li>node token: 2147483647</li>
+</ul>
 
-<!--
-    TODO
-    1. Add new sections for Key, Value
-    2. In the value section, document each of the supported value types (i.e String, Hash, List, Set and Sorted Set)
--->
+<pre><code class="language-bash">192.168.33.41:8101:rc1:dc1:2147483647
+192.168.33.42:8101:rc2:dc1:0
+192.168.33.43:8101:rc2:dc1:2147483647
+</code></pre>
 
 		</div>
 	</div>

@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="dynomite.yaml">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>dynomite.yaml &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://www.dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="http://www.dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://www.dynomitedb.com/css/style.css">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+                  <li class=''><a href="/faq/"> FAQ </a></li>
+                
+                  <li class=''><a href="/roadmap/"> Roadmap </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	
+		
+			
+			
+			
+			
+		
+	
+	<div class="row">
+		
+			
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+			
+		
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Dynomite v0.5.6</h3>
+			<h4>Introduction</h4>
+			<ul>
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/introduction/">Introduction</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/quick-start/">Quick Start</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/terminology/">Terminology</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Architecture</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/architecture/">Architecture</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/topology/">Topology</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/replication/">Replication</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/consistency/">Consistency</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/membership-protocols/">Membership Protocols</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Servers and nodes</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/coordinator/">Coordinator</a></li>
+
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Data</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/kvpairs/">Key/value pairs</a></li>
+
+					
+				
+			</ul>
+			<h4>Configuration</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.6/dynomite-yaml/">dynomite.yaml</a></li>
+
+					
+				
+					
+				
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>dynomite.yaml</h1>
+			
+
+<!--
+TODO
+1. Add `daemonize` to the conf file
+2. Add `output` to the conf file
+3. Add `pid-file` to the conf file
+-->
+
+<p>The <code>dynomite.yaml</code> file supports many configuration options. Each option is described below along with default values and possible values.</p>
+
+<h1 id="datacenter:1b964efaa046bf6b0fcb57967b6052ab">datacenter</h1>
+
+<ul>
+<li>Default value: none</li>
+<li>Default value (dyno CLI): none (in single server mode), <code>dc1</code> (in cluster mode)</li>
+<li>Environment variable: <code>DYNOMITE_DC</code></li>
+</ul>
+
+<p>The name of the data center (DC) that this node is contained within.</p>
+
+<h1 id="rack:1b964efaa046bf6b0fcb57967b6052ab">rack</h1>
+
+<ul>
+<li>Default value: none</li>
+<li>Default value (dyno CLI): none (in single server mode), <code>rack1</code> (in cluster mode)</li>
+<li>Environment variable: <code>DYNOMITE_RACK</code></li>
+</ul>
+
+<p>The name of the rack that contains this node&rsquo;s server.</p>
+
+<h1 id="listen:1b964efaa046bf6b0fcb57967b6052ab">listen</h1>
+
+<ul>
+<li>Default value: none</li>
+<li>Default value (dyno CLI): <code>0.0.0.0:8102</code></li>
+<li>Environment variable: <code>DYNOMITE_LISTEN</code></li>
+</ul>
+
+<p>When using the <code>dyno</code> CLI, <code>listen</code> will be set to a default value of <code>0.0.0.0:8102</code>.</p>
+
+<h1 id="dyn-listen:1b964efaa046bf6b0fcb57967b6052ab">dyn_listen</h1>
+
+<ul>
+<li>Default value: <code>0.0.0.0:8101</code></li>
+<li>Environment variable: <code>DYNOMITE_DYN_LISTEN</code></li>
+</ul>
+
+<p>A string that contains the hostname (or IP address) of the server that the node is installed on. The port is the port that this Dynomite node uses to communicate with other Dynomite nodes.</p>
+
+<h1 id="dyn-port:1b964efaa046bf6b0fcb57967b6052ab">dyn_port</h1>
+
+<ul>
+<li>Default value: <code>8101</code></li>
+<li>Environment variable: <code>DYNOMITE_DYN_PORT</code></li>
+</ul>
+
+<p>The port used by <code>dynomite</code> for node-to-node communication including gossip.</p>
+
+<h1 id="dyn-seeds:1b964efaa046bf6b0fcb57967b6052ab">dyn_seeds</h1>
+
+<ul>
+<li>Default value: none</li>
+<li>Environment variable: <code>DYNOMITE_DYN_SEEDS</code></li>
+</ul>
+
+<p>This is an optional env var. It can be empty or a string (which is then parsed into an array).</p>
+
+<p>When a value is passed it must use &ldquo;:&rdquo; to separate items within each array index, and use &ldquo;|&rdquo; to separate array indexes.</p>
+
+<p>Array of seeds provided as <code>ip-address:port:rack:dc:token</code></p>
+
+<h1 id="dyn-seed-provider:1b964efaa046bf6b0fcb57967b6052ab">dyn_seed_provider</h1>
+
+<ul>
+<li>Default value: none if single server, else <code>simple_provider</code></li>
+<li>Environment variable: <code>DYNOMITE_DYN_SEED_PROVIDER</code></li>
+</ul>
+
+<p>Possible values:</p>
+
+<ul>
+<li><code>simple_provider</code></li>
+<li><code>florida_provider</code></li>
+<li><code>dns_provider</code></li>
+</ul>
+
+<h1 id="dyn-connections:1b964efaa046bf6b0fcb57967b6052ab">dyn_connections</h1>
+
+<ul>
+<li>Default value: none</li>
+<li>Environment variable: <code>DYNOMITE_DYN_CONNECTIONS</code></li>
+</ul>
+
+<!-- TODO -->
+
+<h1 id="dyn-read-timeout:1b964efaa046bf6b0fcb57967b6052ab">dyn_read_timeout</h1>
+
+<ul>
+<li>Default value: none</li>
+<li>Environment variable: <code>DYNOMITE_DYN_READ_TIMEOUT</code></li>
+</ul>
+
+<p>The number of milliseconds before reads between Dynomite nodes timeout.</p>
+
+<h1 id="dyn-write-timeout:1b964efaa046bf6b0fcb57967b6052ab">dyn_write_timeout</h1>
+
+<ul>
+<li>Default value: none</li>
+<li>Environment variable: <code>DYNOMITE_DYN_WRITE_TIMEOUT</code></li>
+</ul>
+
+<p>The number of milliseconds before writes between Dynomite nodes timeout.</p>
+
+<h1 id="hash:1b964efaa046bf6b0fcb57967b6052ab">hash</h1>
+
+<ul>
+<li>Default value: murmur</li>
+<li>Environment variable: <code>DYNOMITE_HASH</code></li>
+</ul>
+
+<p>The hash algorithm to use when hashing a key.</p>
+
+<p>Possible values:</p>
+
+<ul>
+<li>one_at_a_time</li>
+<li>md5</li>
+<li>crc16</li>
+<li>crc32</li>
+<li>crc32a</li>
+<li>fnv1_64</li>
+<li>fnv1a_64</li>
+<li>fnv1_32</li>
+<li>fnv1a_32</li>
+<li>hsieh</li>
+<li>murmur</li>
+<li>jenkins</li>
+<li>murmur3</li>
+</ul>
+
+<h1 id="hash-tag:1b964efaa046bf6b0fcb57967b6052ab">hash_tag</h1>
+
+<ul>
+<li>Default value: none</li>
+<li>Environment variable: <code>DYNOMITE_HASH_TAG</code></li>
+</ul>
+
+<p>The hash tag is a string that causes the key hash to only use the portion of the key specified by the hash tag.</p>
+
+<h1 id="distribution:1b964efaa046bf6b0fcb57967b6052ab">distribution</h1>
+
+<ul>
+<li>Default value: none</li>
+<li>Environment variable: <code>DYNOMITE_DISTRIBUTION</code></li>
+</ul>
+
+<p>Possible values:</p>
+
+<ul>
+<li>ketama</li>
+<li>modula</li>
+<li>random</li>
+<li>vnode</li>
+<li>single</li>
+</ul>
+
+<h1 id="timeout:1b964efaa046bf6b0fcb57967b6052ab">timeout</h1>
+
+<ul>
+<li>Default value: 5000</li>
+<li>Environment variable: <code>DYNOMITE_TIMEOUT</code></li>
+</ul>
+
+<p>Timeout specified in milliseconds.</p>
+
+<h1 id="backlog:1b964efaa046bf6b0fcb57967b6052ab">backlog</h1>
+
+<ul>
+<li>Default value: <code>512</code></li>
+<li>Environment variable: <code>DYNOMITE_BACKLOG</code></li>
+</ul>
+
+<p>On Linux, <code>backlog</code> defines the maximum length to which the queue of pending connections may grow. A connection request that arrives after the queue is full may receive an <code>ECONNREFUSED</code> error. <code>backlog</code> is set to the smaller of <code>backlog</code> or <code>/proc/sys/net/core/somaxconn</code>.</p>
+
+<p>On BSD, <code>backlog</code> defines the maximum length to which the queue of pending connections may grow.  The real maximum queue length will be 1.5 times more than the value specified in the <code>backlog</code> argument. A connection request that arrives after the queue is full may receive an <code>ECONNREFUSED</code> error or a TCP connection may be silently dropped.</p>
+
+<h1 id="client-connections:1b964efaa046bf6b0fcb57967b6052ab">client_connections</h1>
+
+<ul>
+<li>Default value: none</li>
+<li>Environment variable: <code>DYNOMITE_CLIENT_CONNECTIONS</code></li>
+</ul>
+
+<p>Defines the maximum number of client connections.</p>
+
+<h1 id="data-store:1b964efaa046bf6b0fcb57967b6052ab">data_store</h1>
+
+<ul>
+<li>Default value: <code>0</code></li>
+<li>Environment variable: <code>DYNOMITE_DATA_STORE</code></li>
+</ul>
+
+<p><code>data_store</code> supports two possible values:</p>
+
+<ul>
+<li><code>0</code>: Redis or Redis compatible server</li>
+<li><code>1</code>: Memcached</li>
+</ul>
+
+<p>Use an integer value of <code>0</code> or <code>1</code> in the <code>dynomite.yaml</code> file.</p>
+
+<p>However, you must specify the backend by name when using the <code>DYNOMITE_DATA_STORE</code> environment variable. <code>DYNOMITE_DATA_STORE</code> supports the following values:</p>
+
+<ul>
+<li>Redis (converted to <code>0</code> in <code>dynomite.yaml</code> by the <code>dyno</code> CLI)</li>
+<li>Memcached (converted to <code>1</code> in <code>dynomite.yaml</code> by the <code>dyno</code> CLI)</li>
+<li>RocksDB (converted to <code>0</code> in <code>dynomite.yaml</code> by the <code>dyno</code> CLI)</li>
+<li>LMDB (converted to <code>0</code> in <code>dynomite.yaml</code> by the <code>dyno</code> CLI)</li>
+</ul>
+
+<h1 id="preconnect:1b964efaa046bf6b0fcb57967b6052ab">preconnect</h1>
+
+<ul>
+<li>Default value: <code>true</code></li>
+<li>Environment variable: <code>DYNOMITE_PRECONNECT</code></li>
+</ul>
+
+<p>By default, <code>dynomite</code> will preconnect to the backend server. Set <code>preconnect</code> to <code>false</code> to prevent <code>dynomite</code> from preconnecting to the backend server or servers in the pool.</p>
+
+<h1 id="auto-eject-hosts:1b964efaa046bf6b0fcb57967b6052ab">auto_eject_hosts</h1>
+
+<ul>
+<li>Default value: none</li>
+<li>Environment variable: <code>DYNOMITE_AUTO_EJECT_HOSTS</code></li>
+<li>Best practice: <code>true</code></li>
+</ul>
+
+<p>Set <code>auto_eject_hosts</code> to <code>true</code> to allow Dynomite to remove (i.e. eject) a node from the cluster after <code>server_failure_limit</code> consecutive failures.</p>
+
+<p>Importantly, a node will only be temporarily removed from the cluster when <code>server_retry_timeout</code> is a positive integer value. This allows a node with temporary failures to rejoin the cluster.</p>
+
+<h1 id="server-connections:1b964efaa046bf6b0fcb57967b6052ab">server_connections</h1>
+
+<ul>
+<li>Default value: <code>1</code></li>
+<li>Environment variable: <code>DYNOMITE_SERVER_CONNECTIONS</code></li>
+<li>Best practice: <code>1</code></li>
+</ul>
+
+<p><code>server_connections</code> determines how many connections the <code>dynomite</code> server opens to a backend server, such as Redis or Ledis.</p>
+
+<p>Setting <code>server_connections</code> to a value greater than 1 removes the the ability of each <code>dynomite</code> process to guarantee read after write. This guarantee is relaxed as multiple <code>server_connections</code> may result in the read and write being sent to different connections which then causes a race condition.</p>
+
+<h1 id="server-retry-timeout:1b964efaa046bf6b0fcb57967b6052ab">server_retry_timeout</h1>
+
+<ul>
+<li>Default value: none</li>
+<li>Environment variable: <code>DYNOMITE_SERVER_RETRY_TIMEOUT</code></li>
+<li>Best practice: <code>30000</code></li>
+</ul>
+
+<p>Set <code>server_retry_timeout</code> to a positive integer value to allow a previously ejected node to rejoin the cluster after <code>server_retry_timeout</code> milliseconds.</p>
+
+<h1 id="server-failure-limit:1b964efaa046bf6b0fcb57967b6052ab">server_failure_limit</h1>
+
+<ul>
+<li>Default value: none</li>
+<li>Environment variable: <code>DYNOMITE_SERVER_FAILURE_LIMIT</code></li>
+<li>Best practice: <code>3</code></li>
+</ul>
+
+<!-- TODO: SET A DEFAULT VALUE OF 3. Ref: https://github.com/Netflix/dynomite/blob/39aa98994650c55819c94cc43f42ddb77d5a4015/notes/recommendation.md -->
+
+<p><code>server_failure_limit</code> is used in conjunction with <code>auto_eject_hosts</code> to determine the number of consecutive failures after which a node is ejected from the cluster.</p>
+
+<h1 id="servers:1b964efaa046bf6b0fcb57967b6052ab">servers</h1>
+
+<ul>
+<li>Default value: <code>redis.dynomitedb.net:6379:1</code></li>
+<li>Environment variable: <code>DYNOMITE_BACKEND</code></li>
+</ul>
+
+<p><code>servers</code> defines the backend server in the form of <code>backend-host:backend-port:weight</code>. The backend may be a Redis, RocksDB, LMDB or other backend server supported by DynomiteDB.</p>
+
+<p>The backend server should be located on the same VM or physical server as the <code>dynomite</code> process. When DynomiteDB is run on Kubernetes then the backend container should be located in the same pod as the <code>dynomite</code> container.</p>
+
+<h1 id="tokens:1b964efaa046bf6b0fcb57967b6052ab">tokens</h1>
+
+<ul>
+<li>Default value: none</li>
+<li>Environment variable: <code>DYNOMITE_TOKENS</code></li>
+</ul>
+
+<p><code>tokens</code> is used to set the node token which defines the range of data tokens owned by the node.</p>
+
+<p>The default formula to define a node token is shown below. <code>numberOfNodesInRack</code> is the number of nodes contained within a rack and <code>nodeIndex</code> is the zer-based index of the node.</p>
+
+<pre><code class="language-bash">nodeToken = (4294967295 / numberOfNodesInRack) * nodeIndex
+</code></pre>
+
+<p>For example, if a rack has 3 nodes, then the node token for each node is shown below.</p>
+
+<pre><code class="language-bash">nodeToken1 = (4294967295 / 3) * 0 = 0
+
+nodeToken2 = (4294967295 / 3) * 1 = 1431655765
+
+nodeToken3 = (4294967295 / 3) * 2 = 2863311530
+</code></pre>
+
+<h1 id="gos-interval:1b964efaa046bf6b0fcb57967b6052ab">gos_interval</h1>
+
+<ul>
+<li>Default value: none</li>
+<li>Environment variable: <code>DYNOMITE_GOS_INTERVAL</code></li>
+</ul>
+
+<p>Sets the amount of time in milliseconds to sleep at the end of a gossip round.</p>
+
+<h1 id="secure-server-option:1b964efaa046bf6b0fcb57967b6052ab">secure_server_option</h1>
+
+<ul>
+<li>Default value: <code>datacenter</code></li>
+<li>Environment variable: <code>DYNOMITE_SECURE_SERVER_OPTION</code></li>
+</ul>
+
+<p><code>secure_server_option</code> determines which node-to-node communication will be encrypted.</p>
+
+<p><code>secure_server_option</code> supports four possible values:</p>
+
+<ul>
+<li><code>none</code>: Do not encrypt communication between nodes.</li>
+<li><code>datacenter</code>: Only encrypt communication between nodes that are in different DCs. Communication between nodes within the same DC is unencrypted.</li>
+<li><code>rack</code>: Encrypt communication between nodes in different racks and between nodes across DCs. Do not encrypt communication between nodes within the same rack within a DC.</li>
+<li><code>all</code>: Encrypt all communication between nodes.</li>
+</ul>
+
+<h1 id="pem-key-file:1b964efaa046bf6b0fcb57967b6052ab">pem_key_file</h1>
+
+<ul>
+<li>Default value: <code>/etc/dynomitedb/dynomite/dynomite.pem</code></li>
+<li>Environment variable: <code>DYNOMITE_PEM_KEY_FILE</code></li>
+</ul>
+
+<p>The SSL public certificate (<code>.pem</code>) file used by Dynomite for secure node-to-node communication.</p>
+
+<p><code>pem_key_file</code> must specify the full path to the SSL <code>.pem</code> file that is used to encrypt communication between Dynomite nodes.</p>
+
+<h1 id="env:1b964efaa046bf6b0fcb57967b6052ab">env</h1>
+
+<ul>
+<li>Default value: <code>aws</code></li>
+<li>Environment variable: <code>DYNOMITE_ENV</code></li>
+</ul>
+
+<p>The possible values for <code>env</code> are:</p>
+
+<ul>
+<li><code>aws</code>: Indicates that Dynomite is installed on AWS.</li>
+<li><code>google</code>: Indicates that Dynomite is installed on GCE.</li>
+<li><code>network</code>: Indicates that Dynomite is installed in a data center that you control.</li>
+</ul>
+
+<h1 id="conn-msg-rate:1b964efaa046bf6b0fcb57967b6052ab">conn_msg_rate</h1>
+
+<ul>
+<li>Default value: <code>50000</code></li>
+<li>Environment variable: <code>DYNOMITE_CONN_MSG_RATE</code></li>
+</ul>
+
+<p>Defines the default number of messages per second.</p>
+
+<h1 id="read-consistency:1b964efaa046bf6b0fcb57967b6052ab">read_consistency</h1>
+
+<ul>
+<li>Default value: <code>dc_one</code></li>
+<li>Environment variable: <code>DYNOMITE_READ_CONSISTENCY</code></li>
+</ul>
+
+<blockquote>
+<p>CL = Consistency Level, so ReadCL = Read Consistency Level</p>
+</blockquote>
+
+<p><code>read_consistency</code> has two possible values:</p>
+
+<ul>
+<li><code>dc_one</code>: During a read request, one replica node must successfully respond to the coordinator with the requested data in order for the overall request to succeed.</li>
+<li><code>dc_quorum</code>: During a read request, a quorum (i.e. simple majority) of replica nodes must successfully respond to the coordinator with the requested data in order for the overall request to succeed.</li>
+</ul>
+
+<h1 id="write-consistency-default-dc-one:1b964efaa046bf6b0fcb57967b6052ab">write_consistency (default: dc_one)</h1>
+
+<ul>
+<li>Default value: <code>dc_one</code></li>
+<li>Environment variable: <code>DYNOMITE_WRITE_CONSISTENCY</code></li>
+</ul>
+
+<p><code>write_consistency</code> has two possible values:</p>
+
+<ul>
+<li><code>dc_one</code>: During a write request, the coordinator synchronously writes to one replica node and asynchronously to other replica nodes. Only one replica node must successfully acknowledge the write request in order for the overall request to succeed.</li>
+<li><code>dc_quorum</code>: During a write request, the coordinator synchronously writes to a quorum (i.e. simple majority) of replica nodes and asynchronously to other replica nodes. A quorum of replica nodes must successfully acknowledge the write request in order for the overall request to succeed.</li>
+</ul>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2016 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script src="http://www.dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+<script src="http://www.dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+<script src="http://www.dynomitedb.com/js/dynomite.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title> &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://www.dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="http://www.dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://www.dynomitedb.com/css/style.css">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+                  <li class=''><a href="/faq/"> FAQ </a></li>
+                
+                  <li class=''><a href="/roadmap/"> Roadmap </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<h3></h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<br>
+			
+
+<p>DELETE THIS AFTER FINISHING THE 410-conf DOCUMENTATION:</p>
+
+<p>Parse and generate the <code>dynomite.yaml</code> file. The current implementation gets the dynomite configuration from environment variables and uses these variables to determine which <code>dynomite.yaml</code> to generate.</p>
+
+<h1 id="dynomite-yaml-variations:4476bef964536397aa34b801620e21a2"><code>dynomite.yaml</code> variations</h1>
+
+<ol>
+<li>Single server (i.e. a development only installation)</li>
+<li>Cluster with single DC
+a. List seeds in <code>dynomite.yaml</code>
+b. Use Florida</li>
+<li>Cluster with multi-DC
+a. List seeds in <code>dynomite.yaml</code>
+b. Use Florida</li>
+</ol>
+
+<p>Importantly, the single DC and multi-DC configurations are very similar, which will be explained below.</p>
+
+<h2 id="single-server-aka-single-node:4476bef964536397aa34b801620e21a2">Single server (aka single node)</h2>
+
+<p>The following logic describes how to configure a single server <code>dynomite.yaml</code> file.</p>
+
+<pre><code class="language-bash">#
+# The if condition below should also include if these env vars are not set as
+# DYNOMITE_CLUSTER_TYPE == &quot;single-node&quot; &amp;&amp; DYNOMITE_DATA_STORE = &quot;Redis&quot; are 
+# the default values (which means that a user does not have to set these values)
+#
+IF DYNOMITE_CLUSTER_TYPE == &quot;single-node&quot; &amp;&amp; DYNOMITE_DATA_STORE = &quot;Redis&quot; OR
+   DYNOMITE_CLUSTER_TYPE == &quot;single-node&quot; &amp;&amp; DYNOMITE_DATA_STORE is not set OR
+   DYNOMITE_CLUSTER_TYPE is not set &amp;&amp; DYNOMITE_DATA_STORE = &quot;Redis&quot; OR,
+   DYNOMITE_CLUSTER_TYPE is not set &amp;&amp; DYNOMITE_DATA_STORE = is not set,
+THEN this is a single server configuration with a Redis backend
+
+    # Set default values for the following variables.
+    .DynListen = &quot;0.0.0.0:8101&quot;
+    .Listen = &quot;0.0.0.0:8102&quot;
+    .DynSeedProvider = &quot;simple_provider&quot;
+    .Backend = &quot;redis.dynomitedb.net:6369&quot;
+    .Token = 0
+    .PemKeyFile = &quot;/etc/dynomitedb/dynomite.pem&quot;
+    .DataStore = 0
+
+END IF
+</code></pre>
+
+<p>The single node template should be based on the example shown below.</p>
+
+<pre><code class="language-yaml">dyn_o_mite:
+  dyn_listen: {.DynListen}
+  listen: {.Listen}
+  dyn_seed_provider: {.DynSeedProvider} 
+  servers:
+  - {.Backend}:1
+  tokens: {.Token}
+  pem_key_file: {.PemKeyFile}
+  data_store: {.DataStore}
+</code></pre>
+
+<p>Beyond the default values, the following environment variables can be used to customize the values of a single node <code>dynomite.yaml</code> file.</p>
+
+<ul>
+<li><code>DYNOMITE_DYN_LISTEN</code>: Variable in template = <code>{.DynListen}</code></li>
+<li><code>DYNOMITE_LISTEN</code>: Variable in template = <code>{.Listen}</code></li>
+<li><code>DYNOMITE_DYN_SEED_PROVIDER</code>: Variable in template = <code>{.DynSeedProvider}</code></li>
+<li><code>DYNOMITE_BACKEND</code>: Variable in template = <code>{.Backend}:1</code> (notice how you must append <code>:1</code>)</li>
+<li><code>DYNOMITE_TOKENS</code>: Variable in template = <code>{.Token}</code></li>
+<li><code>DYNOMITE_PEM_KEY_FILE</code>: Variable in template = <code>{.PemKeyFile}</code></li>
+<li><code>DYNOMITE_DATA_STORE</code>: Variable in template = <code>{.DataStore}</code></li>
+</ul>
+
+<h2 id="single-dc:4476bef964536397aa34b801620e21a2">Single DC</h2>
+
+<p>A single DC cluster is a cluster where all racks and servers are within the same DC.</p>
+
+<p>The following logic determines if we should generate the configuration for a single DC.</p>
+
+<pre><code class="language-bash">IF DYNOMITE_CLUSTER_TYPE = &quot;single-dc&quot;
+THEN
+
+    # Set default values for the following variables.
+    .DC = &quot;dc1&quot;                                  # NEW VARIABLE
+    .Rack = &quot;rack1&quot;                              # NEW VARIABLE
+    .DynListen = &quot;0.0.0.0:8101&quot;                  # Same as single node
+    .Listen = &quot;0.0.0.0:8102&quot;                     # Same as single node
+    .DynSeeds = empty slice                      # OPTIONAL: NEW VARIABLE
+    .DynSeedProvider = &quot;simple_provider&quot;         # OPTIONAL: DIFFERENT
+    .Backend = &quot;redis.dynomitedb.net:6369&quot;       # Same as single node
+    .Token = nil                                 # DIFFERENT, DEFAULT TO nil
+    .PemKeyFile = &quot;/etc/dynomitedb/dynomite.pem&quot; # Same as single node
+    .DataStore = 0                               # Same as single node
+
+END IF
+</code></pre>
+
+<p>The single DC template should be based on the example shown below. The single DC template differs from the single node template by adding the following options:</p>
+
+<ul>
+<li><code>datacenter</code></li>
+<li><code>rack</code></li>
+<li><code>dyn_seeds</code> or <code>dyn_seed_provider</code></li>
+<li><code>secure_server_option</code></li>
+</ul>
+
+<pre><code class="language-yaml">dyn_o_mite:
+  datacenter: {.DC}
+  rack: {.Rack}
+  dyn_listen: {.DynListen}
+  {if not .DynSeedProvider}
+  dyn_seeds:
+  - FOR EACH {.DynSeeds}
+  {/if}
+  {if .DynSeedProvider}
+  dyn_seed_provider: {.DynSeedProvider}
+  {/if}
+  listen: {.Listen}
+  servers:
+  - {.Backend}:1
+  tokens: '{.Token}'
+  secure_server_option: datacenter
+  pem_key_file: {.PemKeyFile}
+  data_store: {.DataStore}
+</code></pre>
+
+<p>The following environment variables can be used to customize the values used to generate the <code>dynomite.yaml</code> file.</p>
+
+<ul>
+<li><code>DYNOMITE_DC</code>: Variable in template = <code>{.DC}</code> <code>[NEW]</code></li>
+<li><code>DYNOMITE_Rack</code>: Variable in template = <code>{.Rack}</code> <code>[NEW]</code></li>
+<li><code>DYNOMITE_DYN_LISTEN</code>: Variable in template = <code>{.DynListen}</code></li>
+<li><code>DYNOMITE_LISTEN</code>: Variable in template = <code>{.Listen}</code></li>
+<li><code>DYNOMITE_DYN_SEEDS</code>: Variable in template = <code>{.DynSeeds}</code></li>
+<li><code>DYNOMITE_DYN_SEED_PROVIDER</code>: Variable in template = <code>{.DynSeedProvider}</code></li>
+<li><code>DYNOMITE_BACKEND</code>: Variable in template = <code>{.Backend}:1</code> (notice how you must append <code>:1</code>)</li>
+<li><code>DYNOMITE_TOKENS</code>: Variable in template = <code>{.Token}</code></li>
+<li><code>DYNOMITE_SECURE_SERVER_OPTION</code>: Variable in template = {.SecureServerOption} <code>[NEW]</code></li>
+<li><code>DYNOMITE_PEM_KEY_FILE</code>: Variable in template = <code>{.PemKeyFile}</code></li>
+<li><code>DYNOMITE_DATA_STORE</code>: Variable in template = <code>{.DataStore}</code></li>
+</ul>
+
+<h2 id="multi-dc:4476bef964536397aa34b801620e21a2">Multi-DC</h2>
+
+<p>A multi-DC <code>dynomite.yaml</code> file follows the exact same logic as the <code>single-dc</code> option.</p>
+
+<h1 id="environment-variables:4476bef964536397aa34b801620e21a2">Environment variables</h1>
+
+<p>The <code>dyno-conf</code> command accepts the following environment variables.</p>
+
+<blockquote>
+<p>When I write &ldquo;if nodes = 1&rdquo; this means if DYNOMITE_CLUSTER_TYPE = &ldquo;single-node&rdquo;.</p>
+</blockquote>
+
+<h2 id="dynomite-cluster-type-default-single-node-clustertype:4476bef964536397aa34b801620e21a2">DYNOMITE_CLUSTER_TYPE (default: single-node) {.ClusterType}</h2>
+
+<p><code>DYNOMITE_CLUSTER_TYPE</code> has 3 possible values:
+- <code>single-node</code>: Create a single server (i.e. development) configuration file.
+- <code>single-dc</code>: Indicates that the configuration file is for a single DC where all nodes reside within the same DC.
+- <code>multi-dc</code>: Indicates that the configuration file is for a large, multi-DC cluster.</p>
+
+<pre><code class="language-bash">if DYNOMITE_CLUSTER_TYPE == &quot;single-node&quot; &amp;&amp; DYNOMITE_DATA_STORE = &quot;Redis&quot; OR
+   DYNOMITE_CLUSTER_TYPE == &quot;single-node&quot; &amp;&amp; DYNOMITE_DATA_STORE is not set, then
+        # Set the default values 
+        .DynListen = &quot;0.0.0.0:8101&quot;
+        .DataStore = 0
+        .Listen = &quot;0.0.0.0:8102&quot;
+        .DynSeedProvider = &quot;simple_provider&quot;
+        .Backend = &quot;redis.dynomitedb.net:6369&quot;
+        .Token = 0
+
+end if
+
+...
+
+Get the environment variable for each of the variables with default values. 
+
+If the environment variable is set, then override the default value.
+</code></pre>
+
+<h2 id="dynomite-node-index-default-1:4476bef964536397aa34b801620e21a2">DYNOMITE_NODE_INDEX (default: 1)</h2>
+
+<p>What is this node&rsquo;s index (using a 1 based index). The 3rd node in a rack
+will use DYNOMITE_NODE_INDEX = 3.</p>
+
+<h2 id="dynomite-nodes-in-rack-default-1:4476bef964536397aa34b801620e21a2">DYNOMITE_NODES_IN_RACK (default: 1)</h2>
+
+<p>How may nodes are in the rack specified by <code>DYNOMITE_RACK</code>.</p>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2016 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script src="http://www.dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+<script src="http://www.dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+<script src="http://www.dynomitedb.com/js/dynomite.js"></script>
+
+	</body>
+</html>
