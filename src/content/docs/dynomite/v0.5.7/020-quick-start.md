@@ -1,5 +1,5 @@
 ---
-title: "Quick Start"
+title: "Quick Start (Docker)"
 slug: "quick-start"
 date: "2016-03-13T20:22:33-08:00"
 product: "Dynomite"
