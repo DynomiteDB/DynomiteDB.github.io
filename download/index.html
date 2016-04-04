@@ -71,39 +71,12 @@
                 <div class="dyno-blog-post">
                     <h1>Download DynomiteDB</h1>
 
-                    
+                    <p>The quickest way to get started with DynomiteDB is via Docker on Mac or Windows, and via apt on Ubuntu Linux.</p>
 
-<div class="alert alert-danger">
-    The DynomiteDB package described below is not yet available. The scheduled release date is March 4, 2016.
-</div>
-                    
-
-<h2 id="prerequisites:147ca6d03f222fe2ead83908bb3bcedf">Prerequisites</h2>
-
-<p>Install GPG before continuing with the installation.</p>
-
-<pre><code class="language-bash">sudo apt-get install gnupg
-</code></pre>
-
-<h2 id="download:147ca6d03f222fe2ead83908bb3bcedf">Download</h2>
-
-<p>Open a terminal and run the following commands to download DynomiteDB v0.5.6 with the Redis backend.</p>
-
-<pre><code class="language-bash">mkdir ~/opt/packages &amp;&amp; cd $_
-
-wget https://dynomitedb.com/download/current/dynomitedb-v0.5.6.deb
-
-wget https://dynomitedb.com/download/current/dynomitedb-v0.5.6.dsc
-</code></pre>
-
-<h2 id="install:147ca6d03f222fe2ead83908bb3bcedf">Install</h2>
-
-<p>First verify the package&rsquo;s signature and then install DynomiteDB.</p>
-
-<pre><code class="language-bash">gpg --verify dynomitedb-v0.5.6.dsc
-
-sudo dpkg -i dynomitedb-v0.5.6.deb
-</code></pre>
+<ul>
+<li><a href="/docs/dynomite/v0.5.7/quick-start/">Install DynomiteDB using Docker</a></li>
+<li><a href="/docs/dynomite/v0.5.7/quick-start-ubuntu/">Install DynomiteDB on Ubuntu Linux</a></li>
+</ul>
 
                 </div>
             </div>
