@@ -38,6 +38,8 @@ Install DynomiteDB.
 apt-get install dynomitedb
 ```
 
+Congrats, DynomiteDB is now installed. You can now start to use DynomiteDB via the `redis-cli` client. Alternatively, you can use your favorite programming language and preferred Redis client driver.
+
 # Connect to Redis
 
 Connect directly to Redis to ensure that Redis is working properly.
