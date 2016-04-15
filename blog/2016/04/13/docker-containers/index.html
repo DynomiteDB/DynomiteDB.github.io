@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Docker containers">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>Docker containers &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://www.dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="http://www.dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://www.dynomitedb.com/css/style.css">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+                  <li class=''><a href="/faq/"> FAQ </a></li>
+                
+                  <li class=''><a href="/roadmap/"> Roadmap </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<section class="dyno-blog-post-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="dyno-blog-post">
+                    <h1>Docker containers</h1>
+                    <p class="lead">A high-level introduction to Docker containers for experienced engineers</p>
+                    <div><p>
+
+<p>The following is a high-level introduction of Docker containers for experienced engineers. It is assumed that you have a conceptual understanding of virtualization (both system-level and OS-level), environments and other basic Linux concepts. The goal of this document is provide a quick, practical overview of containers so that you can make informed choices when architecting your container strategy.</p>
+
+<p>The current generation of container technologies trace their recent linage to “process containers” which were invented in 2006 by Google engineers Paul Manage and Rohit Seth. Process containers were renamed to control groups (aka cgroups) in 2007 as the term container was already used in multiple contexts within the Linux kernel. In 2013, Docker re-introduced the term container when referring to the combination of cgroups, namespaces and a union filesystem.</p>
+
+<h2 id="containers-are-not-lightweight-vms:4edc891bc6a06a84f658c810da5939a6">Containers are not lightweight VMs</h2>
+
+<p>With the rise in Docker’s popularity, technical bloggers started to describe containers as “lightweight VMs” as a shortcut to teaching people about containers. However, this explanation causes more harm than good. It is true that VMs and containers are both a form of virtualization. However, VMs provide system-level virtualization. In simple terms, VMs virtualize an entire computer system including virtualized hardware and a complete operating system.</p>
+
+<p>The original term “process containers” provide a better explanation of Docker containers than “lightweight VMs”. First, containers provide operating system-level virtualization, not system level virtualization. OS-level virtualization is a kernel feature that delivers process isolation inside of an operating system.</p>
+
+<p>Let’s drive home the difference between VMs (system-level virtualization) and containers (OS-level virtualization) with an example using ulimit. In our example, we have two hosts, hostA and hostB.</p>
+
+<p>hostA contains two VMs, vmA and vmB. Next, let’s execute ulimit in each of hostA, vmA and vmB as follows:</p>
+
+<ul>
+<li>hostA: ulimit -Sn 100</li>
+<li>vm1: ulimit -Sn 200</li>
+<li>vm2: ulimit -Sn 150</li>
+</ul>
+
+<p>Executing ulimit as defined above results in different limits on hostA, vm1 and vm2. Why? Each of hostA, vm1 and vm2 have their own kernel.</p>
+
+<p>Next, let’s continue our example with containers. hostB contains two containers, containerA and containerB. We now execute ulimit in each of hostB, containerA and containerB as follows:</p>
+
+<ul>
+<li>hostB: ulimit -Sn 100</li>
+<li>container1: ulimit -Sn 200</li>
+<li>container2: ulimit -Sn 150</li>
+</ul>
+
+<p>Executing ulimit as defined results in the same limits on hostB, container1 and container2. Why? Each of hostB, container1 and container2 all share hostB’s kernel.</p>
+
+<p>In summary, containers provide limited process isolation via cgroups, namespaces, networking and a union filesystem. Next, we’ll discuss container use case categories.</p>
+
+<h2 id="container-use-cases:4edc891bc6a06a84f658c810da5939a6">Container use cases</h2>
+
+<p>There are four use case categories for containers. Each use case category delivers unique benefits and should be evaluated independently of the other use cases. In other words, you may use containers within one part of your development workflow without impacting other parts of your software development process. The use case categories are:</p>
+
+<ul>
+<li>Development environment</li>
+<li>Build environment</li>
+<li>Runtime environments
+
+<ul>
+<li>Product demo</li>
+<li>Testing</li>
+<li>Production deployment</li>
+</ul></li>
+</ul>
+
+<p>Each of the three workflows are discussed in detail below.</p>
+
+<h3 id="development-environment:4edc891bc6a06a84f658c810da5939a6">Development environment</h3>
+
+<p>Container use within the development workflow is low risk and is one of the most common uses of Docker. The benefit of using containers for development is that it eases the burden of installing and configuring the development environment for each developer. Another benefit is that users of various OSs can all develop within a common environment. For example, Mac and Windows users can develop Dynomite in a lightweight Ubuntu based container without the need for a heavyweight VM.</p>
+
+<p>However, the downside of a completely uniform development environment is that small bugs due to library version differences or slight environment differences may go unnoticed. This problem should be taken seriously when compiled software will not be deployed in a container and will therefore run in heterogeneous environments.</p>
+
+<p>A compromise approach may be to provide developers with a core development container that each engineer can then modify, thus providing the benefit of rapid development environment setup combined with heterogeneity.</p>
+
+<h3 id="build-environment:4edc891bc6a06a84f658c810da5939a6">Build environment</h3>
+
+<p>Container use for building software is perhaps the highest value use case. First, the use of containers with properly implemented UnionFS layers provides repeatable builds using known dependencies.</p>
+
+<p>Second, and equally important, archiving a Docker build container is easy. The ability to store build environments in an archive means that production bugs can be traced all the way back to the build environment, in case the build proves to be the source of error.</p>
+
+<h3 id="runtime-environments:4edc891bc6a06a84f658c810da5939a6">Runtime environments</h3>
+
+<p>Docker containers may be used in three distinct runtime environments:
+- Product demos
+- Testing
+- Production</p>
+
+<h4 id="product-demos:4edc891bc6a06a84f658c810da5939a6">Product demos</h4>
+
+<p>Use of containers as a product demo environment is currently widespread. It is also a low risk approach to allowing users to install, run and experience your software with a minimum of friction. Container use for product demos is strongly recommended.</p>
+
+<h4 id="testing:4edc891bc6a06a84f658c810da5939a6">Testing</h4>
+
+<p>The use of containers within test environments is powerful. First, a large number of containers can be created with shared UnionFS layers for all but the top most layers. This allows organizations to run automated tests in a large number of slightly varied environments each with different versions of key shared objects, resource allocations/constraints and application configurations.</p>
+
+<p>Testing containers, much like build containers, allow companies to archive a large number of test environments with minimal storage requirements. Bugs found in production can be reproduced in historical test environments, unit tests can be run in these test environments, and so on.</p>
+
+<p>Overall, the use of containers within testing provides a number of significant benefits.</p>
+
+<h4 id="production:4edc891bc6a06a84f658c810da5939a6">Production</h4>
+
+<p>Finally, let’s discuss container use within production deployments. Excluding Google’s decade of at-scale container use, there are few at-scale production deployments using Docker containers. However, it appears obvious that production use of containers is set to grow rapidly in the one to three year timeframe.</p>
+
+<h2 id="process-isolation:4edc891bc6a06a84f658c810da5939a6">Process isolation</h2>
+
+<p>As discussed in the introduction to this article, containers provide process isolation via OS-level virtualization.</p>
+
+<p>In practical terms, containers provide limited isolation which means that a container provides the following environment that is separate from the host OS:</p>
+
+<ul>
+<li>A file system, starting from / (root)</li>
+<li>A separate namespace including /etc/passwd, /etc/group, clean process ID (PID) namespace, etc.</li>
+<li>A layered file system with mostly immutable layers</li>
+<li>Networking</li>
+</ul>
+
+<p>A clean file system and separate namespace ensure that an application runs in a pristine environment, while networking allows a container to control which parts of a contained application are exposed to the host environment. A risk of this clean environment is that engineers may become careless by hard coding environmental assumptions into applications. The use of varied testing containers helps to mitigate this risk. The layered file system is comprised of mostly immutable layers. UnionFS and layers are extremely important and are discussed in more detail below.</p>
+
+<p>The isolation provided by a container is limited. Most importantly, a container shares the host’s kernel which means that changes in the host’s kernel affect the container.</p>
+
+<h2 id="resource-limits:4edc891bc6a06a84f658c810da5939a6">Resource limits</h2>
+
+<p>An important feature of control groups (cgroups) is the ability to limit the resources (CPU, memory, IO and network) used by a container. Containers also allow a user to pin processes to one or more CPUs.</p>
+
+<p>The ability to limit the resources used by a container is an often overlooked feature. Use of this feature is set to increase when enterprises begin to deploy containers at scale. Specifically, resource limits are vital input to orchestration frameworks as this information determines where to locate containers within a cluster, how to move containers and when to forcibly restart a container. Further, resource limits are used by orchestration frameworks and schedulers (i.e. Mesos) to maximize resource utilization.</p>
+
+<p>Resource limits are most effective when each container runs a single process.</p>
+
+<h2 id="unionfs:4edc891bc6a06a84f658c810da5939a6">UnionFS</h2>
+
+<p>Docker containers use a union file system that is comprised of multiple layers. Most of the layers within a UnionFS are immutable. An equally if not more important point is that layers are shared across multiple Docker images. For example, if we have two Docker images each with three layers as shown in the table below, then imageA and imageB share layer1 and layer2.</p>
+
+<p>Image A and Image B share the “Common app dependencies” layer and the “Ubuntu 14.04.4” layer.</p>
+
+<p>The docker images command will show imageA = 225MB and imageB = 225MB for a total of 450MB. However, on disk the two shared layers are only 300MB, while the unique layers of imageA and imageB are a combined 50 MB. Therefore, Image A and Image B will only consume 350 MB on disk (200MB + 100MB + 25MB + 25MB).</p>
+
+<table class="table table-condensed table-bordered">
+    <tr class="active">
+        <th>Size on disk</th>
+        <th>imageA</th>
+        <th>imageB</th>
+    </tr>
+    <tr>
+        <td>25MB</td>
+        <td>appA</td> 
+        <td>appB</td> 
+    </tr>
+    <tr>
+        <td>100MB</td>
+        <td>Common app dependencies</td> 
+        <td>Common app dependencies</td> 
+    </tr>
+    <tr>
+        <td>200MB</td>
+        <td>Ubuntu 14.04.4 layer</td> 
+        <td>Ubuntu 14.04.4 layer</td> 
+    </tr>
+</table>
+
+<p>Importantly, the disk space savings from shared layers becomes increasingly important for development velocity, build speed and faster provisioning via an orchestration framework. The performance boost from shared layers is very evident when common layers are shared by multiple development, test and build containers.</p>
+
+<p>Proper layer architecture is vitally important when containers are used at scale. The reuse of layers by multiple containers that are part of the same group (“pod” in Kubernetes parlance) allows an orchestration framework to more easily move containers within a cluster. Further, a good layer architecture minimizes network utilization substantially and reduces the amount of time required to deploy additional containers.</p>
+
+<h2 id="networking:4edc891bc6a06a84f658c810da5939a6">Networking</h2>
+
+<p>By default, Docker containers use a Layer 2 (L2) overlay network. While Docker’s approach to networking has benefits, it poses problems at scale. Scalable, performance sensitive deployments of Docker, such as enterprise production use cases, need a higher performance alternative to Docker’s default networking.</p>
+
+<p>Project Calico (<a href="https://www.projectcalico.org">https://www.projectcalico.org</a>) provides a Layer 3 (L3) alternative to Docker’s L2 approach. Essentially, Project Calico implements a vRouter in the host’s kernel and eliminates the need for a vSwitch in each container along with the associated packet encapsulation.</p>
+
+<p>DynomiteDB strongly recommends the use of Project Calico for container networking at scale and even more so for multi-DC deployments.</p>
+
+<h2 id="summary:4edc891bc6a06a84f658c810da5939a6">Summary</h2>
+
+<p>Docker containers provide process isolation via OS-level virtualization. Containers isolate processes from the host environment via cgroups, a clean namespace, UnionFS and networking. Importantly, containers share the host&rsquo;s kernel.</p>
+
+<p>There are four primary use case categories for containers:</p>
+
+<ul>
+<li>Development environment</li>
+<li>Build environment</li>
+<li>Runtime environments
+
+<ul>
+<li>Product demo</li>
+<li>Testing</li>
+<li>Production deployment</li>
+</ul></li>
+</ul>
+
+<p>The lowest risk highest value use cases for containers are within the development environment, build environment and for product demos and testing. At scale production deployment of containers is currently rare.</p>
+
+<p>The key to effective use of containers is to use them to isolate processes, to constrain resource utilization and to reuse layers within a UnionFS.</p>
+</p></div>
+
+                    <div class="dyno-blog-post-footer">
+                        <div class="pull-left">
+                            By 
+                                
+Akbar S. Ahmed
+                             /
+                            In 
+                                <a href="/categories/docker">Docker</a>
+                             /
+                            On April 13, 2016
+                        </div>
+                        <div class="pull-right">
+                            <i class="fa fa-tags"></i>
+                            
+                            <a href="/tags/docker">Docker</a> &middot; <a href="/tags/dynomitedb">DynomiteDB</a> &middot; <a href="/tags/containers">containers</a>
+                            
+                        </div>
+                    </div>
+
+
+                        
+                            
+                            
+                            
+                                
+                                
+                            
+                            
+                                
+                                
+                            
+                                
+                                
+                            
+                                
+                                
+                            
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2016 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script src="http://www.dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+<script src="http://www.dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+<script src="http://www.dynomitedb.com/js/dynomite.js"></script>
+
+	</body>
+</html>

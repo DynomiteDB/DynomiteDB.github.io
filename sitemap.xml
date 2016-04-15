@@ -3,8 +3,13 @@
     
     <url>
         <loc>http://www.dynomitedb.com/</loc>
-        <lastmod>2016-02-11T08:08:08-08:00</lastmod>
+        <lastmod>2016-04-13T08:08:08-08:00</lastmod>
         <priority>0</priority>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/blog/2016/04/13/docker-containers/</loc>
+        <lastmod>2016-04-13T08:08:08-08:00</lastmod>
     </url>
     
     <url>
