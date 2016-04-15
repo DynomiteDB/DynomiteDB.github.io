@@ -9,6 +9,7 @@ buildFuture: "false"
 metaDataFormat: "yaml"
 publishdir: "public" # Change this to "../"
 theme: "dynomite"
+googleAnalytics: "UA-76466336-1"
 
 permalinks:
   # Optional. Change the permalink format for the 'blog' content type.
