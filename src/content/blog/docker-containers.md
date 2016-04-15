@@ -48,7 +48,7 @@ In summary, containers provide limited process isolation via cgroups, namespaces
 
 ## Container use cases
 
-There are four use case categories for containers. Each use case category delivers unique benefits and should be evaluated independently of the other use cases. In other words, you may use containers within one part of your development workflow without impacting other parts of your software development process. The use case categories are:
+There are three use case categories for containers. Each use case category delivers unique benefits and should be evaluated independently of the other use cases. In other words, you may use containers within one part of your development workflow without impacting other parts of your software development process. The use case categories are:
 
 - Development environment
 - Build environment
