@@ -40,6 +40,24 @@ apt-get install dynomitedb
 
 Congrats, DynomiteDB is now installed. You can now start to use DynomiteDB via the `redis-cli` client. Alternatively, you can use your favorite programming language and preferred Redis client driver.
 
+# Start Dynomite and the Redis backend
+
+Our next step is to start a backend and the Dynomite server. We'll start with the Redis backend.
+
+> Only one backend should be running per node.
+
+Start the Redis server with the command below.
+
+```bash
+service dynomitedb-redis start
+```
+
+Next, start the Dynomite server.
+
+```bash
+service dynomite start
+```
+
 # Connect to Redis
 
 Connect directly to Redis to ensure that Redis is working properly.
