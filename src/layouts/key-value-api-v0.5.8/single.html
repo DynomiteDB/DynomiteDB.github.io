@@ -1,0 +1,107 @@
+{{ partial "header.html" . }}
+
+<div class="container">
+	<!--<div class="row">-->
+		<!--<div class="col-xs-12">-->
+			<!--<h3>Dynomite v0.5.6</h3>-->
+			<!--<h4>RelPermalink: {{ .RelPermalink }}</h4>-->
+			<!--<h4>Type: {{ .Type }}</h4>-->
+			<!--<h4>.Params.docurl: {{ .Params.docurl }}</h4>-->
+		<!--</div>-->
+	<!--</div>-->
+	<div class="row">
+		<!--<div class="col-sm-3">-->
+			<!--<ul>-->
+				<!--{{ range .Site.Pages }}-->
+					<!-- TODO: Write a custom template function to to strip the
+					     last directory from .RelPermalink. This requires a
+					     custom build of Hugo.
+
+					     After this is done, I can then uncomment this block of
+					     code which will allow every product+version
+					     documentation set to share a common template.
+					-->
+					<!--{{ if eq .RelPermalink .Params.docurl }}-->
+						<!--{{ .Render "post-title"}}-->
+					<!--{{ end }}-->
+				<!--{{ end }}-->
+			<!--</ul>-->
+		<!--</div>-->
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Key/Value API v0.5.8</h3>
+			<h4>Introduction</h4>
+			<ul>
+				{{ range where .Site.Pages "Type" "key-value-api-v0.5.8" }}
+					{{ if eq .Params.docsection "Introduction" }}
+						{{ .Render "doc-nav"}}
+					{{ end }}
+				{{ end }}
+			</ul>
+			<h4>Data types</h4>
+			<ul>
+				{{ range where .Site.Pages "Type" "key-value-api-v0.5.8" }}
+					{{ if eq .Params.docsection "Data types" }}
+						{{ .Render "doc-nav"}}
+					{{ end }}
+				{{ end }}
+			</ul>
+			<h4>Data modeling</h4>
+			<ul>
+				{{ range where .Site.Pages "Type" "key-value-api-v0.5.8" }}
+					{{ if eq .Params.docsection "Data modeling" }}
+						{{ .Render "doc-nav"}}
+					{{ end }}
+				{{ end }}
+			</ul>
+			<h4>String commands</h4>
+			<ul>
+				{{ range where .Site.Pages "Type" "key-value-api-v0.5.8" }}
+					{{ if eq .Params.docsection "String commands" }}
+						{{ .Render "doc-nav"}}
+					{{ end }}
+				{{ end }}
+			</ul>
+			<h4>List commands</h4>
+			<ul>
+				{{ range where .Site.Pages "Type" "key-value-api-v0.5.8" }}
+					{{ if eq .Params.docsection "List commands" }}
+						{{ .Render "doc-nav"}}
+					{{ end }}
+				{{ end }}
+			</ul>
+			<h4>Set commands</h4>
+			<ul>
+				{{ range where .Site.Pages "Type" "key-value-api-v0.5.8" }}
+					{{ if eq .Params.docsection "Set commands" }}
+						{{ .Render "doc-nav"}}
+					{{ end }}
+				{{ end }}
+			</ul>
+			<h4>Sorted set commands</h4>
+			<ul>
+				{{ range where .Site.Pages "Type" "key-value-api-v0.5.8" }}
+					{{ if eq .Params.docsection "Sorted set commands" }}
+						{{ .Render "doc-nav"}}
+					{{ end }}
+				{{ end }}
+			</ul>
+			<h4>Hash commands</h4>
+			<ul>
+				{{ range where .Site.Pages "Type" "key-value-api-v0.5.8" }}
+					{{ if eq .Params.docsection "Hash commands" }}
+						{{ .Render "doc-nav"}}
+					{{ end }}
+				{{ end }}
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>{{ .Title }}</h1>
+			{{ .Content }}
+		</div>
+	</div>
+</div>
+
+{{ partial "footer.html" . }}
+	</body>
+</html>

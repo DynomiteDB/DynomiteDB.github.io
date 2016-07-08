@@ -1,0 +1,83 @@
+{{ partial "header.html" . }}
+
+<div class="container">
+	<!--<div class="row">-->
+		<!--<div class="col-xs-12">-->
+			<!--<h3>Dynomite v0.5.6</h3>-->
+			<!--<h4>RelPermalink: {{ .RelPermalink }}</h4>-->
+			<!--<h4>Type: {{ .Type }}</h4>-->
+			<!--<h4>.Params.docurl: {{ .Params.docurl }}</h4>-->
+		<!--</div>-->
+	<!--</div>-->
+	<div class="row">
+		<!--<div class="col-sm-3">-->
+			<!--<ul>-->
+				<!--{{ range .Site.Pages }}-->
+					<!-- TODO: Write a custom template function to to strip the
+					     last directory from .RelPermalink. This requires a
+					     custom build of Hugo.
+
+					     After this is done, I can then uncomment this block of
+					     code which will allow every product+version
+					     documentation set to share a common template.
+					-->
+					<!--{{ if eq .RelPermalink .Params.docurl }}-->
+						<!--{{ .Render "post-title"}}-->
+					<!--{{ end }}-->
+				<!--{{ end }}-->
+			<!--</ul>-->
+		<!--</div>-->
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Dynomite v0.5.8</h3>
+			<h4>Introduction</h4>
+			<ul>
+				{{ range where .Site.Pages "Type" "dynomite-v0.5.8" }}
+					{{ if eq .Params.docsection "Introduction" }}
+						{{ .Render "doc-nav"}}
+					{{ end }}
+				{{ end }}
+			</ul>
+			<h4>Architecture</h4>
+			<ul>
+				{{ range where .Site.Pages "Type" "dynomite-v0.5.8" }}
+					{{ if eq .Params.docsection "Architecture" }}
+						{{ .Render "doc-nav"}}
+					{{ end }}
+				{{ end }}
+			</ul>
+			<h4>Servers and nodes</h4>
+			<ul>
+				{{ range where .Site.Pages "Type" "dynomite-v0.5.8" }}
+					{{ if eq .Params.docsection "Servers and nodes" }}
+						{{ .Render "doc-nav"}}
+					{{ end }}
+				{{ end }}
+			</ul>
+			<h4>Data</h4>
+			<ul>
+				{{ range where .Site.Pages "Type" "dynomite-v0.5.8" }}
+					{{ if eq .Params.docsection "Data" }}
+						{{ .Render "doc-nav"}}
+					{{ end }}
+				{{ end }}
+			</ul>
+			<h4>Configuration</h4>
+			<ul>
+				{{ range where .Site.Pages "Type" "dynomite-v0.5.8" }}
+					{{ if eq .Params.docsection "Configuration" }}
+						{{ .Render "doc-nav"}}
+					{{ end }}
+				{{ end }}
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>{{ .Title }}</h1>
+			{{ .Content }}
+		</div>
+	</div>
+</div>
+
+{{ partial "footer.html" . }}
+	</body>
+</html>

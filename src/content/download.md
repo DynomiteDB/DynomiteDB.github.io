@@ -7,5 +7,5 @@ draft: false
 
 The quickest way to get started with DynomiteDB is via Docker on Mac or Windows, and via apt on Ubuntu Linux.
 
-- <a href="/docs/dynomite/v0.5.7/quick-start/">Install DynomiteDB using Docker</a>
-- <a href="/docs/dynomite/v0.5.7/quick-start-ubuntu/">Install DynomiteDB on Ubuntu Linux</a>
+- <a href="/docs/dynomite/v0.5.8/quick-start/">Install DynomiteDB using Docker</a>
+- <a href="/docs/dynomite/v0.5.8/quick-start-ubuntu/">Install DynomiteDB on Ubuntu Linux</a>
