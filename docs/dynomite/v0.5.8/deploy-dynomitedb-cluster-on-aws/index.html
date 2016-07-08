@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Deploy DynomiteDB cluster on AWS">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>Deploy DynomiteDB cluster on AWS &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://www.dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="http://www.dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://www.dynomitedb.com/css/style.css">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+                  <li class=''><a href="/faq/"> FAQ </a></li>
+                
+                  <li class=''><a href="/roadmap/"> Roadmap </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	
+		
+			
+			
+			
+			
+		
+	
+	<div class="row">
+		
+			
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+			
+		
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Dynomite v0.5.8</h3>
+			<h4>Introduction</h4>
+			<ul>
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/introduction/">Introduction</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/quick-start/">Quick Start (Docker)</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/quick-start-ubuntu/">Quick Start (Ubuntu)</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/install-docker-ubuntu-14-04/">Install Docker on Ubuntu 14.04</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/deploy-dynomitedb-cluster-on-aws/">Deploy DynomiteDB cluster on AWS</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/terminology/">Terminology</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Architecture</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/architecture/">Architecture</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/topology/">Topology</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/replication/">Replication</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/consistency/">Consistency</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/membership-protocols/">Membership Protocols</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Servers and nodes</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/coordinator/">Coordinator</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Data</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/kvpairs/">Key/value pairs</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Configuration</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/dynomite-yaml/">dynomite.yaml</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/seeds-list/">seeds.list</a></li>
+
+					
+				
+					
+				
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>Deploy DynomiteDB cluster on AWS</h1>
+			
+
+<h1 id="aws-identity-and-access-management-iam:5033da58bb59432e859b924a7714e8ed">AWS Identity and Access Management (IAM)</h1>
+
+<blockquote>
+<p>Not required, but good for managing resources as a team.</p>
+</blockquote>
+
+<ul>
+<li></li>
+</ul>
+
+<h1 id="create-resource-group:5033da58bb59432e859b924a7714e8ed">Create resource group</h1>
+
+<p>A resource group consolidates all DynomiteDB cluster resources into a single screen. All resources within a resource group share one or more tags.</p>
+
+<ul>
+<li>Click <strong>Create a Group</strong>.</li>
+<li>Enter the following information:
+
+<ul>
+<li>Group name: DynomiteDB Cluster</li>
+<li>Tags: [key:value]
+
+<ul>
+<li>type:node</li>
+</ul></li>
+<li>Regions: leave blank</li>
+<li>Resource types: leave blank</li>
+</ul></li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+
+<h1 id="create-vpc:5033da58bb59432e859b924a7714e8ed">Create VPC</h1>
+
+<!-- ref: http://docs.aws.amazon.com/AmazonVPC/latest/GettingStartedGuide/getting-started-create-vpc.html -->
+
+<ul>
+<li>In the left pane, click <strong>Services</strong>, select <strong>Networking</strong>, click <strong>VPC</strong>.</li>
+<li>Click <strong>Start VPC Wizard</strong>.</li>
+<li>Select <strong>VPC with a Single Public Subnet</strong>.</li>
+<li>Click <strong>Select</strong>.</li>
+<li>Enter the following:
+
+<ul>
+<li>VPC name: DynomiteDB VPC</li>
+<li>Subnet name: DynomiteDB public subnet</li>
+<li>Accept all other defaults</li>
+</ul></li>
+<li>Click <strong>Create VPC</strong>.</li>
+<li>Click <strong>OK</strong>.</li>
+</ul>
+
+<h1 id="create-security-group:5033da58bb59432e859b924a7714e8ed">Create security group</h1>
+
+<ul>
+<li>In the <strong>VPC Dashboard</strong>, click <strong>Security Groups</strong> in the left nav.</li>
+<li>Click <strong>Create Security Group</strong>.</li>
+<li>Enter the following:
+
+<ul>
+<li>Name tag: DynomiteDBSG</li>
+<li>Group name: DynomiteDBSG</li>
+<li>Description: DynomiteDB security group</li>
+<li>VPC: Select DynomiteDB VPC</li>
+</ul></li>
+<li>Click <strong>Yes, Create</strong>.</li>
+</ul>
+
+<h2 id="update-inbound-rules:5033da58bb59432e859b924a7714e8ed">Update inbound rules</h2>
+
+<ul>
+<li>Select <strong>DynomiteDBSG</strong>.</li>
+<li>Click the <strong>Inbound Rules</strong> tab.</li>
+<li>Click *<em>Edit</em>.</li>
+<li>Enter the following:
+
+<ul>
+<li>Type: SSH</li>
+<li>Protocol: TCP</li>
+<li>Port Range: 22</li>
+<li>Source: Enter your IP address</li>
+</ul></li>
+<li>Next rule:
+
+<ul>
+<li>Type: SSH</li>
+<li>Protocol: TCP</li>
+<li>Port Range: 22</li>
+<li>Source: 10.0.0.0/24</li>
+</ul></li>
+<li>Next rule:
+
+<ul>
+<li>Type: All ICMP</li>
+<li>Protocol: TCP</li>
+<li>Port Range: 0-65535</li>
+<li>Source: 10.0.0.0/24</li>
+</ul></li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+
+<h1 id="launch-ec2-instance:5033da58bb59432e859b924a7714e8ed">Launch EC2 instance</h1>
+
+<ul>
+<li>In menu, click <strong>Services</strong>, select <strong>Compute</strong>, click <strong>EC2</strong>.</li>
+<li>Click <strong>Launch Instance</strong>.</li>
+<li>Click <strong>Select</strong> next to <strong>Ubuntu 14.04 LTS (HVM), SSD Volume Type</strong>.</li>
+<li>Select <strong>m3.medium</strong>.</li>
+<li>Click <strong>Next: Configure Instance Details</strong>.
+
+<ul>
+<li>3 instances</li>
+<li>Network: Select DynomiteDB VPC.</li>
+<li>Subnet: Select DynomiteDB Public.</li>
+</ul></li>
+<li>Click <strong>Next: Add Storage</strong>.
+
+<ul>
+<li>Do not change anything.</li>
+</ul></li>
+<li>Click <strong>Next: Tag Instance</strong>.
+
+<ul>
+<li>Key: name</li>
+<li>Value: dynomite</li>
+</ul></li>
+<li>Click <strong>Next: Configure Security Group</strong>.
+
+<ul>
+<li>Select <strong>Select an existing security group</strong>.</li>
+<li>Check <strong>DynomiteDBSG</strong>.</li>
+</ul></li>
+<li>Click <strong>Review and Launch</strong>.</li>
+<li>Click <strong>Launch</strong>.</li>
+<li>Select an existing key pair: <strong>dynomitedb-cluster-aws</strong>.</li>
+<li>Click <strong>Request Spot Instances</strong>.</li>
+<li>Click <strong>View Spot Instances</strong>.</li>
+</ul>
+
+<h1 id="assign-an-elastic-ip-to-an-ec2-instance:5033da58bb59432e859b924a7714e8ed">Assign an elastic IP to an EC2 instance</h1>
+
+<ul>
+<li>In the left pane, click <strong>Services</strong>, select <strong>Networking</strong>, click <strong>VPC</strong>.</li>
+<li>Click <strong>Elastic IPs</strong>.</li>
+<li>Click <strong>Allocate New Address</strong>.
+
+<ul>
+<li>Network platform: Select <strong>EC2-VPC</strong>.</li>
+<li>Click <strong>Yes, Allocate</strong>.</li>
+</ul></li>
+<li>Select the newly created elastic IP, then click <strong>Actions</strong>, click <strong>Associate Address</strong>.</li>
+<li>Enter the following:
+
+<ul>
+<li>Associate Address: Instance</li>
+<li>Instance: Select an instance</li>
+<li>Associate Address: Accept default</li>
+</ul></li>
+<li>Click <strong>Yes, Associate</strong>.</li>
+</ul>
+
+<h1 id="connect-to-instance-with-elastic-ip:5033da58bb59432e859b924a7714e8ed">Connect to instance with elastic IP</h1>
+
+<pre><code class="language-bash">ssh -i ~/.ssh/name-of-your-key-file.pem -p 22 ubuntu@elastic-ip-address
+</code></pre>
+
+<h1 id="start-in-memory-backend-redis:5033da58bb59432e859b924a7714e8ed">Start in-memory backend (Redis)</h1>
+
+<pre><code class="language-bash">sudo service dynomitedb-redis start
+</code></pre>
+
+<h1 id="start-dynomite-server:5033da58bb59432e859b924a7714e8ed">Start <code>dynomite</code> server</h1>
+
+<pre><code class="language-bash">sudo service dynomite start
+</code></pre>
+
+<h1 id="update-dynomite-yaml-configuration:5033da58bb59432e859b924a7714e8ed">Update `dynomite.yaml configuration</h1>
+
+<p>sudo vi /etc/dynomitedb/dynomite.yaml</p>
+
+<pre><code class="language-yaml">dyn_o_mite:
+  datacenter: us-west-oregon
+  rack: us-west-2b
+  dyn_listen: 10.0.0.219:8101
+  data_store: 0
+  listen: 10.0.0.219:8102
+  dyn_seed_provider: simple_provider
+  dyn_seeds:
+  - 10.0.0.235:8101:us-west-2b:us-west-oregon:1431655765
+  - 10.0.0.152:8101:us-west-2b:us-west-oregon:2863311530
+  auto_eject_hosts: true
+  server_retry_timeout: 30000
+  server_failure_limit: 3
+  servers:
+  - 127.0.0.1:22122:1
+  tokens: 0
+  secure_server_option: datacenter
+  pem_key_file: /etc/dynomitedb/dynomite.pem
+</code></pre>
+
+<p>a_dc
+dyn_o_mite:
+  datacenter: dc2
+  rack: rack1
+  dyn_listen: 127.0.0.2:8101
+  dyn_seeds:
+  - 127.0.0.1:8101:rack1:dc1:1383429731
+  - 127.0.0.4:8101:rack2:dc2:1383429731
+  - 127.0.0.5:8101:rack2:dc2:12345678
+  - 127.0.0.3:8101:rack1:dc2:12345678
+  listen: 127.0.0.2:8102
+  servers:
+  - 127.0.0.1:22122:1
+  tokens: &lsquo;1383429731&rsquo;
+  secure_server_option: datacenter
+  pem_key_file: conf/dynomite.pem
+  data_store: 0</p>
+
+<p>redis_rack1_node.yml
+dyn_o_mite:
+  datacenter: dc
+  rack: rack1
+  dyn_listen: 127.0.0.1:8101
+  dyn_seeds:
+  - 127.0.0.2:8101:rack2:dc:1383429731
+  listen: 127.0.0.1:8102
+  servers:
+  - 127.0.0.1:22123:1
+  tokens: &lsquo;1383429731&rsquo;
+  secure_server_option: datacenter
+  pem_key_file: conf/dynomite.pem
+  data_store: 0</p>
+
+<p>Restart backend and dynomite</p>
+
+<pre><code class="language-bash">redis-cli -h 10.0.0.219 -p 8102
+</code></pre>
+
+<h1 id="create-nat-gateway:5033da58bb59432e859b924a7714e8ed">Create NAT gateway</h1>
+
+<ul>
+<li>In the left pane, click <strong>Services</strong>, select <strong>Networking</strong>, click <strong>VPC</strong>.</li>
+<li>Click <strong>NAT Gateways</strong> in the left nav.</li>
+<li>Click <strong>Create a NAT Gateway</strong>.</li>
+<li>Enter the following information:
+
+<ul>
+<li>Subnet: Select DynomiteDB Public.</li>
+<li>Elastic IP Allocation ID: Click <strong>Create New EIP</strong>.</li>
+</ul></li>
+<li>Click <strong>Create a NAT Gateway</strong>.</li>
+</ul>
+
+<h2 id="update-the-route-table:5033da58bb59432e859b924a7714e8ed">Update the route table</h2>
+
+<ul>
+<li>In the left nav, select the drop-down for the DynomiteDB VPC.</li>
+<li>Click <strong>Route Tables</strong> in the left nav.</li>
+<li>Select the private subnet.</li>
+<li>Click the <strong>Routes Tab</strong>.</li>
+<li>Click <strong>Edit</strong>.</li>
+<li>Click <strong>Add another route</strong>.</li>
+<li></li>
+</ul>
+
+<h1 id="create-nat-instances-for-ec2-hosts-on-private-vpc-w-o-eip:5033da58bb59432e859b924a7714e8ed">Create NAT instances for EC2 hosts on private VPC w/o EIP</h1>
+
+<blockquote>
+<p>In production use a NAT Gateway.</p>
+</blockquote>
+
+<h1 id="launch-ec2-instance-original:5033da58bb59432e859b924a7714e8ed">Launch EC2 instance (ORIGINAL)</h1>
+
+<ul>
+<li>Click the <strong>Services</strong> menu, click <strong>EC2</strong>.</li>
+<li>Click <strong>Launch Instance</strong>.</li>
+<li>Click <strong>Select</strong> next to <strong>Ubuntu 14.04 LTS (HVM), SSD Volume Type</strong>.</li>
+<li>Select <strong>m3.medium</strong>.</li>
+<li>Click <strong>Next: Configure Instance Details</strong>.
+
+<ul>
+<li>3 instances</li>
+<li>Click <strong>Create new VPC</strong>.
+
+<ul>
+<li>Click <strong>Create VPC</strong>.</li>
+<li>Enter the following:
+
+<ul>
+<li>Name tag: DynomiteDB VPC</li>
+<li>CIDR block: 10.0.0.0/24</li>
+<li>Tenancy: Default</li>
+</ul></li>
+<li>Click <strong>Yes, Create</strong>.</li>
+</ul></li>
+<li>Click <strong>Create new subnet</strong>.
+
+<ul>
+<li>Enter the following:
+
+<ul>
+<li>Name tag: DynomiteDB subnet</li>
+<li>VPC: DynomiteDB VPC</li>
+<li>Availability Zone: No Preference</li>
+<li>CIDR block: 10.0.0.0/24</li>
+</ul></li>
+<li>Click <strong>Yes, Create</strong>.</li>
+</ul></li>
+<li>Auto-assign Public IP: Enable</li>
+<li>Click <strong>Create new IAM role</strong>.
+
+<ul>
+<li>Click <strong>Create New Role</strong>.</li>
+<li>Role Name: DynomiteDB_IAM</li>
+<li>Click <strong>Next Step</strong>.</li>
+<li>Click <strong>Select</strong> next to <strong>Amazon EC2</strong>.</li>
+<li>Check the following:
+
+<ul>
+<li><strong>Administrator Access</strong></li>
+<li><strong>AmazonEC2FullAccess</strong></li>
+<li><strong>AmazonRoute53FullAccess</strong></li>
+<li><strong>AmazonS3FullAccess</strong></li>
+<li><strong>AmazonVPCFullAccess</strong></li>
+<li><strong>IAMFullAccess</strong></li>
+<li><strong>IAMUserSSHKeys</strong></li>
+</ul></li>
+<li>Click <strong>Next Step</strong>.</li>
+<li>Click <strong>Create Role</strong>.</li>
+</ul></li>
+<li>IAM role: DynomiteDB_IAM</li>
+</ul></li>
+<li>Click <strong>Next: Add Storage</strong>.</li>
+<li>Click <strong>Next: Tag Instance</strong>.
+
+<ul>
+<li>Key: name</li>
+<li>Value: dynomite</li>
+</ul></li>
+<li>Click <strong>Next: Configure Security Group</strong>.
+
+<ul>
+<li>Select <strong>Create a new security group</strong>.</li>
+<li>Enter the following:
+
+<ul>
+<li>Security group name: dynomitedb</li>
+<li>Description: DynomiteDB security group</li>
+</ul></li>
+</ul></li>
+<li>Click <strong>Review and Launch</strong>.</li>
+<li>Click <strong>Launch</strong>.</li>
+<li>Create a new key pair named <strong>dynomitedb-cluster-aws</strong>.</li>
+<li>Click <strong>Download Key Pair</strong>.</li>
+<li>Click <strong>Request Spot Instances</strong>.</li>
+
+<li><p>Click <strong>View Spot Instances</strong>.</p></li>
+
+<li><p>Click <strong>Instances</strong> in the left pane.</p></li>
+</ul>
+
+<pre><code class="language-bash">mv ~/dynomitedb-cluster-aws.pem ~/.ssh/
+chmod 400 ~/.ssh/dynomitedb-cluster-aws.pem
+ssh -i ~/.ssh/dynomitedb-cluster-aws.pem root@52.37.88.69
+</code></pre>
+
+<h1 id="create-ami:5033da58bb59432e859b924a7714e8ed">Create AMI</h1>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2016 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script src="http://www.dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+<script src="http://www.dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+<script src="http://www.dynomitedb.com/js/dynomite.js"></script>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-76466336-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+<script type="text/javascript">
+    (function(d,s,i,r) {
+        if (d.getElementById(i)){return;}
+        var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+        n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/2356163.js';
+        e.parentNode.insertBefore(n, e);
+    })(document,"script","hs-analytics",300000);
+</script>
+
+
+	</body>
+</html>

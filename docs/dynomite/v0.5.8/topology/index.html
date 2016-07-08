@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Topology">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>Topology &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://www.dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="http://www.dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://www.dynomitedb.com/css/style.css">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+                  <li class=''><a href="/faq/"> FAQ </a></li>
+                
+                  <li class=''><a href="/roadmap/"> Roadmap </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	
+		
+			
+			
+			
+			
+		
+	
+	<div class="row">
+		
+			
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+			
+		
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Dynomite v0.5.8</h3>
+			<h4>Introduction</h4>
+			<ul>
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/introduction/">Introduction</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/quick-start/">Quick Start (Docker)</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/quick-start-ubuntu/">Quick Start (Ubuntu)</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/install-docker-ubuntu-14-04/">Install Docker on Ubuntu 14.04</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/deploy-dynomitedb-cluster-on-aws/">Deploy DynomiteDB cluster on AWS</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/terminology/">Terminology</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Architecture</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/architecture/">Architecture</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/topology/">Topology</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/replication/">Replication</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/consistency/">Consistency</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/membership-protocols/">Membership Protocols</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Servers and nodes</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/coordinator/">Coordinator</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Data</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/kvpairs/">Key/value pairs</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Configuration</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/dynomite-yaml/">dynomite.yaml</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/seeds-list/">seeds.list</a></li>
+
+					
+				
+					
+				
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>Topology</h1>
+			
+
+<!-- focus on the physical and logical network -->
+
+<p>DynomiteDB&rsquo;s network topology defines the overall structure of a DynomiteDB cluster including the location and configuration of nodes within each data center (DC), rack and server.</p>
+
+<p>System Administrators and DevOps staff must fully understand DynomiteDB&rsquo;s network topology. However, application developers do not require a deep knowledge of DynomiteDB&rsquo;s topology in order to develop applications that use DynomiteDB.</p>
+
+<p>Importantly, DynomiteDB&rsquo;s topology determines the replication factor (RF). In a standard configuration, the RF within a DC is equal to the number of racks in that DC. For example, if your company has a San Francisco DC (named SFO) with 3 racks, then the RF for SFO is 3.</p>
+
+<p>A cluster&rsquo;s topology includes the following elements:</p>
+
+<ul>
+<li>Data centers (DCs)</li>
+<li>Racks</li>
+<li>Servers</li>
+<li>Nodes and node tokens</li>
+<li>Backends</li>
+</ul>
+
+<blockquote>
+<p>On Amazon Web Services (AWS), a DC = region, a rack = availability zone (AZ) and a server = an EC2 instance.</p>
+</blockquote>
+
+<h1 id="topology-hierarchy:1f133eab44ee052910d299de6eac066e">Topology hierarchy</h1>
+
+<p><a href="/img/dynomite/v0.5.6/topology-hierarchy.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/topology-hierarchy.svg"
+         alt="Topology hierarchy"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Topology hierarchy</p></p>
+
+<p>A DynomiteDB cluster has a well defined hierarchy.</p>
+
+<ul>
+<li>A cluster is comprised of one or more data centers (DCs)</li>
+<li>Each DC contains one or more racks</li>
+<li>Each rack contains one or more servers</li>
+<li>Each server contains a node (i.e. a <code>dynomite</code> instance) and a backend (ex. Redis or ForestDB)</li>
+<li>Each node has a node token between 0 and 4,294,967,295</li>
+</ul>
+
+<h1 id="cluster:1f133eab44ee052910d299de6eac066e">Cluster</h1>
+
+<p>The DynomiteDB cluster is a conceptual container that contains one or more DCs. In each of the sections below we will discuss various topologies.</p>
+
+<h2 id="tokens:1f133eab44ee052910d299de6eac066e">Tokens</h2>
+
+<p>DynomiteDB uses the term <strong>token</strong> in three different contexts:</p>
+
+<ul>
+<li>Token range</li>
+<li>Node token</li>
+<li>Data token</li>
+</ul>
+
+<p>The important point is that these three uses of <strong>token</strong> overlap, as explained below.</p>
+
+<h3 id="token-range:1f133eab44ee052910d299de6eac066e">Token range</h3>
+
+<p>The token range is the entire range of allowed tokens. The token range is from 0 to 4,294,967,295.</p>
+
+<p>The token range defines the minimum and maximum values of both node tokens and data tokens.</p>
+
+<h3 id="node-token:1f133eab44ee052910d299de6eac066e">Node token</h3>
+
+<p>Each node has a node token that indicates the beginning of the range of data tokens that the node owns. The node token is a value within the token range.</p>
+
+<p>The token range is typically divided equally between each of the servers within a rack. For example, if a rack has 3 servers of equal size (same CPU, memory, disk, etc.) then the node on each server will own <sup>1</sup>&frasl;<sub>3</sub> of the token range.</p>
+
+<p>The formula to calculate the node token is displayed below. <code>numberOfNodesInRack</code> is a count of the servers/nodes within a rack. <code>nodeIndex</code> is the node&rsquo;s index (starting at 0) within the rack.</p>
+
+<pre><code class="language-bash">nodeToken = (4294967295 / numberOfNodesInRack) * nodeIndex
+</code></pre>
+
+<p>Using the above formula, we can calculate the node index for 3 nodes within a rack as follows:</p>
+
+<pre><code class="language-bash">firstNodeToken = (4294967295 / 3) * 0 = 0
+secondNodeToken = (4294967295 / 3) * 1 = 1431655765
+thirsNodeToken = (4294967295 / 3) * 2 = 2863311530
+</code></pre>
+
+<h3 id="data-token:1f133eab44ee052910d299de6eac066e">Data token</h3>
+
+<p>A data token is a hash of the key portion of a key/value pair. The key is hashed using a consistent hashing algorithm which outputs the data token. The data token is then compared against the node tokens to determine which nodes own the data token. In other words, the data token and node token determine where each key/value pair is located within a rack.</p>
+
+<p>A node owns all data tokens within the data token range, which is calculated as follows:</p>
+
+<pre><code class="language-bash">minDataToken = nodeToken
+
+maxDataToken = nextNodeToken - 1 
+</code></pre>
+
+<p>A node owns all key/value pairs with a data token from <code>minDataToken</code> to <code>maxDataToken</code>.</p>
+
+<h2 id="single-dc-cluster-with-single-rack:1f133eab44ee052910d299de6eac066e">Single DC cluster with single rack</h2>
+
+<p><a href="/img/dynomite/v0.5.6/topology-1dc-1rack.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/topology-1dc-1rack.svg"
+         alt="1 DC, 1 rack, 3 servers"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">1 DC, 1 rack, 3 servers</p></p>
+
+<blockquote>
+<p>Never use a single DC with a single rack in production as this topology lacks replication, redundancy and HA. It is discussed here for learning purposes only.</p>
+</blockquote>
+
+<p>A cluster with a single DC that contains a single rack is an overly simple topology that can be used during development but should not be used for production deployments. The cluster is comprised of a single DC which contains a single rack. The single rack contains three servers whose node tokens span the entire token range.</p>
+
+<p>The following are the names of the various topology elements (indentation indicates the topology hierarchy):</p>
+
+<ul>
+<li><strong>DC</strong>: sfo (San Francisco)
+
+<ul>
+<li><strong>Rack</strong>: r1
+
+<ul>
+<li><strong>Servers</strong>:
+
+<ul>
+<li>sfo-r1-s1 (node token = 0)</li>
+<li>sfo-r1-s2 (node token = 1431655765)</li>
+<li>sfo-r1-s3 (node token = 2863311530)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Each rack in a DynomiteDB cluster contains the entire token range which means that the number of racks per DC is how you determine the replication factor (RF) per DC. Replication factor (RF) is the number of replicas (i.e. copies) of each key/value pair.</p>
+
+<p>In this example we have one rack which means <code>RF = 1</code>.</p>
+
+<blockquote>
+<p>A rack contains the entire token range. The number of racks per data center (DC) sets the replication factor (RF) per DC.</p>
+</blockquote>
+
+<p>In the diagram above, the rack contains 3 servers with the node token specified in the center of each node. Each server contains one instance of <code>dynomite</code> (i.e. the node) and one instance of <code>redis-server</code> (i.e. the backend). Please note that DynomiteDB supports pluggable backends which means that you can replace <code>redis-server</code> with a different backend.</p>
+
+<p>The entire cluster is exposed to clients via a Redis-compatible API. From an application developers perspective the DynomiteDB cluster operates similarly to a single Redis server. The fact that an application developer does not have to think about sharding, replication, redundancy or another other distributed database concepts is extremely powerful as it contributes to faster development velocity.</p>
+
+<h3 id="servers-and-nodes:1f133eab44ee052910d299de6eac066e">Servers and nodes</h3>
+
+<p><img class="img-responsive center-block"
+     src="/img/dynomite/v0.5.6/architecture-intra-node.svg" 
+     alt="Intra-server architecture">
+<p class="dyno-image-caption text-center">Intra-server architecture</p></p>
+
+<p>A server is either a physical server or a virtual machine (such as an AWS EC2 instance).</p>
+
+<p>Each server within the rack contains a node (a <code>dynomite</code> instance) and a backend (a <code>redis-server</code> instance or other backend). A key feature of DynomiteDB is pluggable backends which means that you can use DynomiteDB as a big data cache or database. To use DynomiteDB as a cache use an in-memory backend, such as Redis. To use DynomiteDB as a database use a persistent backend, such as ForestDB.</p>
+
+<p>The node (i.e. the <code>dynomite</code> instance) is a Dynamo-inspired server that provides the following capabilities:</p>
+
+<ul>
+<li>High availability (HA)</li>
+<li>Linear scalability</li>
+<li>Sharding</li>
+<li>Replication</li>
+<li>Traffic router across the DynomiteDB cluster</li>
+<li>Coordinator</li>
+<li>Gossiper</li>
+<li>Pluggable backends</li>
+<li>Proxying for the backend</li>
+</ul>
+
+<p>DynomiteDB currently supports Redis as its primary backend. However, DynomiteDB supports pluggable backends and will add support for other backends, such as ForestDB, LMDB and Memcached, in the future.</p>
+
+<p>A backend, which is technically a database storage engine, can provide volatile storage, persistent storage or a combination of both. Examples of volatile storage engines include Redis and Memcached. Examples of persistent storage engines include LMDB, RocksDB, LevelDB and ForestDB.</p>
+
+<h3 id="node-tokens:1f133eab44ee052910d299de6eac066e">Node tokens</h3>
+
+<p>The following table shows the node tokens and data token ownership range.</p>
+
+<table class="table table-condensed table-bordered">
+    <tr class="active">
+        <th>Server</th>
+        <th>Node token</th>
+        <th>Min data token</th>
+        <th>Max data token</th>
+    </tr>
+    <tr>
+        <td>sfo-r1-s1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1431655764</td>
+    </tr>
+        <td>sfo-r1-s2</td>
+        <td>1431655765</td>
+        <td>1431655765</td>
+        <td>2863311529</td>
+    </tr>
+        <td>sfo-r1-s3</td>
+        <td>2863311530</td>
+        <td>2863311530</td>
+        <td>4294967295</td>
+    </tr>
+</table>
+
+<p>The formulas used to calculate the data token ownership range follow below:</p>
+
+<pre><code class="language-bash">minDataToken = nodeToken
+
+maxDataToken = nextNodeToken - 1 
+</code></pre>
+
+<h2 id="single-dc-cluster-with-three-racks:1f133eab44ee052910d299de6eac066e">Single DC cluster with three racks</h2>
+
+<p><a href="/img/dynomite/v0.5.6/topology-1dc-3racks.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/topology-1dc-3racks.svg"
+         alt="1 DC, 3 rack, 9 servers"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">1 DC with 3 racks</p></p>
+
+<p>The cluster is comprised of a single DC which contains three racks and each rack contains three servers. Each server contains a node (a <code>dynomite</code> instance) and a backend (a <code>redis-server</code> instance).</p>
+
+<p>A cluster with a single DC that contains three racks is a production ready topology when HA in case of DC failure is not required.</p>
+
+<p>The following are the names of the various topology elements (indentation indicates the topology hierarchy):</p>
+
+<ul>
+<li><strong>DC</strong>: sfo (San Francisco)
+
+<ul>
+<li><strong>Rack</strong>: r1
+
+<ul>
+<li><strong>Servers</strong>:
+
+<ul>
+<li>sfo-r1-s1 (node token = 0)</li>
+<li>sfo-r1-s2 (node token = 1431655765)</li>
+<li>sfo-r1-s3 (node token = 2863311530)</li>
+</ul></li>
+</ul></li>
+<li><strong>Rack</strong>: r2
+
+<ul>
+<li><strong>Servers</strong>:
+
+<ul>
+<li>sfo-r2-s1 (node token = 0)</li>
+<li>sfo-r2-s2 (node token = 1431655765)</li>
+<li>sfo-r2-s3 (node token = 2863311530)</li>
+</ul></li>
+</ul></li>
+<li><strong>Rack</strong>: r3
+
+<ul>
+<li><strong>Servers</strong>:
+
+<ul>
+<li>sfo-r3-s1 (node token = 0)</li>
+<li>sfo-r3-s2 (node token = 1431655765)</li>
+<li>sfo-r3-s3 (node token = 2863311530)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Each rack contains the entire token range which means that <code>RF = 3</code> in this example. Specifically, a key/value pair where the data token = <code>100</code> will be replicated on sfo-r1-s1, sfo-r2-s1 and sfo-r3-s1.</p>
+
+<h3 id="node-tokens-1:1f133eab44ee052910d299de6eac066e">Node tokens</h3>
+
+<p>In this example there are three racks, each of which contains three servers of equal size. The following table shows the node tokens and data token ownership range.</p>
+
+<p>The following are the some salient points about the topology described in the table below:</p>
+
+<ul>
+<li>Each node token is used by three nodes, one node per rack</li>
+<li>Node tokens can repeat across racks, but not within a rack</li>
+<li>Data token ownership is repeated three times, which indicates how data is replicated across the three racks</li>
+<li>Data token ownership is repeated across racks, but not within a rack</li>
+<li>Replication
+
+<ul>
+<li>Data tokens from 0 to 1431655764 are replicated on sfo-r1-s1, sfo-r2-s1 and sfo-r3-s1</li>
+<li>Data tokens from 1431655765 to 2863311529 are replicated on sfo-r1-s2, sfo-r2-s2 and sfo-r3-s2</li>
+<li>Data tokens from 2863311530 to 4294967295 are replicated on sfo-r1-s3, sfo-r2-s3 and sfo-r3-s3</li>
+</ul></li>
+</ul>
+
+<table class="table table-condensed table-bordered">
+    <tr class="active">
+        <th>Rack</th>
+        <th>Server</th>
+        <th>Node token</th>
+        <th>Min data token</th>
+        <th>Max data token</th>
+    </tr>
+    <tr>
+        <td>r1</td>
+        <td>sfo-r1-s1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1431655764</td>
+    </tr>
+        <td></td>
+        <td>sfo-r1-s2</td>
+        <td>1431655765</td>
+        <td>1431655765</td>
+        <td>2863311529</td>
+    </tr>
+        <td></td>
+        <td>sfo-r1-s3</td>
+        <td>2863311530</td>
+        <td>2863311530</td>
+        <td>4294967295</td>
+    </tr>
+    <tr>
+        <td>r2</td>
+        <td>sfo-r2-s1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1431655764</td>
+    </tr>
+        <td></td>
+        <td>sfo-r2-s2</td>
+        <td>1431655765</td>
+        <td>1431655765</td>
+        <td>2863311529</td>
+    </tr>
+        <td></td>
+        <td>sfo-r2-s3</td>
+        <td>2863311530</td>
+        <td>2863311530</td>
+        <td>4294967295</td>
+    </tr>
+        <td>r3</td>
+        <td>sfo-r3-s1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1431655764</td>
+    </tr>
+        <td></td>
+        <td>sfo-r3-s2</td>
+        <td>1431655765</td>
+        <td>1431655765</td>
+        <td>2863311529</td>
+    </tr>
+        <td></td>
+        <td>sfo-r3-s3</td>
+        <td>2863311530</td>
+        <td>2863311530</td>
+        <td>4294967295</td>
+    </tr>
+</table>
+
+<p>The formulas used to calculate the data token ownership range follow below:</p>
+
+<pre><code class="language-bash">minDataToken = nodeToken
+
+maxDataToken = nextNodeToken - 1 
+</code></pre>
+
+<h2 id="two-dc-cluster-with-three-racks-per-dc:1f133eab44ee052910d299de6eac066e">Two DC cluster with three racks per DC</h2>
+
+<p><a href="/img/dynomite/v0.5.6/topology-2dc-3racks.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/topology-2dc-3racks.svg"
+         alt="Two DC cluster with three racks per DC">
+</a>
+<p class="dyno-image-caption text-center">2 DCs with 3 racks per DC</p></p>
+
+<p>The cluster is comprised of a single DC which contains three racks and each rack contains three servers. Each server contains a node (a <code>dynomite</code> instance) and a backend (a <code>redis-server</code> instance).</p>
+
+<p>A cluster with a two DCs that contains three racks per DC and three servers per rack is a robust, production ready topology that is resilient against server, rack and DC failure.</p>
+
+<p>The following are the names of the various topology elements (indentation indicates the topology hierarchy):</p>
+
+<ul>
+<li><strong>DC</strong>: sfo (San Francisco)
+
+<ul>
+<li><strong>Rack</strong>: sfo-r1
+
+<ul>
+<li><strong>Servers</strong>:
+
+<ul>
+<li>sfo-r1-s1 (node token = 0)</li>
+<li>sfo-r1-s2 (node token = 1431655765)</li>
+<li>sfo-r1-s3 (node token = 2863311530)</li>
+</ul></li>
+</ul></li>
+<li><strong>Rack</strong>: sfo-r2
+
+<ul>
+<li><strong>Servers</strong>:
+
+<ul>
+<li>sfo-r2-s1 (node token = 0)</li>
+<li>sfo-r2-s2 (node token = 1431655765)</li>
+<li>sfo-r2-s3 (node token = 2863311530)</li>
+</ul></li>
+</ul></li>
+<li><strong>Rack</strong>: sfo-r3
+
+<ul>
+<li><strong>Servers</strong>:
+
+<ul>
+<li>sfo-r3-s1 (node token = 0)</li>
+<li>sfo-r3-s2 (node token = 1431655765)</li>
+<li>sfo-r3-s3 (node token = 2863311530)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>DC</strong>: jfk (New York)
+
+<ul>
+<li><strong>Rack</strong>: jfk-r1
+
+<ul>
+<li><strong>Servers</strong>:
+
+<ul>
+<li>jfk-r1-s1 (node token = 0)</li>
+<li>jfk-r1-s2 (node token = 1431655765)</li>
+<li>jfk-r1-s3 (node token = 2863311530)</li>
+</ul></li>
+</ul></li>
+<li><strong>Rack</strong>: jfk-r2
+
+<ul>
+<li><strong>Servers</strong>:
+
+<ul>
+<li>jfk-r2-s1 (node token = 0)</li>
+<li>jfk-r2-s2 (node token = 1431655765)</li>
+<li>jfk-r2-s3 (node token = 2863311530)</li>
+</ul></li>
+</ul></li>
+<li><strong>Rack</strong>: jfk-r3
+
+<ul>
+<li><strong>Servers</strong>:
+
+<ul>
+<li>jfk-r3-s1 (node token = 0)</li>
+<li>jfk-r3-s2 (node token = 1431655765)</li>
+<li>jfk-r3-s3 (node token = 2863311530)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Each rack contains the entire token range which means that <code>RF = 3</code> for the SFO DC and JFK DC. Specifically, a key/value pair where the data token = <code>100</code> will be replicated on sfo-r1-s1, sfo-r2-s1 and sfo-r3-s1 within the SFO DC, plus jfk-r1-s1, jfk-r2-s1 AND jfk-r3-s1 within the JFK DC.</p>
+
+<h3 id="node-tokens-2:1f133eab44ee052910d299de6eac066e">Node tokens</h3>
+
+<p>In this example there are six racks, each of which contains three servers of equal size. The following table shows the node tokens and data token ownership range.</p>
+
+<p>The following are the some salient points about the topology described in the table below:</p>
+
+<ul>
+<li>Each node token is used by six nodes, one node per rack and three per DC</li>
+<li>Node tokens can repeat across racks, but not within a rack</li>
+<li>Node tokens can repeat across DCs</li>
+<li>Data token ownership repeats three times per DC, which defines the RF per DC</li>
+<li>Data token ownership repeats six times across the cluster which indicates the total number of replica cluster-wide</li>
+<li>Data token ownership repeats across racks, but not within a rack</li>
+<li>Data token ownership repeats across DCs</li>
+<li>Replication
+
+<ul>
+<li>Data tokens from 0 to 1431655764 are owned by and replicated on sfo-r1-s1, sfo-r2-s1, sfo-r3-s1, jfk-r1-s1, jfk-r2-s1 and jfk-r3-s1</li>
+<li>Data tokens from 1431655765 to 2863311529 are owned by and replicated on sfo-r1-s2, sfo-r2-s2, sfo-r3-s2, jfk-r1-s2, jfk-r2-s2 and jfk-r3-s2</li>
+<li>Data tokens from 2863311530 to 4294967295 are owned by and replicated on sfo-r1-s3, sfo-r2-s3, sfo-r3-s3, jfk-r1-s3, jfk-r2-s3 and jfk-r3-s3</li>
+</ul></li>
+</ul>
+
+<table class="table table-condensed table-bordered">
+    <tr class="active">
+        <th>DC</th>
+        <th>Rack</th>
+        <th>Server</th>
+        <th>Node token</th>
+        <th>Min data token</th>
+        <th>Max data token</th>
+    </tr>
+    <tr>
+        <td>sfo</td>
+        <td>sfo-r1</td>
+        <td>sfo-r1-s1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1431655764</td>
+    </tr>
+        <td></td>
+        <td></td>
+        <td>sfo-r1-s2</td>
+        <td>1431655765</td>
+        <td>1431655765</td>
+        <td>2863311529</td>
+    </tr>
+        <td></td>
+        <td></td>
+        <td>sfo-r1-s3</td>
+        <td>2863311530</td>
+        <td>2863311530</td>
+        <td>4294967295</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>sfo-r2</td>
+        <td>sfo-r2-s1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1431655764</td>
+    </tr>
+        <td></td>
+        <td></td>
+        <td>sfo-r2-s2</td>
+        <td>1431655765</td>
+        <td>1431655765</td>
+        <td>2863311529</td>
+    </tr>
+        <td></td>
+        <td></td>
+        <td>sfo-r2-s3</td>
+        <td>2863311530</td>
+        <td>2863311530</td>
+        <td>4294967295</td>
+    </tr>
+        <td></td>
+        <td>sfo-r3</td>
+        <td>sfo-r3-s1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1431655764</td>
+    </tr>
+        <td></td>
+        <td></td>
+        <td>sfo-r3-s2</td>
+        <td>1431655765</td>
+        <td>1431655765</td>
+        <td>2863311529</td>
+    </tr>
+        <td></td>
+        <td></td>
+        <td>sfo-r3-s3</td>
+        <td>2863311530</td>
+        <td>2863311530</td>
+        <td>4294967295</td>
+    </tr>
+    <tr>
+        <td>jfk</td>
+        <td>jfk-r1</td>
+        <td>jfk-r1-s1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1431655764</td>
+    </tr>
+        <td></td>
+        <td></td>
+        <td>jfk-r1-s2</td>
+        <td>1431655765</td>
+        <td>1431655765</td>
+        <td>2863311529</td>
+    </tr>
+        <td></td>
+        <td></td>
+        <td>jfk-r1-s3</td>
+        <td>2863311530</td>
+        <td>2863311530</td>
+        <td>4294967295</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>jfk-r2</td>
+        <td>jfk-r2-s1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1431655764</td>
+    </tr>
+        <td></td>
+        <td></td>
+        <td>jfk-r2-s2</td>
+        <td>1431655765</td>
+        <td>1431655765</td>
+        <td>2863311529</td>
+    </tr>
+        <td></td>
+        <td></td>
+        <td>jfk-r2-s3</td>
+        <td>2863311530</td>
+        <td>2863311530</td>
+        <td>4294967295</td>
+    </tr>
+        <td></td>
+        <td>jfk-r3</td>
+        <td>jfk-r3-s1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1431655764</td>
+    </tr>
+        <td></td>
+        <td></td>
+        <td>jfk-r3-s2</td>
+        <td>1431655765</td>
+        <td>1431655765</td>
+        <td>2863311529</td>
+    </tr>
+        <td></td>
+        <td></td>
+        <td>jfk-r3-s3</td>
+        <td>2863311530</td>
+        <td>2863311530</td>
+        <td>4294967295</td>
+    </tr>
+</table>
+
+<p>The formulas used to calculate the data token ownership range follow below:</p>
+
+<pre><code class="language-bash">minDataToken = nodeToken
+
+maxDataToken = nextNodeToken - 1 
+</code></pre>
+
+<h1 id="summary:1f133eab44ee052910d299de6eac066e">Summary</h1>
+
+<p>Understanding the network topology is a critical task for System Administrators and operations staff. However, application developers are free to focus on application requirements as DynomiteDB&rsquo;s Redis-compatible API provides a simple API that abstracts away the implementation details of DynomiteDB&rsquo;s distributed nature.</p>
+
+<p>The key elements in a DynomiteDB cluster&rsquo;s topology are:</p>
+
+<ul>
+<li>Data center (DC)</li>
+<li>Rack</li>
+<li>Server</li>
+<li>Node and node token</li>
+<li>Backend</li>
+</ul>
+
+<p>The number of racks per DC defines the replication factor (RF).</p>
+
+<p>If your infrastructure runs on Amazon Web Services (AWS), then the topology elements map to AWS concepts as follows:</p>
+
+<ul>
+<li>Data center (DC) = region</li>
+<li>Rack = availability zone (AZ)</li>
+<li>Server = EC2</li>
+</ul>
+
+<p>If your application runs within a single DC, then you may choose to run a topology with a single DC and three racks. However, if your application has high availability, scalability and performance requirements then a multi-DC, multi-rack per DC topology is a better choice.</p>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2016 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script src="http://www.dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+<script src="http://www.dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+<script src="http://www.dynomitedb.com/js/dynomite.js"></script>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-76466336-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+<script type="text/javascript">
+    (function(d,s,i,r) {
+        if (d.getElementById(i)){return;}
+        var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+        n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/2356163.js';
+        e.parentNode.insertBefore(n, e);
+    })(document,"script","hs-analytics",300000);
+</script>
+
+
+	</body>
+</html>

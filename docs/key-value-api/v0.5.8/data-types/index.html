@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Data types">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>Data types &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://www.dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="http://www.dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://www.dynomitedb.com/css/style.css">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+                  <li class=''><a href="/faq/"> FAQ </a></li>
+                
+                  <li class=''><a href="/roadmap/"> Roadmap </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	
+		
+			
+			
+			
+			
+		
+	
+	<div class="row">
+		
+			
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+			
+		
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Key/Value API v0.5.8</h3>
+			<h4>Introduction</h4>
+			<ul>
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/key-value-api/v0.5.8/introduction/">Introduction</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Data types</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/key-value-api/v0.5.8/data-types/">Data types</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/key-value-api/v0.5.8/string/">String</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/key-value-api/v0.5.8/integer/">Integer</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/key-value-api/v0.5.8/float/">Float</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/key-value-api/v0.5.8/list/">List</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/key-value-api/v0.5.8/set/">Set</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/key-value-api/v0.5.8/sorted-set/">Sorted Set</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/key-value-api/v0.5.8/hash/">Hash</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/key-value-api/v0.5.8/data-types-summary/">Data types summary</a></li>
+
+					
+				
+			</ul>
+			<h4>Data modeling</h4>
+			<ul>
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/key-value-api/v0.5.8/schema/">Schema</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>String commands</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>List commands</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Set commands</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Sorted set commands</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Hash commands</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>Data types</h1>
+			
+
+<p>DynomiteDB supports a variety of data types, including:</p>
+
+<ul>
+<li>String</li>
+<li>List</li>
+<li>Set</li>
+<li>Sorted Set</li>
+<li>Hash</li>
+</ul>
+
+<p>The String type is used to support several sub-types including Integer, Float and Bitmap.</p>
+
+<h1 id="string:4207c876ad2a56ed3ba005314c727b84">String</h1>
+
+<p><strong>String</strong> is an ordered sequence of non-unique bytes. String is binary safe and more closely resembles a byte array than a string literal.</p>
+
+<ul>
+<li><a href="../string">Learn more about Strings</a></li>
+<li><a href="../integer">Learn more about Integers</a></li>
+<li><a href="../float">Learn more about Floats</a></li>
+</ul>
+
+<h1 id="list:4207c876ad2a56ed3ba005314c727b84">List</h1>
+
+<p><strong>List</strong> is an insertion ordered, non-unique sequence of strings. It is implemented as a doubly-linked list and supports fast head and tail operations.</p>
+
+<ul>
+<li><a href="../list">Learn more about Lists</a></li>
+</ul>
+
+<h1 id="set:4207c876ad2a56ed3ba005314c727b84">Set</h1>
+
+<p><strong>Set</strong> is an unordered, unique collection of strings. It is similar to a mathematical set and supports common set operations including union, intersection and difference.</p>
+
+<ul>
+<li><a href="../set">Learn more about Sets</a></li>
+</ul>
+
+<h1 id="sorted-set:4207c876ad2a56ed3ba005314c727b84">Sorted Set</h1>
+
+<p><strong>Sorted Set</strong> is a score ordered sequence of unique strings. Each item in a Sorted Set is comprised of two components, the member and a score. The member is a string value, while the score is an arbitrary float value that you define.</p>
+
+<ul>
+<li><a href="../sorted-set">Learn more about Sorted Sets</a></li>
+</ul>
+
+<h1 id="hash:4207c876ad2a56ed3ba005314c727b84">Hash</h1>
+
+<p><strong>Hash</strong> is an unordered collection of unique field/value pairs. It is similar to a relational database row, a flat unnested document in a document database, or a hash map provided by various programming languages.</p>
+
+<ul>
+<li><a href="../hash">Learn more about Hashes</a></li>
+</ul>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2016 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script src="http://www.dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+<script src="http://www.dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+<script src="http://www.dynomitedb.com/js/dynomite.js"></script>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-76466336-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+<script type="text/javascript">
+    (function(d,s,i,r) {
+        if (d.getElementById(i)){return;}
+        var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+        n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/2356163.js';
+        e.parentNode.insertBefore(n, e);
+    })(document,"script","hs-analytics",300000);
+</script>
+
+
+	</body>
+</html>

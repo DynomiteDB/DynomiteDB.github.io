@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Introduction">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>Introduction &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://www.dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="http://www.dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://www.dynomitedb.com/css/style.css">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+                  <li class=''><a href="/faq/"> FAQ </a></li>
+                
+                  <li class=''><a href="/roadmap/"> Roadmap </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	
+		
+			
+			
+			
+			
+		
+	
+	<div class="row">
+		
+			
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+			
+		
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Dynomite v0.5.8</h3>
+			<h4>Introduction</h4>
+			<ul>
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/introduction/">Introduction</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/quick-start/">Quick Start (Docker)</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/quick-start-ubuntu/">Quick Start (Ubuntu)</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/install-docker-ubuntu-14-04/">Install Docker on Ubuntu 14.04</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/deploy-dynomitedb-cluster-on-aws/">Deploy DynomiteDB cluster on AWS</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/terminology/">Terminology</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Architecture</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/architecture/">Architecture</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/topology/">Topology</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/replication/">Replication</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/consistency/">Consistency</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/membership-protocols/">Membership Protocols</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Servers and nodes</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/coordinator/">Coordinator</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Data</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/kvpairs/">Key/value pairs</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Configuration</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/dynomite-yaml/">dynomite.yaml</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/seeds-list/">seeds.list</a></li>
+
+					
+				
+					
+				
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>Introduction</h1>
+			
+
+<p>Welcome to DynomiteDB. This document provides an introduction to DynomiteDB. It explains the key concepts and terminology that you need to know to use DynomiteDB.</p>
+
+<h2 id="what-is-dynomitedb:a30249b4c82f8568bb305fac6a23711f">What is DynomiteDB</h2>
+
+<p>DynomiteDB is an open source framework that turns any database into a scalable, distributed database. It provides Dynamo-like sharding, replication and high availability for various key/value database engines, which are called backends.</p>
+
+<p>DynomiteDB makes it easy to deploy linearly scalable clusters of the following databases:</p>
+
+<ul>
+<li>Redis</li>
+<li>RocksDB</li>
+<li>LevelDB</li>
+<li>LMDB</li>
+</ul>
+
+<p>A key benefit of DynomiteDB is that you can reuse the same database infrastructure for a wide variety of workloads, from a highly available, distributed cache that uses the Redis backend to a big data distributed database that uses the RocksDB backend.</p>
+
+<p>DynomiteDB provides the same Redis-compatible key/value API across all backends. A common API means that you can reuse your data model and queries for both persistent and in-memory workloads. This greatly simplifies application development and increases development velocity.</p>
+
+<h2 id="key-value-api:a30249b4c82f8568bb305fac6a23711f">Key/Value API</h2>
+
+<p>DynomiteDB provides access to all supported backends via the same Redis-compatible API. You can use the same Redis client, commands and data types that you are already using. With DynomiteDB, you gain instant scalability for your Redis servers with almost no changes to your code.</p>
+
+<p><a href="/docs/key-value-api/v0.5.8/introduction/">Learn more about the DynomiteDB Key/Value API</a>.</p>
+
+<h3 id="value-data-types:a30249b4c82f8568bb305fac6a23711f">Value data types</h3>
+
+<p>Dynomite supports a variety of value data type when the Redis database engine is used as a backend. Importantly, Redis is the primary and default backend used by Dynomite.</p>
+
+<p>The following value data types are supported:</p>
+
+<ul>
+<li>String</li>
+<li>Hash</li>
+<li>List</li>
+<li>Set</li>
+<li>Sorted Set</li>
+</ul>
+
+<h2 id="key-features:a30249b4c82f8568bb305fac6a23711f">Key features</h2>
+
+<h3 id="high-performance:a30249b4c82f8568bb305fac6a23711f">High performance</h3>
+
+<p>Dynomite provides a high performance cache and database combined with linear scalability. Linear scalability means that Dynomite&rsquo;s capacity scales as you add more clusters to the server. Specifically, if one Dynomite server can handle 40,000 ops/second then we know that two Dynomite servers will handle 80,000 ops/second.</p>
+
+<h3 id="high-availability-ha:a30249b4c82f8568bb305fac6a23711f">High availability (HA)</h3>
+
+<p>Dynomite is a highly available server which means that Dynomite is able to <code>SET</code> and <code>GET</code> your cache data even when a server, rack or entire data center goes offline.</p>
+
+<h3 id="sharding-and-replication:a30249b4c82f8568bb305fac6a23711f">Sharding and replication</h3>
+
+<p>Dynomite shards data by distributing various key/value pairs across the cluster. It then replicates each key/value pair by creating extra copies on multiple servers.</p>
+
+<h2 id="summary:a30249b4c82f8568bb305fac6a23711f">Summary</h2>
+
+<p>Dynomite is a high performance, linearly scalable Dynamo layer that allows single-server database engines to operate as a cluster. Dynomite supports a variety of value data types.</p>
+
+<h2 id="what-s-next:a30249b4c82f8568bb305fac6a23711f">What&rsquo;s next</h2>
+
+<ul>
+    <li><a href="../quick-start/">Continue to the Quick Start to install DynomiteDB with Docker.</a></li>
+    <li><a href="../quick-start-ubuntu/">Continue to the Quick Start to install DynomiteDB on Ubuntu using a <code>.deb</code> package.</a></li>
+</ul>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2016 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script src="http://www.dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+<script src="http://www.dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+<script src="http://www.dynomitedb.com/js/dynomite.js"></script>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-76466336-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+<script type="text/javascript">
+    (function(d,s,i,r) {
+        if (d.getElementById(i)){return;}
+        var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+        n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/2356163.js';
+        e.parentNode.insertBefore(n, e);
+    })(document,"script","hs-analytics",300000);
+</script>
+
+
+	</body>
+</html>

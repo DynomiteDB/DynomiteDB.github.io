@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Install Docker on Ubuntu 14.04">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>Install Docker on Ubuntu 14.04 &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://www.dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="http://www.dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://www.dynomitedb.com/css/style.css">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+                  <li class=''><a href="/faq/"> FAQ </a></li>
+                
+                  <li class=''><a href="/roadmap/"> Roadmap </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	
+		
+			
+			
+			
+			
+		
+	
+	<div class="row">
+		
+			
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+			
+		
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Dynomite v0.5.8</h3>
+			<h4>Introduction</h4>
+			<ul>
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/introduction/">Introduction</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/quick-start/">Quick Start (Docker)</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/quick-start-ubuntu/">Quick Start (Ubuntu)</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/install-docker-ubuntu-14-04/">Install Docker on Ubuntu 14.04</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/deploy-dynomitedb-cluster-on-aws/">Deploy DynomiteDB cluster on AWS</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/terminology/">Terminology</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Architecture</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/architecture/">Architecture</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/topology/">Topology</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/replication/">Replication</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/consistency/">Consistency</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/membership-protocols/">Membership Protocols</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Servers and nodes</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/coordinator/">Coordinator</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Data</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/kvpairs/">Key/value pairs</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Configuration</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/dynomite-yaml/">dynomite.yaml</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/seeds-list/">seeds.list</a></li>
+
+					
+				
+					
+				
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>Install Docker on Ubuntu 14.04</h1>
+			
+
+<p>The following instructions are provided for your convenience. If you have an problems installing Docker on Ubuntu 14.04, then we strongly recommend that you view the full installation instructions on Docker.com.</p>
+
+<h1 id="check-kernel-version:f884542273f7b723d850da75f1f10a38">Check kernel version</h1>
+
+<pre><code class="language-bash">sudo uname -r
+# Kernel must be &gt;= 3.10
+</code></pre>
+
+<h1 id="install-prerequisites-and-docker:f884542273f7b723d850da75f1f10a38">Install prerequisites and Docker</h1>
+
+<pre><code class="language-bash">sudo apt-get update
+
+sudo apt-get upgrade -y
+</code></pre>
+
+<p>Install Docker prerequisites.</p>
+
+<pre><code class="language-bash">sudo apt-get install apt-transport-https ca-certificates curl
+</code></pre>
+
+<p>Get the docker GPG key.</p>
+
+<pre><code class="language-bash">sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+</code></pre>
+
+<p>Add Docker to the list of repositories.</p>
+
+<pre><code class="language-bash">sudo vi /etc/apt/sources.list.d/docker.list
+</code></pre>
+
+<p>Paste the following into <code>docker.list</code>:</p>
+
+<pre><code class="language-bash">deb https://apt.dockerproject.org/repo ubuntu-trusty main
+</code></pre>
+
+<p>Update the packages list.</p>
+
+<pre><code class="language-bash">sudo apt-get update
+</code></pre>
+
+<p>Add docker to the cache to speed up subsequent access.</p>
+
+<pre><code class="language-bash">sudo apt-cache policy docker-engine
+</code></pre>
+
+<p>Install the kernel extras package.</p>
+
+<pre><code class="language-bash">sudo apt-get install -y linux-image-extra-$(uname -r) 
+</code></pre>
+
+<p>Install the Application Armar and Docker Enginee.</p>
+
+<pre><code class="language-bash">sudo apt-get install -y apparmor docker-engine
+</code></pre>
+
+<p>Start Docker.</p>
+
+<pre><code class="language-bash">sudo service docker start
+</code></pre>
+
+<h1 id="create-a-docker-group:f884542273f7b723d850da75f1f10a38">Create a <code>docker</code> group</h1>
+
+<p>The creation of a <code>docker</code> group allows you to run Docker without the <code>sudo</code> command.</p>
+
+<pre><code class="language-bash">sudo usermod -aG docker $USER
+</code></pre>
+
+<p>Logout and then login again, then run the <code>hello-world</code> container.</p>
+
+<pre><code class="language-bash">docker run hello-world
+</code></pre>
+
+<h1 id="install-docker-compose:f884542273f7b723d850da75f1f10a38">Install Docker Compose</h1>
+
+<p><code>cd</code> to your home directory.</p>
+
+<pre><code class="language-bash">cd
+</code></pre>
+
+<p>Download the <code>docker-compose</code> script.</p>
+
+<pre><code class="language-bash">curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` &gt; ~/docker-compose
+</code></pre>
+
+<p>Move <code>docker-compose</code> into the <code>bin</code> directory.</p>
+
+<pre><code class="language-bash">sudo mv docker-compose /usr/local/bin/docker-compose
+</code></pre>
+
+<p>Make <code>docker-compose</code> executable.</p>
+
+<pre><code class="language-bash">sudo chmod +x /usr/local/bin/docker-compose
+</code></pre>
+
+<p>Download the Bash completion file for <code>docker-compose</code>.</p>
+
+<pre><code class="language-bash">curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose &gt; ./docker-compose-bash-completion
+</code></pre>
+
+<p>Move the Bash completion file into the system-wide <code>/etc/bash_completion.d</code> directory.</p>
+
+<pre><code class="language-bash">sudo mv  ./docker-compose-bash-completion /etc/bash_completion.d/docker-compose
+</code></pre>
+
+<p>Check that you&rsquo;ve installed <code>docker-compose</code> correctly by viewing the installed version number.</p>
+
+<pre><code class="language-bash">docker-compose --version
+</code></pre>
+
+<p>Congratulations, you have successfully installed Docker on Ubuntu 14.04.</p>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2016 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script src="http://www.dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+<script src="http://www.dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+<script src="http://www.dynomitedb.com/js/dynomite.js"></script>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-76466336-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+<script type="text/javascript">
+    (function(d,s,i,r) {
+        if (d.getElementById(i)){return;}
+        var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+        n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/2356163.js';
+        e.parentNode.insertBefore(n, e);
+    })(document,"script","hs-analytics",300000);
+</script>
+
+
+	</body>
+</html>

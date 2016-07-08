@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Replication">
+    <meta name="author" content="The DynomiteDB community">
+
+    <meta name="keywords" content="DynomiteDB, Dynomite, Dyno, Dynamo, Redis, Cache, Distributed, High Availability, Shared Nothing">
+    <link rel="shortcut icon" href="/favicon@3x.png">
+
+    <title>Replication &middot; DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://www.dynomitedb.com/css/theme/flatly.css">
+    
+
+    <link rel="stylesheet" href="http://www.dynomitedb.com/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://www.dynomitedb.com/css/style.css">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache" />
+</head>
+<body lang="en">
+    
+    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.dynomitedb.com"
+                style="display: inline-block; color: #3498db; padding-top: 15px;">
+                <img alt="DynomiteDB" src="/img/logo-blue@2x.png" height="36px" width="36px"
+                    style="display: inline-block; vertical-align: middle">
+                <span style="padding-left: 3px;">DynomiteDB</span>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                
+                  <li class=''><a href="/docs/"> Docs </a></li>
+                
+                  <li class=''><a href="/blog/"> Blog </a></li>
+                
+                  <li class=''><a href="/faq/"> FAQ </a></li>
+                
+                  <li class=''><a href="/roadmap/"> Roadmap </a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	
+		
+			
+			
+			
+			
+		
+	
+	<div class="row">
+		
+			
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+					
+					
+				
+			
+		
+		<div class="col-sm-3 dyno-doc-nav">
+			<h3>Dynomite v0.5.8</h3>
+			<h4>Introduction</h4>
+			<ul>
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/introduction/">Introduction</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/quick-start/">Quick Start (Docker)</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/quick-start-ubuntu/">Quick Start (Ubuntu)</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/install-docker-ubuntu-14-04/">Install Docker on Ubuntu 14.04</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/deploy-dynomitedb-cluster-on-aws/">Deploy DynomiteDB cluster on AWS</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/faq/">FAQ</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/terminology/">Terminology</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Architecture</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/architecture/">Architecture</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/topology/">Topology</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/replication/">Replication</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/consistency/">Consistency</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/membership-protocols/">Membership Protocols</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Servers and nodes</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/coordinator/">Coordinator</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Data</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/kvpairs/">Key/value pairs</a></li>
+
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+			<h4>Configuration</h4>
+			<ul>
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/dynomite-yaml/">dynomite.yaml</a></li>
+
+					
+				
+					
+						
+
+<li><a href="http://www.dynomitedb.com/docs/dynomite/v0.5.8/seeds-list/">seeds.list</a></li>
+
+					
+				
+					
+				
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-9 dyno-doc">
+			<h1>Replication</h1>
+			
+
+<p>Replication means that multiple copies of each key/value pair are stored across multiple nodes in a cluster. Each copy of a key/value pair is called a replica. Each replica is stored on a different node where each replica node is in a different rack.</p>
+
+<p>Replication ensures that your application will continue to work when a server, rack or entire data center (DC) fails. In other words, replication is a core component of high availability (HA).</p>
+
+<h1 id="replicas-and-replica-nodes:ac45b47766ef303adf8b4200751ecac6">Replicas and replica nodes</h1>
+
+<p>A replica node is a node that owns the data token range of a key/value pair&rsquo;s data token. A data token is generated by hashing the key portion of a key/value pair with a consistent hashing algorithm. Each replica (i.e. copy of a key/value pair) is written to all replica nodes across a cluster.</p>
+
+<p>DynomiteDB has a masterless, peer-to-peer architecture which means that each replica node is equal to every other replica node. This fact is important as a server or rack failure that affects one replica node has no effect the other replica nodes.</p>
+
+<h2 id="data-token-ownership:ac45b47766ef303adf8b4200751ecac6">Data token ownership</h2>
+
+<p><a href="/img/dynomite/v0.5.6/replication-data-token-ownership.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-data-token-ownership.svg"
+         alt="Token ownership"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Data token ownership</p></p>
+
+<p>The diagram above focuses on a single rack with three servers. <code>s1</code>&rsquo;s node token is 0, <code>s2</code>&rsquo;s node token is 1431655765 and <code>s3</code>&rsquo;s node token is 2863311530.</p>
+
+<p>We can determine which nodes are replica nodes for a given key/value pair as follows:</p>
+
+<ol>
+<li>Calculate the data token by hashing the key portion of the key/value pair with a consistent hashing algorithm</li>
+<li>For each node set the data token ownership range from <code>nodeToken</code> to <code>nextNodeToken - 1</code></li>
+<li>Check if the data token is within the range of data tokens owned by each node</li>
+</ol>
+
+<p><a href="/img/dynomite/v0.5.6/replication-data-token-ownership-ring.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-data-token-ownership-ring.svg"
+         alt="Token ownership (ring view)"
+         style="height: 300px;">
+</a>
+<p class="dyno-image-caption text-center">Data token ownership (token ring)</p></p>
+
+<p>The diagram above displays the same token ownership information as the earlier diagram, except that a token ring is used for display.</p>
+
+<p>To continue the example in the diagram above we will determine the replica node for a key/value pair with data token = 100 and another key/value pair with data token = 4000000000.</p>
+
+<p><code>s1</code> owns all data tokens from 0 to 1431655764. Therefore, a key/value pair with a data token = 100 will be written to node <code>s1</code>.</p>
+
+<p><code>s3</code> owns all data tokens from 2863311530 to 4294967295. Therefore, a key/value pair with a data token =  4000000000 will be written to node <code>s3</code>.</p>
+
+<blockquote>
+<p>Don&rsquo;t worry too much about the readability of the data tokens as it is an implementation detail managed internally by DynomiteDB.</p>
+</blockquote>
+
+<p>Importantly, an application developer never sees or thinks about data tokens. Instead, an application developer focuses on key/value pairs that make sense for the given application, such as <code>firstName: Jane</code> or <code>age: 23</code>. DynomiteDB&rsquo;s use of data tokens is an implementation detail that is not exposed to the application layer.</p>
+
+<h1 id="replication-factor-rf:ac45b47766ef303adf8b4200751ecac6">Replication factor (RF)</h1>
+
+<p><a href="/img/dynomite/v0.5.6/replication-factor.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-factor.svg"
+         alt="Replication factor"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">3 racks means replication factor (RF) = 3</p></p>
+
+<p>Replication factor (RF) determines how many replicas exist per DC. The RF for a DC is equal to the number of racks in a DC. For example, if a DC has 3 racks then we know that <code>RF = 3</code> which means that there are 3 replicas of each key/value pair.</p>
+
+<p>Each rack contains the entire token range from 0 to 4,294,967,295. Each node within the rack is assigned a node token within the token range where all nodes put together own the entire token range. Therefore, a data token is always owned by exactly one node within each rack which explains why the number of racks per DC determines the RF.</p>
+
+<h1 id="replication:ac45b47766ef303adf8b4200751ecac6">Replication</h1>
+
+<p>Replication happens on write and is a mix of synchronous and asynchronous operations. The number of nodes involved in the synchronous portion of the write is determined by the write consistency level (CL). If the write CL = <code>dc_one</code>, then one replica node within the local DC is written to synchronously while all other replica nodes are written to asynchronously. If the write CL = <code>dc_quorum</code>, then a quorum (i.e. a simple majority) of replica nodes within the local DC are written to synchronously while all other replica nodes are written to asynchronously. Replica nodes in remote DCs are always written to asynchronously.</p>
+
+<p>In the next few sections we will discuss a few variations of replication:</p>
+
+<ul>
+<li>Coordinator&rsquo;s role in replication</li>
+<li>Symmetric replication: When all servers across multiple racks are of equal size and number</li>
+<li>Asymmetric replication: When the number and size of servers differ across racks</li>
+<li>Cross-DC replication: Replication from a local DC to one or more remote DCs</li>
+</ul>
+
+<h2 id="coordinator-s-role-in-replication:ac45b47766ef303adf8b4200751ecac6">Coordinator&rsquo;s role in replication</h2>
+
+<p><a href="/img/dynomite/v0.5.6/replication-coordinator-topology-unaware.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-coordinator-topology-unaware.svg"
+         alt="Coordinator"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Coordinator</p></p>
+
+<p>The diagram above shows how a write request flows from a client to Dynomite to a backend. Importantly, the client (which is typically an API server) uses a standard Redis client to communicate with the Redis-compatible API on a <code>dynomite</code> instance. From the client&rsquo;s perspective, it thinks it is communicating to a single server.</p>
+
+<p><code>dynomite</code> receives the request which is passed to the coordinator subsystem. The coordinator hashes the key from the key/value pair to generate a data token. The coordinator uses the data token and its knowledge of the network topology to determine which nodes are the replica nodes for this request.</p>
+
+<h3 id="write-consistency-level-cl-dc-one:ac45b47766ef303adf8b4200751ecac6">Write consistency level (CL) = dc_one</h3>
+
+<p><a href="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_one.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_one.svg"
+         alt="Write CL dc_one with topology awareness"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Write CL <code>dc_one</code> with topology awareness</p></p>
+
+<p>When write CL = <code>dc_one</code> and the coordinator&rsquo;s node is a replica node, then a write request flows as follows:</p>
+
+<ul>
+<li>the coordinator synchronously sends the write request to its backend</li>
+<li>the coordinator waits for a response from its backend</li>
+<li>if the coordinator receives a success response from its backend then:
+
+<ul>
+<li>the coordinator sends a success response to the client</li>
+<li>the coordinator asynchronously replicates the write request to all other replica nodes</li>
+</ul></li>
+<li>if the coordinator receives a failure response from its backend then:
+
+<ul>
+<li>the coordinator sends a failure message to the client</li>
+</ul></li>
+</ul>
+
+<p><a href="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_one-nonreplica.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_one-nonreplica.svg"
+         alt="Write CL dc_one without topology awareness"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Write CL <code>dc_one</code> without topology awareness</p></p>
+
+<p>When write CL = <code>dc_one</code> and the coordinator&rsquo;s node is <strong>not</strong> a replica node, then a write request flows as follows:</p>
+
+<ul>
+<li>the coordinator synchronously sends the write request to the replica node within its rack</li>
+<li>the coordinator waits for a response from the replica node</li>
+<li>if the coordinator receives a success response from the replica node then:
+
+<ul>
+<li>the coordinator sends a success response to the client</li>
+<li>the coordinator asynchronously replicates the write request to all other replica nodes</li>
+</ul></li>
+<li>if the coordinator receives a failure response from the replica node then:
+
+<ul>
+<li>the coordinator sends a failure message to the client</li>
+</ul></li>
+</ul>
+
+<h3 id="write-consistency-level-cl-dc-quorum:ac45b47766ef303adf8b4200751ecac6">Write consistency level (CL) = dc_quorum</h3>
+
+<p><a href="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_quorum.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_quorum.svg"
+         alt="Write CL dc_quorum with topology awareness"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Write CL <code>dc_quorum</code> with topology awareness</p></p>
+
+<p>When write CL = <code>dc_quorum</code> and the coordinator&rsquo;s node is a replica node, then a write request flows as follows:</p>
+
+<ul>
+<li>the coordinator synchronously sends the write request to its backend and enough replica nodes in other racks to obtain a quorum</li>
+<li>the coordinator waits for a response from a quorum of replica nodes</li>
+<li>if the coordinator receives a success response from a quorum of replica nodes then:
+
+<ul>
+<li>the coordinator sends a success response to the client</li>
+<li>the coordinator asynchronously replicates the write request to all other replica nodes</li>
+</ul></li>
+<li>if the coordinator does not receive a success response from a quorum of replica nodes then:
+
+<ul>
+<li>the coordinator sends a failure message to the client</li>
+</ul></li>
+</ul>
+
+<p><a href="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_quorum-nonreplica.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-1dc-3racks-dc_quorum-nonreplica.svg"
+         alt="Write CL dc_quorum without topology awareness"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Write CL <code>dc_quorum</code> without topology awareness</p></p>
+
+<p>When write CL = <code>dc_quorum</code> and the coordinator&rsquo;s node is <strong>not</strong> a replica node, then a write request flows as follows:</p>
+
+<ul>
+<li>the coordinator synchronously sends the write request to enough replica nodes to obtain a quorum</li>
+<li>the coordinator waits for a response from a quorum of replica nodes</li>
+<li>if the coordinator receives a success response from a quorum of replica nodes then:
+
+<ul>
+<li>the coordinator sends a success response to the client</li>
+<li>the coordinator asynchronously replicates the write request to all other replica nodes</li>
+</ul></li>
+<li>if the coordinator does not receive a success response from a quorum of replica nodes then:
+
+<ul>
+<li>the coordinator sends a failure message to the client</li>
+</ul></li>
+</ul>
+
+<h3 id="topology-aware-dyno-client:ac45b47766ef303adf8b4200751ecac6">Topology-aware Dyno client</h3>
+
+<p><a href="/img/dynomite/v0.5.6/replication-coordinator-topology-aware.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-coordinator-topology-aware.svg"
+         alt="Topology-aware Dyno Client"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Topology-aware Dyno Client</p></p>
+
+<p>The Dyno client is topology aware which means that it always sends each request to a replica node. The benefit of this feature is that the coordinator will always be on a replica node which reduces latency and intra-cluster communication.</p>
+
+<h2 id="symmetric-replication:ac45b47766ef303adf8b4200751ecac6">Symmetric replication</h2>
+
+<p><a href="/img/dynomite/v0.5.6/replication-symmetric.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-symmetric.svg"
+         alt="Symmetric replication"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Symmetric replication</p></p>
+
+<p>The diagram above shows symmetric replication as the single DC has two racks where each rack has three equal size servers (i.e. same CPU, memory, disk, etc.).</p>
+
+<p>A server in each rack owns the same data token range as a server in the other rack. The table below shows each of the three data token ranges and the two nodes (one from each rack) that owns the range.</p>
+
+<table class="table table-condensed table-bordered">
+    <tr class="active">
+        <th>Node token</th>
+        <th>Min data token</th>
+        <th>Max data token</th>
+        <th>Replica nodes</th>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>1431655764</td>
+        <td>sfo-r1-s1, sfo-r2-s1</td>
+    </tr>
+        <td>1431655765</td>
+        <td>1431655765</td>
+        <td>2863311529</td>
+        <td>sfo-r1-s2, sfo-r2-s2</td>
+    </tr>
+        <td>2863311530</td>
+        <td>2863311530</td>
+        <td>4294967295</td>
+        <td>sfo-r1-s3, sfo-r2-s3</td>
+    </tr>
+</table>
+
+<p>When the client sends a write request for a key/value pair with data token = 3000000000 with write CL = <code>dc_one</code>, then the data is written synchronously to one node and asynchronously to the other replica node.</p>
+
+<h2 id="asymmetric-replication:ac45b47766ef303adf8b4200751ecac6">Asymmetric replication</h2>
+
+<p><a href="/img/dynomite/v0.5.6/replication-asymmetric.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-asymmetric.svg"
+         alt="Asymmetric replication"
+         style="height: 600px;">
+</a>
+<p class="dyno-image-caption text-center">Asymmetric replication</p></p>
+
+<p>The diagram above shows asymmetric replication as the single DC has two racks where one rack has three servers and the other rack has six servers.</p>
+
+<p>Each node in rack <code>r1</code> owns <sup>1</sup>&frasl;<sub>3</sub> of the data token range as shown in the table below.</p>
+
+<table class="table table-condensed table-bordered">
+    <tr class="active">
+        <th>Node token</th>
+        <th>Min data token</th>
+        <th>Max data token</th>
+        <th>Replica nodes</th>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>1431655764</td>
+        <td>sfo-r1-s1</td>
+    </tr>
+        <td>1431655765</td>
+        <td>1431655765</td>
+        <td>2863311529</td>
+        <td>sfo-r1-s2</td>
+    </tr>
+        <td>2863311530</td>
+        <td>2863311530</td>
+        <td>4294967295</td>
+        <td>sfo-r1-s3</td>
+    </tr>
+</table>
+
+<p>Each node in rack <code>r2</code> owns <sup>1</sup>&frasl;<sub>6</sub> of the data token range as shown in the table below.</p>
+
+<table class="table table-condensed table-bordered">
+    <tr class="active">
+        <th>Node token</th>
+        <th>Min data token</th>
+        <th>Max data token</th>
+        <th>Replica nodes</th>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>715827881</td>
+        <td>sfo-r2-s1</td>
+    </tr>
+        <td>715827882</td>
+        <td>715827882</td>
+        <td>1431655764</td>
+        <td>sfo-r2-s2</td>
+    </tr>
+        <td>1431655765</td>
+        <td>1431655765</td>
+        <td>2147483646</td>
+        <td>sfo-r2-s3</td>
+    </tr>
+    </tr>
+        <td>2147483647</td>
+        <td>2147483647</td>
+        <td>2863311529</td>
+        <td>sfo-r2-s4</td>
+    </tr>
+    </tr>
+        <td>2863311530</td>
+        <td>2863311530</td>
+        <td>3579139411</td>
+        <td>sfo-r2-s5</td>
+    </tr>
+    </tr>
+        <td>3579139412</td>
+        <td>3579139412</td>
+        <td>4294967295</td>
+        <td>sfo-r2-s6</td>
+    </tr>
+</table>
+
+<p>If the client connects to a node in <code>r1</code>, then when the client sends a write request for a key/value pair with data token = 3000000000 with write CL = <code>dc_one</code>, then the data is written synchronously to <code>r1s3</code> and asynchronously to <code>r2s5</code>.</p>
+
+<p>In general, the data on a node in <code>r1</code> will be split among two nodes in <code>r2</code>. Conversely, data stored separately on two nodes in <code>r2</code> is consolidated on one node in <code>r1</code>.</p>
+
+<h2 id="multi-dc-replication:ac45b47766ef303adf8b4200751ecac6">Multi-DC replication</h2>
+
+<p><a href="/img/dynomite/v0.5.6/replication-multi-dc.svg" target="_blank">
+    <img class="img-responsive center-block"
+         src="/img/dynomite/v0.5.6/replication-multi-dc.svg"
+         alt="Multi-DC symmetric replication"
+         style="height: 500px;">
+</a>
+<p class="dyno-image-caption text-center">Multi-DC symmetric replication</p></p>
+
+<p>The diagram above show a cluster with a two DCs that each contain three racks with three servers per rack. The servers are all equal size. Therefore this example shows multi-DC symmetric replication.</p>
+
+<p>Multi-DC replication is nearly identical to the replication within a single DC with multiple racks. During multi-DC replication, the coordinator in the local DC picks a coordinator in the remote DC. The local coordinator then forwards the request to the remote coordinator asynchronously. The remote coordinator then forwards the request to all replica nodes in the remote DC.</p>
+
+<p>The local coordinator uses a remote coordinator to reduce cross-DC traffic. in our example, the remote DC has three replicas, yet only a single request was sent over the network from the local coordinator to the remote coordinator. The remote coordinator is then responsible for all communication within its DC.</p>
+
+<h1 id="summary:ac45b47766ef303adf8b4200751ecac6">Summary</h1>
+
+<p>DynomiteDB replicates each key/value pair across multiple servers and racks. A copy of a key/value pair is called a replica. Replicas are stored on nodes that own the data token range that matches the replica&rsquo;s data token. The data token is generated by hashing the key portion of a key/value pair with a consistent hashing algorithm.</p>
+
+<p>Each rack owns the complete token range. The nodes within a rack each own a portion of the range. As a result, each key/value pair is stored on one node per rack.</p>
+
+<p>The number of racks per DC defines the replication factor (RF). The RF is the number of replicas per DC.</p>
+
+<p>During a write request, the write consistency level (CL) determines how many replica nodes are written to synchronously, while the remainder are written to asynchronously. Writes to replica nodes in remote DCs are always written to asynchronously.</p>
+
+<p>DynomiteDB supports both symmetric replication and asymmetric replication across racks and DCs.</p>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <footer>
+            <div class="pull-left">
+                <p>&copy; 2016 DynomiteDB.com</p>
+            </div>
+
+            
+            <div class="pull-right">
+                
+                
+                
+                    <a href="https://twitter.com/DynomiteDB" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                
+                
+                    <a href="https://github.com/DynomiteDB/DynomiteDB" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i></a>
+                
+                
+                
+                
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script src="http://www.dynomitedb.com/js/jquery.min-2.1.4.js"></script>
+<script src="http://www.dynomitedb.com/js/bootstrap.min-3.3.5.js"></script>
+<script src="http://www.dynomitedb.com/js/dynomite.js"></script>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-76466336-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+<script type="text/javascript">
+    (function(d,s,i,r) {
+        if (d.getElementById(i)){return;}
+        var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+        n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/2356163.js';
+        e.parentNode.insertBefore(n, e);
+    })(document,"script","hs-analytics",300000);
+</script>
+
+
+	</body>
+</html>

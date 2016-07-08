@@ -148,7 +148,22 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/debugging/alloc_msgs_max/</loc>
+        <lastmod>2016-06-16T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/key-value-api/v0.5.8/introduction/</loc>
+        <lastmod>2016-05-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/introduction/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/introduction/</loc>
         <lastmod>2016-03-13T20:22:33-08:00</lastmod>
     </url>
     
@@ -158,7 +173,22 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/key-value-api/v0.5.8/schema/</loc>
+        <lastmod>2016-05-15T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/key-value-api/v0.5.8/data-types/</loc>
+        <lastmod>2016-05-15T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/quick-start/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/quick-start/</loc>
         <lastmod>2016-03-13T20:22:33-08:00</lastmod>
     </url>
     
@@ -168,7 +198,17 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/key-value-api/v0.5.8/string/</loc>
+        <lastmod>2016-05-15T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/quick-start-ubuntu/</loc>
+        <lastmod>2016-03-27T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/quick-start-ubuntu/</loc>
         <lastmod>2016-03-27T20:22:33-08:00</lastmod>
     </url>
     
@@ -178,7 +218,57 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/install-docker-ubuntu-14-04/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/key-value-api/v0.5.8/integer/</loc>
+        <lastmod>2016-05-15T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/deploy-dynomitedb-cluster-on-aws/</loc>
+        <lastmod>2016-05-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/key-value-api/v0.5.8/float/</loc>
+        <lastmod>2016-05-16T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/key-value-api/v0.5.8/list/</loc>
+        <lastmod>2016-05-16T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/key-value-api/v0.5.8/set/</loc>
+        <lastmod>2016-05-16T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/key-value-api/v0.5.8/sorted-set/</loc>
+        <lastmod>2016-05-16T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/key-value-api/v0.5.8/hash/</loc>
+        <lastmod>2016-05-16T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/key-value-api/v0.5.8/data-types-summary/</loc>
+        <lastmod>2016-05-15T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/faq/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/faq/</loc>
         <lastmod>2016-03-13T20:22:33-08:00</lastmod>
     </url>
     
@@ -193,12 +283,22 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/terminology/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/terminology/</loc>
         <lastmod>2016-02-18T20:22:33-08:00</lastmod>
     </url>
     
     <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/architecture/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/architecture/</loc>
         <lastmod>2016-03-13T20:22:33-08:00</lastmod>
     </url>
     
@@ -213,12 +313,22 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/topology/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/topology/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
     <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/replication/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/replication/</loc>
         <lastmod>2016-03-13T20:22:33-08:00</lastmod>
     </url>
     
@@ -233,12 +343,22 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/consistency/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/consistency/</loc>
         <lastmod>2016-02-07T20:22:33-08:00</lastmod>
     </url>
     
     <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/membership-protocols/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/membership-protocols/</loc>
         <lastmod>2016-03-13T20:22:33-08:00</lastmod>
     </url>
     
@@ -253,12 +373,22 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/coordinator/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/coordinator/</loc>
         <lastmod>2016-02-18T20:22:33-08:00</lastmod>
     </url>
     
     <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/kvpairs/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/kvpairs/</loc>
         <lastmod>2016-03-13T20:22:33-08:00</lastmod>
     </url>
     
@@ -273,12 +403,27 @@
     </url>
     
     <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/dynomite-yaml/</loc>
+        <lastmod>2016-03-13T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.6/kvpairs/</loc>
         <lastmod>2016-02-18T20:22:33-08:00</lastmod>
     </url>
     
     <url>
         <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.7/seeds-list/</loc>
+        <lastmod>2016-03-14T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/seeds-list/</loc>
+        <lastmod>2016-03-14T20:22:33-08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dynomitedb.com/docs/dynomite/v0.5.8/compile-mac/</loc>
         <lastmod>2016-03-14T20:22:33-08:00</lastmod>
     </url>
     

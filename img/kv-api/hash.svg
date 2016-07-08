@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1337px" height="586px" viewBox="0 0 1337 586" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>hash</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="9" y="72" width="1321" height="500" rx="45"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="1321" height="500" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="59" y="10" width="585" height="126" rx="45"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="585" height="126" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <rect id="path-5" x="-5.68434189e-14" y="0" width="609.660166" height="104"></rect>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="609.660166" height="104" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <rect id="path-7" x="602.133497" y="0" width="609.660166" height="104"></rect>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="609.660166" height="104" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+        <rect id="path-9" x="-5.68434189e-14" y="0" width="609.660166" height="104"></rect>
+        <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="609.660166" height="104" fill="white">
+            <use xlink:href="#path-9"></use>
+        </mask>
+        <rect id="path-11" x="602.133497" y="0" width="609.660166" height="104"></rect>
+        <mask id="mask-12" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="609.660166" height="104" fill="white">
+            <use xlink:href="#path-11"></use>
+        </mask>
+        <rect id="path-13" x="-5.68434189e-14" y="0" width="609.660166" height="104"></rect>
+        <mask id="mask-14" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="609.660166" height="104" fill="white">
+            <use xlink:href="#path-13"></use>
+        </mask>
+        <rect id="path-15" x="602.133497" y="0" width="609.660166" height="104"></rect>
+        <mask id="mask-16" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="609.660166" height="104" fill="white">
+            <use xlink:href="#path-15"></use>
+        </mask>
+        <rect id="path-17" x="-5.68434189e-14" y="0" width="609.660166" height="104"></rect>
+        <mask id="mask-18" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="609.660166" height="104" fill="white">
+            <use xlink:href="#path-17"></use>
+        </mask>
+        <rect id="path-19" x="602.133497" y="0" width="609.660166" height="104"></rect>
+        <mask id="mask-20" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="609.660166" height="104" fill="white">
+            <use xlink:href="#path-19"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hash">
+            <use id="Rectangle-1" stroke="#ECF0F1" mask="url(#mask-2)" stroke-width="12" xlink:href="#path-1"></use>
+            <use id="Rectangle-1" stroke="#ECF0F1" mask="url(#mask-4)" stroke-width="12" fill="#FFFFFF" xlink:href="#path-3"></use>
+            <text id="company:id=7" font-family="ArialRoundedMTBold, Arial Rounded MT Bold" font-size="64" font-weight="normal" fill="#000000">
+                <tspan x="94" y="90">company:id=7</tspan>
+            </text>
+            <g id="Row-1" transform="translate(66.000000, 148.000000)">
+                <use id="Rectangle-3" stroke="#ECF0F1" mask="url(#mask-6)" stroke-width="10" fill="#2C3E50" opacity="0.375816231" xlink:href="#path-5"></use>
+                <use id="Rectangle-3" stroke="#ECF0F1" mask="url(#mask-8)" stroke-width="10" fill="#2C3E50" opacity="0.375816231" xlink:href="#path-7"></use>
+                <text id="Key" font-family="ArialRoundedMTBold, Arial Rounded MT Bold" font-size="64" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="15" y="75">Key</tspan>
+                </text>
+                <text id="Value" font-family="ArialRoundedMTBold, Arial Rounded MT Bold" font-size="64" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="621" y="75">Value</tspan>
+                </text>
+            </g>
+            <g id="Row-2" transform="translate(66.000000, 248.000000)">
+                <use id="Rectangle-3" stroke="#ECF0F1" mask="url(#mask-10)" stroke-width="10" xlink:href="#path-9"></use>
+                <use id="Rectangle-3" stroke="#ECF0F1" mask="url(#mask-12)" stroke-width="10" xlink:href="#path-11"></use>
+                <text id="Name" font-family="ArialRoundedMTBold, Arial Rounded MT Bold" font-size="64" font-weight="normal" fill="#000000">
+                    <tspan x="15" y="75">Name</tspan>
+                </text>
+                <text id="DynomiteDB" font-family="ArialRoundedMTBold, Arial Rounded MT Bold" font-size="64" font-weight="normal" fill="#000000">
+                    <tspan x="621" y="75">DynomiteDB</tspan>
+                </text>
+            </g>
+            <g id="Row-3" transform="translate(66.000000, 348.000000)">
+                <use id="Rectangle-3" stroke="#ECF0F1" mask="url(#mask-14)" stroke-width="10" xlink:href="#path-13"></use>
+                <use id="Rectangle-3" stroke="#ECF0F1" mask="url(#mask-16)" stroke-width="10" xlink:href="#path-15"></use>
+                <text id="Location" font-family="ArialRoundedMTBold, Arial Rounded MT Bold" font-size="64" font-weight="normal" fill="#000000">
+                    <tspan x="15" y="75">Location</tspan>
+                </text>
+                <text id="Palo-Alto,-CA" font-family="ArialRoundedMTBold, Arial Rounded MT Bold" font-size="64" font-weight="normal" fill="#000000">
+                    <tspan x="621" y="75">Palo Alto, CA</tspan>
+                </text>
+            </g>
+            <g id="Row-4" transform="translate(66.000000, 447.000000)">
+                <use id="Rectangle-3" stroke="#ECF0F1" mask="url(#mask-18)" stroke-width="10" xlink:href="#path-17"></use>
+                <use id="Rectangle-3" stroke="#ECF0F1" mask="url(#mask-20)" stroke-width="10" xlink:href="#path-19"></use>
+                <text id="Category" font-family="ArialRoundedMTBold, Arial Rounded MT Bold" font-size="64" font-weight="normal" fill="#000000">
+                    <tspan x="15" y="76">Category</tspan>
+                </text>
+                <text id="Software" font-family="ArialRoundedMTBold, Arial Rounded MT Bold" font-size="64" font-weight="normal" fill="#000000">
+                    <tspan x="621" y="76">Software</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
