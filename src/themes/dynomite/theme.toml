@@ -1,6 +1,6 @@
 name = "dynomite"
 license = "Apache 2"
-licenselink = "https://github.com/DynomiteDB/DynomiteDB/blob/master/LICENSE"
+licenselink = "https://github.com/DynomiteDB/DynomiteDB.github.io/blob/master/LICENSE"
 description = "DynomiteDB theme for Hugo. Forked from the Hugo Multi BootSwatch Theme (https://github.com/mpas/hugo-multi-bootswatch)."
 tags = ["project", "documentation", "blog"]
 features = ["project", "documentation", "blog"]
