@@ -3,7 +3,7 @@
 baseurl: "http://www.dynomitedb.com"
 #baseurl: "//www.dynomitedb.com"
 languageCode: "en-us"
-title: "DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed cache"
+title: "DynomiteDB - A high performance, linearly scalable, highly available (HA) and distributed database"
 buildDrafts: "false"
 buildFuture: "false"
 metaDataFormat: "yaml"
@@ -17,15 +17,15 @@ permalinks:
 
 params:
   product: "DynomiteDB"
-  description: "DynomiteDB is a high performance, linearly scalable, highly available (HA) and distributed cache."
-  keywords: "dynomite, cache, high availability, HA, linearly scalable, scalable, distributed, distributed cache"
+  description: "DynomiteDB is a high performance, linearly scalable, highly available (HA) and distributed database."
+  keywords: "dynomite, cache, high availability, HA, linearly scalable, scalable, distributed, distributed database"
   languagecode: "en-US"
-  author: "The DynomiteDB community"
+  author: "DynomiteDB"
   copyright: "2016 DynomiteDB.com"
 
   # Social links are displayed in the footer
   twitter: "https://twitter.com/DynomiteDB"
-  github: "https://github.com/DynomiteDB/DynomiteDB"
+  github: "https://github.com/DynomiteDB"
   #facebook: "https://www.facebook.com/<username>"
   #delicious: "https://delicious.com/<username>"
   #linkedin: "https://www.linkedin.com/in/<username>"
