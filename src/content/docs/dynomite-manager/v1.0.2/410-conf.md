@@ -1,11 +1,11 @@
 ---
-title: "dynomite.yaml"
-slug: "dynomite-yaml"
+title: "Dynomite Manager configuration"
+slug: "conf"
 date: "2016-03-13T20:22:33-08:00"
-product: "Dynomite"
-version: "v0.5.8"
-type: "dynomite-v0.5.8"
-docurl: "/docs/dynomite/v0.5.8/"
+product: "Dynomite Manager"
+version: "v1.0.2"
+type: "dynomite-manager-v1.0.2"
+docurl: "/docs/dynomite-manager/v1.0.2/"
 docsection: "Configuration"
 weight: 910
 draft: false
@@ -19,6 +19,13 @@ TODO
 -->
 
 The `dynomite.yaml` file supports many configuration options. Each option is described below along with default values and possible values.
+
+# Configuration properties
+
+## Dynomite
+
+## Redis
+
 
 # datacenter
   
@@ -274,7 +281,6 @@ By default, `dynomite` will preconnect to the backend server. Set `preconnect` t
 
 <!--
 - Environment variable: `DYNOMITE_AUTO_EJECT_HOSTS`
--->
 
 Set `auto_eject_hosts` to `true` to allow Dynomite to remove (i.e. eject) a node from the cluster after `server_failure_limit` consecutive failures.
 

@@ -10,6 +10,8 @@
                     <p class="lead">{{ .Description }}</p>
                     <div><p>{{ .Content }}</p></div>
 
+                    {{ partial "blog-about-dynomitedb.html" . }}
+
                     <div class="dyno-blog-post-footer">
                         <div class="pull-left">
                             By {{ with.Params.authors }}

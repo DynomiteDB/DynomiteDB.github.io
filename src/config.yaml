@@ -37,6 +37,7 @@ params:
   # Documentation
   current_dyno_version: "v1.3.1"
   current_dynomite_version: "v0.5.6"
+  current_dynomite_manager_version: "v1.0.2"
 
   strings:
     # name of the header used in the post list page
@@ -83,6 +84,9 @@ params:
     - id: "dynomite"
       name: "Dynomite"
       version: "v0.5.6"
+    - id: "dynomite-manager"
+      name: "Dynomite Manager"
+      version: "v1.0.2"
     - id: "dyno-java"
       name: "Dyno Client (Java)"
       version: "v1.3.1"
