@@ -1,3 +1,5 @@
+# This build is out of date. Please use the upstream repo from Netflix: https://github.com/Netflix/dynomite
+
 # dynomitedb.com
 
 <!--
